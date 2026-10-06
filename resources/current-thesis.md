@@ -1,6 +1,54 @@
-# Agent booking questions integrations and pilot
+# Homebase opportunity distribution and working analysis
 
-Updated project copy: 2026-10-05. Source: [current working Page](https://chatgpt.com/space/page_af46a0758c0481918b30bebe2a884596). This is a local snapshot of the Page, not a live sync.
+Local thesis updated: 2026-10-06. The [short business thesis](business-thesis.md) is the discussion version for friends and advisors. The [working Page](https://chatgpt.com/space/page_af46a0758c0481918b30bebe2a884596) is a separate copy and has not been updated by this revision.
+
+## Current direction
+
+The [business thesis](business-thesis.md) establishes the market premise: personal agents are expanding the ways people initiate service requests, while execution can still require searching websites, submitting forms and making calls. Uber, DoorDash and Booking.com illustrate how organized supply and a transaction layer help turn intent into a purchase. Homebase would provide a shared booking layer for participating local-service businesses, usable by multiple agents.
+
+**Build a supplier network for a specific task that people want their personal agents to complete, then make that network accessible through an MCP connector or API.** The central commercial question is how requests reach Homebase. Supplier onboarding and a working connector establish capability; distribution must turn that capability into demand.
+
+Start with an audience, a task, a location and a channel to customers. Develop the supplier side around those requests. Wajo is a possible agent partner, and Boston cleaning is one possible use case. Neither defines the business or has been selected through measured demand.
+
+## Distribution choices and the evidence needed
+
+| Route | What Homebase would do | Evidence that would support the route | Main weakness |
+| --- | --- | --- | --- |
+| Personal-agent partnership | Offer useful supply and booking execution; agree how the partner routes relevant requests and what each side earns. | Recent eligible requests, an accountable partner owner, actual routing and paid continuation. | Dependence on the partner; it can integrate suppliers directly or favor another provider. |
+| Platform directory or MCP marketplace | Publish a clear listing for a specific service and coverage area; support the platform's connection flow. | Relevant discovery traffic, completed connections, requests and fulfilled jobs attributable to the listing. | Being listed may produce little demand; installs alone do not establish usage. |
+| Direct niche distribution | Reach a community around a concrete need and guide users into their preferred agent with a setup link or prompt. | A reachable audience, successful setup on its actual agents, real requests and acceptable acquisition cost. | Homebase must acquire users itself; installation friction and low repeat usage can undermine economics. |
+
+A platform integration can feel native without making Homebase a first-party product. Clarify whether a proposed partnership offers ordinary availability, promotion, automatic selection for eligible tasks, or an actual volume commitment. These have different distribution value.
+
+**Track the whole path:** relevant audience reached → connection completed → eligible request → Homebase selected → suitable offer → confirmed booking → fulfilled and paid job → another request when the need returns. For a built-in partnership, track enablement and routing instead of assuming each user installs something. Count drop-offs and requests outside our coverage. Compare cost per acquired, paying customer with contribution, rather than reporting installs as customer acquisition.
+
+## Discovery connection and selection
+
+The [official MCP Registry](https://registry.modelcontextprotocol.io/) provides server discovery. [Smithery](https://smithery.ai/) offers publishing and connection tooling. [Claude supports directory submissions](https://claude.com/blog/build-plugins-for-claude), subject to review. These are possible distribution surfaces, not evidence of Homebase demand.
+
+[Claude's connector documentation](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) describes connection and authentication and says connected apps can be used when relevant. [Smithery's connection documentation](https://smithery.ai/docs/use/connect) also includes authorization flows. The proposed one-line prompt is an entry into onboarding; test the actual permissions, sign-in steps and supported actions for each target agent. Do not assume a public registry listing automatically installs the connector into consumer agents.
+
+Once connected, Homebase still needs the agent to choose it for an appropriate request. Make service scope, location coverage and supported actions explicit, and test ordinary user requests without naming Homebase. Distinguish success when the user explicitly invokes Homebase from success when the agent selects it unaided.
+
+## Questions for friends advisors and potential partners
+
+| Question | How to answer it |
+| --- | --- |
+| Which audience can we actually reach? | Name a community or partner and its existing access to users; inspect recent examples of the task and the agents those people use. |
+| What makes the task painful enough to delegate? | Walk through a recent attempt and its alternatives. Look for coordination, uncertainty or unavailable capacity, rather than assuming every booking needs an agent. |
+| Why would an agent company buy this? | Compare our coverage, completion and operating cost with browsing, calls, existing marketplaces and direct integrations. Ask which work it wants to own. |
+| Can supply satisfy the requests we can attract? | Match actual request locations, scope and timing to willing providers with capacity and authority to accept bookings. |
+| What would people pay for? | Test supplier-funded acquisition separately from user- or agent-funded coordination. Follow jobs to payment and reconcile all delivery costs. |
+| What could compound into an advantage? | Look for repeatable onboarding, dense useful supply, reliable fulfillment and distribution relationships. Determine what another connector or supplier platform could readily copy. |
+| How large could the business become? | Estimate reachable users × eligible requests per user × fulfilled share × Homebase net revenue per job. Subtract acquisition and operating costs. Do not use total home-services spending as the fee opportunity. |
+
+A household asking to change its existing cleaner's appointment is a different commercial case from acquiring a new customer for another cleaner. Repeat service visits do not necessarily create repeat Homebase revenue. For direct distribution, Homebase also bears user-acquisition costs that are absent from a simple partner revenue-share illustration.
+
+**Recommendation:** pursue the narrow distribution hypothesis; defer broad integration work until there is a credible route to real requests. A small test should connect one audience and channel to sufficient participating supply, then establish whether requests turn into fulfilled jobs at economics people will continue paying for. A functioning connector without that path is insufficient evidence for a network business.
+
+## Earlier cleaning scenario retained for implementation detail
+
+The following October 5 analysis is retained as a conditional example of the partner route. Its Wajo pitch, illustrative fees, Boston software observations and pilot are not the chosen distribution strategy. Current vendor capabilities and permissions must be rechecked before implementation. The [original snapshot](archive/2026-10-06-before-distribution-reframe/current-thesis.md) preserves its original framing.
 
 **Test whether Wajo wants a supplier network you operate, with an API as the interface.** A connector alone gives Wajo little reason to share valuable customer-acquisition revenue. The proposition becomes stronger if you recruit willing cleaners, expose usable offers, complete bookings and handle exceptions more effectively than Wajo can do directly. That is the central question for the pilot.
 
@@ -94,4 +142,3 @@ The working flow is **Wajo → your API → cleaner’s existing software → ve
 **Continue only if requests recur, cleaners honor the offers, customers receive suitable service, and both your company and Wajo have a reason to keep participating.** The decisive Wajo question is: “Having seen what we handle, would you continue giving us this share rather than do it directly?”
 
 If the answer is no, a working integration has not validated this business. Keep operator capacity recovery and specific property-maintenance coordination problems as adjacent hypotheses. A venture-scale case would require repeatable supplier onboarding and additional demand partners; this pilot establishes whether the first commercial relationship works.
-

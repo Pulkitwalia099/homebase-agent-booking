@@ -1,15 +1,18 @@
 # Homebase research index
 
-Project resources updated: 2026-10-06. The business thesis adds October 6 public-source checks; this does not claim new field validation.
+Project resources updated: 2026-10-06. The latest revision restores the market story before introducing Homebase, then retains the distribution and audience hypotheses. Public-source checks establish product activity, discovery and connection options, not field validation or Homebase demand. Only the local copies were updated.
 
 ## Current resources
 
 | Resource | Use |
 | --- | --- |
 | [Project overview](../README.md) | Current position and next decisions |
-| [Business thesis](business-thesis.md) | Short narrative, proposed 10× outcomes and conditions for a company |
-| [Current thesis](current-thesis.md) | Concise questions, monetization, software routes and pilot |
-| [Working Page](https://chatgpt.com/space/page_af46a0758c0481918b30bebe2a884596) | Editable online version; local thesis is a dated snapshot |
+| [Draft archive](archive/README.md) | Preserved drafts and revision notes; archive every revision going forward |
+| [Business thesis](business-thesis.md) | Plain-language discussion draft: opportunity, solution, distribution, audiences and key questions |
+| [Current thesis](current-thesis.md) | Detailed distribution analysis with the earlier commercial, integration and pilot scenario retained |
+| [Working Page](https://chatgpt.com/space/page_af46a0758c0481918b30bebe2a884596) | Separate online copy; not updated in the distribution revision |
+| [Earlier business thesis](archive/2026-10-06-before-distribution-reframe/business-thesis.md) | Exact local copy preserved before the October 6 distribution revision, including pre-existing edits |
+| [Earlier detailed thesis](archive/2026-10-06-before-distribution-reframe/current-thesis.md) | Exact October 5 local Page snapshot preserved before the revision |
 | [Earlier ecosystem visual draft](../prototypes/homebase-ecosystem-draft.html) | Superseded prototype kept for reference |
 
 ## Original research
@@ -29,6 +32,19 @@ These documents are historical source material. Recommendations and source promp
 | [Dots evidence workbook](../bookingrailresearcheverythinginoneemailmasterpack/agent_booking_evidence.xlsx) | Detailed evidence across 12 sheets; related to the same investigation as the DOCX |
 | [Earlier thesis PDF](../homebase-thesis-and-research-fa07f453.pdf) | Prior business thesis and research |
 | [91-path mystery shop PDF](../homebase-mystery-shop-91-paths-81676ce7.pdf) | Earlier interface audit, not completed commercial transactions |
+
+## Distribution evidence checked October 6 2026
+
+| Primary source | What it establishes | Limit for this thesis |
+| --- | --- | --- |
+| [Official MCP Registry](https://registry.modelcontextprotocol.io/) | A public surface exists for discovering MCP servers. | Does not establish that a target personal agent searches it or routes consumer bookings through it. |
+| [Smithery](https://smithery.ai/) and [connection documentation](https://smithery.ai/docs/use/connect) | Publishing and connection tooling exist; documented flows include authorization when required. | Does not establish our audience's presence, installs, requests or universal one-prompt setup. |
+| [Claude directory submission announcement](https://claude.com/blog/build-plugins-for-claude), September 25 2026 | Developers can submit a remote MCP connector or plugin bundle, subject to review; listing and usage analytics are described. | Eligibility and approval are separate from a commercial partnership or demand commitment. |
+| [Claude connector help](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) | Documents directory discovery, connection, authentication and use of relevant connected apps. | Does not guarantee selection of Homebase or establish the same setup experience on other agents. |
+
+The distribution routes and audience examples are strategic hypotheses. No marketplace performance, partner routing commitment or representative customer demand was measured. “Figure Out” in the discussion request has not been resolved to a specific product; no capability or partnership claim is attributed to that name.
+
+The earlier numerical performance targets are preserved in the archived business thesis. They remain proposed targets, not measured outcomes or requirements of the revised discussion draft.
 
 ## Corrections to carry forward
 
@@ -59,6 +75,8 @@ The current thesis links the specific primary sources beside each claim. These e
 A documented endpoint is not evidence of this project's permission to use it or of a confirmed appointment. Check exact account entitlements and the full price, availability, acceptance, status, change and cancellation flow with the selected cleaner and vendor.
 
 ## Sources for the market-shift thesis
+
+October 6 narrative refresh: Google's Gemini task announcement, Town's Series A announcement, Wajo's product page, DoorDash's agent-ordering page, Booking.com's Demand API overview and Angi's booking description were rechecked. They support expanding product capabilities and examples of structured transactions; they do not measure personal-agent adoption growth or local-booking volume. Google's role is described as a common starting point, not the only historical channel. Meta's Muse URL redirected to a login page during this check and is not used to substantiate the revised opening.
 
 - Personal agents and funding: [Meta Muse](https://ai.meta.com/tools/muse/), [OpenAI Dots](https://openai.com/index/introducing-dots/), [Instinct announcement](https://www.businesswire.com/news/home/20260928153437/en/), [Town announcement](https://www.town.com/press/series-a), [Hark announcement](https://hark.com/articles/hark-announces-usd700-million-fundraising-round). Funding is not evidence of booking demand.
 - Existing structured rails: [Booking.com Demand API](https://developers.booking.com/demand/docs/getting-started/overview), [DoorDash agentic ordering, limited beta](https://developer.doordash.com/en-US/mcp/), [Gemini selected multi-step app tasks](https://blog.google/innovation-and-ai/products/gemini-app/android-multi-step-tasks/).
