@@ -1,8 +1,8 @@
 # Homebase
 
-Current project context · 2026-10-05
+Current project context · 2026-10-06
 
-Homebase is exploring a service that lets consumer personal agents find participating local businesses and obtain reliable bookings through the businesses' existing software.
+Homebase is exploring a shared booking route for personal agents to discover and book participating local businesses through the businesses' existing software. The [business thesis](resources/business-thesis.md) explains the market shift and the commercial proof still needed.
 
 ## Start here
 
