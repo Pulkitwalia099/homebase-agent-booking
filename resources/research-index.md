@@ -10,6 +10,7 @@ Project resources synchronized: 2026-10-05. Public source checks supporting the 
 | [Business thesis](business-thesis.md) | Short narrative, proposed 10× outcomes and conditions for a company |
 | [Current thesis](current-thesis.md) | Concise questions, monetization, software routes and pilot |
 | [Working Page](https://chatgpt.com/space/page_af46a0758c0481918b30bebe2a884596) | Editable online version; local thesis is a dated snapshot |
+| [Earlier ecosystem visual draft](../prototypes/homebase-ecosystem-draft.html) | Superseded prototype kept for reference |
 
 ## Original research
 

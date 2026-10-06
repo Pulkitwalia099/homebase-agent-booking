@@ -1,0 +1,91 @@
+<div id="homebase-ecosystem-draft">
+  <style>
+    #homebase-ecosystem-draft { width: 100%; }
+    #homebase-ecosystem-draft * { box-sizing: border-box; }
+    #homebase-ecosystem-draft .hb-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+    #homebase-ecosystem-draft .hb-column { min-width: 0; }
+    #homebase-ecosystem-draft .hb-layer { display: grid; grid-template-columns: minmax(6rem, 32%) 1fr; gap: .75rem; align-items: start; }
+    #homebase-ecosystem-draft .hb-layer > div { min-width: 0; }
+    #homebase-ecosystem-draft .hb-label { color: var(--muted-foreground); }
+    #homebase-ecosystem-draft .hb-demand .hb-label { color: var(--purple); }
+    #homebase-ecosystem-draft .hb-discovery .hb-label { color: var(--orange); }
+    #homebase-ecosystem-draft .hb-front .hb-label { color: var(--blue); }
+    #homebase-ecosystem-draft .hb-stack .hb-label { color: var(--green); }
+    #homebase-ecosystem-draft .hb-brands { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+    #homebase-ecosystem-draft .hb-brands span { color: var(--foreground); font-weight: 500; white-space: nowrap; }
+    #homebase-ecosystem-draft .hb-google { display: inline-flex; align-items: center; gap: .25rem; }
+    #homebase-ecosystem-draft .hb-google img { width: 1rem; height: 1rem; }
+    #homebase-ecosystem-draft .hb-homebase { color: var(--primary); font-weight: 500; }
+    #homebase-ecosystem-draft .hb-arrow { margin: .25rem 0 .25rem 32%; padding-left: .75rem; color: var(--muted-foreground); }
+    #homebase-ecosystem-draft .hb-potential { margin-top: 1.2rem; }
+    #homebase-ecosystem-draft .hb-potential strong { color: var(--foreground); }
+    #homebase-ecosystem-draft .hb-potential .text-muted { margin-top: .4rem; }
+    @media (max-width: 640px) {
+      #homebase-ecosystem-draft .hb-columns { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+  </style>
+  <h2>Same local market, two ways to reach it</h2>
+  <div class="hb-columns">
+    <section class="hb-column" aria-label="Current ecosystem">
+      <h3>Today</h3>
+      <div class="hb-layer hb-demand">
+        <div class="hb-label">Personal agents</div>
+        <div class="hb-brands"><span>Wajo</span><span>Instinct</span><span>Muse</span><span>Dots</span></div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓ many separate paths</div>
+      <div class="hb-layer hb-discovery">
+        <div class="hb-label">Discovery + contact</div>
+        <div class="hb-brands">
+          <span class="hb-google"><img alt="" src="https://cdn.jsdelivr.net/npm/simple-icons@15/icons/google.svg">Google</span>
+          <span>Websites</span><span>Reviews</span><span>Forms</span><span>Calls</span>
+        </div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓ different handoffs</div>
+      <div class="hb-layer hb-front">
+        <div class="hb-label">Front office</div>
+        <div class="hb-brands"><span>Staff</span><span>AI receptionist</span><span>None</span></div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓</div>
+      <div class="hb-layer hb-stack">
+        <div class="hb-label">Scheduling + records</div>
+        <div class="hb-brands"><span>Launch27</span><span>BookingKoala</span><span>Jobber</span><span>Housecall Pro</span><span>Other / manual</span></div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓</div>
+      <div class="hb-layer">
+        <div class="hb-label">Local supply</div>
+        <div class="hb-brands"><span>Small team</span><span>Regional</span><span>Multi-location</span><span>…</span></div>
+      </div>
+    </section>
+    <section class="hb-column" aria-label="Proposed Homebase ecosystem">
+      <h3>With Homebase — proposed</h3>
+      <div class="hb-layer hb-demand">
+        <div class="hb-label">Personal agents</div>
+        <div class="hb-brands"><span>Wajo</span><span>Instinct</span><span>Muse</span><span>Dots</span></div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓ one supplier interface</div>
+      <div class="hb-layer hb-discovery">
+        <div class="hb-label">Discovery + booking</div>
+        <div class="hb-homebase">HOMEBASE<br><span class="text-muted">Opted-in offers · booking request · verified status</span></div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓ authorized route</div>
+      <div class="hb-layer hb-front">
+        <div class="hb-label">Front office</div>
+        <div class="hb-brands"><span>Staff when needed</span><span>AI when used</span><span>None / direct tool</span></div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓</div>
+      <div class="hb-layer hb-stack">
+        <div class="hb-label">Scheduling + records</div>
+        <div class="hb-brands"><span>Launch27</span><span>BookingKoala</span><span>Jobber</span><span>Housecall Pro</span><span>Other / manual</span></div>
+      </div>
+      <div class="hb-arrow" aria-hidden="true">↓</div>
+      <div class="hb-layer">
+        <div class="hb-label">Local supply</div>
+        <div class="hb-brands"><span>Opted-in small</span><span>Regional</span><span>Multi-location</span><span>…</span></div>
+      </div>
+    </section>
+  </div>
+  <div class="card hb-potential">
+    <strong>Potential for a standard clean: 15 minutes → 2 minutes to confirmation = about 7.5× faster</strong>
+    <div class="text-muted">Illustrative assumption with complete customer details, eligible supply and a bookable slot; measure against the agent’s real process.</div>
+  </div>
+</div>

@@ -29,3 +29,5 @@ Boston-area first standard residential cleans are a provisional pilot. Choose th
 Demand, willingness to pay, production access, profitable delivery and venture scale remain unproven. Keep operator capacity recovery and specific property-maintenance coordination problems as adjacent hypotheses.
 
 The original research files remain available below. Their conclusions are historical inputs; the current thesis takes precedence where it revises them. No partner commitment or live pilot is recorded.
+
+The [earlier ecosystem visual draft](prototypes/homebase-ecosystem-draft.html) is preserved for reference; the short business thesis is the current narrative for future visuals.
