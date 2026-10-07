@@ -1,0 +1,1 @@
+Exact supporting-file snapshot before adding the October 6 connector distribution research. Project-relative paths preserved. Business thesis, detailed thesis, Word/PDF and working Page are not revised by this research.

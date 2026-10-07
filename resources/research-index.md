@@ -6,9 +6,14 @@ Project resources updated: 2026-10-06. The latest revision restores the market s
 
 | Resource | Use |
 | --- | --- |
+| [Industry opportunity research October 6](../exa-results/industry-opportunities-2026-10-06/research.md) · [Comparison CSV](../exa-results/industry-opportunities-2026-10-06/industry-comparison.csv) | Plain-language problems, value chains, hypothetical use cases, buyers, access constraints and incumbent coverage; narrows the earlier middleware suggestions |
+| [Personal-agent middleware assessment October 6](../exa-results/personal-agent-middleware-2026-10-06/research.md) | PACT and Personal Agent Protocol; proposed thesis changes; infrastructure competition; opportunities beyond local services; venture-scale conditions |
+| [Monitoring plan](../exa-results/personal-agent-middleware-2026-10-06/monitoring-plan.md) · [Watchlist](../exa-results/personal-agent-middleware-2026-10-06/watchlist.csv) · [Evidence ledger](../exa-results/personal-agent-middleware-2026-10-06/evidence-ledger.csv) | 22 source/decision trackers and 9 initial evidence records; weekday alerts, weekly synthesis and monthly review proposed, not activated |
+| [Connector distribution research October 6](../exa-results/connector-distribution-2026-10-06/research.md) | Official discovery, ranking, featuring and authorization rules across OpenAI/dots, Claude, Muse and Instinct; adoption evidence and GoLocal channel recommendations |
 | [Project overview](../README.md) | Current position and next decisions |
 | [Draft archive](archive/README.md) | Preserved drafts and revision notes; archive every revision going forward |
-| [Business thesis](business-thesis.md) | Plain-language discussion draft: opportunity, solution, distribution, audiences and key questions |
+| [Business thesis](business-thesis.md) | Word-edition text: opportunity, connector ecosystem, distribution options and key questions |
+| [Word discussion draft](../output/docx/homebase-business-thesis.docx) | Editable two-page document with simple language, a teal flow diagram and two closing questions |
 | [Current thesis](current-thesis.md) | Detailed distribution analysis with the earlier commercial, integration and pilot scenario retained |
 | [Working Page](https://chatgpt.com/space/page_af46a0758c0481918b30bebe2a884596) | Separate online copy; not updated in the distribution revision |
 | [Earlier business thesis](archive/2026-10-06-before-distribution-reframe/business-thesis.md) | Exact local copy preserved before the October 6 distribution revision, including pre-existing edits |
@@ -82,3 +87,50 @@ October 6 narrative refresh: Google's Gemini task announcement, Town's Series A 
 - Existing structured rails: [Booking.com Demand API](https://developers.booking.com/demand/docs/getting-started/overview), [DoorDash agentic ordering, limited beta](https://developer.doordash.com/en-US/mcp/), [Gemini selected multi-step app tasks](https://blog.google/innovation-and-ai/products/gemini-app/android-multi-step-tasks/).
 - Digitized supplier workflows: [Jobber merchant OAuth](https://developer.getjobber.com/docs/getting_started/), [MaidCentral booking API flow](https://support.maidcentral.com/apidocs/online-booking-to-api-workflow).
 - Market scope and existing alternatives: [Harvard Joint Center's home-improvement estimate](https://www.jchs.harvard.edu/press-releases/remodeling-soars-new-heights-industry-struggles-address-labor-shortages-and-urgent), [Angi instant booking](https://www.angi.com/landing/how-it-works), [Handy home cleaning](https://orders.angi.com/services/cleaning-service).
+
+## Connector ecosystem additions for the Word edition
+
+October 6 2026: [ChatGPT connected apps](https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt) and [custom MCP apps](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt), alongside the Claude sources above, establish existing plugin and custom-connector paths. Availability, authentication and administrator controls vary. Universal one-prompt installation is not established. A partner integration does not establish guaranteed routing of every query. Existing personal-agent usage within a chosen niche remains a selection criterion to validate. The Word edition and local business thesis were updated; the working Page was not.
+
+## Word annotation revision — October 6 2026
+
+The [Jobber developer guide](https://developer.getjobber.com/docs/getting_started/) supports merchant OAuth authorization and marketplace installation as a supplier connection path. This does not establish universal one-click setup or completed booking support. The ChatGPT and Claude sources above support marketplace discovery and custom connections; transaction history leading to wider platform recommendations remains a growth hypothesis. The six annotation edits clarify benefits for agents and businesses, setup, and distribution in the local Word document and short thesis. The working Page was not updated.
+
+## User supplied GoLocal revision — October 6 2026
+
+The user confirmed that the facts in their edited Word file are sourced and instructed that they be preserved. The current [short thesis](business-thesis.md), local Word master and final PDF use the supplied wording, including the market sizes, agent-startup count, funding and task-completion claims. The [exact source](archive/2026-10-06-before-user-pdf-edition/user-edited/golocal-business-thesis.docx) is archived. This records the user's supplied thesis; the earlier research notes above retain their original evidence assessments. The working Page is unchanged.
+
+## Connector distribution research added October 6 2026
+
+The [detailed local research brief](../exa-results/connector-distribution-2026-10-06/research.md) separates public listing, contextual recommendation, connection and task execution. It adds primary evidence beyond the earlier distribution notes without rewriting them:
+
+- [Claude directory metrics](https://claude.com/docs/connectors/building/managing-your-listing) disclose ranking by distinct accounts sending any MCP message over 30 days, including incomplete connections; the top ten by recent growth receive a Trending tag. This is not the published algorithm for in-chat suggestions or a measure of paying customers.
+- [Claude directory versus custom](https://claude.com/docs/connectors/building/directory-vs-custom) confirms that every directory entry is eligible for Suggested Connectors and custom connectors are not. The open MCP Registry does not itself provide Claude directory distribution.
+- [OpenAI plugin guidelines](https://developers.openai.com/plugins/plugin-guidelines) connect strong utility and satisfaction with possible enhanced placement or suggestions. [Metadata guidance](https://developers.openai.com/plugins/guides/optimize-metadata) explains tool-selection controls, not a complete ranking formula. [Dots documentation](https://learn.chatgpt.com/docs/dots/computers-and-apps) says dots uses supported installed and enabled plugins.
+- [Muse's now-accessible platform guidelines](https://muse.ai/platform/docs) document agent discovery and separate editorial criteria: usefulness beyond browser access, completion, reliability and maintenance. This supplements the earlier failed Muse URL check. Booking connectors are explicitly discussed.
+- [Instinct's official product site](https://instinct.com/) establishes product capabilities; no official public developer listing or recommendation specification was found in the targeted searches.
+- [Canva's adoption report](https://www.canva.com/newsroom/news/claude-small-business/) reports millions arriving through AI assistants/new surfaces and 85% quarterly growth in authenticated assistant connections. It is self-reported, spans assistants and does not isolate organic directory acquisition or establish startup economics.
+
+OpenAI's current physical-goods-only commerce language leaves GoLocal's exact service-booking eligibility unresolved. The brief flags this and the restriction on unofficial pass-through integrations for confirmation before implementation. A native partnership does not automatically eliminate customer or merchant authorization. Only the research brief and local index were updated; the thesis, Word/PDF and working Page were not revised.
+
+## Personal agent protocol developments assessed October 6 2026
+
+The founder's stated focus is durable, venture-scale middleware for personal agents, with local services one possible application. The new [research assessment](../exa-results/personal-agent-middleware-2026-10-06/research.md) proposes a broader comparison without replacing the user-edited discussion thesis.
+
+- [Decagon and Instinct PACT](https://decagon.ai/blog/introducing-the-personal-agent-consent-trust-protocol-pact) has a public [specification](https://openpactprotocol.org/spec) and [implementation](https://github.com/openpactprotocol/openpactprotocol). Consent, scoped delegation, signed receipts and duplicate-message handling are existing primitives, not unoccupied product categories.
+- [Meta and Sierra Personal Agent Protocol](https://sierra.ai/blog/introducing-personal-agent-protocol) is an announced cross-channel design with a v0.1 specification planned later in October. Partner participation is not evidence of deployment or request volume. Decagon is joining its working group; do not presume a settled standards split.
+- [Decagon Personal Agent Gateway](https://decagon.ai/blog/personal-agents-are-here) directly competes in agent identification, routing, permissions and resolution. Auth0, Composio, Temporal, Stripe, Shopify and Cloudflare provide adjacent infrastructure; the memo links their primary documentation and distinguishes their scopes.
+- Instinct's participation updates the earlier absence of public interoperability detail. Its marketplace/recommendation rules and any GoLocal routing relationship remain unestablished.
+- The proposed opportunity is domain-specific transaction execution, exception handling and outcome reconciliation. Travel changes, complex returns/warranties and property coordination are discovery candidates. Freight/logistics is a separate business-agent adjacency, not verified personal-agent demand.
+
+This addition updates local research, monitoring resources and navigation only. Thesis text, Word/PDF and working Page remain unchanged. No monitoring schedule, subscription, outreach, partnership or transaction was activated. Original source captures and both before/after snapshots are preserved.
+
+## Industry and value chain research added October 6 2026
+
+The [detailed follow-up](../exa-results/industry-opportunities-2026-10-06/research.md) explains participants, money, customer tasks and candidate products in appliance/after-sales repair, travel servicing, healthcare administration, property maintenance and moving/utilities; it also screens returns, automotive service and freight.
+
+New competitive evidence narrows the earlier suggestions. [Updater](https://updater.com/) explicitly markets complex-service purchasing infrastructure for apps and AI agents. [Spotnana](https://www.spotnana.com/blog/introducing-spotnanas-ai-architecture/) and [TPConnects](https://tpconnects.com/iris-travel-seller-solutions/iris-api/) already automate substantial travel servicing. [Rossware](https://www.rossware.com/integrations) supplies multi-network repair integrations; [ServicePower](https://www.servicepower.com/solutions/overview) covers dispatch, claims and reimbursement. [Latchel](https://latchel.com/property-management-maintenance-software/) and [Property Meld](https://www.appfolio.com/partners/propertymeld) cover broad property coordination. [Loop](https://docs.loopreturns.com/integration-guides/loop-anywhere) covers cross-platform returns and separately documents warranty policies.
+
+The recommended discovery order is repair/after-sales and a narrow travel-servicing task, with healthcare conditional on a domain partner. This is a search priority, not a validated market ranking. Generic returns and property coordination are downgraded relative to the earlier broad candidate list. A buyer's actual unresolved queue, permitted access, repeatable delivery and paid continuation are still required. Existing human-initiated workflow revenue would validate that workflow business but not automatically validate personal-agent demand.
+
+Only new local research and navigation were added. Prior source bodies, thesis, Word/PDF and online Page are unchanged. No outreach or implementation occurred.
