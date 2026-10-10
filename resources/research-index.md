@@ -134,3 +134,11 @@ New competitive evidence narrows the earlier suggestions. [Updater](https://upda
 The recommended discovery order is repair/after-sales and a narrow travel-servicing task, with healthcare conditional on a domain partner. This is a search priority, not a validated market ranking. Generic returns and property coordination are downgraded relative to the earlier broad candidate list. A buyer's actual unresolved queue, permitted access, repeatable delivery and paid continuation are still required. Existing human-initiated workflow revenue would validate that workflow business but not automatically validate personal-agent demand.
 
 Only new local research and navigation were added. Prior source bodies, thesis, Word/PDF and online Page are unchanged. No outreach or implementation occurred.
+
+## Technical friend review added October 9 2026
+
+The [new assessment](../exa-results/technical-friend-review-2026-10-09/research.md) rechecks third-party infrastructure and service networks, compares B2B starting workflows, and frames broader execution and reconciliation opportunities. The [short companion note](golocal-technical-discussion.md) and [editable Word version](../output/docx/golocal-middleware-discussion.docx) are intended to accompany the existing thesis when discussing it with a technical middleware builder.
+
+Composio, PACT, Updater, Square and Openbay establish that access tooling and some service networks already exist. ServicePower, Latchel and project44 narrow claims of missing coordination. Duffel documents a concrete boundary between a supplier cancellation refund and refunding the customer. These are existing capabilities and discovery prompts, not proof of an unserved market or paid demand. Repair/after-sales remains the first provisional discovery candidate, followed by a bounded travel-servicing task; buyer access can change that order.
+
+New companion material and local navigation only. Main thesis text, detailed thesis, original Word/PDF and working Page unchanged. No communication to the friend or other external action occurred. Before/after copies and raw source responses are preserved in the archive.

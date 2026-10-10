@@ -6,6 +6,7 @@ Personal agents are expanding the ways people find and buy services, but local b
 
 ## Start here
 
+- [Technical discussion note for a middleware builder](resources/golocal-technical-discussion.md) · [October 9 evidence and recommendation](exa-results/technical-friend-review-2026-10-09/research.md): existing providers, B2B workflows and questions about what GoLocal should own. The user-edited thesis is unchanged.
 - [Where to build personal-agent middleware](exa-results/industry-opportunities-2026-10-06/research.md): plain-language problems, industry value chains, buyers, existing products and a narrower order for customer discovery.
 - [October 6 personal-agent middleware assessment and proposed direction](exa-results/personal-agent-middleware-2026-10-06/research.md) · [Monitoring plan](exa-results/personal-agent-middleware-2026-10-06/monitoring-plan.md): PACT, Personal Agent Protocol, opportunities beyond local services and evidence to track. Research proposal; the user-edited thesis below is unchanged.
 - [Short business thesis for friends and advisors](resources/business-thesis.md)
