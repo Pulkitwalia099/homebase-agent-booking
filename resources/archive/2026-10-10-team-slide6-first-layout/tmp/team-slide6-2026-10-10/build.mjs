@@ -1,0 +1,37 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {PresentationFile,FileBlob} from '@oai/artifact-tool';
+const ROOT='/Users/pulkitwalia/Documents/ChatGPT/Homebase';
+const WORK=path.join(ROOT,'tmp/team-slide6-2026-10-10');
+const p=await PresentationFile.importPptx(await FileBlob.load(path.join(ROOT,'output/pptx/golocal-pitch-v18.pptx')));
+const slideId=(await p.inspect({select:'$.slides[5]',include:['id']})).records[0].id;
+const s=p.resolve(slideId);
+p.delete((await p.inspect({select:'$.slides[5].elements[*]',include:['id','kind']})).records.map(x=>x.id));
+const C={ink:'#193C32',muted:'#65746C',bg:'#FBF9F4',green:'#236C4E',border:'#CDD5CE'};
+s.background.fill=C.bg;let n=0;
+function tx(str,x,y,w,h,size=26,color=C.ink,bold=false){
+ const sh=s.shapes.add({geometry:'textbox',name:`team-slide6-text-${n++}`,position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0,style:'solid'}});
+ sh.text=str;sh.text.style={fontSize:size,typeface:'Helvetica Neue',color,bold,insets:0,verticalAlignment:'top',alignment:'left',autoFit:'none',wrap:'square'};return sh;
+}
+tx('THE TEAM',52,27,1176,25,17,C.muted,true);
+tx('Local services experience meets agent engineering.',52,65,1176,66,44,C.ink,true);
+tx('The operating knowledge and technical experience to build GoLocal.',52,143,1176,48,27,C.muted);
+tx('Pulkit Walia',52,249,540,58,42,C.ink,true);
+tx('Founder, HBS MBA',52,311,540,39,24,C.green,true);
+tx('Urban Company founding team',52,369,555,43,28,C.ink,true);
+tx('A decade building local services in Asia.\nHelped scale the company from zero\nto a $3B IPO.',52,421,555,111,26,C.ink);
+tx('Provider networks and\nservice operations.',52,540,555,65,25,C.green,true);
+tx('Rohit Jain',688,249,540,58,42,C.ink,true);
+tx('Engineering',688,311,540,39,24,C.green,true);
+tx('Backend engineering',688,369,540,43,28,C.ink,true);
+tx('Experience at Amazon and Square.\nBuilt production MCP integrations.\nSystem design instructor.',688,421,540,111,26,C.ink);
+tx('Agent integrations and\nreliable systems.',688,540,540,65,25,C.green,true);
+s.shapes.add({geometry:'rect',name:'team-slide6-shared-close',position:{left:52,top:620,width:1176,height:58},fill:C.green,line:{fill:'none',width:0,style:'solid'}});
+tx('Build the provider network and the infrastructure agents need to book it.',70,631,1140,41,27,'#FFFFFF',true);
+tx('6 / 6',1160,695,70,21,17,C.muted);
+s.speakerNotes.text='Team slide, October 10, 2026. Pulkit Walia is the GoLocal founder and an Urban Company founding team member, not an Urban Company founder. The decade building local services in Asia and helping scale the company from zero to a $3B IPO are founder-supplied credentials. The $3B describes the company IPO milestone, not personal revenue or a GoLocal valuation. HBS MBA and the Urban Company company milestone are also stated on the public team page https://laoh.ai/ (reviewed October 10, 2026). Rohit Jain is shown as Engineering, without an inferred CTO/cofounder title or specific full-time commitment. Backend experience at Amazon and Square and system-design instruction are supported by https://laoh.ai/. Production MCP experience is founder-reported: Rohit built products on MCPs and was an early adopter of deploying them in production. No independent public production audit has been established. The green capability lines connect these experiences to the proposed GoLocal roles: provider networks/service operations and agent integrations/reliable systems. This is an editorial assessment of fit, not measured GoLocal production performance. Supplied profile links: https://www.linkedin.com/in/pulkitwalia/ and https://www.linkedin.com/in/rohit-jain-343437187/. Direct LinkedIn profiles have not been independently read. Slides 1–5 retain their approved visible content. No live integrations, paid demand, completed GoLocal bookings or agreed pricing implied. No application submission, Page synchronization or outreach.';
+await fs.mkdir(path.join(WORK,'renders'),{recursive:true});
+const b=await p.export({slide:s,format:'png',scale:2});
+await fs.writeFile(path.join(WORK,'renders/slide-6.png'),new Uint8Array(await b.arrayBuffer()));
+await(await PresentationFile.exportPptx(p)).save(path.join(WORK,'candidate.pptx'));
+console.log('Team slide authored; candidate and slide 6 preview exported.');

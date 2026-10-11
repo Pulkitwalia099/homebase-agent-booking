@@ -1,0 +1,21 @@
+{
+  "unchanged_slides_pixel_identical": {
+    "1": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true
+  },
+  "logos_original_sources_embedded": 5,
+  "native_connectors": 13,
+  "native_diagram_and_labels_retained": true,
+  "additional_examples": [
+    "OpenClaw",
+    "Hermes",
+    "Claude",
+    "Gemini"
+  ],
+  "dots_promotional_collages_omitted": true,
+  "slide2_individually_visually_reviewed": true,
+  "validation_findings": 0
+}

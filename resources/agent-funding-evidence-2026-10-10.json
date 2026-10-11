@@ -1,0 +1,69 @@
+{
+  "checked_on": "2026-10-10",
+  "headline": "More than $2B raised by just three companies building personal AI agents",
+  "selected_company_total_usd_minimum": 2105000000,
+  "method": "Hark announced over $700M Series A + Instinct $1B Series C + Instinct previously reported $350M cumulative total + Town $55M Series A. Do not add Instinct's $250M Series B separately to the $350M previous total. No AI-lab company-wide funding or valuation is included.",
+  "companies": [
+    {
+      "name": "Hark",
+      "amount_usd": 700000000,
+      "qualification": "Over this amount in Series A; personal intelligence platform includes models and hardware. INKS inferred to mean Hark from amount, not confirmed by user.",
+      "source": "https://hark.com/articles/hark-announces-usd700-million-fundraising-round"
+    },
+    {
+      "name": "Instinct",
+      "amount_usd": 1000000000,
+      "round": "Series C, September 28 2026",
+      "source": "https://www.businesswire.com/news/home/20260928153437/en/"
+    },
+    {
+      "name": "Instinct",
+      "amount_usd": 350000000,
+      "round": "Previous total reported August 26 2026, including $250M Series B",
+      "source": "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/",
+      "source_level": "Secondary reporting of company disclosure to WSJ; primary total unavailable"
+    },
+    {
+      "name": "Town",
+      "amount_usd": 55000000,
+      "round": "Series A, June 3 2026",
+      "source": "https://www.town.com/press/series-a"
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Wajo/Bajoy",
+      "reason": "Bajoy identity unconfirmed; likely Wajo from project context. No verified funding amount in targeted searches. Wajo official launch page supports product existence, not funding.",
+      "source": "https://wajo.ai/blog/unveiling-wajo"
+    }
+  ],
+  "platform_context": [
+    {
+      "name": "Meta Muse",
+      "source": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "finding": "Launched personal agent."
+    },
+    {
+      "name": "Gemini",
+      "source": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-services-gemini-august-2026/",
+      "finding": "Already expanding connected apps and booking tasks; not merely an unannounced future arrival."
+    },
+    {
+      "name": "Claude",
+      "source": "https://www.anthropic.com/research/trustworthy-agents",
+      "finding": "Anthropic describes existing multi-application agent tasks in Claude Cowork and Code; does not by itself establish an upcoming general personal-agent launch."
+    }
+  ],
+  "competitive_context": [
+    {
+      "name": "Updater",
+      "source": "https://updater.com/",
+      "finding": "Already markets commerce infrastructure for apps/AI agents, including home improvement and moving. Therefore universal claim that no platform/middleware exists is not supported; actual coverage/completion in GoLocal's intended categories must be checked."
+    }
+  ],
+  "limits": [
+    "Funding is not adoption, service-request volume, shifted Google local-search share or proven GoLocal demand.",
+    "The channel fragmentation and interoperability opportunity are strategic inferences.",
+    "Selected-company funding is not a complete industry aggregate."
+  ]
+}

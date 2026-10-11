@@ -1,0 +1,177 @@
+{
+  "date": "2026-10-11",
+  "scope": "Private GoLocal connector prototype for the founder's own agent and synthetic business account. No production bookings or demand evidence.",
+  "sources": [
+    {
+      "url": "https://www.meta.com/help/artificial-intelligence/1687253048996149/",
+      "finding": "Muse offers a private Custom Connector path guided from chat and a Secure Credentials Store. Retrieved via Parallel Fetch after the web reader timed out."
+    },
+    {
+      "url": "https://muse.ai/platform/docs",
+      "finding": "Public connector review is separate; requires documented tools, test access, security and complete supported workflows."
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps",
+      "finding": "Dots can use supported installed/enabled plugins, subject to permissions and execution environment."
+    },
+    {
+      "url": "https://developers.openai.com/plugins/build/mcp-server",
+      "finding": "Official SDK and Streamable HTTP tool implementation guidance; authorization and meaningful annotations required."
+    },
+    {
+      "url": "https://developer.getjobber.com/docs/getting_started/",
+      "finding": "Separate developer and business accounts; developer testing signup offers a 90-day testing window. GraphiQL token is short-lived and reauthorization invalidates previous refresh tokens."
+    },
+    {
+      "url": "https://developer.getjobber.com/docs/building_your_app/app_authorization/",
+      "finding": "OAuth authorization code, state, S256 PKCE, secret exchange, account identity and refresh rotation are documented."
+    },
+    {
+      "url": "https://developer.getjobber.com/docs/using_jobbers_api/api_queries_and_mutations/",
+      "finding": "Documented fixed clientCreate example used as the first controlled write. Live verification pending business account."
+    },
+    {
+      "url": "https://developer.getjobber.com/docs/changelog/",
+      "finding": "2026-09-25 listed as active version and pinned in this pilot. Verify the authorized schema before scheduling implementation."
+    },
+    {
+      "url": "https://developer.getjobber.com/docs/building_your_app/testing_your_app/",
+      "finding": "Use internal testing; coordinate with Jobber before testing with existing customers or broad distribution."
+    },
+    {
+      "url": "https://help.housecallpro.com/en/articles/8505035-api-overview",
+      "finding": "Housecall Pro API requires MAX; eligible admins generate read-only or full-access keys."
+    },
+    {
+      "url": "https://www.housecallpro.com/pricing/",
+      "finding": "Advertises a no-card 14-day trial with MAX features; actual trial API-key entitlement has not been tested."
+    },
+    {
+      "url": "https://www.getjobber.com/pricing/",
+      "finding": "Standard no-card 14-day trial on Grow; shorter fallback to investigate after developer signup failure."
+    },
+    {
+      "url": "https://www.getjobber.com/sign-up/",
+      "finding": "Standard signup offers Start with Google and Start with Apple. Google signup was opened for user handoff; account creation not confirmed."
+    }
+  ],
+  "observations": [
+    "User authorized account creation, selected pulkitwalia099@gmail.com, and approved saving a private app with Clients read/write and Jobs read-only scopes.",
+    "User completed Developer Center signup. GoLocal Connector Test app saved; generated credentials copied directly from visible credential fields to private local .env without disclosure in chat.",
+    "Business developer signup returned An unexpected error occurred in the in-app browser; user also reported failure with another email and in Chrome.",
+    "Analytics errors were observed in the signup page console; they do not establish causation for the signup failure.",
+    "Standard free trial with Google signup opened as a fallback. No paid plan or billing information was submitted.",
+    "16 automated tests passed; Jobber HTTP responses were mocked. Real MCP SDK smoke completed search, availability, quote, approval, simulated booking, duplicate retry, status and cancellation over public HTTPS.",
+    "Temporary ngrok tunnel uses inspect=false. MCP and REST endpoints require a dedicated private bearer token; operator actions use a separate credential.",
+    "Actual Muse calls, Dots installation, live Jobber data reads/writes, appointment scheduling, fulfillment and payments are unverified."
+  ],
+  "money_spent_usd": 0,
+  "user_spending_cap_usd": 60,
+  "unchanged": [
+    "Local short and detailed theses",
+    "Working Page",
+    "Public website and deployment"
+  ],
+  "updates": [
+    {
+      "date": "2026-10-11",
+      "observations": [
+        "User reports standard Jobber Google signup also fails.",
+        "User chose Housecall Pro free trial instead of sending Jobber support email; email remains unsent.",
+        "Housecall Pro signup reached required mobile-number step after entering approved email and name. User handoff pending for remaining signup, password and terms.",
+        "Official API documentation read through browser: merchant API keys use Authorization: Token; OAuth reserved for approved integration partners; GET /company supplies company identity, GET /jobs supports page_size=10.",
+        "Read-only Housecall adapter added with exact company binding, endpoint allowlist, GET-only requests, redirect refusal, sanitized errors and no customer contact fields.",
+        "21 tests passed, including five Housecall mocked-response tests. Running endpoint stays in demo mode. Trial API-key access and all live vendor operations remain unverified."
+      ],
+      "sources": [
+        "https://docs.housecallpro.com/docs/housecall-public-api/b87d37ae48a0d-authentication",
+        "https://docs.housecallpro.com/docs/housecall-public-api/24a5d891a80a8-get-company",
+        "https://docs.housecallpro.com/docs/housecall-public-api/6c97704da8bf3-get-jobs"
+      ],
+      "money_spent_usd": 0
+    },
+    {
+      "date": "2026-10-11",
+      "scope": "Dots and Codex private simulated connector",
+      "observations": [
+        "User asked for a Dots connector and authorized creating and connecting the private demo, including the custom-MCP warning and simulated-only OAuth grant.",
+        "Implemented demo-only golocal:demo OAuth using official MCP SDK discovery/auth routes, S256 PKCE, exact registered ChatGPT callbacks, one-time codes, resource and issuer binding, opaque encrypted-state tokens, refresh rotation/reuse revocation and a one-day absolute grant limit. Supplier mode refuses these grants.",
+        "27 automated tests pass, including real HTTP OAuth and official MCP SDK search, availability, quote, confirmation, same-key replay, status and cancellation. All booking actions in these checks were simulated.",
+        "Live browser OAuth discovered DCR and golocal:demo, created private app and completed operator consent. ChatGPT settings show a primary connected account, OAuth used, DEVELOPMENT status and the exact MCP URL.",
+        "Browser sign-in exposed no-referrer producing opaque Origin on form POST. Fixed with same-origin referrer policy; regression assertions keep foreign/opaque Origin and invalid CSRF rejected. Browser sign-in/consent then succeeded.",
+        "Actual app ID is asdk_app_6acb14f577d481919971027ef1da3827. Plugin permissions tool confirms installed app with Use my default / Allow low-risk. No global permissions were changed.",
+        "Local marketplace golocal-development registered and plugin version 0.1.1 installed through official Codex CLI. Package maps the actual account app; separate OAuth MCP template retained outside the package to avoid duplicate connection.",
+        "Active chat has no new GoLocal tool namespace. Authorization requested to open and message a fresh Dots test chat; actual Dots tool execution remains unverified.",
+        "Housecall Pro signup remains at user handoff; live supplier reads, scheduling, fulfillment and payments remain unverified. No support email sent, no paid subscription or real booking."
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/dots/computers-and-apps",
+        "https://developers.openai.com/plugins/build/plugins",
+        "https://developers.openai.com/plugins/build/auth",
+        "https://developers.openai.com/plugins/deploy/submission#authentication-limitations",
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy"
+      ],
+      "money_spent_usd": 0
+    },
+    {
+      "date": "2026-10-11",
+      "scope": "User-authorized Jobber signup-support email",
+      "observations": [
+        "The user explicitly instructed sending the prepared signup-support email as well.",
+        "Sent from pulkitwalia099@gmail.com to api-support@getjobber.com, subject Developer testing account signup fails in two browsers.",
+        "Body matches the prepared local support draft; no credentials or attachments included.",
+        "Gmail returned message/thread ID 1a1294e1df2fbe83 with SENT label. Support reply and working business test account remain pending."
+      ],
+      "money_spent_usd": 0
+    },
+    {
+      "date": "2026-10-11",
+      "scope": "Actual personal Dot connected-tool lifecycle test",
+      "observations": [
+        "User explicitly authorized opening and messaging the Dots test. A new test request was sent in the ongoing personal Dot conversation at https://chatgpt.com/dots/home.",
+        "Dot reported nine actual connected MCP calls with isError=false: status, search, availability, prepare quote, confirm, booking status, same-key confirm retry, cancel and final booking status.",
+        "Provider demo-plumber; quote demo-quote-dc3419c4-f800-4069-af0c-d87f94e15594; booking demo-booking-6855431f-5d40-48dc-a617-923425038394; idempotency key golocal-dot-e2e-20261011-a1. Retry returned the same booking ID.",
+        "Exact simulated quote USD 0.00 for October 12, 2026, 10\u201311 a.m. America/Denver; terms say no technician, repair, payment or messages. Final state cancelled, simulated=true, amountCharged=0.",
+        "Parent Codex chat tools became available on the subsequent turn. Actual plugin status/search calls worked. Independent booking-status and post-cancellation same-key replay calls returned the exact same canceled booking with amountCharged=0.",
+        "Saved Dot report, screenshot and structured verification results. This supersedes earlier pending-Dots-execution observations; supplier booking, payment, fulfillment and actual Muse execution remain unverified."
+      ],
+      "artifacts": [
+        "output/golocal-dots-e2e-results.json",
+        "output/dots-golocal-test-report.txt",
+        "output/dots-golocal-e2e-passed.png"
+      ],
+      "money_spent_usd": 0
+    },
+    {
+      "date": "2026-10-11",
+      "scope": "Housecall Pro test-business profile and final signup handoff",
+      "observations": [
+        "User explicitly authorized using their supplied mobile number with Housecall Pro and creating a synthetic test-business profile. The number is not copied into this evidence ledger.",
+        "Entered Owner operator, Plumbing, GoLocal Connector Test, and https://getgolocal.com. Existing approved email and Pulkit Walia name retained.",
+        "Signup advanced to step=5: Set your password and you are in; 14-Day free trial, no credit card required.",
+        "Browser-control rules require user entry and submission of a new password. Final account creation, dashboard access and trial API entitlement remain unconfirmed.",
+        "No card, paid subscription, real customer import or booking. Screenshot saved for the final handoff."
+      ],
+      "money_spent_usd": 0
+    }
+  ],
+  "datedUpdates": [
+    {
+      "date": "2026-10-11",
+      "topic": "Housecall trial and live MCP synthetic job",
+      "trialDashboardVerified": true,
+      "apiKeyPermission": "Full access, approved, stored privately",
+      "companyId": "4cd1c8ed-be46-46ea-a458-98b8063b82f3",
+      "companyName": "GoLocal Connector Test",
+      "timeZone": "America/New_York",
+      "jobId": "job_8ead1790a92c40e89c0294e6d1ed4359",
+      "result": "Created scheduled $0 synthetic job; initial owner-assignment guard required operator reconciliation without POST retry; repeated confirmation returned same job; schedule removal verified needs scheduling",
+      "jobCancelled": false,
+      "customerNotifications": false,
+      "paymentsOrMessagesInitiated": false,
+      "testsPassed": 34,
+      "actualDotsHousecallRun": "awaiting separate grant approval",
+      "spend": 0
+    }
+  ]
+}

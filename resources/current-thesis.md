@@ -8,6 +8,10 @@ The latest [short thesis](business-thesis.md) follows the user's edited Word fil
 
 The updated discussion focuses on whether AI companies will build the local supplier network themselves, and whether a direct personal-agent integration or distribution of the MCP can establish enough demand in a confined area. It also asks whether freight forwarders, brokers or other business agents have a useful B2B booking workflow. These additions are preserved in full in the short thesis; the earlier detailed analysis below remains supporting context.
 
+## Market-size check — October 10 2026
+
+The [dated market-sizing note](local-services-tam-2026-10-10.md) supports a conservative **$1T+ in annual U.S. spending across selected local-service categories**: roughly $600B home improvement and repair, $283.8B motor vehicle maintenance and repair, $239.6B personal care and clothing services, and $65.5B child day care. Their indicative sum is about $1.2T, using different data years and sources. The home figure includes materials and DIY work. This is market context, not GoLocal's transactionable booking volume or fee revenue. The blanket $2T local-services claim in the user-edited short thesis has no comparable scoped calculation; retain that historical draft as supplied, but use the sourced, qualified line in future revisions.
+
 ## Current direction
 
 The [business thesis](business-thesis.md) establishes the market premise: personal agents are expanding the ways people initiate service requests, while execution can still require searching websites, submitting forms and making calls. Uber, DoorDash and Booking.com illustrate how organized supply and a transaction layer help turn intent into a purchase. GoLocal would provide a shared booking layer for participating local-service businesses, usable by multiple agents.
@@ -148,3 +152,68 @@ The working flow is **Wajo → your API → cleaner’s existing software → ve
 **Continue only if requests recur, cleaners honor the offers, customers receive suitable service, and both your company and Wajo have a reason to keep participating.** The decisive Wajo question is: “Having seen what we handle, would you continue giving us this share rather than do it directly?”
 
 If the answer is no, a working integration has not validated this business. Keep operator capacity recovery and specific property-maintenance coordination problems as adjacent hypotheses. A venture-scale case would require repeatable supplier onboarding and additional demand partners; this pilot establishes whether the first commercial relationship works.
+
+## Founder and partner evidence reported October 10 2026
+
+The founder supplied these updates while preparing a six-slide application for An Evening with the Sharks. They supersede the earlier absence of recorded partner commitments; they do not establish live integrations or completed transactions.
+
+- **Cactus AI:** agreed to partner in Salt Lake City and Dallas, where it serves 100+ mid-market trade shops. The founder clarified that Cactus will introduce shops and provide booking access through existing customers. This is a supplier-access and integration route; personal-agent request routing has not been reported. Do not label all Cactus customers as onboarded GoLocal businesses.
+- **Back-office management company:** agreed to onboard its 20 clients, according to the founder. Its name, completed onboarding and commercial terms have not yet been supplied. Keep this figure separate from Cactus's customer base; unique nonoverlapping supply has not been established.
+- **Discovery:** the founder reports a few positive customer interviews and partnership calls. Specific interview counts, findings, paid demand and completed bookings were not supplied.
+- **Pulkit Walia:** identifies Urban Company as the platform he helped build over the last decade in Asia. He describes himself as a founding team member who helped scale it from zero to a $3 billion IPO, and GoLocal as reimagining the business for the AI era. His public [IPO reflection](https://www.linkedin.com/posts/pulkitwalia_urban-company-is-now-public-when-i-first-activity-7374240855139868672-U711) supports the decade-long connection. Supplied [LinkedIn profile](https://www.linkedin.com/in/pulkitwalia/); direct profile retrieval was unavailable.
+- **Rohit Jain:** the founder describes backend engineering, MCP-based products, production MCP integrations and system design interview teaching. His supplied [LinkedIn profile](https://www.linkedin.com/in/rohit-jain-343437187/) is linked from [Laoh's team section](https://laoh.ai/), which lists Amazon, Square and Citrix experience. The [Udemy instructor profile](https://www.udemy.com/user/a6a5d0a8-fdb1-40b1-84d5-1fe3a0861886/) retrieved October 10 reports 24,599 total learners. That is not a count of system design students alone. Exact GoLocal role, equity and time commitment remain unspecified; do not label him cofounder or CTO without confirmation.
+
+The current forwarded 2026 organiser emails specify a current Harvard student founder and a startup beyond ideation. The founder has checked the deadline. Sources: [HBS Entrepreneurship Club email](https://mail.google.com/mail/u/?authuser=pulkitwalia099%40gmail.com#all/1a123c475a96c71a), [Rock Center email](https://mail.google.com/mail/u/?authuser=pulkitwalia099%40gmail.com#all/1a10df28300df0a3). The six-slide maximum and evaluation criteria were supplied by the founder; the application form could not be retrieved through web tools. Older public 2025 pages do not determine this round's eligibility.
+
+Recommendation: apply with the local-service booking thesis, supplier-access commitments and relevant team credentials. Customer-request distribution remains the principal commercial question. New dated local supporting context only; short thesis, Word/PDF and online Page unchanged. No external message or application was sent.
+
+## Six-slide Sharks application deck — October 10 2026
+
+Created an editable PowerPoint and a six-page PDF using the current thesis and the founder's partnership/team updates. The narrative is: fragmented local bookings in an expanding personal-agent market; GoLocal's participating supply and shared MCP booking interface; specific supplier-access commitments; proposed success-fee economics and request distribution; team experience. The original thesis, its Word/PDF and the working Page remain unchanged.
+
+The application form was subsequently inspected through the browser. It requires a current Harvard student founder, a startup beyond ideation, basic company details and a deck of six slides maximum including the title. It states that submissions cannot be edited. The form contains no separate long-form business questions. Preparation is not submission.
+
+The deck preserves the founder-sourced $2T local-services and $600B home-services figures and the 15+ new-agent-startup claim. Its speaker notes retain provenance and qualification. The market amounts are service-market figures, not GoLocal revenue projections. Rohit's title is Engineering; cofounder/CTO status has not been inferred. Cactus's 100+ customer base and the separate 20-client onboarding commitment are displayed separately and are not presented as live GoLocal merchants.
+
+Recommendation: pursue the application and the next commercial validation steps. Supplier access plus founder experience justify the early pitch. A connector alone is a useful feature; manual fulfillment can become a service business. A venture-scale case requires repeatable demand routing, reliable transactions and viable economics across multiple suppliers, cities and agents. Those conditions remain unproven.
+
+Application preparation status: the Harvard email and GoLocal company name were entered, the six-page PDF was attached, and the form displayed Draft saved with the attachment. Existing name, school and No outside capital selection were retained. Optional website and funding-summary fields remain blank. No Submit action was performed; founder review is pending.
+
+## Funding-led pitch wireframe — October 10 2026
+
+The founder asked to establish the capital flowing into personal agents before explaining local-booking fragmentation. The [new content wireframe](golocal-pitch-wireframe-2026-10-10.txt) proposes the positioning “Stripe for home-service bookings,” clarified as booking infrastructure connecting agents to participating suppliers and their existing software. The [funding ledger](agent-funding-evidence-2026-10-10.json) records a selected-company total exceeding $2.105B: Hark over $700M Series A, Instinct $1B Series C plus $350M previously reported cumulative funding, and Town $55M Series A. Wajo funding is excluded as unverified. “INKS” is provisionally identified as Hark from the amount; “Bajoy” remains an unconfirmed name, potentially Wajo.
+
+Meta Muse is launched and Google/Anthropic already have agent capabilities. The expected diversification of local-service requests is a thesis, not a measured Google share shift. Existing marketplaces, software booking APIs and Updater’s agent-commerce platform mean the pitch should describe fragmented interoperability and supplier access rather than claim no middleware exists anywhere. FSM means field service management software; supplier authorization and bookable actions remain distinct from a general CRM connection.
+
+Only research and a proposed wireframe were added. The existing deck, its application attachment, user-edited short thesis/Word/PDF and online Page were not revised. Application submission remains pending.
+
+
+## Visual pitch structure revision — October 10 2026
+
+The founder requested an editable six-slide structure before visual styling. The new [PPTX](../output/pptx/golocal-pitch-structure.pptx) and [PDF](../output/pdf/golocal-pitch-structure.pdf) show a seven-task local-service journey and the many-agent / GoLocal / business-software / participating-provider connection. The planned product includes authorized coverage, pricing/quote data, schedules and permitted transaction history, with quote, booking, payment and management actions. Existing business systems remain authoritative. Some local platforms already transact; the claim concerns fragmentation across agents and suppliers.
+
+The proposed under-five-second lookup versus roughly fifteen minutes of sequential calls is a founder illustration and target, not a measured benchmark or full-booking time. Complex scopes may still require merchant responses. Payment tools are proposed and must use platform-compatible checkout.
+
+The funding slide uses a verified selected-company $2B+ minimum. No allocation of Meta/OpenAI general financing to Muse/Dots establishes $3B+ in the cited evidence. New connector documentation supports developer access and conditional broader discovery for useful approved tools; it does not establish automatic recommendations from transaction count or first arrival. See the [new dated evidence](connector-and-process-evidence-2026-10-10.json).
+
+The commercial proposal remains supplier-paid new-customer success fees, with an unagreed demand-partner share. Direct agent routing and user-added connectors remain distribution hypotheses. Cactus is supply access, not a secured agent-demand partner. Prior source bodies, main thesis, Word/PDF and working Page are unchanged. The application attachment was not replaced and no submission occurred.
+
+## Founder-confirmed Salt Lake City onboarding commitment · October 10 2026
+
+The founder confirmed the Cactus AI and regional back-office partnerships and a combined commitment to onboard **50 service providers** while authorizing slide 5. Use this latest commitment for the pilot pitch; preserve the earlier Cactus 100+ customer reach and separate 20-client commitment above as historical statements, not numbers to sum. The exact back-office partner name and per-partner allocation are not supplied. Fifty is committed onboarding, not a live merchant or completed-booking count. Start with one service category in Salt Lake City, then onboard willing providers, connect their authorized existing systems and test the first agent bookings. Supplier access is distinct from user demand. [Dated evidence note](partner-pilot-slide5-evidence-2026-10-10.json). Main short thesis, its Word/PDF and online Page unchanged.
+
+## Founder correction: partner introductions pipeline · October 10 2026
+
+The founder corrected the previous onboarding-commitment description. **Cactus AI agreed to introduce GoLocal to 50+ service partners**, and **YourCardare**, the regional back-office partner, is expected to bring another **56 potential provider introductions**, using the latest founder-supplied number and spelling. Describe these as introductions in the pipeline, not committed onboarding or live supply. Keep counts separate; unique nonoverlapping coverage is not established. This correction supersedes the prior combined 50-provider onboarding-commitment statement above for the current pitch; preserve that and older 100+/20 records as historical. The Salt Lake City pilot remains planned for one service category. Introductions precede merchant agreement, onboarding, authorized software connections and first confirmed agent bookings. [Dated correction](partner-pipeline-correction-2026-10-10.json). Short thesis, Word/PDF and online Page unchanged.
+
+## YourCardare count corrected by founder annotation · October 10 2026
+
+The founder annotation on slide 5 corrects YourCardare's count to **10+ providers**. Current wording: “Another 10+ providers in the pipeline.” This supersedes the earlier 56 figure above; preserve the prior dated record as historical. Cactus AI remains 50+ service-partner introductions. Counts are pipeline access, not committed onboarding or live merchants. [Annotation correction record](yourcardare-count-correction-2026-10-10.json). Main short thesis and online Page unchanged.
+
+## Pilot scope and deck framing clarification · October 10 2026
+
+The founder now selects **Salt Lake City and plumbing** for the planned proof of concept. This supersedes the earlier unspecified service category in the pitch. The pilot is intended to test whether participating supply and customer-authorized agent requests can produce confirmed bookings; it is not recorded production validation. The first customer audience, adequate local coverage, integrations and demand remain to be established.
+
+The general model is separate: choose one city-category combination, onboard suppliers toward useful coverage, recruit users with a booking need, support one-time connector setup, then test whether useful bookings encourage recommendations, more requests and more supply. Slide 4 shows this repeatable model; slide 5 shows the selected pilot and partner access. Recommendation eligibility, approval steps and reliable execution still depend on each platform and merchant.
+
+Cactus AI’s 50+ partner introductions and YourCardare’s additional 10+ providers remain pipeline figures. No inference that all are onboarded, unique, or Salt Lake City plumbing providers. The local deck/context were updated; the short thesis, Word/PDF and online Page remain separate unchanged copies.

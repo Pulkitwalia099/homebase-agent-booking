@@ -1,0 +1,1 @@
+Completed founder annotation: YourCardare changed to “Another 10+ providers in the pipeline.” Exact visible change is confined to the annotation bounds; all other slides are pixel-identical to v17. Original 56 count preserved in historical source/draft snapshots. Short thesis, Word/PDF, online Page and application unchanged.

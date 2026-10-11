@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-10",
+  "deck": "output/pptx/golocal-pitch-v25.pptx",
+  "scope": "Slide 2 personal-agent column only",
+  "used_assets": [
+    "muse.png",
+    "town.jpeg",
+    "hark.jpeg",
+    "openclaw.jpeg",
+    "heremes.png"
+  ],
+  "unused_assets_reason": "Duplicate Town/Hark copies and promotional Dots collages not added",
+  "asset_treatment": "Original embedded bytes, native crops and intact colors; native labels for OpenClaw/Hermes; no logo recreation",
+  "agent_examples": [
+    "Instinct",
+    "Muse",
+    "Dots",
+    "Town",
+    "Hark",
+    "OpenClaw",
+    "Hermes"
+  ],
+  "additional_caption": "Claude \u00b7 Gemini \u00b7 more",
+  "qualification": "Illustrative ecosystem, not signed integrations/partnerships; original selected-startup $2B+ funding basis retained without expansion or last-month claim",
+  "additional_primary_sources": [
+    "https://claude.com/resources/articles/dispatch-and-computer-use",
+    "https://gemini.google/about/"
+  ],
+  "unchanged": [
+    "Slides 1, 3, 4, 5, 6",
+    "Supplier software examples and qualifications",
+    "Thesis Word/PDF",
+    "Online Page",
+    "Application"
+  ]
+}

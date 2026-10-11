@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-10-11T06:52:05.113Z",
+  "result": "passed",
+  "agent": "Muse",
+  "publicConnector": "GoLocal",
+  "museProvider": "custom.golocal",
+  "agentTransport": "Muse custom REST connector using secure bearer credential",
+  "base": "https://getgolocal.com/api/connector",
+  "deployment": "dpl_HDBzDG75852aYkLcDJThjvsmt4DL",
+  "commit": "780903cf0c4840895c476c39cc953ee61649bef9",
+  "companyId": "4cd1c8ed-be46-46ea-a458-98b8063b82f3",
+  "quoteId": "c1972daf-3e9f-4120-8780-acdb0177559f",
+  "jobId": "job_7bec0be6b918473ba4492fc0d9dc882c",
+  "idempotencyKey": "golocal-muse-e2e-20261011-c1",
+  "museSuccessfulLifecycleCalls": [
+    "connector_status",
+    "housecall_company",
+    "housecall_list_jobs",
+    "prepare_housecall_test_booking",
+    "confirm_housecall_test_booking",
+    "housecall_test_booking_status",
+    "confirm_housecall_test_booking",
+    "unschedule_housecall_test_booking",
+    "housecall_test_booking_status"
+  ],
+  "museReportedIdempotentReplay": true,
+  "independentScheduledStatus": {
+    "jobId": "job_7bec0be6b918473ba4492fc0d9dc882c",
+    "invoiceNumber": "3",
+    "workStatus": "scheduled",
+    "scheduledStart": "2026-10-12T16:00:00Z",
+    "scheduledEnd": "2026-10-12T17:00:00Z",
+    "scheduledStartLocal": "2026-10-12T12:00:00-04:00",
+    "timeZone": "America/New_York",
+    "totalAmount": 0,
+    "amountCharged": 0,
+    "realVendorRecord": true,
+    "syntheticCustomer": true,
+    "availabilityChecked": false,
+    "customerNotifications": false
+  },
+  "independentFinalStatus": {
+    "jobId": "job_7bec0be6b918473ba4492fc0d9dc882c",
+    "invoiceNumber": "3",
+    "workStatus": "needs scheduling",
+    "scheduledStart": null,
+    "scheduledEnd": null,
+    "scheduledStartLocal": null,
+    "timeZone": "America/New_York",
+    "totalAmount": 0,
+    "amountCharged": 0,
+    "realVendorRecord": true,
+    "syntheticCustomer": true,
+    "availabilityChecked": false,
+    "customerNotifications": false
+  },
+  "independentFinalJobs": {
+    "jobs": [
+      {
+        "id": "job_7bec0be6b918473ba4492fc0d9dc882c",
+        "invoiceNumber": "3",
+        "workStatus": "needs scheduling"
+      },
+      {
+        "id": "job_2e0d3b1c453b45dbab46441411a44f44",
+        "invoiceNumber": "2",
+        "workStatus": "needs scheduling"
+      },
+      {
+        "id": "job_8ead1790a92c40e89c0294e6d1ed4359",
+        "invoiceNumber": "1",
+        "workStatus": "needs scheduling"
+      }
+    ],
+    "page": 1,
+    "totalPages": 1,
+    "availabilityInferred": false
+  },
+  "jobOperationsUsed": 3,
+  "jobOperationsLimit": 3,
+  "credentialExpiresAt": "2026-10-12T05:48:00.745Z",
+  "cloudCredentialConfiguration": "SHA-256 verifier and original expiry only; raw bearer processed in transit",
+  "supplierCredentialLocation": "local backend only",
+  "spendUSD": 0,
+  "jobCancelled": false,
+  "limits": [
+    "Synthetic $0 trial records only; no fulfillment, customer messages, dispatch, work-start, invoice sending or payments.",
+    "Single operator and bound company; concurrent multi-supplier merchant routing not implemented.",
+    "Muse used custom REST; native custom MCP transport not established.",
+    "Relay requires local backend and ngrok online; credential expires October 12 1:48 a.m. Eastern."
+  ],
+  "evidence": [
+    "output/muse-golocal-test-report.txt",
+    "output/muse-golocal-e2e-passed.png",
+    "output/muse-housecall-job-unscheduled.png",
+    "output/muse-golocal-relay-live-results.json"
+  ],
+  "diagnosisResolved": [
+    "Muse could reach getgolocal.com but not original ngrok host; protected relay published.",
+    "already_connected preserved old credential host binding; supported reconnect=true and secure re-entry of same key fixed authentication.",
+    "Read timeouts resolved by sequential calls with 90-second client timeout to accommodate approvals; relay upstream deadline remains 20 seconds."
+  ]
+}

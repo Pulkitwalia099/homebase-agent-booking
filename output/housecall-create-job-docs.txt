@@ -1,0 +1,1080 @@
+- generic "Accessibility Menu":
+  - button "Accessibility Menu"
+- main:
+  - img: 
+  - textbox "Search Project":
+    - /placeholder: Search Housecall Pro Public API...
+  - heading "Create a Job" [level=1]
+  - generic "https://api.housecallpro.com/jobs":
+    - generic: post
+    - generic: https://api.housecallpro.com/jobs
+  - paragraph: Create a job with the ID for an already existing address and customer. If you decide to use the price form to generate the line item, fill in its fields and options (if applicable) here using the UUIDs you retrieved from the GET price form endpoint. When using pricing forms, the unit_price is automatically calculated based on the fields and options selected.
+  - heading "Request" [level=2]:
+    - link "Request":
+      - /url: "#Request"
+      - generic: Request
+      - img: 
+  - heading "Body" [level=3]:
+    - link "Body":
+      - /url: "#request-body"
+      - generic: Body
+      - img: 
+  - textbox
+  - combobox
+  - button "Request Body Content Type":
+    - generic: application/json
+    - img: 
+  - paragraph: Object used when creating a job.
+  - generic: invoice_number
+  - generic: number
+  - paragraph: Invoice number must be unique across all of a company's jobs in Housecall Pro. If left blank, one will be automatically generated.
+  - generic: customer_id
+  - generic: string
+  - generic: required
+  - generic: address_id
+  - generic: string
+  - generic: required
+  - button:
+    - img: 
+  - generic: schedule
+  - generic: object
+  - generic: scheduled_start
+  - generic: string
+  - paragraph: ISO-8601 formatted date string YYYY-MM-DDTHH:MM:SS(2023-03-23T15:30:00)
+  - generic: scheduled_end
+  - generic: string
+  - paragraph: ISO-8601 formatted date string YYYY-MM-DDTHH:MM:SS(2023-03-23T16:30:00)
+  - generic: arrival_window
+  - generic: integer
+  - paragraph: In minutes
+  - generic: anytime
+  - generic: boolean
+  - paragraph: If true, the job can be scheduled anytime during the day.
+  - generic: "Default:"
+  - generic: "false"
+  - generic: anytime_start_date
+  - generic: string
+  - paragraph:
+    - text: ISO-8601 formatted date string YYYY-MM-DD(2023-03-23)
+    - strong: Required if anytime is true
+  - generic: assigned_employee_ids
+  - generic: array[string]
+  - button:
+    - img: 
+  - generic: line_items
+  - generic: array[LineItemCreate]
+  - paragraph: Object used to create a line on a job.
+  - generic: name
+  - generic: string
+  - generic: required
+  - generic: description
+  - generic: string
+  - generic: unit_price
+  - generic: number
+  - paragraph: Selling price of a singe unit in cents.
+  - generic: "Default:"
+  - generic: "0"
+  - generic: quantity
+  - generic: number
+  - paragraph: The number of items being solid. This can be a float up to two decmial places.
+  - generic: "Default:"
+  - generic: "1"
+  - generic: unit_cost
+  - generic: number
+  - paragraph: Direct cost to the company of a singe unit in cents. This value is used for job costing.
+  - generic: "Default:"
+  - generic: "0"
+  - button:
+    - img: 
+  - generic: pricing_form
+  - generic: PriceForm or null
+  - generic: tags
+  - generic: array[string]
+  - generic: lead_source
+  - generic: string
+  - generic: notes
+  - generic: string
+  - button:
+    - img: 
+  - generic: job_fields
+  - generic: object
+  - generic: job_type_id
+  - generic: string
+  - generic: business_unit_id
+  - generic: string
+  - heading "Responses" [level=2]:
+    - link "Responses":
+      - /url: "#Responses"
+      - generic: Responses
+      - img: 
+  - tablist:
+    - tab "201" [selected]
+  - tabpanel "201":
+    - paragraph: Created
+    - heading "Body" [level=3]:
+      - link "Body":
+        - /url: "#response-body"
+        - generic: Body
+        - img: 
+    - textbox
+    - combobox
+    - button "Response Body Content Type":
+      - generic: application/json
+      - img: 
+    - generic: responses
+    - generic: /
+    - generic: "201"
+    - paragraph: A single job segment.
+    - generic: id
+    - generic: string
+    - generic: invoice_number
+    - generic: string
+    - generic: description
+    - generic: string
+    - button:
+      - img: 
+    - generic: customer
+    - generic: object
+    - generic: id
+    - generic: string
+    - generic: first_name
+    - generic: string or null
+    - generic: last_name
+    - generic: string or null
+    - generic: email
+    - generic: string or null
+    - generic: mobile_number
+    - generic: string or null
+    - generic: home_number
+    - generic: string or null
+    - generic: work_number
+    - generic: string or null
+    - generic: company
+    - generic: string or null
+    - generic: notifications_enabled
+    - generic: boolean
+    - generic: lead_source
+    - generic: string or null
+    - button:
+      - img: 
+    - generic: notes
+    - generic: array[Note]
+    - generic: created_at
+    - generic: string
+    - generic: updated_at
+    - generic: string
+    - generic: company_name
+    - generic: string
+    - generic: company_id
+    - generic: string
+    - generic: tags
+    - generic: array[string]
+    - button:
+      - img: 
+    - generic: address
+    - generic: Address or null
+    - generic: id
+    - generic: string
+    - generic: required
+    - generic: type
+    - generic: string
+    - generic: "Allowed values:"
+    - generic: billing
+    - generic: service
+    - generic: street
+    - generic: string or null
+    - generic: street_line_2
+    - generic: string or null
+    - generic: city
+    - generic: string or null
+    - generic: state
+    - generic: string or null
+    - generic: zip
+    - generic: string or null
+    - generic: country
+    - generic: string or null
+    - button:
+      - img: 
+    - generic: notes
+    - generic: array[Note]
+    - generic: id
+    - generic: string
+    - generic: content
+    - generic: string
+    - generic: work_status
+    - generic: string
+    - generic: "Allowed values:"
+    - generic: needs scheduling
+    - generic: scheduled
+    - generic: in progress
+    - generic: complete rated
+    - generic: complete unrated
+    - generic: user canceled
+    - generic: pro canceled
+    - button:
+      - img: 
+    - generic: work_timestamps
+    - generic: Work Timestamps
+    - generic: on_my_way_at
+    - generic: string or null
+    - paragraph: ISO-8601 formatted date string YYYY-MM-DDTHH:MM:SS(2023-03-23T15:30:00)
+    - generic: started_at
+    - generic: string or null
+    - paragraph: ISO-8601 formatted date string YYYY-MM-DDTHH:MM:SS(2023-03-23T15:30:00)
+    - generic: completed_at
+    - generic: string or null
+    - paragraph: ISO-8601 formatted date string YYYY-MM-DDTHH:MM:SS(2023-03-23T15:30:00)
+    - button:
+      - img: 
+    - generic: schedule
+    - generic: Schedule
+    - generic: scheduled_start
+    - generic: string
+    - paragraph: ISO-8601 formatted date string in UTC YYYY-MM-DDTHH:MM:SS(2023-03-23T15:30:00)
+    - generic: scheduled_end
+    - generic: string
+    - paragraph: ISO-8601 formatted date string in UTC YYYY-MM-DDTHH:MM:SS(2023-03-23T16:30:00)
+    - generic: time_zone
+    - generic: string or null
+    - paragraph: IANA time zone identifier used to schedule this job. null if no time zone could be determined.
+    - generic: "Example:"
+    - generic: America/Los_Angeles
+    - generic: scheduled_start_local
+    - generic: string<date-time> or null
+    - paragraph: scheduled_start expressed in time_zone, as an ISO-8601 timestamp with a UTC offset (not "Z"). null if unscheduled or time_zone is unknown. Prefer this field over scheduled_start whenever showing the scheduled time to a user.
+    - generic: "Example:"
+    - generic: 2023-03-23T08:30:00-07:00
+    - generic: scheduled_end_local
+    - generic: string<date-time> or null
+    - paragraph: scheduled_end expressed in time_zone, as an ISO-8601 timestamp with a UTC offset (not "Z"). null if unscheduled or time_zone is unknown. Prefer this field over scheduled_end whenever showing the scheduled time to a user.
+    - generic: "Example:"
+    - generic: 2023-03-23T09:30:00-07:00
+    - generic: arrival_window
+    - generic: integer
+    - button:
+      - img: 
+    - generic: appointments
+    - generic: array[Appointment]
+    - paragraph: Only present if expanded with appointments
+    - generic: total_amount
+    - generic: integer
+    - generic: outstanding_balance
+    - generic: integer
+    - generic: subtotal
+    - generic: integer
+    - button:
+      - img: 
+    - generic: assigned_employees
+    - generic: array[Employee]
+    - generic: id
+    - generic: string
+    - generic: first_name
+    - generic: string
+    - generic: last_name
+    - generic: string
+    - generic: email
+    - generic: string
+    - generic: mobile_number
+    - generic: string
+    - generic: color_hex
+    - generic: string
+    - generic: avatar_url
+    - generic: string
+    - generic: role
+    - generic: string
+    - generic: created_at
+    - generic: string
+    - generic: tags
+    - generic: array[string]
+    - button:
+      - img: 
+    - generic: permissions
+    - generic: object
+    - generic: company_name
+    - generic: string
+    - generic: company_id
+    - generic: string
+    - generic: tags
+    - generic: array[string]
+    - generic: original_estimate_id
+    - generic: string or null
+    - paragraph: null unless job has been copied from an estimate
+    - generic: original_estimate_uuids
+    - generic: array[string]
+    - paragraph: null unless job has been copied from an estimate. Includes all estimate UUIDs if job was created from multiple estimate options.
+    - generic: lead_source
+    - generic: string or null
+    - button:
+      - img: 
+    - generic: job_fields
+    - generic: object
+    - button:
+      - img: 
+    - generic: job_type
+    - generic: JobType
+    - button:
+      - img: 
+    - generic: business_unit
+    - generic: JobType
+    - button:
+      - img: 
+    - generic: attachments
+    - generic: array[Attachment]
+    - paragraph: Only present if expanded with attachments
+    - generic: id
+    - generic: string
+    - generic: file_name
+    - generic: string
+    - generic: url
+    - generic: string
+    - generic: file_type
+    - generic: string
+    - generic: locked_at
+    - generic: string<date-time>
+    - generic: created_at
+    - generic: string
+    - generic: updated_at
+    - generic: string
+    - generic: canceled_at
+    - generic: string<date-time> or null
+    - paragraph: When the job was user canceled (ISO8601 UTC). null if not user canceled.
+    - generic: deleted_at
+    - generic: string<date-time> or null
+    - paragraph: When the job was pro canceled/deleted (ISO8601 UTC). null if not pro canceled.
+    - generic: company_name
+    - generic: string
+    - generic: company_id
+    - generic: string
+    - generic: recurrence_number
+    - generic: integer
+    - paragraph: The occurrence number of this job in the recurrence series if recurrent
+    - generic: recurrence_rule
+    - generic: string
+    - paragraph: The iCal RRULE string defining the recurrence pattern if recurrent
+    - generic: "Example:"
+    - generic: FREQ=MONTHLY;COUNT=12;BYDAY=1FR
+    - generic: recurrence_status
+    - generic: string or null
+    - paragraph: The status of the recurrence series. null if not recurrent.
+    - generic: "Allowed values:"
+    - generic: active
+    - generic: complete
+    - generic: cancelled
+    - generic: "null"
+    - generic: recurrence_id
+    - generic: string or null
+    - paragraph: UUID of the recurrence series this job belongs to. null if not recurrent.
+    - generic: assigned_route_template_id
+    - generic: string or null
+    - paragraph: UUID of the route template assigned to this job. null if no route template is assigned.
+  - button "Body" [expanded]:
+    - img: 
+    - text: Body
+  - region:
+    - textbox: "{ \"invoice_number\": 0, \"customer_id\": \"string\", \"address_id\": \"string\", \"schedule\": { \"scheduled_start\": \"string\", \"scheduled_end\": \"string\", \"arrival_window\": 0, \"anytime\": false, \"anytime_start_date\": \"string\" }, \"assigned_employee_ids\": [ \"string\" ], \"line_items\": [ { \"name\": \"string\", \"description\": \"string\", \"unit_price\": 0, \"quantity\": 1, \"unit_cost\": 0, \"pricing_form\": { \"id\": \"pbpf_3fa85f6457174562b3fc2c963f66afa6\", \"fields\": [ { \"id\": \"pbpff_d458bfa14c0543cf9d4dd4b549a58a9e\", \"value\": 0, \"options\": [ { \"id\": \"pbpffo_b6145991abce4e9c8cd0d7d2014fca01\" } ] } ] } } ], \"tags\": [ \"string\" ], \"lead_source\": \"string\", \"notes\": \"string\", \"job_fields\": { \"job_type_id\": \"string\", \"business_unit_id\": \"string\" } }"
+    - generic: "1"
+    - generic: "{"
+    - generic: "2"
+    - generic: "\"invoice_number\": 0,"
+    - generic: "3"
+    - generic: "\"customer_id\": \"string\","
+    - generic: "4"
+    - generic: "\"address_id\": \"string\","
+    - generic: "5"
+    - generic: "\"schedule\": {"
+    - generic: "6"
+    - generic: "\"scheduled_start\": \"string\","
+    - generic: "7"
+    - generic: "\"scheduled_end\": \"string\","
+    - generic: "8"
+    - generic: "\"arrival_window\": 0,"
+    - generic: "9"
+    - generic: "\"anytime\": false,"
+    - generic: "10"
+    - generic: "\"anytime_start_date\": \"string\""
+    - generic: "11"
+    - generic: "},"
+    - generic: "12"
+    - generic: "\"assigned_employee_ids\": ["
+    - generic: "13"
+    - generic: "\"string\""
+    - generic: "14"
+    - generic: "],"
+    - generic: "15"
+    - generic: "\"line_items\": ["
+    - generic: "16"
+    - generic: "{"
+    - generic: "17"
+    - generic: "\"name\": \"string\","
+    - generic: "18"
+    - generic: "\"description\": \"string\","
+    - generic: "19"
+    - generic: "\"unit_price\": 0,"
+    - generic: "20"
+    - generic: "\"quantity\": 1,"
+    - generic: "21"
+    - generic: "\"unit_cost\": 0,"
+    - generic: "22"
+    - generic: "\"pricing_form\": {"
+    - generic: "23"
+    - generic: "\"id\": \"pbpf_3fa85f6457174562b3fc2c963f66afa6\","
+    - generic: "24"
+    - generic: "\"fields\": ["
+    - generic: "25"
+    - generic: "{"
+    - generic: "26"
+    - generic: "\"id\": \"pbpff_d458bfa14c0543cf9d4dd4b549a58a9e\","
+    - generic: "27"
+    - generic: "\"value\": 0,"
+    - generic: "28"
+    - generic: "\"options\": ["
+    - generic: "29"
+    - generic: "{"
+    - generic: "30"
+    - generic: "\"id\": \"pbpffo_b6145991abce4e9c8cd0d7d2014fca01\""
+    - generic: "31"
+    - generic: "}"
+    - generic: "32"
+    - generic: "]"
+    - generic: "33"
+    - generic: "}"
+    - generic: "34"
+    - generic: "]"
+    - generic: "35"
+    - generic: "}"
+    - generic: "36"
+    - generic: "}"
+    - generic: "37"
+    - generic: "],"
+    - generic: "38"
+    - generic: "\"tags\": ["
+    - generic: "39"
+    - generic: "\"string\""
+    - generic: "40"
+    - generic: "],"
+    - generic: "41"
+    - generic: "\"lead_source\": \"string\","
+    - generic: "42"
+    - generic: "\"notes\": \"string\","
+    - generic: "43"
+    - generic: "\"job_fields\": {"
+    - generic: "44"
+    - generic: "\"job_type_id\": \"string\","
+    - generic: "45"
+    - generic: "\"business_unit_id\": \"string\""
+    - generic: "46"
+    - generic: "}"
+    - generic: "47"
+    - generic: "}"
+  - button "Send API Request"
+  - button "Request Sample Language":
+    - text: "Request Sample: Shell / cURL"
+    - img: 
+  - button:
+    - img: 
+  - 'group "curl --request POST \\ --url https://api.housecallpro.com/jobs \\ --header ''Accept: application/json'' \\ --header ''Content-Type: application/json'' \\ --data ''{ \"invoice_number\": 0, \"customer_id\": \"string\", \"address_id\": \"string\", \"schedule\": { \"scheduled_start\": \"string\", \"scheduled_end\": \"string\", \"arrival_window\": 0, \"anytime\": false, \"anytime_start_date\": \"string\" }, \"assigned_employee_ids\": [ \"string\" ], \"line_items\": [ { \"name\": \"string\", \"description\": \"string\", \"unit_price\": 0, \"quantity\": 1, \"unit_cost\": 0, \"pricing_form\": { \"id\": \"pbpf_3fa85f6457174562b3fc2c963f66afa6\", \"fields\": [ { \"id\": \"pbpff_d458bfa14c0543cf9d4dd4b549a58a9e\", \"value\": 0, \"options\": [ { \"id\": \"pbpffo_b6145991abce4e9c8cd0d7d2014fca01\" } ] } ] } } ], \"tags\": [ \"string\" ], \"lead_source\": \"string\", \"notes\": \"string\", \"job_fields\": { \"job_type_id\": \"string\", \"business_unit_id\": \"string\" } }''"':
+    - generic: curl --request POST \
+    - generic: "--url https://api.housecallpro.com/jobs \\"
+    - generic: "--header 'Accept: application/json' \\"
+    - generic: "--header 'Content-Type: application/json' \\"
+    - generic: "--data '{"
+    - generic: "\"invoice_number\": 0,"
+    - generic: "\"customer_id\": \"string\","
+    - generic: "\"address_id\": \"string\","
+    - generic: "\"schedule\": {"
+    - generic: "\"scheduled_start\": \"string\","
+    - generic: "\"scheduled_end\": \"string\","
+    - generic: "\"arrival_window\": 0,"
+    - generic: "\"anytime\": false,"
+    - generic: "\"anytime_start_date\": \"string\""
+    - generic: "},"
+    - generic: "\"assigned_employee_ids\": ["
+    - generic: "\"string\""
+    - generic: "],"
+    - generic: "\"line_items\": ["
+    - generic: "{"
+    - generic: "\"name\": \"string\","
+    - generic: "\"description\": \"string\","
+    - generic: "\"unit_price\": 0,"
+    - generic: "\"quantity\": 1,"
+    - generic: "\"unit_cost\": 0,"
+    - generic: "\"pricing_form\": {"
+    - generic: "\"id\": \"pbpf_3fa85f6457174562b3fc2c963f66afa6\","
+    - generic: "\"fields\": ["
+    - generic: "{"
+    - generic: "\"id\": \"pbpff_d458bfa14c0543cf9d4dd4b549a58a9e\","
+    - generic: "\"value\": 0,"
+    - generic: "\"options\": ["
+    - generic: "{"
+    - generic: "\"id\": \"pbpffo_b6145991abce4e9c8cd0d7d2014fca01\""
+    - generic: "}"
+    - generic: "]"
+    - generic: "}"
+    - generic: "]"
+    - generic: "}"
+    - generic: "}"
+    - generic: "],"
+    - generic: "\"tags\": ["
+    - generic: "\"string\""
+    - generic: "],"
+    - generic: "\"lead_source\": \"string\","
+    - generic: "\"notes\": \"string\","
+    - generic: "\"job_fields\": {"
+    - generic: "\"job_type_id\": \"string\","
+    - generic: "\"business_unit_id\": \"string\""
+    - generic: "}"
+    - generic: "}'"
+  - generic: Response Example
+  - button:
+    - img: 
+  - generic: "1"
+  - generic: "{"
+  - generic: "2"
+  - generic: "\"id\": \"string\","
+  - generic: "3"
+  - generic: "\"invoice_number\": \"string\","
+  - generic: "4"
+  - generic: "\"description\": \"string\","
+  - generic: "5"
+  - generic: "\"customer\": {"
+  - generic: "6"
+  - generic: "\"id\": \"string\","
+  - generic: "7"
+  - generic: "\"first_name\": \"string\","
+  - generic: "8"
+  - generic: "\"last_name\": \"string\","
+  - generic: "9"
+  - generic: "\"email\": \"string\","
+  - generic: "10"
+  - generic: "\"mobile_number\": \"string\","
+  - generic: "11"
+  - generic: "\"home_number\": \"string\","
+  - generic: "12"
+  - generic: "\"work_number\": \"string\","
+  - generic: "13"
+  - generic: "\"company\": \"string\","
+  - generic: "14"
+  - generic: "\"notifications_enabled\": true,"
+  - generic: "15"
+  - generic: "\"lead_source\": \"string\","
+  - generic: "16"
+  - generic: "\"notes\": ["
+  - generic: "17"
+  - generic: "{"
+  - generic: "18"
+  - generic: "\"id\": \"string\","
+  - generic: "19"
+  - generic: "\"content\": \"string\""
+  - generic: "20"
+  - generic: "}"
+  - generic: "21"
+  - generic: "],"
+  - generic: "22"
+  - generic: "\"created_at\": \"string\","
+  - generic: "23"
+  - generic: "\"updated_at\": \"string\","
+  - generic: "24"
+  - generic: "\"company_name\": \"string\","
+  - generic: "25"
+  - generic: "\"company_id\": \"string\","
+  - generic: "26"
+  - generic: "\"tags\": ["
+  - generic: "27"
+  - generic: "\"string\""
+  - generic: "28"
+  - generic: "]"
+  - generic: "29"
+  - generic: "},"
+  - generic: "30"
+  - generic: "\"address\": {"
+  - generic: "31"
+  - generic: "\"id\": \"string\","
+  - generic: "32"
+  - generic: "\"type\": \"billing\","
+  - generic: "33"
+  - generic: "\"street\": \"string\","
+  - generic: "34"
+  - generic: "\"street_line_2\": \"string\","
+  - generic: "35"
+  - generic: "\"city\": \"string\","
+  - generic: "36"
+  - generic: "\"state\": \"string\","
+  - generic: "37"
+  - generic: "\"zip\": \"string\","
+  - generic: "38"
+  - generic: "\"country\": \"string\""
+  - generic: "39"
+  - generic: "},"
+  - generic: "40"
+  - generic: "\"notes\": ["
+  - generic: "41"
+  - generic: "{"
+  - generic: "42"
+  - generic: "\"id\": \"string\","
+  - generic: "43"
+  - generic: "\"content\": \"string\""
+  - generic: "44"
+  - generic: "}"
+  - generic: "45"
+  - generic: "],"
+  - generic: "46"
+  - generic: "\"work_status\": \"needs scheduling\","
+  - generic: "47"
+  - generic: "\"work_timestamps\": {"
+  - generic: "48"
+  - generic: "\"on_my_way_at\": \"string\","
+  - generic: "49"
+  - generic: "\"started_at\": \"string\","
+  - generic: "50"
+  - generic: "\"completed_at\": \"string\""
+  - generic: "51"
+  - generic: "},"
+  - generic: "52"
+  - generic: "\"schedule\": {"
+  - generic: "53"
+  - generic: "\"scheduled_start\": \"string\","
+  - generic: "54"
+  - generic: "\"scheduled_end\": \"string\","
+  - generic: "55"
+  - generic: "\"time_zone\": \"America/Los_Angeles\","
+  - generic: "56"
+  - generic: "\"scheduled_start_local\": \"2023-03-23T08:30:00-07:00\","
+  - generic: "57"
+  - generic: "\"scheduled_end_local\": \"2023-03-23T09:30:00-07:00\","
+  - generic: "58"
+  - generic: "\"arrival_window\": 0,"
+  - generic: "59"
+  - generic: "\"appointments\": ["
+  - generic: "60"
+  - generic: "{"
+  - generic: "61"
+  - generic: "\"id\": \"string\","
+  - generic: "62"
+  - generic: "\"start_date\": \"2021-01-10\","
+  - generic: "63"
+  - generic: "\"start_time\": \"2021-01-10T10:45:00\","
+  - generic: "64"
+  - generic: "\"end_time\": \"2021-01-10T10:45:00\","
+  - generic: "65"
+  - generic: "\"anytime\": true,"
+  - generic: "66"
+  - generic: "\"arrival_window_minutes\": 0,"
+  - generic: "67"
+  - generic: "\"dispatched_employees_ids\": ["
+  - generic: "68"
+  - generic: "\"string\""
+  - generic: "69"
+  - generic: "]"
+  - generic: "70"
+  - generic: "}"
+  - generic: "71"
+  - generic: "]"
+  - generic: "72"
+  - generic: "},"
+  - generic: "73"
+  - generic: "\"total_amount\": 0,"
+  - generic: "74"
+  - generic: "\"outstanding_balance\": 0,"
+  - generic: "75"
+  - generic: "\"subtotal\": 0,"
+  - generic: "76"
+  - generic: "\"assigned_employees\": ["
+  - generic: "77"
+  - generic: "{"
+  - generic: "78"
+  - generic: "\"id\": \"string\","
+  - generic: "79"
+  - generic: "\"first_name\": \"string\","
+  - generic: "80"
+  - generic: "\"last_name\": \"string\","
+  - generic: "81"
+  - generic: "\"email\": \"string\","
+  - generic: "82"
+  - generic: "\"mobile_number\": \"string\","
+  - generic: "83"
+  - generic: "\"color_hex\": \"string\","
+  - generic: "84"
+  - generic: "\"avatar_url\": \"string\","
+  - generic: "85"
+  - generic: "\"role\": \"string\","
+  - generic: "86"
+  - generic: "\"created_at\": \"string\","
+  - generic: "87"
+  - generic: "\"tags\": ["
+  - generic: "88"
+  - generic: "\"string\""
+  - generic: "89"
+  - generic: "],"
+  - generic: "90"
+  - generic: "\"permissions\": {"
+  - generic: "91"
+  - generic: "\"can_add_and_edit_job\": true,"
+  - generic: "92"
+  - generic: "\"can_be_booked_online\": true,"
+  - generic: "93"
+  - generic: "\"can_call_and_text_with_customers\": true,"
+  - generic: "94"
+  - generic: "\"can_chat_with_customers\": true,"
+  - generic: "95"
+  - generic: "\"can_delete_and_cancel_job\": true,"
+  - generic: "96"
+  - generic: "\"can_edit_message_on_invoice\": true,"
+  - generic: "97"
+  - generic: "\"can_see_street_view_data\": true,"
+  - generic: "98"
+  - generic: "\"can_share_job\": true,"
+  - generic: "99"
+  - generic: "\"can_take_payment_see_prices\": true,"
+  - generic: "100"
+  - generic: "\"can_see_customers\": true,"
+  - generic: "101"
+  - generic: "\"can_see_full_schedule\": true,"
+  - generic: "102"
+  - generic: "\"can_see_future_jobs\": true,"
+  - generic: "103"
+  - generic: "\"can_see_marketing_campaigns\": true,"
+  - generic: "104"
+  - generic: "\"can_see_reporting\": true,"
+  - generic: "105"
+  - generic: "\"can_edit_settings\": true,"
+  - generic: "106"
+  - generic: "\"is_point_of_contact\": true,"
+  - generic: "107"
+  - generic: "\"is_admin\": true"
+  - generic: "108"
+  - generic: "},"
+  - generic: "109"
+  - generic: "\"company_name\": \"string\","
+  - generic: "110"
+  - generic: "\"company_id\": \"string\""
+  - generic: "111"
+  - generic: "}"
+  - generic: "112"
+  - generic: "],"
+  - generic: "113"
+  - generic: "\"tags\": ["
+  - generic: "114"
+  - generic: "\"string\""
+  - generic: "115"
+  - generic: "],"
+  - generic: "116"
+  - generic: "\"original_estimate_id\": \"string\","
+  - generic: "117"
+  - generic: "\"original_estimate_uuids\": ["
+  - generic: "118"
+  - generic: "\"string\""
+  - generic: "119"
+  - generic: "],"
+  - generic: "120"
+  - generic: "\"lead_source\": \"string\","
+  - generic: "121"
+  - generic: "\"job_fields\": {"
+  - generic: "122"
+  - generic: "\"job_type\": {"
+  - generic: "123"
+  - generic: "\"id\": \"string\","
+  - generic: "124"
+  - generic: "\"name\": \"string\""
+  - generic: "125"
+  - generic: "},"
+  - generic: "126"
+  - generic: "\"business_unit\": {"
+  - generic: "127"
+  - generic: "\"id\": \"string\","
+  - generic: "128"
+  - generic: "\"name\": \"string\""
+  - generic: "129"
+  - generic: "}"
+  - generic: "130"
+  - generic: "},"
+  - generic: "131"
+  - generic: "\"attachments\": ["
+  - generic: "132"
+  - generic: "{"
+  - generic: "133"
+  - generic: "\"id\": \"string\","
+  - generic: "134"
+  - generic: "\"file_name\": \"string\","
+  - generic: "135"
+  - generic: "\"url\": \"string\","
+  - generic: "136"
+  - generic: "\"file_type\": \"string\""
+  - generic: "137"
+  - generic: "}"
+  - generic: "138"
+  - generic: "],"
+  - generic: "139"
+  - generic: "\"locked_at\": \"2019-08-24T14:15:22Z\","
+  - generic: "140"
+  - generic: "\"created_at\": \"string\","
+  - generic: "141"
+  - generic: "\"updated_at\": \"string\","
+  - generic: "142"
+  - generic: "\"canceled_at\": \"2019-08-24T14:15:22Z\","
+  - generic: "143"
+  - generic: "\"deleted_at\": \"2019-08-24T14:15:22Z\","
+  - generic: "144"
+  - generic: "\"company_name\": \"string\","
+  - generic: "145"
+  - generic: "\"company_id\": \"string\","
+  - generic: "146"
+  - generic: "\"recurrence_number\": 0,"
+  - generic: "147"
+  - generic: "\"recurrence_rule\": \"FREQ=MONTHLY;COUNT=12;BYDAY=1FR\","
+  - generic: "148"
+  - generic: "\"recurrence_status\": \"active\","
+  - generic: "149"
+  - generic: "\"recurrence_id\": \"string\","
+  - generic: "150"
+  - generic: "\"assigned_route_template_id\": \"string\""
+  - generic: "151"
+  - generic: "}"
+- link "Housecall Pro":
+  - /url: /
+  - img "Housecall Pro"
+- link "Home":
+  - /url: /
+  - img: 
+  - generic: Home
+- generic "Housecall Pro Public API":
+  - img:  
+- link "Housecall Pro Public API":
+  - /url: /docs/housecall-public-api
+- link "Authentication":
+  - /url: /docs/housecall-public-api/b87d37ae48a0d-authentication
+  - generic "Authentication":
+    - generic: Authentication
+- link "Changelog":
+  - /url: /docs/housecall-public-api/06ba3d648e345-changelog
+  - generic "Changelog":
+    - generic: Changelog
+- link "Multi-location Enabled APIs":
+  - /url: /docs/housecall-public-api/4c64fe617d191-multi-location-enabled-ap-is
+  - generic "Multi-location Enabled APIs":
+    - generic: Multi-location Enabled APIs
+- link "Pricebook API":
+  - /url: /docs/housecall-public-api/p5zsg5n9sbiij-pricebook-api
+  - generic "Pricebook API":
+    - generic: Pricebook API
+- link "Webhooks":
+  - /url: /docs/housecall-public-api/46e9e1be07621-webhooks
+  - generic "Webhooks":
+    - generic: Webhooks
+- generic: APIS
+- link "Housecall v1 API v1":
+  - /url: /docs/housecall-public-api/a4ca20a18010c-housecall-v1-api
+  - generic "Housecall v1 API":
+    - img: 
+    - generic: Housecall v1 API
+    - generic: v1
+    - img: 
+- generic "Checklists":
+  - generic: Checklists
+  - img: 
+- generic "Customers":
+  - generic: Customers
+  - img: 
+- generic "Employees":
+  - generic: Employees
+  - img: 
+- generic "Estimates":
+  - generic: Estimates
+  - img: 
+- generic "Jobs":
+  - generic: Jobs
+  - img: 
+- link "Get Jobs get":
+  - /url: /docs/housecall-public-api/6c97704da8bf3-get-jobs
+  - generic "Get Jobs":
+    - img: 
+    - generic: Get Jobs
+    - generic: get
+- link "Create a Job post":
+  - /url: /docs/housecall-public-api/2dcf481ed7d69-create-a-job
+  - generic "Create a Job":
+    - img: 
+    - generic: Create a Job
+    - generic: post
+- link "Get a Job get":
+  - /url: /docs/housecall-public-api/bbabd67bed1ab-get-a-job
+  - generic "Get a Job":
+    - img: 
+    - generic: Get a Job
+    - generic: get
+- link "Add an Attachment to a Job post":
+  - /url: /docs/housecall-public-api/c4ea6b1217b22-add-an-attachment-to-a-job
+  - generic "Add an Attachment to a Job":
+    - img: 
+    - generic: Add an Attachment to a Job
+    - generic: post
+- link "Lists all line items for a job get":
+  - /url: /docs/housecall-public-api/1c84b6c79b94f-lists-all-line-items-for-a-job
+  - generic "Lists all line items for a job":
+    - img: 
+    - generic: Lists all line items for a job
+    - generic: get
+- link "Add a line item to a Job post":
+  - /url: /docs/housecall-public-api/99ba8250597cd-add-a-line-item-to-a-job
+  - generic "Add a line item to a Job":
+    - img: 
+    - generic: Add a line item to a Job
+    - generic: post
+- link "Bulk update a job's line items put":
+  - /url: /docs/housecall-public-api/79a5ef20427d5-bulk-update-a-job-s-line-items
+  - generic "Bulk update a job's line items":
+    - img: 
+    - generic: Bulk update a job's line items
+    - generic: put
+- link "Update a single line item for a job put":
+  - /url: /docs/housecall-public-api/7b05bc804ebcc-update-a-single-line-item-for-a-job
+  - generic "Update a single line item for a job":
+    - img: 
+    - generic: Update a single line item for a job
+    - generic: put
+- link "Delete a single line item for a job delete":
+  - /url: /docs/housecall-public-api/0c05c275eede7-delete-a-single-line-item-for-a-job
+  - generic "Delete a single line item for a job":
+    - img: 
+    - generic: Delete a single line item for a job
+    - generic: delete
+- link "Update job schedule put":
+  - /url: /docs/housecall-public-api/1d344f58672f9-update-job-schedule
+  - generic "Update job schedule":
+    - img: 
+    - generic: Update job schedule
+    - generic: put
+- link "Delete job schedule delete":
+  - /url: /docs/housecall-public-api/7c3db70353a4f-delete-job-schedule
+  - generic "Delete job schedule":
+    - img: 
+    - generic: Delete job schedule
+    - generic: delete
+- link "Dispatch job to employees put":
+  - /url: /docs/housecall-public-api/7395e7ae9c4e7-dispatch-job-to-employees
+  - generic "Dispatch job to employees":
+    - img: 
+    - generic: Dispatch job to employees
+    - generic: put
+- link "Lists all job input materials for a job get":
+  - /url: /docs/housecall-public-api/024edad38a2a2-lists-all-job-input-materials-for-a-job
+  - generic "Lists all job input materials for a job":
+    - img: 
+    - generic: Lists all job input materials for a job
+    - generic: get
+- link "Bulk update a job's input materials put":
+  - /url: /docs/housecall-public-api/ecc9f7a5d84bc-bulk-update-a-job-s-input-materials
+  - generic "Bulk update a job's input materials":
+    - img: 
+    - generic: Bulk update a job's input materials
+    - generic: put
+- link "Add job tag post":
+  - /url: /docs/housecall-public-api/f9f47b5268bae-add-job-tag
+  - generic "Add job tag":
+    - img: 
+    - generic: Add job tag
+    - generic: post
+- link "Add job note post":
+  - /url: /docs/housecall-public-api/62185fa6f6afc-add-job-note
+  - generic "Add job note":
+    - img: 
+    - generic: Add job note
+    - generic: post
+- link "Delete job note delete":
+  - /url: /docs/housecall-public-api/e3423d7dc7d5f-delete-job-note
+  - generic "Delete job note":
+    - img: 
+    - generic: Delete job note
+    - generic: delete
+- link "Remove job tag delete":
+  - /url: /docs/housecall-public-api/f34ea2077256c-remove-job-tag
+  - generic "Remove job tag":
+    - img: 
+    - generic: Remove job tag
+    - generic: delete
+- link "Create Job Link post":
+  - /url: /docs/housecall-public-api/083bf9924aa4b-create-job-link
+  - generic "Create Job Link":
+    - img: 
+    - generic: Create Job Link
+    - generic: post
+- link "Lock Job post":
+  - /url: /docs/housecall-public-api/90211f98061d0-lock-job
+  - generic "Lock Job":
+    - img: 
+    - generic: Lock Job
+    - generic: post
+- link "Lock Jobs post":
+  - /url: /docs/housecall-public-api/30432b125d051-lock-jobs
+  - generic "Lock Jobs":
+    - img: 
+    - generic: Lock Jobs
+    - generic: post
+- generic "Job Appointments":
+  - generic: Job Appointments
+  - img: 
+- generic "Job Invoices":
+  - generic: Job Invoices
+  - img: 
+- generic "Job Types":
+  - generic: Job Types
+  - img: 
+- generic "Leads":
+  - generic: Leads
+  - img: 
+- generic "Lead Sources":
+  - generic: Lead Sources
+  - img: 
+- generic "Application":
+  - generic: Application
+  - img: 
+- generic "Webhooks":
+  - generic: Webhooks
+  - img: 
+- generic "Materials":
+  - generic: Materials
+  - img: 
+- generic "Material Categories":
+  - generic: Material Categories
+  - img: 
+- generic "Price Forms":
+  - generic: Price Forms
+  - img: 
+- generic "Price Book Services":
+  - generic: Price Book Services
+  - img: 
+- generic "Service Zones":
+  - generic: Service Zones
+  - img: 
+- generic "Pipeline":
+  - generic: Pipeline
+  - img: 
+- generic "Routes":
+  - generic: Routes
+  - img: 
+- generic "Company":
+  - generic: Company
+  - img: 
+- generic "Schedule":
+  - generic: Schedule
+  - img: 
+- generic "Events":
+  - generic: Events
+  - img: 
+- generic "Tags":
+  - generic: Tags
+  - img: 
+- generic "Lead Line Items":
+  - generic: Lead Line Items
+  - img: 
+- generic "Invoices":
+  - generic: Invoices
+  - img: 
+- generic "Schemas":
+  - img: 
+  - generic: Schemas
+  - img: 
+- link "powered by Stoplight":
+  - /url: https://stoplight.io/?utm_source=workspaces&utm_medium=housecallpro&utm_campaign=powered_by&utm_content=/docs/housecall-public-api/2dcf481ed7d69-create-a-job
+  - generic:  
+  - text: powered by
+  - strong: Stoplight

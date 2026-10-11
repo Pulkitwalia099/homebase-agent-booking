@@ -1,0 +1,19 @@
+{
+  "golocal-pitch-v26.pptx": {
+    "slides": 7,
+    "native_shapes": 135,
+    "tables": 1,
+    "embedded_images": 10,
+    "sha256": "083cf97ce4efb18a5a89833f005f50c869b7443f1a1f5d2876edeb6ae634e7f2"
+  },
+  "golocal-pitch-v25.pptx": {
+    "slides": 6,
+    "native_shapes": 132,
+    "tables": 1,
+    "embedded_images": 10,
+    "sha256": "4b11efef1370231289398d133d675810e1c17f0ba448e1cc062bf1c48187f49f"
+  },
+  "v26_unchanged_from_archived_cover": true,
+  "bundle_verified_files": 69,
+  "context_words": 6744
+}

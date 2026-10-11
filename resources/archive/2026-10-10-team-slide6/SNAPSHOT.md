@@ -1,0 +1,3 @@
+# Team slide completed · October 10, 2026
+
+Editable six-slide deck v21 and team preview. Only slide 6 changed from approved v18. Includes exact screenshot headshots, linked LinkedIn profiles, education, company marks, Urban Company experience, founder-supplied $700K first-venture revenue and $50M Bessemer consumer AI deployment, Rohit engineering/MCP experience and system-design teaching. Selected original assets, evidence and authoring/validation records preserved with project-relative paths. Short/detailed thesis, online Page, PDFs and application unchanged. No contacts, bookings or submissions. Intermediate v19/v20 revisions preserved separately.

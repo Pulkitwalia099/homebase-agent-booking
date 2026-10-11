@@ -1,0 +1,1 @@
+Exact v18 and affected supporting files before the authorized team-slide revision. Approved slides 1–5 retained. Pulkit Urban Company experience and Rohit backend/MCP experience positioned for GoLocal.

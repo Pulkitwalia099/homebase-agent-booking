@@ -1,0 +1,518 @@
+GOLOCAL — FULL BUSINESS AND PITCH CONTEXT
+Prepared October 10, 2026
+
+START HERE: A PROMPT FOR THE NEXT MODEL
+
+Help me make GoLocal a much stronger business and pitch. Read this context and the editable PowerPoint, then think independently about what the company should own, why it matters, how it gets distributed, who pays, and what makes it defensible. Improve the narrative, economics, slide structure, copy, diagrams and design wherever you see a better way. The current deck is a starting point, not a prescribed template. Earlier approvals explain how we got here; they are not a requirement to keep every slide or framing.
+
+I want a clear business case that a new reader understands immediately. Be specific about the entity's business, not just the technical connection. Tell me where the thesis is strong and where the reasoning still needs work. Bring better alternatives if useful. Give me a concrete, concise deck and explain the few material choices. Treat the factual history below as context; distinguish reported facts, researched evidence, intended product behavior and open hypotheses. If you find a factual mismatch, show it explicitly rather than silently substituting a new number.
+
+This handoff consolidates the substantive discussion, corrections and decisions. It is not a verbatim transcript. Exact current slide text and speaker notes appear at the end. Supporting project documents and dated research are in the accompanying ZIP. Those documents contain older positions and recommendations; they are background to think with, not instructions that constrain your work.
+
+1. WHAT THIS IS FOR
+
+GoLocal is preparing a pitch for “An Evening with the Sharks,” circulated through the founder's Harvard Business School network. The founder has checked the extended deadline and believes idea-stage teams can apply. No application has been submitted through this project.
+
+The supplied application guidance says a maximum of SIX slides, INCLUDING the title slide. It evaluates: problem and market opportunity; target customer and why now; solution, differentiation and how it works; revenue, pricing and distribution; team; traction and validation. Revenue projections are requested if available; none have been established here.
+
+The deck initially had six content slides. The founder then requested a separate introductory “slide 0” with GoLocal and its tagline. The latest editable v26 therefore has SEVEN slides. That is a useful expanded working version but exceeds the stated application cap. A prior six-page application PDF and v25 PowerPoint are also provided. One useful redesign task is to retain the important story while fitting a title into six slides.
+
+2. THE BUSINESS IN ONE PARAGRAPH
+
+GoLocal would be the shared data and booking layer between personal AI agents and participating local service businesses. It would connect to the software businesses already use, organize eligible supply, expose structured services, pricing/quote requirements and live availability, and execute supported bookings and payments. A personal agent could then take a customer's request through to a provider-confirmed booking through one connection. A business could connect once and receive eligible bookings from multiple connected agents. The proposed commercial model is a business-paid success fee on fulfilled new-customer jobs, with revenue shared with contributing channel partners.
+
+The broader ambition is transaction infrastructure for the emerging agent economy, starting with local services. “Stripe for home services” was an explanatory analogy the founder liked. It conveys infrastructure and monetization better than a simple connector, but the founder removed it from the opening slide because it distracted from establishing the market opportunity first. Whether an execution API, a supplier network, a marketplace or a hybrid is the right business is still worth thinking through.
+
+Current name: GoLocal. Tagline: “Local services, booked by your personal agent.” Earlier name: Homebase. Naming discussions explored Relay, Carry, Sorted, All Set, pet/local-expert references and Lokie. GoLocal replaced Lokie because of the Loki/Marvel association. The current task is improving the business and deck, not restarting naming by default.
+
+3. THE MARKET STORY THE FOUNDER WANTS PEOPLE TO UNDERSTAND
+
+Every major platform shift creates a new way to find and buy local services. Telephones supported Yellow Pages; the internet supported Google/Craigslist; mobile plus GPS supported Google Maps; LLMs supported conversational chatbots; personal agents now let people delegate tasks. These are illustrative eras and incremental capabilities, not exact invention dates.
+
+Historically, local-service search was heavily concentrated on Google and Google Maps. Personal agents introduce more starting points for requests. The founder expects several agents with different user groups and strengths, rather than one winner owning all demand. There may still be consolidation. The extent of actual local-search migration has not been measured in this project.
+
+The gap: a user can delegate a task, but the agent still pieces together websites, forms, calls and callbacks to get scope, quotes, live availability, bookings and payments. It can call businesses, but calling one by one does not create a comprehensive structured transaction layer. The founder's illustrative comparison was roughly 15 minutes calling three or four providers versus a target of under five seconds for an API lookup. That is a motivating comparison, not measured GoLocal performance or total end-to-end booking latency.
+
+Uber, DoorDash and Booking.com illustrate how organized supply plus a transaction layer makes a service easier to buy. Booking a ride or food order is straightforward through an established platform. Local services across trades, cleaning and other categories are much more fragmented. Existing marketplaces and software do solve parts of this problem; the opportunity is to identify and own the remaining gaps rather than assume nobody has built anything relevant.
+
+The story should show PROGRESSIVE UNLOCKS. The founder repeatedly rejected versions that looked like a static timeline or made it unclear what each platform solved. The latest opening uses a green staircase of cumulative capabilities and three red transaction bottlenecks. It distinguishes the enabling technology from the platform built on it. Personal agents solve delegation; they still need structured supplier data and transactional access to finish the task efficiently.
+
+4. WHY BOTH SIDES NEED A SHARED LAYER
+
+Demand side: many personal agents, each potentially needing to recruit local supply, integrate different tools and manage booking workflows. The deck gives Instinct, Muse, Dots, Town, Hark, OpenClaw and Hermes as illustrative examples and mentions Claude and Gemini. These examples are not GoLocal partners. They also include different types of assistants, frameworks and platforms; a cleaner taxonomy may help.
+
+Supply side: many independent businesses, plus fragmented software even WITHIN one service category. Plumbing is the current illustration. Enterprise, mid-market and small businesses use different stacks, with overlap. The stack changes again for cleaning, landscaping and other categories. The founder did not want a diagram that implied ServiceTitan was the single main system and GoLocal merely connected many businesses through it.
+
+Current examples:
+- Enterprise: BuildOps, ServiceTitan, Simpro, Probook AI and other platforms.
+- Mid-market: Housecall Pro, FieldEdge, Service Fusion, Commusoft, Joblogic, Cactus AI and others.
+- Small business: Jobber, Workiz, ServiceM8, Kickserv, Topline Pro and many other platforms.
+
+These are illustrative, overlapping segments. AI operations products sit alongside conventional field-service software in the diagram. A software-directory listing supports “100+ listed plumbing products” across the category, not 100 firms in each tier or a measured market-share statistic. Earlier suggestions of 20+/50+/100+ per segment and no vendor above 5% were not established. Pro AI was clarified as Probook AI. Robinline was omitted because of category fit. Character AI was not included as plumbing software.
+
+Businesses already hold much of the information agents need in their operating systems: services, coverage, scope/quote rules, schedules and customer/booking records. That does not mean every required field is clean, current or available through an API. Merchant-by-merchant permissions and supported operations matter.
+
+Value to agents: immediate access to eligible participating supply to discover, filter, book and manage bookings through one integration, reducing repeated supplier recruitment and integration work.
+
+Value to businesses: one integration can expose them to multiple connected agents. For supported platforms, setup may be a one-click OAuth approval through an app marketplace. Other systems may need credentials, manual setup or a custom integration. The business continues using its existing software. The founder's point was distribution and transaction access with minimal repeated setup, not just less administration.
+
+5. WHAT THE PRODUCT WOULD ACTUALLY DO
+
+The intended path is personal agent → GoLocal → provider software → local business.
+
+GoLocal needs to normalize relevant supply information, identify an eligible provider, return accurate scope/price/availability, execute the permitted booking action, confirm provider acceptance and support subsequent status or changes where available. Payment authorization, payment settlement and job completion are separate outcomes.
+
+Some work can be quoted and booked directly. A plumbing repair may require a diagnostic visit before a final repair quote. The example therefore books a visit rather than pretending the entire repair can be priced from one sentence. Complex scoping can still require photos, a call or human judgment.
+
+Questions about the product boundary remain: Does GoLocal own supply quality, booking reliability, payment orchestration, failed-booking recovery and post-booking management? Which of these produces durable value beyond connecting APIs? Does it integrate software vendors directly, work through existing supplier networks, or onboard businesses one by one? What does a sufficiently useful first version actually include?
+
+Prior integration research considered Jobber OAuth/GraphQL, Housecall Pro API access, Launch27, BookingKoala and MaidCentral. Public booking pages, API documentation, webhooks and production booking permissions are different evidence levels. An event integration does not necessarily allow booking writes. Plumbing is the current pilot choice; cleaning vendors remain historical research rather than the chosen launch stack.
+
+6. DISTRIBUTION IS THE CENTRAL BUSINESS QUESTION
+
+Building an MCP and onboarding suppliers does not automatically make it discoverable or selected by agents. The original central question was: how do actual requests reach us?
+
+The near-term proposed experience is a one-time prompt to a compatible agent: “Add GoLocal to find me local services.” Setup may require sign-in and approval. After installation, the connector can support future eligible bookings. This phrase is the intended entry point, not proof that every agent supports identical installation.
+
+The founder wants a coherent connector-led growth story instead of a slide listing “two routes.” Start with one city-category combination, build useful supplier coverage, recruit users with a specific recurring or urgent booking need, and make the connector useful. Successful bookings may support agent suggestions and broader discovery; more requests can attract more providers; better coverage makes the connector more useful. Expand category by category and city by city.
+
+The long-term ambition is first-party integration or a deep partnership with a large personal-agent platform, making GoLocal the default for relevant service requests. No such demand-routing agreement has been reported. Even a platform partnership would need defined categories, coverage and routing terms; it does not imply capturing every search query.
+
+Earlier discussion considered directory/marketplace discovery and direct marketing to niches already using personal agents. A listing, an installed connector, a selected tool, a confirmed booking and a fulfilled paid job are distinct milestones. The founder believes useful connectors increasingly get recommended by agents; prior research supports conditional discovery/featuring, not a guaranteed autonomous flywheel.
+
+Cold start requires BOTH enough eligible local suppliers and enough users submitting useful requests. The founder suggested a possible product-led supply tactic: bring a real request to a vendor and make signing up to convert it simple. This is a growth idea, not an executed acquisition channel. Candidate demand archetypes discussed include move-in cleaning before furniture arrives, plumbing needs, and households already using agents for errands. The precise reachable audience is still an important missing choice.
+
+Questions to improve: Where do the first 100 requests come from? What is the user's burning need? Why install GoLocal rather than let the agent browse/call? Can a software partner also distribute demand? How does GoLocal win selection among competing connectors? What evidence gets it recommended? How expensive is the first city-category launch and how much of it repeats in the next city?
+
+7. REVENUE AND THE SCALE QUESTION
+
+Current deck model: participating businesses pay a success fee on FULFILLED NEW-CUSTOMER jobs; contributing partners share in revenue. No fee, take rate, split or pricing agreement has been finalized. There are no reported revenue projections, unit economics or paid continuation.
+
+New-customer acquisition and existing-customer coordination are different commercial hypotheses. A merchant may pay to acquire a new customer but not for every reschedule or repeat visit. Repeat bookings therefore do not automatically equal repeated monetization. Lead cost, acquired-customer cost, gross service revenue, GoLocal revenue and contribution after costs are different quantities.
+
+Older cleaning/Wajo analysis used $100/$40 acquisition costs, $60/$30 fees and a 60/40 split as illustrations. Those are not measured or agreed and are not the current pitch's pricing. The current thesis was deliberately kept simpler.
+
+The business may look like a useful feature if it is only a thin adapter, a service business if it needs bespoke manual coordination, or vertical software if recurring workflows can be reused for paying buyers. A venture-scale case needs repeatable distribution, reliable transactions, attractive contribution and expansion across meaningful categories. Supplier access, execution quality, permissions, transaction history, workflow reuse and partner distribution are possible sources of differentiation to evaluate, not established moats.
+
+8. PARTNERSHIPS, PILOT AND CURRENT VALIDATION
+
+The founder has had customer interviews and partnership calls and reports positive responses. Detailed interview counts, documented quotes and paid commitments are not provided.
+
+Current proof-of-concept plan: SALT LAKE CITY, PLUMBING. This belongs on the pilot slide, not the general growth slide. The planned goal is to turn eligible personal-agent requests into provider-confirmed bookings.
+
+Cactus AI: founder-reported channel partnership, agreed to introduce GoLocal to 50+ service partners. Earlier founder context described a YC/venture-backed business with 100+ mid-market trade-shop customers across Salt Lake City and Dallas and potential booking access through existing customers. The latest deck emphasizes introductions, not deployed access or dominance in the market.
+
+YourCardare: named regional back-office partner, another 10+ providers in the pipeline. The founder corrected the older number to 10+ in an annotation. An earlier 56 figure and an earlier 20-client reference are historical, not the latest deck count.
+
+Use pipeline/introductions language. The founder explicitly rejected “committed onboarding” as an overpromise. Do not add the partner counts into a claimed unique live supply total: overlap, geography, category eligibility and integration readiness have not been established.
+
+The planned sequence is introductions → onboard consenting providers and connect supported systems → test initial agent bookings. No live GoLocal transaction, paid revenue, production booking reliability or representative agent-demand volume has been reported. The partnership pipeline is valuable supply access and early validation, not proof that demand or economics are solved.
+
+9. TEAM: LATEST FOUNDER-SUPPLIED FACTS
+
+Pulkit Walia — Operations and Partnerships
+LinkedIn: https://www.linkedin.com/in/pulkitwalia/
+Education: Harvard Business School MBA.
+- Built Asia's largest home services marketplace from zero to a $3B IPO as an Urban Company founding team member, over the last decade.
+- Launched his first venture at 19: a consumer home security systems brand, scaling to $700K in revenue.
+- Investor at Bessemer Venture Partners, deploying $50M in consumer AI startups.
+
+Rohit Jain — Engineering
+LinkedIn: https://www.linkedin.com/in/rohit-jain-343437187/
+Education: Texas A&M, Computer Science; IIT Kharagpur.
+- Five years as a Senior SWE at Amazon, Square and Citrix.
+- #1 system design tutor on Udemy, with 2,500 engineers taught.
+- Built production-grade MCP integrations.
+
+These are the founder's supplied credentials. The latest 2,500 figure replaces an older screenshot's 25,000+ in the pitch. The exact scope/date of the Udemy ranking was not independently established. The $3B IPO belongs to Urban Company, not GoLocal. Rohit's precise employment commitment, ownership and cofounder/CTO status have not been specified. The latest Pulkit role supersedes the earlier requested “Stratton” wording. A garbled later annotation did not clearly replace the explicit $50M investment figure.
+
+The desired team positioning is relevant execution experience on both sides: Pulkit has built and scaled the underlying local-service business; Rohit can build reliable systems and production MCP integrations. Three useful points each. Real photos, soft rounded corners, education logos, recognizable company NAMES and restrained emphasis. Earlier tiny company logos did not communicate enough and were removed.
+
+Asset repositories supplied by the founder:
+https://github.com/RohitJain1103/laoh-web
+https://github.com/Pulkitwalia099/get-an-expert-web
+Original photos and logo sources are included in the bundle, with local provenance notes.
+
+10. CURRENT DECK FLOW AND WHY EACH SLIDE EXISTS
+
+Cover / slide 0: GoLocal and the tagline. Minimal introduction.
+
+Slide 1 / opportunity: $1.2 trillion+ U.S. local-services opportunity. Show cumulative platform unlocks and three unfinished transaction steps. Establish market and bottleneck before pitching the product.
+
+Slide 2 / solution architecture: fragmented personal agents on the left, GoLocal in the middle, fragmented plumbing software stacks and businesses on the right. Show the data/actions GoLocal provides and the business benefit of one connection. This diagram is deliberately more than a row of business logos.
+
+Slide 3 / customer outcome: a concrete request travels from scoping to live options to customer approval to provider-confirmed booking. It should make the architecture tangible without repeating it. Current illustrative request is Dallas/tomorrow/leaking kitchen tap; Oak Plumbing, $79 diagnostic visit, 9–11 am and GL-1042 are fictional example values. Dallas in the illustration is not the pilot location. Choosing a consistent city may improve the story.
+
+Slide 4 / growth and business model: one city-category, critical supply plus user acquisition, one-time setup, conditional booking/recommendation/supply loop, expand, success fee on fulfilled new-customer jobs. The founder wanted a simple repeatable growth model, not multiple distribution routes or a dense pilot plan.
+
+Slide 5 / initial proof: Salt Lake City plumbing, Cactus AI 50+ introductions, YourCardare another 10+ pipeline providers, planned route to confirmed bookings. Partnership pipeline rather than invented traction.
+
+Slide 6 / team: relevant marketplace-building experience plus engineering/MCP capability, two clear profiles with three points each.
+
+The intended logical flow is market shift → remaining gap → shared layer → completed customer outcome → distribution/economics → initial access/validation → team. The six-slide cap may require combining proof with growth, incorporating a branded title into the market opening, or choosing another cleaner arrangement. A better model should decide rather than mechanically squeeze text.
+
+11. WHAT THE FOUNDER REPEATEDLY LIKED AND DISLIKED
+
+Liked: single, simple, useful phrases; an understandable business story; concrete customer requests; visually explicit platform progression; a sharp “one connection for agents, one integration for businesses” close; large opportunity with a realistic entry wedge; clean, consistent diagrams; premium restrained design; substantive business questions.
+
+Disliked: attractive visuals with content a new reader cannot understand; too many sections and dense paragraphs; technical jargon without explaining the business; repeated architecture; spending too much time on pilot mechanics; forcing content onto a page at the expense of readability; excessive bolding; unclear roles/partnership language; a diagram implying one dominant supplier software company; logos that look inconsistent or overwhelm the story.
+
+The earlier thesis was for friends/advisors, eventually aimed at 1–2 readable pages. Readers already understand MCP, so MCP 101 was not needed. The founder wanted definitive language for what is being built, while leaving genuinely undecided routes as open strategic choices. He explicitly asked not to silently change his sourced facts. His latest request is to give the next model full context and freedom to improve, without locking it into the existing presentation.
+
+12. MARKET AND WHY-NOW EVIDENCE: WHAT THE NUMBERS MEAN
+
+The current opening's “$1.2 trillion+” is the founder's preferred broad-market framing. The project's supporting calculation is approximately $1.19–$1.20T across selected U.S. categories, with mixed years and measures:
+- Home improvement/repair: around $600B; Harvard JCHS, 2023 actual / 2025 projection including owner and rental stock. Includes materials and DIY.
+- Auto maintenance/repair: $283.802B; BEA 2025.
+- Personal care and clothing services: $239.558B; BEA 2025, a broad category.
+- Child day care: $65.547B; Census 2024 revenue.
+
+This is underlying spending, not GoLocal's bookable volume or fee revenue. The supplied calculation is approximate rather than an independently published $1.2T+ lower bound. Earlier short-thesis wording used $2T local services and $600B home services; the current deck later changed its opening. These documents have different revision dates. The context bundle preserves them rather than rewriting historical source bodies.
+
+Current funding caption: “$2B+ raised,” based on selected-company reported funding in the project ledger: Hark over $700M Series A; Instinct $1B Series C plus an earlier reported $350M cumulative total; Town $55M Series A. Selected total exceeds $2.105B. It is not all last-month funding and not money raised by every agent pictured. Broader AI-lab funding and valuations are not additive evidence for this narrow headline. Earlier requests for $3B+ or “last month” were not retained as verified claims. Funding supports why-now context; it is not consumer adoption, local-service demand or proof of a successful GoLocal channel.
+
+13. EARLIER STRATEGIC DISCUSSION: WHAT ELSE MIGHT BE BETTER?
+
+Before building the deck, the founder wanted to share the thesis with a technical friend already working in agent middleware. He asked:
+1. Is third-party infrastructure already available?
+2. If not, what use cases should we build?
+3. Is there a B2B wedge with faster monetization?
+4. Are there more exciting middleware spaces beyond local services?
+
+The technical-discussion note explored what GoLocal should own beyond a connector: accepted bookings, delegated permissions, workflow execution across businesses, recovery of interrupted work and verification of completed outcomes.
+
+Prior research identified Composio for authentication/connections; PACT and Personal Agent Protocol for permission/trust patterns; Updater for agent/app commerce in complex services; Square Bookings and Openbay for existing transaction access. These are relevant competitors, complements or possible infrastructure to use. Their existence challenges an absolute “no middleware exists” claim. Coverage in the chosen workflow remains a concrete research question.
+
+B2B alternatives discussed:
+- Stalled appliance-repair cases involving approval, return visits or claim paperwork. Potential buyer: retailer/service-network operator; existing ServicePower coverage means identifying a narrow residual problem.
+- Travel cancellation/refund follow-through across supplier and seller/customer payment systems. Existing Duffel and servicing products may already cover significant parts.
+- Deadline-driven property-service exceptions before move-in or inspection. Existing maintenance coordinators such as Latchel make broad coordination a crowded starting point.
+- Operator capacity recovery, specific property-maintenance coordination, freight-forwarder/broker use cases and other cross-business execution problems as adjacent hypotheses.
+
+A B2B buyer with an existing request queue could reduce dependence on consumer connector adoption, but does not validate personal-agent demand. Faster monetization depends on actual willingness to pay and procurement, not the B2B label alone. Useful broader product directions include vertical execution APIs, recurring exception resolution and reconciliation/confirmation of completed outcomes. There was no decision to abandon the GoLocal consumer/agent thesis; these remain options to examine.
+
+14. KEY OPEN QUESTIONS FOR A STRONGER PITCH
+
+- What EXACTLY is GoLocal selling: qualified acquisition, confirmed bookings, execution infrastructure, software access or operational completion?
+- Who is the first payer and why is the fee justified by incremental value?
+- What is the initial demand audience and acquisition channel, beyond supplier introductions?
+- Why this first city/category, and what constitutes sufficient supply coverage?
+- Which critical actions are available through the first partner's systems? What requires human work?
+- Why would agent platforms select GoLocal over browser/calling tools, vendor-native connectors or an incumbent network?
+- What remains differentiated as agent capabilities and software APIs improve?
+- How does the proposed recommendation loop actually operate on each platform?
+- Can success-fee revenue support user acquisition, integration maintenance, support, partner shares and failure recovery?
+- What evidence would make this a compelling venture-scale infrastructure story rather than a promising connector or coordination service?
+- Does an existing B2B queue offer a more credible starting wedge while preserving the longer-term agent-commerce opportunity?
+- Which two or three pilot outcomes best test demand, reliable execution and economics?
+
+15. WHAT IS IN THE TRANSFER BUNDLE
+
+Working deck: decks/golocal-pitch-v26.pptx — editable, cover plus six content slides.
+Six-slide alternative: decks/golocal-pitch-v25.pptx — original content version without the cover.
+PDFs: pdf/golocal-pitch-with-cover.pdf and pdf/golocal-application-final.pdf.
+Context: this file, including exact extracted slide text and source notes below.
+Project sources: resources/business-thesis.md, current-thesis.md, technical discussion, market sizing, pitch wireframe and dated evidence JSON files. Earlier positions are preserved in these source documents.
+Research: selected exa-results research, source/evidence captures and ledgers where available.
+Assets: original supplied agent images and team images/logos with provenance notes. PowerPoint already embeds the images it uses.
+A file manifest records paths and hashes. This is a local handoff; no Page synchronization or application submission took place.
+
+Source URLs are also in the exact speaker notes and supporting research. The bundle carries earlier research, not a new live verification of all vendor capabilities or platform rules. This gives the next model the evidence trail to inspect and update as needed.
+
+END OF CONSOLIDATED CONTEXT
+
+APPENDIX: EXACT TEXT AND SPEAKER NOTES FROM THE CURRENT EDITABLE DECK
+
+The following is XML-extracted text. Some words in graphical logos do not appear as text, and table reading order is the PowerPoint XML order rather than a visual grid. Text split by emphasis may occupy separate lines. These notes explain the provenance and intended meaning of the actual deck; they are part of the handoff, not restrictions on redesign.
+
+
+PAGE 1 — LOGICAL SLIDE 0
+================================================================
+
+VISIBLE TEXT
+GoLocal
+Local services, booked by your personal agent.
+1 / 7
+
+SPEAKER NOTES
+Requested introductory cover, October 10 2026. Uses approved business name GoLocal and existing tagline: Local services, booked by your personal agent. The six approved content slides follow unchanged except pagination. Seven total slides exceed the application six-page maximum; this is a separate cover version, not a replacement of the six-page application PDF.
+
+
+PAGE 2 — LOGICAL SLIDE 1
+================================================================
+
+VISIBLE TEXT
+$1.2 trillion+ U.S. local-services opportunity
+Each new platform unlocks another step. The transaction gap remains.
+
+Pre-2000
+2000–2010
+2010–2020
+2020–2025
+2026+
+Technology
+Telephones
+Internet
+Mobile + GPS
+LLMs
+AI + tools
+Platform
+Yellow Pages
+Google /
+Craigslist
+Google Maps
+AI chatbots
+Personal AI
+agents
+Find a business
+✓
+✓
+✓
+✓
+✓
+Compare options
+—
+✓
+✓
+✓
+✓
+Location & reviews
+—
+—
+✓
+✓
+✓
+Conversational request
+—
+—
+—
+✓
+✓
+Delegate the task
+—
+—
+—
+—
+✓
+Scope & quote
+—
+—
+—
+—
+Agent calls
+Live availability
+—
+—
+—
+—
+Calls / sites
+Book & pay
+—
+—
+—
+—
+Sites / checkout
+Mixed-year U.S. spending, including materials. Illustrative eras/workflows; some platforms already transact.
+2 / 7
+A platform that solves the final three steps can complete local-service bookings
+and capture value in the $1.2 trillion+ U.S. market.
+
+SPEAKER NOTES
+Cumulative staircase of platform unlocks requested by the founder, October 10 2026. Capabilities remain green in later platforms: directories enable finding businesses; internet adds digital comparison; Maps/mobile adds location and review-based filtering; LLM chatbots add conversational requests; personal agents add task delegation. Dark-green diagonal identifies each new unlock and pale green preserves earlier gains. This is an illustrative progression of typical customer-facing platform capabilities, not a product-by-product historical audit, launch-date claim or assertion that older platforms never offered a similar feature. Red means work still manual or outside the platform. The last three rows are the remaining quote, live-availability and booking/payment bottlenecks across fragmented providers. Personal agents can call and browse; delegation does not by itself expose reliable structured supplier data or authorized transactions. Some providers and marketplaces already transact. Complex scoping and merchant authorization may still require human input. Dates retained: Maps 2010–2020, chatbots 2020–2025, personal AI agents 2026+. AI + tools is a simplified action-capability description. No measured mass-adoption or universal booking-success claim. Historical context: https://www.craigslist.org/about/mission_and_history ; https://blog.google/products-and-platforms/products/maps/look-back-15-years-mapping-world/ .
+Market evidence from project chat “Estimate Homebase local services TAM”, October 10 2026, and resources/local-services-tam-2026-10-10.md. Approximately $1.2T in annual U.S. spending across selected categories: home improvement and repair around $600B (Harvard, 2023 actual / 2025 projected total owner and rental stock); auto maintenance and repair $283.802B (BEA 2025); personal care and clothing services $239.558B (BEA 2025); child day care $65.546955B (Census 2024 revenue). Indicative sum $1.1889T with rounded home baseline, or $1.1969T with $608B home projection, rounded to $1.2T. This supports approximately $1.2T rather than a measured $1.2T+ lower bound. Mixed years and measures; includes home materials and DIY. Underlying spending is not bookable volume or GoLocal fee revenue. Sources: https://www.jchs.harvard.edu/blog/bigger-market-more-players-what-20-years-data-reveal-about-remodeling-industry ; https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_Improving_Americas_Housing_2025.pdf ; https://fred.stlouisfed.org/release/tables?eid=44183&rid=53 ; https://fred.stlouisfed.org/series/AIES6244RCT00US .
+Founder-requested headline wording, October 10 2026: $1.2 trillion+. This is the founder’s broad-market estimate/framing. The sourced selected-category sum remains approximately $1.2T, with mixed observation years and materials/DIY included; no independent $1.2T+ lower-bound calculation was added. The original market research is preserved unchanged.
+Opportunity close requested by the founder: solving quotes, live availability and booking/payment can enable end-to-end local-service bookings and value capture. This is the commercial thesis, not evidence of achieved integration, measured revenue share or guaranteed large market capture. Reachable supply, permitted operations, reliability and demand distribution remain necessary. User requested finishing slide 1 before revising slide 2; other slides remain unchanged.
+
+
+PAGE 3 — LOGICAL SLIDE 2
+================================================================
+
+VISIBLE TEXT
+THE SHARED DATA AND BOOKING LAYER
+GoLocal connects personal agents to local businesses
+The data agents need already lives across businesses’ different software systems.
+Personal agents
+$2B+ raised
+GoLocal
+Plumbing software stacks
+100+ listed options*
+Plumbing
+businesses
+Instinct
+
+Dots
+
+
+
+
+OpenClaw
+Hermes
+Claude · Gemini · more
+
+GoLocal
+One data & booking API
+Services & coverage
+Pricing & quote requirements
+Live availability
+Quote, book, pay & manage
+
+
+
+BuildOps, ServiceTitan
+Simpro, Probook AI
++ other platforms
+Housecall Pro, FieldEdge
+Service Fusion, Commusoft
+Joblogic, Cactus AI + others
+Jobber, Workiz, ServiceM8
+Kickserv, Topline Pro
++ many other platforms
+Enterprise
+Mid-market
+Small
+businesses
+Just one service category: plumbing.
+The software mix changes across categories.
+We onboard businesses and connect their existing software.
+One connection for agents. One integration for participating businesses.
+*100+ listed plumbing products, Software Advice. Segment examples overlap. Merchant authorization required.
+3 / 7
+
+SPEAKER NOTES
+Slide 2 now explicitly shows plumbing as one category. Founder requested several equally weighted vendor examples per provider segment so ServiceTitan is not visually presented as the single main platform. Illustrative enterprise row: BuildOps, ServiceTitan, Simpro, Probook AI and other platforms. Mid-market row: Housecall Pro, FieldEdge, Service Fusion, Commusoft, Joblogic, Cactus AI and others. Small-business row: Jobber, Workiz, ServiceM8, Kickserv, Topline Pro and many other platforms. These are overlapping segment examples, not exclusive customer tiers, an exhaustive vendor taxonomy, signed GoLocal integrations or a measured concentration claim. BuildOps explicitly serves commercial plumbing, Simpro Premium explicitly supports complex enterprise operations including plumbing; other named vendors advertise plumbing workflows. Probook and Cactus are AI operations/booking tools alongside field-service software. Category-level count: 100+ listed plumbing software options across all provider sizes. Software Advice category page shows 186 products in its listing, 212 in introductory copy, and 180 in the buyer guide/FAQ. The conservative 100+ wording avoids relying on an inconsistent exact count. This is a software-directory product count, including tools with differing scopes and geography, not a count of independent firms, production booking APIs, exclusively small-business vendors or enterprise providers. No separate 20+, 50+ or 100+ tier total established. Source accessed October 10 2026: https://www.softwareadvice.com/field-service/plumbing-software-comparison/ . New official vendor pages: https://buildops.com/industries/plumbing ; https://www.simprogroup.com/industries/plumbing-software ; https://www.simprogroup.com/solutions/simpro-premium ; https://www.commusoft.com/en-us/industries/plumbing-software/ ; https://www.servicefusion.com/plumbing-software ; https://www.joblogic.com/industries/plumbing-software/ ; https://www.kickserv.com/industries/plumbing . Prior sources and qualifications preserved in resources/software-stack-segments-2026-10-10.json and resources/plumbing-vendor-depth-evidence-2026-10-10.json. Character AI not added because no verified plumbing software role; the existing verified Cactus AI example is retained. Robinline excluded per founder direction. Topline Pro retained. Every category has its own software mix; Launch27 cleaning and LMN landscaping are existing source examples. Supplier authorization, supported actions and integrations remain required. No production or market-share claim. Left funnel, central GoLocal data/actions and bottom business message retained. $2B+ selected-company funding caption retains the basis in resources/agent-funding-evidence-2026-10-10.json and is not last-month-only or local-service demand.
+October 10 logo update: agent rows show Instinct, Muse, Dots, Town, Hark, OpenClaw and Hermes as illustrative demand-side products/frameworks, not signed partners or completed GoLocal integrations. Claude and Gemini are additional examples of the broader assistant/agent landscape. Their inclusion is supported by https://claude.com/resources/articles/dispatch-and-computer-use and https://gemini.google/about/ . No niche-by-niche count or market-share claim added. Original founder-supplied assets are embedded without redrawing or recoloring; native crop removes blank image margins and extracts the original OpenClaw symbol for use with an editable name. Dots images are promotional collages and remain unused to preserve consistency; Instinct and Dots use text. Duplicate Town/Hark attachments not repeated. Selected-startup $2B+ funding basis unchanged, not funding for all pictured examples or the last month. All prior business-software examples, supplier permissions and source qualifications retained.
+
+
+PAGE 4 — LOGICAL SLIDE 3
+================================================================
+
+VISIBLE TEXT
+THE CUSTOMER EXPERIENCE
+A customer request becomes a confirmed booking
+CUSTOMER TO PERSONAL AGENT
+“Book a plumber in Dallas tomorrow morning
+for my leaking kitchen tap.”
+PERSONAL AGENT
+1  Scope the job
+Collects the address and
+a photo of the leak.
+Defines a diagnostic visit.
+GOLOCAL
+2  Check live options
+Matches connected providers.
+Returns available slots
+and visit fees.
+CUSTOMER + AGENT
+3  Approve the visit
+Chooses Oak Plumbing.
+Approves the $79 visit
+and payment authorization.
+GOLOCAL
+4  Confirm the booking
+Books in the provider’s system.
+Returns the booking ID
+and payment status.
+Oak Plumbing confirmed for tomorrow, 9–11 am
+Booking GL-1042. $79 visit fee authorized. Repairs quoted after inspection.
+Illustrative customer journey. Provider, price, slot and booking ID are examples, not live transactions.
+4 / 7
+
+SPEAKER NOTES
+Illustrative proposed customer journey, October 10 2026. This replaces the architecture repeated on slide 3 with a concrete request-to-confirmation example. A customer in Dallas asks their personal agent to book a plumber tomorrow morning for a leaking kitchen tap. The agent collects address, a photo and necessary access information, then scopes a diagnostic visit. GoLocal queries participating, authorized business systems for eligible providers, service coverage, live slots and visit fees. The agent presents a bookable option, and the customer explicitly approves the provider, fee and payment authorization. GoLocal rechecks availability, uses the permitted booking operation in the provider system, and returns a confirmed booking ID and payment status only after the provider system accepts the booking. If availability changes or no suitable option exists, the agent offers another option instead of claiming success. Booking GL-1042, Oak Plumbing, $79 and 9–11 am are invented illustrative values, not an actual merchant, offer, market price or completed transaction. The $79 covers a diagnostic visit only. Repairs require a later provider quote and customer approval. Payment authorization is distinct from a settled payment and requires supported payment capabilities and customer consent. Actual quote, schedule, payment and booking capabilities vary across providers and software. The slide presents the intended experience and does not imply production readiness or automatic access to every merchant. Sources of the proposed product scope are resources/business-thesis.md and resources/current-thesis.md; no new factual performance, transaction volume or speed claim is introduced. Existing slides, user-supplied thesis facts and evidence remain unchanged.
+
+
+PAGE 5 — LOGICAL SLIDE 4
+================================================================
+
+VISIBLE TEXT
+LAUNCH AND GROWTH
+Launch locally. Grow through completed bookings.
+Build critical mass in one city-category combination.
+1  Build local supply
+2  Connect once
+3  The network compounds
+One city
+One service category
+Onboard suppliers to reach
+critical mass. Recruit users
+with a specific booking need.
+“Add GoLocal to find
+me local services.”
+One-time setup, with approval.
+Then use it for future bookings.
+Useful
+bookings
+Agent
+suggestions*
+More
+businesses
+More booking
+requests
+Expand category by category,
+city by city.
+REVENUE MODEL · PROPOSED
+Businesses pay a success fee on fulfilled new-customer jobs. Revenue is shared with partners.
+*Recommendations depend on usefulness, reliability and platform rules.
+5 / 7
+
+SPEAKER NOTES
+GoLocal repeatable growth model, updated from the founder request October 10, 2026. This slide deliberately contains no named pilot city or category. Pick one city-category combination, onboard enough participating suppliers for useful local coverage and recruit users with the relevant booking need. This is the proposed cold-start strategy, not evidence that critical mass or demand already exists. Users can start setup by asking their personal agent: "Add GoLocal to find me local services." One-time connector setup can require sign-in and approval on a compatible platform; each transaction retains its own authorization. The installed connector can then serve future eligible requests. The diagram represents the proposed network effect: useful bookings support agent suggestions, more booking requests attract more businesses, better supply supports useful bookings. Recommendations depend on usefulness, reliability and platform rules, not guaranteed automatic cross-user learning, ranking or traffic. Source basis retained from the approved slide: https://developers.openai.com/plugins/plugin-guidelines ; https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/ ; https://muse.ai/platform/docs . These primary sources were reviewed for the prior approved October 10 slide; this revision changes the framing, not their evidence level. Expand category by category and city by city after demonstrating useful supply and booking outcomes. Proposed revenue remains a business-paid success fee on fulfilled new-customer jobs, shared with contributing partners. Prices, shares, paid continuation and margins remain unmeasured/unagreed. The concrete Salt Lake City plumbing proof of concept and existing channel partnerships are on slide 5. No named city/category should be inferred from this general model.
+
+
+PAGE 6 — LOGICAL SLIDE 5
+================================================================
+
+VISIBLE TEXT
+PARTNERSHIPS AND PILOT
+First proof of concept: Salt Lake City plumbing
+Two channel partnerships give us a pipeline of provider introductions.
+50+
+provider introductions
+in the pipeline
+Via Cactus AI
+Cactus AI
+Agreed to introduce GoLocal
+to 50+ service partners.
+YourCardare
+Regional back-office partner
+Another 10+ providers in the pipeline.
+Pilot goal: turn agent requests into confirmed bookings.
+Provider introductions
+Onboard and connect
+Test first agent bookings
+6 / 7
+
+SPEAKER NOTES
+Planned proof of concept: Salt Lake City, plumbing. Latest founder instruction October 10, 2026 specifies this city-category combination and asks that it be introduced on slide 5 rather than slide 4. This updates the prior unspecified-category pilot plan, without asserting a live integration, completed GoLocal booking, paid revenue or proven demand. Two founder-reported channel partnerships are already secured for provider introductions: Cactus AI agreed to introduce GoLocal to 50+ service partners; YourCardare, the regional back-office partner, has another 10+ providers in the pipeline. These figures are kept separate, are not inferred to be all unique, all Salt Lake City plumbers, committed onboardings or live supply. The latest pipeline framing supersedes prior commitment language and the historical YourCardare 56 figure; original evidence remains archived. The planned sequence is partner introductions, onboard consenting providers and connect supported software, then test customer-authorized personal-agent bookings. Pilot goal is to turn eligible agent requests into actual provider-confirmed bookings. Merchant booking permissions, supported actions, usable plumbing coverage, a reachable first audience and customer demand still need to be established. The general supply/demand model, one-time connector setup and conditional network effect are shown on slide 4. Partner names and counts are founder-supplied facts, not new public-source claims or platform endorsements.
+
+
+PAGE 7 — LOGICAL SLIDE 6
+================================================================
+
+VISIBLE TEXT
+THE TEAM
+The team behind GoLocal
+Pulkit Walia
+Operations and Partnerships
+LinkedIn
+Rohit Jain
+Engineering
+LinkedIn
+Harvard Business School
+MBA
+Texas A&M, Computer Science
+IIT Kharagpur
+Built Asia’s largest home services marketplace from zero to a 
+$3B IPO
+ as an Urban Company founding team member.
+Launched a home security brand at 19, scaling it to $700K in revenue.
+Investor at Bessemer Venture Partners, deploying $50M in consumer AI startups.
+5 years as a Senior SWE at Amazon, Square and Citrix.
+#1 system design tutor on Udemy, with 2,500 engineers taught.
+Built production-grade 
+MCP integrations
+.
+7 / 7
+
+SPEAKER NOTES
+Team credentials as supplied and corrected by the founder on October 10, 2026. Pulkit Walia role "Operations and Partnerships" follows the latest annotated instruction; body text uses limited emphasis and company names are written out. The founder describes Urban Company as Asia's largest home services marketplace and his role as founding team member helping build from zero to a $3 billion IPO. Company IPO milestone is not GoLocal revenue/valuation. First venture at age 19: consumer home security systems brand, $700K revenue. Investor at Bessemer Venture Partners, deploying $50M in consumer AI startups. All facts preserved as supplied; no independent audit inferred. Rohit Jain latest founder description: five years as a Senior SWE at Amazon, Square and Citrix; #1 system design tutor on Udemy; 2,500 engineers taught; built production-grade MCP integrations. The latest 2,500 supersedes the prior 25,000+ in this deck. Exact basis and date of the #1 ranking are founder-supplied rather than independently established, and it is not reframed as a different ranking. Education from founder screenshot/live page https://laoh.ai/: Pulkit Harvard Business School MBA; Rohit Texas A&M Computer Science and IIT Kharagpur. No extra degree type, CTO/cofounder title or commitment inferred. Photos are original screenshot versions from live Laoh assets, with native rounded image geometry. Original company marks and HBS mark are from public/team in the founder-supplied https://github.com/Pulkitwalia099/get-an-expert-web (commit 6aedaea); Citrix from the live Laoh page. Education logos: Texas A&M official https://aux.tamu.edu/logos/boxTAM.svg sourced from https://marcomm.tamu.edu/creative-platform/logos/; IIT Kharagpur official emblem from the National Informatics Centre asset library https://www.uxdt.nic.in/documents/iit/iit-kharagpur/ and original image https://www.uxdt.nic.in/wp-content/uploads/2024/06/iit-khargpur-01.jpg. Texas A&M SVG is rasterized only for compatibility, preserving its original artwork and colors. Complete logos retain proportions. LinkedIn profiles: https://www.linkedin.com/in/pulkitwalia/ and https://www.linkedin.com/in/rohit-jain-343437187/. Company footer logos are removed in this revision; university logos identify education, not GoLocal partnerships or endorsements.

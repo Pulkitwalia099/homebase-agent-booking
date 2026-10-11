@@ -1,0 +1,1 @@
+Completed connector setup research and local index addition for the GoLocal website. Website changes are separately versioned in Pulkitwalia099/homebase. Thesis and online Page unchanged.

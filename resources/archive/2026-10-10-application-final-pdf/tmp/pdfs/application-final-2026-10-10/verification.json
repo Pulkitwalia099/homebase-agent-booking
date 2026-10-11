@@ -1,0 +1,55 @@
+{
+  "source_deck": "output/pptx/golocal-pitch-v25.pptx",
+  "source_sha256": "4b11efef1370231289398d133d675810e1c17f0ba448e1cc062bf1c48187f49f",
+  "source_unchanged": true,
+  "page_count": 6,
+  "page_size_pt": [
+    960.0,
+    540.0
+  ],
+  "outline_count": 6,
+  "linkedin_links": 2,
+  "bytes": 1934730,
+  "approved_slide_images": [
+    {
+      "slide": 1,
+      "sha256": "a97cc4818b597c4707a797623040a68d2720c48a27ada8d29cf3b3d95c47ad62"
+    },
+    {
+      "slide": 2,
+      "sha256": "ebc74ffd3104569f075378bc1b0e260a173a207779d08046d680b7aac9372c93"
+    },
+    {
+      "slide": 3,
+      "sha256": "01a8fe76a37bc40d34f2ea0f22f3ca1a61f27090dea6f12d729e774534f6d6d1"
+    },
+    {
+      "slide": 4,
+      "sha256": "072584fc7b065b418b8ffa669bf04f1ae51b558efb2f193f889933bc7c2313c0"
+    },
+    {
+      "slide": 5,
+      "sha256": "cd09ab2b1d2a9afb04420900e1b4bbda9e51269568013717de7668f76c1d8b1a"
+    },
+    {
+      "slide": 6,
+      "sha256": "ac7d933b0fec114e86ec09b8bcbafc65f513bd5cdd79cd872338ecc08c9ef1bc"
+    }
+  ],
+  "export": "High-resolution approved slide renders, losslessly embedded; source deck remains editable",
+  "native_export_fallback": "Artifact Tool PDF export encountered missing #standard-fonts/Helvetica; approved renders used for fidelity",
+  "content_changes": false,
+  "each_pdf_page_matches_approved_slide_pixels": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "six_pdf_pages_visually_reviewed": true,
+  "flow_review": "Opportunity/gap, shared booking layer, illustrative customer flow, distribution/growth/revenue, partner pipeline/pilot, relevant team",
+  "style_review": "Cream/green palette, Helvetica Neue, margins, logos, photos and page numbering consistent; no clipping or layout edits required",
+  "final_pdf": "output/pdf/golocal-application-final.pdf",
+  "final_sha256": "a70d6f1cfff8508d4936339ec2939861575eaf3ba47228bf3ee5f63ee56ea524"
+}

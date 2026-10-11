@@ -1,0 +1,1 @@
+Exact snapshot before polishing the user-uploaded final V26 on October 10, 2026. source-attachments contains the uploaded Downloads file, the authoritative input for this revision. The project copy is separately preserved at its project-relative path. Local thesis and working Page are unchanged. Archive index copied as an individual affected file, not recursively.

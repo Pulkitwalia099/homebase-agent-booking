@@ -1,0 +1,18 @@
+Test complete — full lifecycle report:
+
+Reads (all 200)
+
+Schemas: all seven tools · connector_status: housecall backend, test mode, live bookings and payments off · housecall_company: GoLocal Connector Test, 4cd1c8ed-be46-46ea-a458-98b8063b82f3 · housecall_list_jobs: 2 jobs → one slot left under the cap
+
+Prepare (approved) → quote c1972daf-3e9f-4120-8780-acdb0177559f, $0.00 USD, Oct 12 12:00–13:00 EDT, fixed fictional customer. All guard flags verified (contact verified, no email/phone, notifications/dispatch/work-start/payments/availability all off).
+
+Confirm (approved) → job job_7bec0be6b918473ba4492fc0d9dc882c, invoice 3, key golocal-muse-e2e-20261011-c1, first creation. Status read: scheduled, $0.
+
+Repeat confirm (approved) → same job, idempotentReplay: true. No additional job.
+
+Unschedule (approved) → needs scheduling, null start/end, unscheduled: true, jobCancelled: false. Final status read identical: notifications off, $0.00 charged.
+
+No messages, dispatch, work-start, invoice sending, or payment at any point — and none possible through these tools. No further jobs or writes from here; the test is concluded.
+
+Muse
+Connected

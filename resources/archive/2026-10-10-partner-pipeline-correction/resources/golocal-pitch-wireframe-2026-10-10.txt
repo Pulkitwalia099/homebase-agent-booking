@@ -1,0 +1,89 @@
+GoLocal pitch structure — October 10, 2026
+
+BUSINESS
+GoLocal is the shared data and booking layer for home services. It recruits participating suppliers, connects their authorized business software, and gives personal agents one endpoint to compare providers, request quotes, check schedules, book, pay and manage jobs. These are proposed capabilities. Proposed revenue: a supplier-paid fee on a fulfilled job from a new customer, with a share for the partner bringing demand.
+
+1. CUMULATIVE PLATFORM UNLOCKS AND THE REMAINING GAP
+Headline: $1.2 trillion+ U.S. local-services opportunity (founder-requested wording).
+Each new platform unlocks another step. The transaction gap remains.
+Native editable green/red staircase matrix. Columns retain dates and separate technology from platform:
+- Pre-2000: Telephones / Yellow Pages.
+- 2000–2010: Internet / Google and Craigslist.
+- 2010–2020: Mobile + GPS / Google Maps.
+- 2020–2025: LLMs / AI chatbots.
+- 2026+: AI + tools / Personal AI agents.
+Capability rows turn green progressively and remain green in later columns:
+1. Find a business: Yellow Pages onward.
+2. Compare options: internet onward.
+3. Location and reviews: Maps onward.
+4. Conversational request: chatbots onward.
+5. Delegate the task: personal agents.
+Dark-green diagonal marks the new unlock; pale green carries earlier gains forward. The explanatory green/red legend is removed. Three bottom rows remain red: scope/quote, live availability, book/pay. Final agent cells identify calls, calls/sites and sites/checkout as external work still needed. Red means manual/external work, not impossibility or absence of all digital transaction providers.
+Closing: a platform that solves the final three steps can complete local-service bookings and capture value in the $1.2 trillion+ U.S. market. This is the commercial thesis, not a guaranteed market share or revenue projection.
+Market basis unchanged: mixed-year indicative annual U.S. spending across selected local-service categories, including materials, not GoLocal fee revenue. Historical progression illustrative, not precise launch dates or a platform feature audit. No product introduction on slide 1.
+
+2. THE SHARED DATA AND BOOKING LAYER
+Headline: GoLocal connects personal agents to local businesses.
+The data agents need already lives across businesses’ different software systems.
+Native editable many-to-one-to-many diagram:
+- Left: Instinct, Muse, Dots, Town, Hark. Names are placeholders for later logos.
+- Middle: GoLocal, one data and booking API. Services/coverage, pricing/quote requirements, live availability. Quote, book, pay and manage.
+- Right: plumbing as one service category, with multiple equally weighted software examples aligned to provider sizes. Enterprise: BuildOps, ServiceTitan, Simpro, Probook AI and other platforms. Mid-market: Housecall Pro, FieldEdge, Service Fusion, Commusoft, Joblogic, Cactus AI and others. Small businesses: Jobber, Workiz, ServiceM8, Kickserv, Topline Pro and many others.
+- Stack heading: Plumbing software stacks / 100+ listed options. The count is category-wide across all sizes, not a tier-specific count. Software Advice lists more than 100 plumbing products; its exact counts vary across its page, so use the conservative line.
+- Category line: Just one service category: plumbing. The software mix changes across categories.
+Two-way arrows represent requests and data/results. Vendors serve overlapping segments. Groupings are examples, not exclusive tiers, market-share claims or signed integrations. Probook and Cactus are AI tools alongside field-service software. Character AI is not included because no verified plumbing/FSM role. Robinline remains excluded. No independent 20+, 50+ or 100+ count for a specific provider segment established. New evidence: plumbing-vendor-depth-evidence-2026-10-10.json. Earlier vendor sources retained.
+Closing: we onboard businesses and connect their existing software. One connection for agents, one integration for participating businesses.
+Retain the supported $2B+ selected-company funding caption under personal agents. No last-month-only claim or unverified 5% software concentration figure. Funding is not local-service demand. Proposed network and merchant authorization noted; not live GoLocal partnerships or production bookings.
+
+3. THE CUSTOMER EXPERIENCE
+Headline: A customer request becomes a confirmed booking.
+Customer request: “Book a plumber in Dallas tomorrow morning for my leaking kitchen tap.”
+Native editable four-step timeline with explicit ownership:
+1. Personal agent scopes the job: collects address and a photo, defines a diagnostic visit.
+2. GoLocal checks live options: matches connected providers, returns available slots and visit fees.
+3. Customer and agent approve the visit: choose illustrative Oak Plumbing, approve $79 visit and payment authorization.
+4. GoLocal confirms the booking: books in the provider's system, returns booking ID and payment status.
+Final customer confirmation: Oak Plumbing tomorrow 9–11 am, booking GL-1042, $79 visit fee authorized. Repairs quoted after inspection.
+This is an illustrative proposed journey, not production traction or a real quote. Names, fees, slots and ID are examples. Provider acceptance establishes confirmation; availability is rechecked before commitment. Diagnostic visit fee does not cover repair. Payment authorization is distinct from settlement. Supported booking and payment operations require merchant and customer authorization.
+Slide 3 no longer repeats slide 2's ecosystem diagram or unmeasured speed comparison.
+
+4. LAUNCH AND GROWTH
+Headline: Launch locally. Grow through completed bookings.
+Salt Lake City pilot: one city, one service category.
+Three flat stages, matching slide 3's timeline, cream background, green emphasis and Helvetica Neue:
+1. Start with one market. Partners onboard participating businesses; GoLocal recruits users with a specific booking need. First category and audience remain to be chosen.
+2. Connect once. Highlighted prompt: “Add GoLocal to book local services for me.” One-time setup with approval, then book through the agent. Intended compatible-platform experience, not a universal verified installation or booking-approval waiver.
+3. Grow through bookings. Native editable loop: useful bookings → agent suggestions → more booking requests → more businesses → useful bookings. Expand category by category, city by city. Recommendations depend on usefulness, reliability and platform rules; no guaranteed automatic recommendation, ranking or traffic.
+Proposed revenue footer: businesses pay a success fee on fulfilled new-customer jobs; revenue is shared with contributing partners. No measured/agreed fee, mix, share or projections.
+Official sources in speaker notes: OpenAI plugin guidelines, OpenAI app-submission announcement, Muse connector guidelines. Supporting demand-led supplier signup tactic and the longer-term default-agent partnership ambition stay in notes.
+Historical slide 4 note described 50 committed provider onboardings; superseded by the founder correction in slide 5 below. Current basis: Cactus AI 50+ introductions and another 56 potential introductions through YourCardare; pipeline access, not committed onboarding. The approved visible slide 4 contains no provider count.
+
+5. PARTNERSHIPS AND PILOT
+Headline: Partnerships to launch the Salt Lake City pilot.
+Channel partnerships give GoLocal a pipeline of provider introductions.
+Primary figure: 50+ provider introductions in the pipeline, explicitly attributed to Cactus AI.
+Cactus AI agreed to introduce GoLocal to 50+ service partners.
+YourCardare is the named regional back-office partner, with another 56 potential provider introductions as supplied by the founder. Keep this figure separate; no combined unique total inferred.
+One city. One service category.
+Native editable sequence: provider introductions → onboard and connect → test first agent bookings.
+Cream background, green emphasis, large single figure and flat partner text, matching approved slides. The founder corrected the earlier committed-onboarding framing: these are pipeline introductions, not committed providers, authorized production supply or completed bookings. Historical numbers remain preserved.
+
+6. TEAM
+Pulkit Walia, Founder / HBS MBA. Urban Company founding team; decade building local services in Asia, zero to $3B IPO (founder-supplied company milestone).
+Rohit Jain, Engineering. Backend experience at Amazon/Square; production MCP products; system-design teaching. No inferred CTO/cofounder title or commitment.
+Close: GoLocal, the shared data and booking layer for home services.
+
+STATUS
+Six-slide structure retained, with slide 1 now simplified and visually refined. Editable text/table/diagrams and named logo positions remain. Sources and qualifications are in speaker notes. Previous deck retained. Main thesis, its Word/PDF and online Page unchanged. Application attachment was not replaced and application was not submitted.
+
+SLIDE 2 STATUS
+The five-agent/GoLocal/software/local-business architecture is now applied, with illustrative software and AI tools grouped by business size and category variation made explicit. Other slides retained for the ongoing slide-by-slide review.
+
+SLIDE 4 STATUS · OCTOBER 10 2026
+Applied the founder-approved three-stage launch and growth plan to v15. Only slide 4 changed; slides 1–3 and 5–6 are pixel-identical to v14. Editable PPTX and slide preview delivered; no new PDF, thesis revision, Page synchronization or application action.
+
+SLIDE 5 STATUS · OCTOBER 10 2026
+Applied the confirmed combined 50-provider onboarding commitment, named Cactus AI and descriptive regional back-office partner label, and the planned pilot launch sequence to v16. Only slide 5 changed; slides 1–4 and 6 are pixel-identical to v15. Editable PPTX and preview delivered; main short thesis and online Page unchanged. No new PDF or application action.
+
+SLIDE 5 PIPELINE CORRECTION · OCTOBER 10 2026
+Founder corrected onboarding commitment to a pipeline of introductions: Cactus AI agreed to introduce GoLocal to 50+ partners, another 56 potential introductions through YourCardare. Applied to v17 and its preview. Other slides pixel-identical to v16; original v16 and evidence preserved as historical.

@@ -1,0 +1,18 @@
+# Prepared GoLocal relay for Muse
+
+October 11, 2026. Private Muse connector `custom.golocal` is connected and the approved GoLocal credential is saved in its secure store. The actual booking flow has **not passed**: Muse's normal urllib and curl requests to the ngrok host time out before any vendor write. Independent authenticated HTTPS requests to that same host return 200. Muse's public GET to `https://getgolocal.com/` returned 200 in 0.64 seconds.
+
+The prepared remedy is a protected REST relay on the existing GoLocal website, at `https://getgolocal.com/api/connector`. Source is in `website/apps/web/lib/golocal-relay.mjs` with its Next.js route and six security tests. This remains **local, not deployed**. Six tests and the production website build/TypeScript pass. A live read through the relay code, run locally, returned the exact bound GoLocal Connector Test company. This validates forwarding code, not deployed Muse execution.
+
+## Proposed grant and deployment
+
+- Publish only the reviewed relay files to the existing `homebase-agent-booking` project in `pulkitwalia099s-projects`, root `apps/web`, project `prj_5xQeo7zajFDCi9dqBfLZRMdPMKBS`. CLI inspection verified this target; the MCP project-inspection token failed with 403 and the mapped CLI fallback succeeded.
+- Configure `GOLOCAL_RELAY_TOKEN_SHA256` with only the SHA-256 verifier of the existing Muse GoLocal credential and `GOLOCAL_RELAY_EXPIRES_AT` with its existing deadline, `2026-10-12T05:48:00.745Z` (October 12, 1:48 a.m. Eastern). Missing/invalid settings disable private calls. Expired access is rejected.
+- No supplier API key, operator token, encryption key or raw GoLocal bearer is stored in Vercel configuration. During a request, Muse's bearer and controlled test JSON pass through the GoLocal Vercel function and then to the existing ngrok backend. This adds a processing destination relative to the approved direct tunnel connection; obtain specific approval before publication and Muse host configuration.
+- Update the existing Muse GoLocal connector to allow only `getgolocal.com` for the new REST interface. Use `/api/connector/integration` for documentation, GET `/api/connector/tools`, and POST `/api/connector/tools/{name}`. Preserve its secure credential and expiry; no separate Housecall consumer connector.
+- The relay allows only seven fixed tool names. Arbitrary paths, operator/OAuth access, query forwarding, oversized/malformed JSON, wrong bearer, foreign browser origins and expired credentials are rejected. It forwards only selected headers, disables cache and redirects, performs one upstream request, and never automatically retries a write. A failed write returns outcome-unknown because it may already have reached the backend.
+- The supplier key, encrypted state and test-job guards remain on the local GoLocal server. The relay is a stable public address, not a migration to durable hosted supplier execution. This Mac and ngrok must remain online. No paid plan, DNS change or supplier account is needed.
+
+After approval, verify deployed unauthenticated reads are rejected, valid schema/company reads succeed, and the public integration URLs point to the relay. Ask Muse to resume the same controlled lifecycle with `golocal-muse-e2e-20261011-c1`, preserving approval for each write. One of the three total job operations remains; do not raise the limit or use a new idempotency key after an unknown outcome. Verify actual Muse results and vendor final state independently.
+
+No Muse vendor job was created during diagnosis. Independent connected-tool job list still shows only Job #1 and #2, both needs scheduling. Total spend $0. The prepared relay and pending additional approval are recorded in `output/muse-golocal-relay-prepared.json`.

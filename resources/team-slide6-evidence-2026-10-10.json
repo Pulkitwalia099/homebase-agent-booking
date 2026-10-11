@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-10",
+  "scope": "Slide 6 team revision only",
+  "deck": "output/pptx/golocal-pitch-v21.pptx",
+  "founder_supplied": {
+    "Pulkit Walia": [
+      "GoLocal founder",
+      "Urban Company founding team member",
+      "A decade building local services in Asia, helped scale company from zero to a $3B IPO",
+      "First venture: consumer home security brand, scaled to $700K revenue",
+      "Investor at Bessemer Venture Partners, deployed $50M in consumer AI startups"
+    ],
+    "Rohit Jain": [
+      "Backend/software engineer",
+      "Products and integrations on MCPs deployed in production",
+      "System design instructor"
+    ]
+  },
+  "public_team_page": {
+    "url": "https://laoh.ai/",
+    "observed": "2026-10-10",
+    "claims_used": [
+      "Pulkit Harvard Business School MBA",
+      "Rohit Texas A&M Computer Science and IIT Kharagpur",
+      "Rohit Amazon, Square, Citrix work history",
+      "25,000+ engineers taught"
+    ]
+  },
+  "profiles": {
+    "Pulkit Walia": "https://www.linkedin.com/in/pulkitwalia/",
+    "Rohit Jain": "https://www.linkedin.com/in/rohit-jain-343437187/"
+  },
+  "repo_sources": [
+    {
+      "url": "https://github.com/RohitJain1103/laoh-web",
+      "commit": "9f2bc05d1fde9cb3f60d1762e78405614778bc04",
+      "note": "No matching team assets in main or inspected site-improvement/email-logo branches."
+    },
+    {
+      "url": "https://github.com/Pulkitwalia099/get-an-expert-web",
+      "commit": "6aedaea3382cccf15040977fdba2318eab0fb5d3",
+      "files": [
+        "public/team/uc.jpg",
+        "public/team/bessemer.jpg",
+        "public/team/amazon.jpg",
+        "public/team/square.jpg",
+        "public/team/hbs.jpg"
+      ]
+    }
+  ],
+  "asset_provenance": {
+    "live-image-6.jpeg": "2befc1bfb90148a40094c5fed6f9d9c0cfa973523af577e357014479429336f8",
+    "live-image-2.jpeg": "9947ed814e3d2585b1fb9b291541bb0f09e0d45bacd2517e5c18ef8b322902e8",
+    "live-image-5.png": "19c1823fb50e4f3a217dc58f2e58c445485e4b5b28d18865e397ba03113a8d50",
+    "repo-uc.jpg": "48b71319a66fff1c1464c3404f19a387cc87050bc84bf353c0ed49601d080604",
+    "repo-bessemer.jpg": "8a2009aa9ebb7003c90f3326fea03c343307fb38b1457346c933374fb6413fdd",
+    "repo-amazon.jpg": "3edbc850c4cfe50d87ea46d29c984f7af19abac11ce017d049c9294ab67cf08a",
+    "repo-square.jpg": "88a44daeed4a5364c36f6b81b2976acc488fb901edca063298ade3cde352e2b5",
+    "repo-hbs.jpg": "bd74a2ebc3119e327c23e86d27ddaae1f8306b50470d113ff3d304fd6e0fc042"
+  },
+  "limits": [
+    "Founder facts preserved as supplied, not independently audited",
+    "IPO milestone belongs to Urban Company, not GoLocal",
+    "Revenue of first venture and deployed investment capital are different measures",
+    "Engineering label and proposed GoLocal focus do not infer CTO/cofounder title or full-time commitment",
+    "MCP deployment experience is founder-reported",
+    "Company logos identify employment/background, not GoLocal partnerships",
+    "Education names do not imply additional degree types",
+    "Main short thesis, detailed thesis, online Page and application unchanged"
+  ]
+}

@@ -1,0 +1,77 @@
+Passed ✅ All 9 resumed-run MCP calls succeeded (isError=false). Exactly one new synthetic vendor job was created, the same-key retry returned it again, and its schedule was removed
+
+Company: GoLocal Connector Test
+Company ID: 4cd1c8ed-be46-46ea-a458-98b8063b82f3
+Fresh quote ID: 0b29be64-8e3c-4437-8d14-063a076119ac
+New job ID: job_2e0d3b1c453b45dbab46441411a44f44
+Vendor invoiceNumber field: "2"
+Idempotency key: hcp-dot-e2e-20261011-b1
+
+Actual tool results, in order
+
+connector_status
+backend="housecall"; housecallTestWritesEnabled=true; housecallConfigured=true; liveBookingsSupported=false; paymentsSupported=false; dotsOAuthScope="golocal:housecall-test"
+
+housecall_company
+Exact company/name match above; timeZone="America/New_York"
+
+housecall_list_jobs
+Returned only existing job_8ead1790a92c40e89c0294e6d1ed4359, invoiceNumber="1", workStatus="needs scheduling"; availabilityInferred=false. Job #1 was untouched
+
+prepare_housecall_test_booking
+Returned the fresh quote above, amount=0, currency="USD", customer="GoLocal API Test - No Service", service="Synthetic plumbing test - NO SERVICE"
+All required safety evidence matched:
+
+customerContactVerified=true
+customerHasEmail=false
+customerHasPhone=false
+customerNotifications=false
+workStartSupported=false
+dispatchWorkflowSupported=false
+paymentsSupported=false
+availabilityChecked=false
+customerContactPolicy="No email or phone allowed; verified again before job creation."
+expiresAt=1791697232699
+
+Quoted schedule: October 12, 2026, noon–1pm America/New_York (EDT, UTC−04:00)
+start="2026-10-12T16:00:00.000Z"
+end="2026-10-12T17:00:00.000Z"
+
+Exact terms: “Creates a real $0 test job in your trial only. Housecall may assign the bound test owner automatically. No dispatch workflow, payment or customer notifications. Schedule removal does not cancel the job.”
+
+confirm_housecall_test_booking
+Used the fresh quote ID and key above, user_approved=true
+Returned job_2e0d3b1c453b45dbab46441411a44f44; workStatus="scheduled"; idempotentReplay=false; realVendorRecord=true; syntheticCustomer=true; totalAmount=0; amountCharged=0
+
+housecall_test_booking_status
+Independently returned the same job with workStatus="scheduled"
+scheduledStart="2026-10-12T16:00:00Z"
+scheduledEnd="2026-10-12T17:00:00Z"
+scheduledStartLocal="2026-10-12T12:00:00-04:00"
+timeZone="America/New_York"; amountCharged=0
+
+confirm_housecall_test_booking, identical retry
+Same quote_id, idempotency_key and user_approved=true
+Returned job_2e0d3b1c453b45dbab46441411a44f44 again, invoiceNumber="2", idempotentReplay=true, workStatus="scheduled", amountCharged=0. No duplicate job created
+
+unschedule_housecall_test_booking
+Same new job ID, user_approved=true
+Returned unscheduled=true; jobCancelled=false; workStatus="needs scheduling"; scheduledStart=null; scheduledEnd=null; scheduledStartLocal=null; totalAmount=0; amountCharged=0
+
+Final housecall_test_booking_status
+jobId="job_2e0d3b1c453b45dbab46441411a44f44"
+workStatus="needs scheduling"
+scheduledStart=null
+scheduledEnd=null
+scheduledStartLocal=null
+timeZone="America/New_York"
+totalAmount=0
+amountCharged=0
+realVendorRecord=true
+syntheticCustomer=true
+availabilityChecked=false
+customerNotifications=false
+
+The final status tool omits jobCancelled; jobCancelled=false was explicitly returned by the unschedule call. The job remains in Housecall Pro without a schedule. No invoice action, payment, customer message, dispatch, work-start or service fulfillment was performed
+
+1:32 AM

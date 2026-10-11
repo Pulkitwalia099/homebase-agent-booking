@@ -1,0 +1,20 @@
+{
+  "name": "golocal-development",
+  "interface": {
+    "displayName": "GoLocal Development"
+  },
+  "plugins": [
+    {
+      "name": "golocal",
+      "source": {
+        "source": "local",
+        "path": "./plugins/golocal"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

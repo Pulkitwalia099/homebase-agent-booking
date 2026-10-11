@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-10",
+  "source": "Founder annotations annotation-mv39a1d3-h and annotation-mv39bk0w-i on V35",
+  "pipeline": {
+    "total": "60+ plumbing companies",
+    "geography": "Salt Lake City",
+    "Cactus AI": "50+ through YC-backed AI front office for local trades",
+    "YourCardare": "10+ through regional back-office partner",
+    "status": "pipeline, not live integrated providers or completed onboardings",
+    "supersedes": "Earlier uncertainty about combined pipeline geography/category. Latest founder clarification supplies both."
+  },
+  "public_corroboration": {
+    "url": "https://www.ycombinator.com/companies/oncactus",
+    "supports": "Cactus is YC Spring 2025; AI call answering, qualification, booking and follow-up for local trades. Does not verify GoLocal-specific partnership or counts."
+  },
+  "team_headline": "Built for consumer apps. Now building for the agent layer."
+}

@@ -1,0 +1,1 @@
+Completed revision: removed slide 1 legend; headline $1.2 trillion+ as requested; matched slide 2 market label. Original market calculation preserved and note distinguishes founder headline framing from the indicative sum. Six-slide PDF rendered, changed pages visually reviewed, native matrix retained, slides 3–6 unchanged. Main thesis, Page and application unchanged.

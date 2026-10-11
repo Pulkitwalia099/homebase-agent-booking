@@ -1,0 +1,122 @@
+import express from 'express';
+import { randomBytes, timingSafeEqual } from 'node:crypto';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import { z } from 'zod/v4';
+import { makeServer, makeTools } from './tools.js';
+import { PilotError } from './jobber.js';
+
+const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const equal = (a, b) => typeof a === 'string' && Buffer.byteLength(a) === Buffer.byteLength(b) && timingSafeEqual(Buffer.from(a), Buffer.from(b));
+const page = (title, body) => `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${escape(title)}</title><style>body{font:17px system-ui;background:#f5f2e9;color:#193c32;max-width:780px;padding:32px;margin:auto}input,button{font:inherit;padding:10px;margin:8px 0}button{cursor:pointer}pre{white-space:pre-wrap}label{display:block}a{color:#193c32}</style></head><body><h1>${escape(title)}</h1>${body}</body></html>`;
+
+export function createApp(context) {
+  const { config, store, jobber } = context;
+  const app = express();
+  app.disable('x-powered-by');
+  const sessions = new Map(); const limits = new Map();
+  app.use((req, res, next) => {
+    res.set({ 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
+      'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; form-action 'self' https://api.getjobber.com; frame-ancestors 'none'; base-uri 'none'" });
+    if (!config.allowedHosts.has(req.get('host'))) return res.status(403).send('Host not allowed. Set PUBLIC_BASE_URL to the exact HTTPS tunnel origin.');
+    const origin = req.get('origin');
+    if (origin && origin !== config.baseUrl && !config.allowedOrigins.includes(origin)) return res.status(403).send('Origin not allowed.');
+    const now = Date.now(); const current = limits.get(req.ip);
+    if (!current || current.until < now) limits.set(req.ip, { until: now + 60000, n: 1 });
+    else if (++current.n > 120) return res.status(429).send('Too many requests; wait one minute.');
+    if (limits.size > 1000) for (const [ip, value] of limits) if (value.until < now) limits.delete(ip);
+    next();
+  });
+  app.use(express.json({ limit: '32kb' }));
+  app.use(express.urlencoded({ extended: false, limit: '4kb' }));
+  const auth = (req, res, next) => equal(req.get('authorization'), `Bearer ${config.mcpToken}`) ? next() : res.status(401).set('WWW-Authenticate', 'Bearer realm="GoLocal private pilot"').json({ error: 'Authentication required' });
+  const getSession = req => {
+    const cookie = req.get('cookie')?.split(';').map(c => c.trim()).find(c => c.startsWith('golocal_operator='))?.slice(17);
+    const session = sessions.get(cookie);
+    return session?.expiresAt > Date.now() ? session : null;
+  };
+  const operator = (req, res, next) => {
+    req.operator = getSession(req);
+    if (!req.operator) return res.status(401).send(page('Operator sign-in', '<p>Read ADMIN_TOKEN from the private local .env file and enter it here.</p><form method="post" action="/operator/login"><label>Operator token <input type="password" name="token" autocomplete="off" required></label><button>Sign in</button></form>'));
+    next();
+  };
+  const csrf = (req, res, next) => equal(req.body.csrf, req.operator.csrf) && (!req.get('origin') || req.get('origin') === config.baseUrl) ? next() : res.status(403).send('Invalid operator form.');
+  const form = (req, action, label) => `<form method="post" action="${escape(action)}"><input type="hidden" name="csrf" value="${escape(req.operator.csrf)}"><button>${escape(label)}</button></form>`;
+  const wrap = fn => (req, res, next) => Promise.resolve(fn(req, res)).catch(next);
+
+  app.get('/health', (req, res) => res.json({ ok: true, service: 'golocal-pilot', backend: config.backend }));
+  app.get('/', (req, res) => res.send(page('GoLocal connector pilot', '<p>A private connector test for Muse and compatible MCP clients.</p><p><a href="/operator">Operator setup</a> · <a href="/integration">Integration documentation</a></p><p>Demo bookings are simulated. Live bookings and payments are not enabled.</p>')));
+  app.get('/integration', (req, res) => res.json({
+    name: 'GoLocal private pilot', backend: config.backend, mcp: { url: `${config.baseUrl}/mcp`, transport: 'Streamable HTTP', auth: 'Bearer token via secure credentials input' },
+    api: { listTools: `${config.baseUrl}/api/tools`, callTool: `${config.baseUrl}/api/tools/{name}`, method: 'POST', body: 'JSON object matching the tool input schema', auth: 'Authorization: Bearer <MCP_BEARER_TOKEN>' },
+    constraints: ['Single operator and one test business account.', 'Simulated bookings only in demo mode.', 'Live scheduling and payments are not implemented.', 'Housecall Pro mode exposes only company and bounded job reads.', 'Jobber test writes require operator enablement and separate browser approval.', 'Keep secrets out of chat, URLs and tool responses.'],
+    tools: makeTools(context).map(t => ({ name: t.name, description: t.description, annotations: t.annotations, inputSchema: z.toJSONSchema(z.object(t.schema).strict()) }))
+  }));
+  app.get('/api/tools', auth, (req, res) => res.json({ tools: makeTools(context).map(t => ({ name: t.name, description: t.description, annotations: t.annotations, inputSchema: z.toJSONSchema(z.object(t.schema).strict()) })) }));
+  app.post('/api/tools/:name', auth, wrap(async (req, res) => {
+    const tool = makeTools(context).find(t => t.name === req.params.name);
+    if (!tool) return res.status(404).json({ code: 'NOT_FOUND' });
+    const args = z.object(tool.schema).strict().safeParse(req.body);
+    if (!args.success) return res.status(400).json({ code: 'INVALID_INPUT' });
+    res.json(await tool.fn(args.data));
+  }));
+  app.post('/mcp', auth, wrap(async (req, res) => {
+    const server = makeServer(context);
+    const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
+    res.on('close', () => { void transport.close(); void server.close(); });
+    await server.connect(transport);
+    await transport.handleRequest(req, res, req.body);
+  }));
+  app.all('/mcp', auth, (req, res) => res.status(405).set('Allow', 'POST').json({ error: 'Use Streamable HTTP POST; this pilot is stateless.' }));
+
+  app.post('/operator/login', (req, res) => {
+    if (req.get('origin') && req.get('origin') !== config.baseUrl) return res.status(403).send('Invalid login origin.');
+    if (!equal(req.body.token, config.adminToken)) return res.status(401).send('Invalid operator token.');
+    for (const [id, session] of sessions) if (session.expiresAt < Date.now()) sessions.delete(id);
+    if (sessions.size > 20) return res.status(429).send('Too many operator sessions. Restart to clear them.');
+    const id = randomBytes(32).toString('hex');
+    sessions.set(id, { csrf: randomBytes(32).toString('hex'), expiresAt: Date.now() + 3600000 });
+    res.set('Set-Cookie', `golocal_operator=${id}; HttpOnly; SameSite=Lax; Path=/; Max-Age=3600${config.baseUrl.startsWith('https:') ? '; Secure' : ''}`).redirect(303, '/operator');
+  });
+  app.get('/operator', operator, (req, res) => {
+    if (config.backend === 'housecall') return res.send(page('GoLocal operator', '<p>Housecall Pro read-only test mode. Set HOUSECALL_API_KEY and HOUSECALL_TEST_COMPANY_ID in the private local .env, then restart.</p><p>Use only your synthetic test company and a read-only API key. Live scheduling, writes and payments are not implemented.</p><p><a href="/integration">Tool documentation</a></p>'));
+    const active = store.state.jobber?.active;
+    const body = `<p>Mode: <strong>${escape(config.backend)}</strong>. No live scheduling or payments.</p>
+      <p>Jobber: ${active ? `connected to ${escape(store.state.jobber.account.name)}` : 'not connected'}.</p>
+      <p>Use a 90-day developer testing account. Set JOBBER_CLIENT_ID, JOBBER_CLIENT_SECRET and JOBBER_TEST_ACCOUNT_ID in .env, then restart.</p>
+      <p>OAuth callback: <code>${escape(config.jobber.callbackUrl)}</code></p>
+      ${form(req, '/operator/jobber/connect', 'Connect Jobber test account')}
+      ${form(req, '/operator/jobber/forget', 'Forget locally stored Jobber credentials')}
+      <p>Forgetting deletes local tokens. Revoke the app in Jobber separately.</p>
+      <p><a href="/integration">Tool documentation</a></p>`;
+    res.send(page('GoLocal operator', body));
+  });
+  app.post('/operator/jobber/connect', operator, csrf, wrap(async (req, res) => res.redirect(303, await jobber.begin())));
+  app.get('/oauth/jobber/callback', operator, wrap(async (req, res) => {
+    if (typeof req.query.code !== 'string' || typeof req.query.state !== 'string') throw new PilotError('INVALID_STATE', 'OAuth callback is missing the code or state.');
+    await jobber.callback(req.query.code, req.query.state);
+    res.redirect(303, '/operator');
+  }));
+  app.post('/operator/jobber/forget', operator, csrf, wrap(async (req, res) => {
+    await store.transaction(s => { s.jobber = null; s.oauth = null; s.approvals = {}; });
+    res.redirect(303, '/operator');
+  }));
+  app.get('/operator/approvals/:id', operator, (req, res) => {
+    const item = store.state.approvals?.[req.params.id];
+    if (!item || item.expiresAt < Date.now() || item.accountId !== config.jobber.accountId) return res.status(404).send('Approval expired or not found.');
+    res.send(page('Approve one Jobber test write', `<p>Create one fake client named <strong>GoLocal Connector Test</strong> in test account <code>${escape(item.accountId)}</code>.</p><p>No email, phone, appointment or payment. Amount charged: $0.</p><p>Operation: ${escape(item.key)}.</p>${item.approved ? '<p>Approved. Return to Muse and ask it to finish this test-client operation.</p>' : form(req, `/operator/approvals/${item.id}`, 'Approve this exact test-client write')}`));
+  });
+  app.post('/operator/approvals/:id', operator, csrf, wrap(async (req, res) => {
+    await store.transaction(s => {
+      const item = s.approvals?.[req.params.id];
+      if (!config.jobber.writes || !item || item.expiresAt < Date.now() || item.accountId !== config.jobber.accountId) throw new PilotError('APPROVAL_REQUIRED', 'Approval expired or test writes disabled.');
+      item.approved = true;
+    });
+    res.redirect(303, `/operator/approvals/${req.params.id}`);
+  }));
+  app.use((err, req, res, next) => {
+    if (res.headersSent) return next(err);
+    const safe = err instanceof PilotError;
+    res.status(safe ? 400 : 500).json({ code: safe ? err.code : 'INTERNAL_ERROR', message: safe ? err.message : 'Connector error.', retryAutomatically: false });
+  });
+  return app;
+}

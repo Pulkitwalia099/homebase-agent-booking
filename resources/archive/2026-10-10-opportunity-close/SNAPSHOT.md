@@ -1,0 +1,1 @@
+Completed slide 1 revision: opportunity close links final three steps to completed bookings and value capture. Final deck reimported, six-page PDF rendered and changed page visually inspected. Slides 2–6 unchanged. Future slide 2 plan recorded only; concentration/month-specific funding qualifiers unverified. Thesis/Word/PDF, working Page and application unchanged.

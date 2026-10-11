@@ -1,0 +1,1 @@
+Completed user-facing notification revision: b665bd4 deployed on getgolocal.com. Verified all three forms deliver emails labeled Important and Starred; duplicate retry and protected retry endpoint pass. Free plan retained. Exact report/source/proof/index preserved, excluding credentials.

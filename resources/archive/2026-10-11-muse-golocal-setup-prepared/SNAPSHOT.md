@@ -1,0 +1,1 @@
+GoLocal shared product identity; Muse custom provider and connection disclosure prepared. Separate one-day company/origin-bound authentication support, 37 tests passed. Credential grant and actual Muse test pending. No secrets/dependencies, new vendor jobs or spend. Theses, Page and public website unchanged.

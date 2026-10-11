@@ -1,0 +1,1 @@
+Exact copies before the authorized slide 5 partner/pilot revision. Source v15 and affected supporting files preserved. User confirms Cactus AI and regional back-office partnerships, commitment to onboard 50 providers, Salt Lake City pilot. All other slides retained.

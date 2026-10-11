@@ -1,0 +1,21 @@
+{
+  "recorded": "2026-10-10",
+  "source": "Founder statements in this conversation, most recently the explicit slide 5 implementation request.",
+  "latest_confirmed_facts": [
+    "Cactus AI and regional back-office company are channel partners.",
+    "Partner commitment to onboard 50 providers.",
+    "Start the pilot in Salt Lake City with one city-category combination."
+  ],
+  "partner_roles": {
+    "Cactus AI": "Introductions of trade shops and booking access through existing customers.",
+    "Regional back-office partner": "Onboarding its clients for the pilot."
+  },
+  "limits": [
+    "The exact back-office company name is not supplied.",
+    "No allocation of the combined 50 between partners is supplied.",
+    "50 denotes an onboarding commitment, not live GoLocal merchants or completed bookings.",
+    "Historical 100+ Cactus customer reach and separate 20-client commitment are preserved rather than summed or overwritten.",
+    "Connect software and test first bookings are the next planned steps; provider authorization, supported operations and customer demand must be established."
+  ],
+  "artifact": "output/pptx/golocal-pitch-v16.pptx"
+}

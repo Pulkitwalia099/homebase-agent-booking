@@ -1,0 +1,3 @@
+# Team slide assets · October 10, 2026
+
+The live-image files are exact unaltered inline assets from https://laoh.ai/, matching the founder’s screenshot: Pulkit photo (6), Rohit photo (2), Citrix icon (5). The repo files are from public/team in the founder-supplied https://github.com/Pulkitwalia099/get-an-expert-web: Urban Company, Bessemer Venture Partners, Amazon, Square and Harvard Business School. Source photos in that repo have different backgrounds; the requested screenshot versions are retained. The earlier supplied Laoh repository does not include these team assets in the inspected branches.

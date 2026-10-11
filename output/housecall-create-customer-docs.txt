@@ -1,0 +1,650 @@
+- generic "Accessibility Menu":
+  - button "Accessibility Menu"
+- main:
+  - img: 
+  - textbox "Search Project":
+    - /placeholder: Search Housecall Pro Public API...
+  - heading "Create Customer" [level=1]
+  - generic "https://api.housecallpro.com/customers":
+    - generic: post
+    - generic: https://api.housecallpro.com/customers
+  - paragraph: Create a new Customer.
+  - heading "Request" [level=2]:
+    - link "Request":
+      - /url: "#Request"
+      - generic: Request
+      - img: 
+  - 'button "Security: API Key (Company API Key)"':
+    - img: 
+    - 'heading "Security: API Key (Company API Key)"'
+  - 'button "Security: API Key (Application API Key)"':
+    - img: 
+    - 'heading "Security: API Key (Application API Key)"'
+  - 'button "Security: OAuth 2.0"':
+    - img: 
+    - 'heading "Security: OAuth 2.0"'
+  - heading "Body" [level=3]:
+    - link "Body":
+      - /url: "#request-body"
+      - generic: Body
+      - img: 
+  - textbox
+  - combobox
+  - button "Request Body Content Type":
+    - generic: application/json
+    - img: 
+  - paragraph: One of first_name, last_name, email, mobile_number, home_number, work_number are required.
+  - generic: first_name
+  - generic: string or null
+  - generic: last_name
+  - generic: string or null
+  - generic: email
+  - generic: string or null
+  - generic: company
+  - generic: string or null
+  - generic: notifications_enabled
+  - generic: boolean
+  - paragraph: Will the customer receive notifications
+  - generic: mobile_number
+  - generic: string or null
+  - generic: home_number
+  - generic: string or null
+  - generic: work_number
+  - generic: string or null
+  - generic: tags
+  - generic: array[string]
+  - generic: lead_source
+  - generic: string or null
+  - generic: notes
+  - generic: string
+  - button:
+    - img: 
+  - generic: addresses
+  - generic: array[object]
+  - generic: street
+  - generic: string
+  - generic: street_line_2
+  - generic: string
+  - generic: city
+  - generic: string
+  - generic: state
+  - generic: string
+  - generic: zip
+  - generic: string
+  - generic: country
+  - generic: string
+  - heading "Responses" [level=2]:
+    - link "Responses":
+      - /url: "#Responses"
+      - generic: Responses
+      - img: 
+  - tablist:
+    - tab "201" [selected]
+  - tabpanel "201":
+    - paragraph: Created
+    - heading "Body" [level=3]:
+      - link "Body":
+        - /url: "#response-body"
+        - generic: Body
+        - img: 
+    - textbox
+    - combobox
+    - button "Response Body Content Type":
+      - generic: application/json
+      - img: 
+    - generic: responses
+    - generic: /
+    - generic: "201"
+    - generic: id
+    - generic: string
+    - generic: first_name
+    - generic: string or null
+    - generic: last_name
+    - generic: string or null
+    - generic: email
+    - generic: string or null
+    - generic: mobile_number
+    - generic: string or null
+    - generic: home_number
+    - generic: string or null
+    - generic: work_number
+    - generic: string or null
+    - generic: company
+    - generic: string or null
+    - generic: notifications_enabled
+    - generic: boolean
+    - paragraph: Will the customer receive notifications
+    - generic: lead_source
+    - generic: string or null
+    - generic: notes
+    - generic: string or null
+    - generic: created_at
+    - generic: string
+    - generic: updated_at
+    - generic: string
+    - generic: company_name
+    - generic: string
+    - generic: company_id
+    - generic: string
+    - generic: tags
+    - generic: array[string]
+    - button:
+      - img: 
+    - generic: addresses
+    - generic: array[Address]
+    - generic: id
+    - generic: string
+    - generic: required
+    - generic: type
+    - generic: string
+    - generic: "Allowed values:"
+    - generic: billing
+    - generic: service
+    - generic: street
+    - generic: string or null
+    - generic: street_line_2
+    - generic: string or null
+    - generic: city
+    - generic: string or null
+    - generic: state
+    - generic: string or null
+    - generic: zip
+    - generic: string or null
+    - generic: country
+    - generic: string or null
+    - button:
+      - img: 
+    - generic: attachments
+    - generic: array[Attachment]
+    - paragraph: Only present if expanded with attachments
+    - generic: id
+    - generic: string
+    - generic: file_name
+    - generic: string
+    - generic: url
+    - generic: string
+    - generic: file_type
+    - generic: string
+    - generic: do_not_service
+    - generic: boolean
+    - paragraph: Only present if expanded with do_not_service
+  - button "Auth security-schemes" [expanded]:
+    - img: 
+    - text: Auth
+    - button "security-schemes":
+      - text: API Key
+      - img: 
+  - region:
+    - generic: Authorization
+    - generic: ":"
+    - textbox "Authorization":
+      - /placeholder: "123"
+  - button "Body" [expanded]:
+    - img: 
+    - text: Body
+  - region:
+    - textbox: "{ \"first_name\": \"string\", \"last_name\": \"string\", \"email\": \"string\", \"company\": \"string\", \"notifications_enabled\": true, \"mobile_number\": \"string\", \"home_number\": \"string\", \"work_number\": \"string\", \"tags\": [ \"string\" ], \"lead_source\": \"string\", \"notes\": \"string\", \"addresses\": [ { \"street\": \"string\", \"street_line_2\": \"string\", \"city\": \"string\", \"state\": \"string\", \"zip\": \"string\", \"country\": \"string\" } ] }"
+    - generic: "1"
+    - generic: "{"
+    - generic: "2"
+    - generic: "\"first_name\": \"string\","
+    - generic: "3"
+    - generic: "\"last_name\": \"string\","
+    - generic: "4"
+    - generic: "\"email\": \"string\","
+    - generic: "5"
+    - generic: "\"company\": \"string\","
+    - generic: "6"
+    - generic: "\"notifications_enabled\": true,"
+    - generic: "7"
+    - generic: "\"mobile_number\": \"string\","
+    - generic: "8"
+    - generic: "\"home_number\": \"string\","
+    - generic: "9"
+    - generic: "\"work_number\": \"string\","
+    - generic: "10"
+    - generic: "\"tags\": ["
+    - generic: "11"
+    - generic: "\"string\""
+    - generic: "12"
+    - generic: "],"
+    - generic: "13"
+    - generic: "\"lead_source\": \"string\","
+    - generic: "14"
+    - generic: "\"notes\": \"string\","
+    - generic: "15"
+    - generic: "\"addresses\": ["
+    - generic: "16"
+    - generic: "{"
+    - generic: "17"
+    - generic: "\"street\": \"string\","
+    - generic: "18"
+    - generic: "\"street_line_2\": \"string\","
+    - generic: "19"
+    - generic: "\"city\": \"string\","
+    - generic: "20"
+    - generic: "\"state\": \"string\","
+    - generic: "21"
+    - generic: "\"zip\": \"string\","
+    - generic: "22"
+    - generic: "\"country\": \"string\""
+    - generic: "23"
+    - generic: "}"
+    - generic: "24"
+    - generic: "]"
+    - generic: "25"
+    - generic: "}"
+  - button "Send API Request"
+  - button "Request Sample Language":
+    - text: "Request Sample: Shell / cURL"
+    - img: 
+  - button:
+    - img: 
+  - 'group "curl --request POST \\ --url https://api.housecallpro.com/customers \\ --header ''Accept: application/json'' \\ --header ''Authorization: 123'' \\ --header ''Content-Type: application/json'' \\ --data ''{ \"first_name\": \"string\", \"last_name\": \"string\", \"email\": \"string\", \"company\": \"string\", \"notifications_enabled\": true, \"mobile_number\": \"string\", \"home_number\": \"string\", \"work_number\": \"string\", \"tags\": [ \"string\" ], \"lead_source\": \"string\", \"notes\": \"string\", \"addresses\": [ { \"street\": \"string\", \"street_line_2\": \"string\", \"city\": \"string\", \"state\": \"string\", \"zip\": \"string\", \"country\": \"string\" } ] }''"':
+    - generic: curl --request POST \
+    - generic: "--url https://api.housecallpro.com/customers \\"
+    - generic: "--header 'Accept: application/json' \\"
+    - generic: "--header 'Authorization: 123' \\"
+    - generic: "--header 'Content-Type: application/json' \\"
+    - generic: "--data '{"
+    - generic: "\"first_name\": \"string\","
+    - generic: "\"last_name\": \"string\","
+    - generic: "\"email\": \"string\","
+    - generic: "\"company\": \"string\","
+    - generic: "\"notifications_enabled\": true,"
+    - generic: "\"mobile_number\": \"string\","
+    - generic: "\"home_number\": \"string\","
+    - generic: "\"work_number\": \"string\","
+    - generic: "\"tags\": ["
+    - generic: "\"string\""
+    - generic: "],"
+    - generic: "\"lead_source\": \"string\","
+    - generic: "\"notes\": \"string\","
+    - generic: "\"addresses\": ["
+    - generic: "{"
+    - generic: "\"street\": \"string\","
+    - generic: "\"street_line_2\": \"string\","
+    - generic: "\"city\": \"string\","
+    - generic: "\"state\": \"string\","
+    - generic: "\"zip\": \"string\","
+    - generic: "\"country\": \"string\""
+    - generic: "}"
+    - generic: "]"
+    - generic: "}'"
+  - generic: Response Example
+  - button:
+    - img: 
+  - 'group "{ \"id\": \"string\", \"first_name\": \"string\", \"last_name\": \"string\", \"email\": \"string\", \"mobile_number\": \"string\", \"home_number\": \"string\", \"work_number\": \"string\", \"company\": \"string\", \"notifications_enabled\": true, \"lead_source\": \"string\", \"notes\": \"string\", \"created_at\": \"string\", \"updated_at\": \"string\", \"company_name\": \"string\", \"company_id\": \"string\", \"tags\": [ \"string\" ], \"addresses\": [ { \"id\": \"string\", \"type\": \"billing\", \"street\": \"string\", \"street_line_2\": \"string\", \"city\": \"string\", \"state\": \"string\", \"zip\": \"string\", \"country\": \"string\" } ], \"attachments\": [ { \"id\": \"string\", \"file_name\": \"string\", \"url\": \"string\", \"file_type\": \"string\" } ], \"do_not_service\": true }"':
+    - generic: "1"
+    - generic: "{"
+    - generic: "2"
+    - generic: "\"id\": \"string\","
+    - generic: "3"
+    - generic: "\"first_name\": \"string\","
+    - generic: "4"
+    - generic: "\"last_name\": \"string\","
+    - generic: "5"
+    - generic: "\"email\": \"string\","
+    - generic: "6"
+    - generic: "\"mobile_number\": \"string\","
+    - generic: "7"
+    - generic: "\"home_number\": \"string\","
+    - generic: "8"
+    - generic: "\"work_number\": \"string\","
+    - generic: "9"
+    - generic: "\"company\": \"string\","
+    - generic: "10"
+    - generic: "\"notifications_enabled\": true,"
+    - generic: "11"
+    - generic: "\"lead_source\": \"string\","
+    - generic: "12"
+    - generic: "\"notes\": \"string\","
+    - generic: "13"
+    - generic: "\"created_at\": \"string\","
+    - generic: "14"
+    - generic: "\"updated_at\": \"string\","
+    - generic: "15"
+    - generic: "\"company_name\": \"string\","
+    - generic: "16"
+    - generic: "\"company_id\": \"string\","
+    - generic: "17"
+    - generic: "\"tags\": ["
+    - generic: "18"
+    - generic: "\"string\""
+    - generic: "19"
+    - generic: "],"
+    - generic: "20"
+    - generic: "\"addresses\": ["
+    - generic: "21"
+    - generic: "{"
+    - generic: "22"
+    - generic: "\"id\": \"string\","
+    - generic: "23"
+    - generic: "\"type\": \"billing\","
+    - generic: "24"
+    - generic: "\"street\": \"string\","
+    - generic: "25"
+    - generic: "\"street_line_2\": \"string\","
+    - generic: "26"
+    - generic: "\"city\": \"string\","
+    - generic: "27"
+    - generic: "\"state\": \"string\","
+    - generic: "28"
+    - generic: "\"zip\": \"string\","
+    - generic: "29"
+    - generic: "\"country\": \"string\""
+    - generic: "30"
+    - generic: "}"
+    - generic: "31"
+    - generic: "],"
+    - generic: "32"
+    - generic: "\"attachments\": ["
+    - generic: "33"
+    - generic: "{"
+    - generic: "34"
+    - generic: "\"id\": \"string\","
+    - generic: "35"
+    - generic: "\"file_name\": \"string\","
+    - generic: "36"
+    - generic: "\"url\": \"string\","
+    - generic: "37"
+    - generic: "\"file_type\": \"string\""
+    - generic: "38"
+    - generic: "}"
+    - generic: "39"
+    - generic: "],"
+    - generic: "40"
+    - generic: "\"do_not_service\": true"
+    - generic: "41"
+    - generic: "}"
+- link "Housecall Pro":
+  - /url: /
+  - img "Housecall Pro"
+- link "Home":
+  - /url: /
+  - img: 
+  - generic: Home
+- generic "Housecall Pro Public API":
+  - img:  
+- link "Housecall Pro Public API":
+  - /url: /docs/housecall-public-api
+- link "Authentication":
+  - /url: /docs/housecall-public-api/b87d37ae48a0d-authentication
+  - generic "Authentication":
+    - generic: Authentication
+- link "Changelog":
+  - /url: /docs/housecall-public-api/06ba3d648e345-changelog
+  - generic "Changelog":
+    - generic: Changelog
+- link "Multi-location Enabled APIs":
+  - /url: /docs/housecall-public-api/4c64fe617d191-multi-location-enabled-ap-is
+  - generic "Multi-location Enabled APIs":
+    - generic: Multi-location Enabled APIs
+- link "Pricebook API":
+  - /url: /docs/housecall-public-api/p5zsg5n9sbiij-pricebook-api
+  - generic "Pricebook API":
+    - generic: Pricebook API
+- link "Webhooks":
+  - /url: /docs/housecall-public-api/46e9e1be07621-webhooks
+  - generic "Webhooks":
+    - generic: Webhooks
+- generic: APIS
+- link "Housecall v1 API v1":
+  - /url: /docs/housecall-public-api/a4ca20a18010c-housecall-v1-api
+  - generic "Housecall v1 API":
+    - img: 
+    - generic: Housecall v1 API
+    - generic: v1
+    - img: 
+- generic "Checklists":
+  - generic: Checklists
+  - img: 
+- generic "Customers":
+  - generic: Customers
+  - img: 
+- link "Get Customers get":
+  - /url: /docs/housecall-public-api/042bd3bf861ae-get-customers
+  - generic "Get Customers":
+    - img: 
+    - generic: Get Customers
+    - generic: get
+- link "Create Customer post":
+  - /url: /docs/housecall-public-api/4e0bf8c4d65d7-create-customer
+  - generic "Create Customer":
+    - img: 
+    - generic: Create Customer
+    - generic: post
+- link "Get Customer get":
+  - /url: /docs/housecall-public-api/7599b1ec89338-get-customer
+  - generic "Get Customer":
+    - img: 
+    - generic: Get Customer
+    - generic: get
+- link "Update Customer put":
+  - /url: /docs/housecall-public-api/b1c3acd657849-update-customer
+  - generic "Update Customer":
+    - img: 
+    - generic: Update Customer
+    - generic: put
+- link "Get All of a Customer's Addresses get":
+  - /url: /docs/housecall-public-api/abdc4e24d762b-get-all-of-a-customer-s-addresses
+  - generic "Get All of a Customer's Addresses":
+    - img: 
+    - generic: Get All of a Customer's Addresses
+    - generic: get
+- link "Create an Address on a Customer post":
+  - /url: /docs/housecall-public-api/6cf593d8a90ca-create-an-address-on-a-customer
+  - generic "Create an Address on a Customer":
+    - img: 
+    - generic: Create an Address on a Customer
+    - generic: post
+- link "Get a Customer's Address get":
+  - /url: /docs/housecall-public-api/721b19310aa3b-get-a-customer-s-address
+  - generic "Get a Customer's Address":
+    - img: 
+    - generic: Get a Customer's Address
+    - generic: get
+- generic "Employees":
+  - generic: Employees
+  - img: 
+- generic "Estimates":
+  - generic: Estimates
+  - img: 
+- generic "Jobs":
+  - generic: Jobs
+  - img: 
+- link "Get Jobs get":
+  - /url: /docs/housecall-public-api/6c97704da8bf3-get-jobs
+  - generic "Get Jobs":
+    - img: 
+    - generic: Get Jobs
+    - generic: get
+- link "Create a Job post":
+  - /url: /docs/housecall-public-api/2dcf481ed7d69-create-a-job
+  - generic "Create a Job":
+    - img: 
+    - generic: Create a Job
+    - generic: post
+- link "Get a Job get":
+  - /url: /docs/housecall-public-api/bbabd67bed1ab-get-a-job
+  - generic "Get a Job":
+    - img: 
+    - generic: Get a Job
+    - generic: get
+- link "Add an Attachment to a Job post":
+  - /url: /docs/housecall-public-api/c4ea6b1217b22-add-an-attachment-to-a-job
+  - generic "Add an Attachment to a Job":
+    - img: 
+    - generic: Add an Attachment to a Job
+    - generic: post
+- link "Lists all line items for a job get":
+  - /url: /docs/housecall-public-api/1c84b6c79b94f-lists-all-line-items-for-a-job
+  - generic "Lists all line items for a job":
+    - img: 
+    - generic: Lists all line items for a job
+    - generic: get
+- link "Add a line item to a Job post":
+  - /url: /docs/housecall-public-api/99ba8250597cd-add-a-line-item-to-a-job
+  - generic "Add a line item to a Job":
+    - img: 
+    - generic: Add a line item to a Job
+    - generic: post
+- link "Bulk update a job's line items put":
+  - /url: /docs/housecall-public-api/79a5ef20427d5-bulk-update-a-job-s-line-items
+  - generic "Bulk update a job's line items":
+    - img: 
+    - generic: Bulk update a job's line items
+    - generic: put
+- link "Update a single line item for a job put":
+  - /url: /docs/housecall-public-api/7b05bc804ebcc-update-a-single-line-item-for-a-job
+  - generic "Update a single line item for a job":
+    - img: 
+    - generic: Update a single line item for a job
+    - generic: put
+- link "Delete a single line item for a job delete":
+  - /url: /docs/housecall-public-api/0c05c275eede7-delete-a-single-line-item-for-a-job
+  - generic "Delete a single line item for a job":
+    - img: 
+    - generic: Delete a single line item for a job
+    - generic: delete
+- link "Update job schedule put":
+  - /url: /docs/housecall-public-api/1d344f58672f9-update-job-schedule
+  - generic "Update job schedule":
+    - img: 
+    - generic: Update job schedule
+    - generic: put
+- link "Delete job schedule delete":
+  - /url: /docs/housecall-public-api/7c3db70353a4f-delete-job-schedule
+  - generic "Delete job schedule":
+    - img: 
+    - generic: Delete job schedule
+    - generic: delete
+- link "Dispatch job to employees put":
+  - /url: /docs/housecall-public-api/7395e7ae9c4e7-dispatch-job-to-employees
+  - generic "Dispatch job to employees":
+    - img: 
+    - generic: Dispatch job to employees
+    - generic: put
+- link "Lists all job input materials for a job get":
+  - /url: /docs/housecall-public-api/024edad38a2a2-lists-all-job-input-materials-for-a-job
+  - generic "Lists all job input materials for a job":
+    - img: 
+    - generic: Lists all job input materials for a job
+    - generic: get
+- link "Bulk update a job's input materials put":
+  - /url: /docs/housecall-public-api/ecc9f7a5d84bc-bulk-update-a-job-s-input-materials
+  - generic "Bulk update a job's input materials":
+    - img: 
+    - generic: Bulk update a job's input materials
+    - generic: put
+- link "Add job tag post":
+  - /url: /docs/housecall-public-api/f9f47b5268bae-add-job-tag
+  - generic "Add job tag":
+    - img: 
+    - generic: Add job tag
+    - generic: post
+- link "Add job note post":
+  - /url: /docs/housecall-public-api/62185fa6f6afc-add-job-note
+  - generic "Add job note":
+    - img: 
+    - generic: Add job note
+    - generic: post
+- link "Delete job note delete":
+  - /url: /docs/housecall-public-api/e3423d7dc7d5f-delete-job-note
+  - generic "Delete job note":
+    - img: 
+    - generic: Delete job note
+    - generic: delete
+- link "Remove job tag delete":
+  - /url: /docs/housecall-public-api/f34ea2077256c-remove-job-tag
+  - generic "Remove job tag":
+    - img: 
+    - generic: Remove job tag
+    - generic: delete
+- link "Create Job Link post":
+  - /url: /docs/housecall-public-api/083bf9924aa4b-create-job-link
+  - generic "Create Job Link":
+    - img: 
+    - generic: Create Job Link
+    - generic: post
+- link "Lock Job post":
+  - /url: /docs/housecall-public-api/90211f98061d0-lock-job
+  - generic "Lock Job":
+    - img: 
+    - generic: Lock Job
+    - generic: post
+- link "Lock Jobs post":
+  - /url: /docs/housecall-public-api/30432b125d051-lock-jobs
+  - generic "Lock Jobs":
+    - img: 
+    - generic: Lock Jobs
+    - generic: post
+- generic "Job Appointments":
+  - generic: Job Appointments
+  - img: 
+- generic "Job Invoices":
+  - generic: Job Invoices
+  - img: 
+- generic "Job Types":
+  - generic: Job Types
+  - img: 
+- generic "Leads":
+  - generic: Leads
+  - img: 
+- generic "Lead Sources":
+  - generic: Lead Sources
+  - img: 
+- generic "Application":
+  - generic: Application
+  - img: 
+- generic "Webhooks":
+  - generic: Webhooks
+  - img: 
+- generic "Materials":
+  - generic: Materials
+  - img: 
+- generic "Material Categories":
+  - generic: Material Categories
+  - img: 
+- generic "Price Forms":
+  - generic: Price Forms
+  - img: 
+- generic "Price Book Services":
+  - generic: Price Book Services
+  - img: 
+- generic "Service Zones":
+  - generic: Service Zones
+  - img: 
+- generic "Pipeline":
+  - generic: Pipeline
+  - img: 
+- generic "Routes":
+  - generic: Routes
+  - img: 
+- generic "Company":
+  - generic: Company
+  - img: 
+- generic "Schedule":
+  - generic: Schedule
+  - img: 
+- generic "Events":
+  - generic: Events
+  - img: 
+- generic "Tags":
+  - generic: Tags
+  - img: 
+- generic "Lead Line Items":
+  - generic: Lead Line Items
+  - img: 
+- generic "Invoices":
+  - generic: Invoices
+  - img: 
+- generic "Schemas":
+  - img: 
+  - generic: Schemas
+  - img: 
+- link "powered by Stoplight":
+  - /url: https://stoplight.io/?utm_source=workspaces&utm_medium=housecallpro&utm_campaign=powered_by&utm_content=/docs/housecall-public-api/4e0bf8c4d65d7-create-customer
+  - generic:  
+  - text: powered by
+  - strong: Stoplight

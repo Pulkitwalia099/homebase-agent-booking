@@ -1,0 +1,32 @@
+{
+  "unchanged_slides": [
+    {
+      "slide": 1,
+      "pixel_identical": true
+    },
+    {
+      "slide": 2,
+      "pixel_identical": true
+    },
+    {
+      "slide": 3,
+      "pixel_identical": true
+    },
+    {
+      "slide": 4,
+      "pixel_identical": true
+    },
+    {
+      "slide": 5,
+      "pixel_identical": true
+    }
+  ],
+  "native_bullet_paragraphs": 6,
+  "embedded_images": 10,
+  "native_rounded_photos": 2,
+  "profile_links": [
+    "https://www.linkedin.com/in/pulkitwalia/",
+    "https://www.linkedin.com/in/rohit-jain-343437187/"
+  ],
+  "latest_founder_corrections_present": true
+}

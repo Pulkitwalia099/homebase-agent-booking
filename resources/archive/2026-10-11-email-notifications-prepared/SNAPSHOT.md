@@ -1,0 +1,1 @@
+Completed prepared notification revision. Local commit b665bd4 passes eight tests and full webpack build/TypeScript. Resend free account and domain verified; Gmail rule saved; production CRON_SECRET installed. Restricted sending credential confirmation, activation, cloud build and actual inbox delivery remain pending. No paid plan selected.

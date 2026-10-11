@@ -1,0 +1,1 @@
+Exact copies before the authorized slide 4 launch-and-growth revision. Slides 1–3 and 5–6 remain unchanged. Existing PDF preserved; this request produces editable PPTX and slide preview. Thesis and online Page unchanged.

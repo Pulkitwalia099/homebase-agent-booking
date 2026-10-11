@@ -1,0 +1,59 @@
+GoLocal pitch structure — October 10, 2026
+
+BUSINESS
+GoLocal is the shared data and booking layer for home services. It recruits participating suppliers, connects their authorized business software, and gives personal agents one endpoint to compare providers, request quotes, check schedules, book, pay and manage jobs. These are proposed capabilities. Proposed revenue: a supplier-paid fee on a fulfilled job from a new customer, with a share for the partner bringing demand.
+
+1. CUMULATIVE PLATFORM UNLOCKS AND THE REMAINING GAP
+Headline: ≈$1.2T U.S. local-services opportunity.
+Each new platform unlocks another step. The transaction gap remains.
+Native editable green/red staircase matrix. Columns retain dates and separate technology from platform:
+- Pre-2000: Telephones / Yellow Pages.
+- 2000–2010: Internet / Google and Craigslist.
+- 2010–2020: Mobile + GPS / Google Maps.
+- 2020–2025: LLMs / AI chatbots.
+- 2026+: AI + tools / Personal AI agents.
+Capability rows turn green progressively and remain green in later columns:
+1. Find a business: Yellow Pages onward.
+2. Compare options: internet onward.
+3. Location and reviews: Maps onward.
+4. Conversational request: chatbots onward.
+5. Delegate the task: personal agents.
+Dark-green diagonal marks the new unlock; pale green carries earlier gains forward. Three bottom rows remain red: scope/quote, live availability, book/pay. Final agent cells identify calls, calls/sites and sites/checkout as external work still needed. Red means manual/external work, not impossibility or absence of all digital transaction providers.
+Closing: agents still rely on calls and websites to turn a request into a completed booking.
+Market basis unchanged: mixed-year indicative annual U.S. spending across selected local-service categories, including materials, not GoLocal fee revenue. Historical progression illustrative, not precise launch dates or a platform feature audit. No product introduction on slide 1.
+
+2. WHY NOW AND THE MARKET
+Billions are backing personal agents and a new way to find local services.
+$2B+ verified selected-company funding: Hark $700M+, Instinct $1.35B cumulative reported, Town $55M. See funding ledger. $3B+ is not established from this evidence; broad AI-lab financing cannot be allocated to Muse or Dots.
+Editable named logo positions: OpenAI Dots, Meta Muse, Claude. These platforms have developer connector paths, subject to review/compatibility/permissions.
+Use ≈$1.2T annual U.S. spending across selected local-service categories, consistent with slide 1 and the market-sizing note. This replaces the older $2T/$600B framing in this deck; underlying spending is not GoLocal fee revenue.
+Uber and DoorDash make booking straightforward. Local-service agents still cross websites, calls and business software to quote, check slots and confirm jobs.
+
+3. WHAT GOLOCAL BUILDS
+Agent labels: Instinct, Muse and Other agents. Instinct replaces Dots per the founder’s annotation. These are illustrative agent platforms, not signed demand partnerships.
+Native editable diagram: multiple personal agents ↔ GoLocal ↔ multiple FSM/CRM/booking systems ↔ participating businesses.
+GoLocal central data: services and coverage, prices/quote requirements, live slots, permitted transaction history. Actions: quote, book, pay, manage.
+System labels are placeholders for integration categories, not signed vendors. Merchant authorization is required; business systems remain authoritative.
+Calls query providers sequentially; GoLocal can compare connected supply through one query.
+Illustrative target ~15 min → under 5 sec for data lookup only, not measured and not total booking/scoping latency.
+
+4. BUSINESS MODEL AND DISTRIBUTION
+Proposed supplier-paid success fee on a fulfilled job from a new customer, with an agreed share for the demand partner. Terms remain open.
+Route to explore: direct partnership with a personal-agent platform to route relevant requests.
+Route to explore: user-added connector, marketed to a niche with urgent recurring pain. Installation still requires customer acquisition. A single prompt may initiate setup where supported; platform-specific permissions and integration steps can follow.
+Native sequence: approved connector → useful completed tasks → broader discovery. Recommendation is conditional on platform rules, not guaranteed from transaction history or early arrival.
+Cactus supplies merchant access; it is not the secured personal-agent demand partner.
+
+5. WHAT IS COMING TOGETHER
+Cactus serves 100+ trade shops in Salt Lake City and Dallas. Agreed introductions and booking access via its customers.
+Separate back-office company agreed to onboard 20 clients.
+Founder-reported commitments, not unique live merchants, deployed integrations, bookings or revenue.
+Native next-step sequence: one trade/city → connect authorized supply → route and fulfill real jobs.
+
+6. TEAM
+Pulkit Walia, Founder / HBS MBA. Urban Company founding team; decade building local services in Asia, zero to $3B IPO (founder-supplied company milestone).
+Rohit Jain, Engineering. Backend experience at Amazon/Square; production MCP products; system-design teaching. No inferred CTO/cofounder title or commitment.
+Close: GoLocal, the shared data and booking layer for home services.
+
+STATUS
+Six-slide structure retained, with slide 1 now simplified and visually refined. Editable text/table/diagrams and named logo positions remain. Sources and qualifications are in speaker notes. Previous deck retained. Main thesis, its Word/PDF and online Page unchanged. Application attachment was not replaced and application was not submitted.

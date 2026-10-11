@@ -1,0 +1,27 @@
+{
+  "reviewed": "2026-10-10",
+  "purpose": "Slide 4 launch and growth plan",
+  "sources": [
+    {
+      "url": "https://developers.openai.com/plugins/plugin-guidelines",
+      "finding": "Strong real-world utility and high user satisfaction may make a plugin eligible for enhanced directory placement or proactive suggestions. Conditional, not guaranteed."
+    },
+    {
+      "url": "https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/",
+      "finding": "OpenAI describes app-discovery experiments using conversational context, usage patterns and preferences, and possible future recommendations."
+    },
+    {
+      "url": "https://muse.ai/platform/docs",
+      "finding": "Approved connectors can be discovered by the agent and in Settings. More users getting value can broaden discovery; featuring considers usefulness, completion, reliability and maintenance and is not guaranteed."
+    }
+  ],
+  "founder_updates": [
+    "Proposed Salt Lake City pilot with one service category.",
+    "Latest founder statement: partnerships to onboard 50 service providers; not a live supply count. Exact partner attribution remains for slide 5 review."
+  ],
+  "limits": [
+    "One-time prompt is the intended setup entry point on compatible agents; authorization and booking approvals still apply.",
+    "No proven cold-start resolution, autonomous agent recommendation loop, completed jobs, demand volume, production integration or monetization.",
+    "Supplier-paid success fee and partner split proposed, not agreed."
+  ]
+}

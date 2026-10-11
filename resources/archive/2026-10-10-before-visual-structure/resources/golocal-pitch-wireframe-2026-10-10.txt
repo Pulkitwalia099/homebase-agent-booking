@@ -1,0 +1,49 @@
+GoLocal pitch content wireframe — October 10, 2026
+
+POSITIONING
+Stripe for home-service bookings.
+GoLocal connects personal agents to participating local businesses and their booking software. Agents get quotes, check availability, book jobs and manage bookings through one integration. We recruit and authorize supply as well as connect software. Proposed monetization: a supplier-paid success fee on a fulfilled job from a new customer, shared with the demand partner.
+
+SLIDE 1 — EVERY TECHNOLOGY SHIFT CREATES A NEW FRONT DOOR TO LOCAL SERVICES
+Cover: GoLocal. Stripe for home-service bookings.
+Simple progression: phone era / Yellow Pages; web era / Google and Craigslist; mobile era / Maps; agent era / ask your personal agent.
+This is a conceptual customer-journey progression, not a claim about product invention dates or that directories offered completed bookings.
+Closing line: Local services, booked by your personal agent.
+
+SLIDE 2 — $2B+ RAISED BY JUST THREE COMPANIES BUILDING PERSONAL AI AGENTS
+Lead with funding, then the channel shift, then the execution gap.
+Evidence: Hark over $700M Series A; Instinct $1B Series C plus $350M earlier reported total; Town $55M Series A. Combined reported funding exceeds $2.105B. This is a selected-company minimum, not an exhaustive market total or spending solely on service-booking capabilities. Wajo funding is unverified and excluded.
+Meta has launched Muse; Google and Anthropic already offer agent capabilities. Avoid implying both have only an unannounced future launch.
+Core copy: As more people ask personal agents to find services, local requests can arrive through many agents. But those agents face independent businesses using different booking systems and still rely on websites, forms and calls.
+Opportunity: a shared route from an agent request to a confirmed local booking.
+Market context: founder-sourced $2T local services, including $600B home services. Scope/year of those estimates is not established here; preserve the founder's supplied figures.
+Channel fragmentation is the investment thesis; funding does not quantify shifted local-search share or proven booking demand.
+
+SLIDE 3 — GOLOCAL GIVES AGENTS ONE CONNECTION TO BOOK PARTICIPATING LOCAL BUSINESSES
+Show multiple personal agents / GoLocal / multiple business software systems / participating local businesses.
+GoLocal owns supplier recruitment, merchant authorization, software connections and consistent quote/availability/booking actions.
+Simple example: a customer asks for a plumber tomorrow; their agent checks participating providers through GoLocal, gets a quote or appointment option, and confirms the booking in the provider's existing system. Quote requests must remain requests until accepted. Business software remains authoritative.
+Benefits: a business connects once to reach all agents connected to GoLocal; an agent company gets supplier access and standardized booking actions without onboarding every merchant itself.
+Nomenclature: booking infrastructure for home services. Technical detail: connects field service management (FSM) systems and other booking software through an API/MCP interface.
+Do not claim no existing middleware or service marketplace exists. Updater already markets infrastructure for AI agents including home improvement. The proposed gap is broad, reliable interoperability across independent trades/home-service suppliers and multiple systems; unserved scope still needs validation.
+
+SLIDE 4 — SUPPLIERS PAY WHEN GOLOCAL BRINGS A COMPLETED JOB FROM A NEW CUSTOMER
+Proposed supplier-paid success fee; share an agreed portion with the agent partner bringing demand. Pricing and split are unagreed.
+Distribution route one: direct personal-agent partnership routes eligible requests to GoLocal.
+Route two: user-added connector distributed to a narrow audience with an urgent task. Installation still requires a customer acquisition channel.
+These routes remain under exploration; Cactus is supplier access, not a secured personal-agent demand partner.
+Scale logic: add participating providers and software connections; serve more eligible requests across agents; expand once completion and economics repeat. A venture outcome is not established by a large market or a working endpoint alone.
+
+SLIDE 5 — PARTNERS HAVE AGREED TO OPEN ACCESS TO THE FIRST BUSINESSES
+Cactus AI: shop introductions and booking access through existing customers in Salt Lake City and Dallas, where it serves 100+ mid-market trade shops.
+Separate back-office management company: agreed to onboard 20 clients.
+These are separate founder-reported commitments, not 120 live unique merchants. Product integrations, bookings and revenue remain unreported.
+Next steps: select one trade and one partner city based on requests and useful supply; secure a demand route; connect and complete real bookings.
+
+SLIDE 6 — EXPERIENCE BUILDING LOCAL SERVICES; ENGINEERING FOR THE AGENT ERA
+Pulkit Walia: Urban Company founding team; decade building local services in Asia; helped scale from zero to a $3B IPO. HBS MBA student.
+Rohit Jain: software/backend engineering experience; production-grade MCP products. Engineering role, not an inferred CTO/cofounder title.
+Close: GoLocal aims to become the shared booking infrastructure personal agents use for home services.
+
+STATUS
+Content proposal for review. Existing deck/application attachment was not replaced and the application was not submitted. Online Page unchanged.

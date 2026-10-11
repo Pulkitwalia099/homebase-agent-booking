@@ -1,0 +1,393 @@
+- generic "Accessibility Menu":
+  - button "Accessibility Menu"
+- main:
+  - img: 
+  - textbox "Search Project":
+    - /placeholder: Search Housecall Pro Public API...
+  - heading "Delete job schedule" [level=1]
+  - 'generic "https://api.housecallpro.com/jobs/{job_id}/schedule"':
+    - generic: delete
+    - generic: "https://api.housecallpro.com/jobs/{job_id}/schedule"
+  - paragraph: Erase schedule on a job
+  - heading "Request" [level=2]:
+    - link "Request":
+      - /url: "#Request"
+      - generic: Request
+      - img: 
+  - 'button "Security: API Key"':
+    - img: 
+    - 'heading "Security: API Key"'
+  - 'button "Security: OAuth 2.0"':
+    - img: 
+    - 'heading "Security: OAuth 2.0"'
+  - heading "Path Parameters" [level=3]:
+    - link "Path Parameters":
+      - /url: "#Path-Parameters"
+      - generic: Path Parameters
+      - img: 
+  - generic: job_id
+  - generic: string
+  - generic: required
+  - heading "Responses" [level=2]:
+    - link "Responses":
+      - /url: "#Responses"
+      - generic: Responses
+      - img: 
+  - tablist:
+    - tab "200" [selected]
+  - tabpanel "200":
+    - paragraph: OK
+    - heading "Body" [level=3]:
+      - link "Body":
+        - /url: "#response-body"
+        - generic: Body
+        - img: 
+    - textbox
+    - combobox
+    - button "Response Body Content Type":
+      - generic: application/json
+      - img: 
+    - generic: responses
+    - generic: /
+    - generic: "200"
+    - generic: object
+    - generic: string
+    - generic: required
+    - generic: ">= 1 characters"
+    - generic: deleted
+    - generic: boolean
+    - generic: required
+  - button "Auth security-schemes" [expanded]:
+    - img: 
+    - text: Auth
+    - button "security-schemes":
+      - text: API Key
+      - img: 
+  - region:
+    - generic: Authorization
+    - generic: ":"
+    - textbox "Authorization":
+      - /placeholder: "123"
+  - button "Parameters" [expanded]:
+    - img: 
+    - text: Parameters
+  - region:
+    - generic: job_id*
+    - generic: ":"
+    - textbox "job_id":
+      - /placeholder: string
+  - button "Send API Request"
+  - button "Request Sample Language":
+    - text: "Request Sample: Shell / cURL"
+    - img: 
+  - button:
+    - img: 
+  - 'group "curl --request DELETE \\ --url https://api.housecallpro.com/jobs/{job_id}/schedule \\ --header ''Accept: application/json'' \\ --header ''Authorization: 123'' \\ --header ''Content-Type: application/json''"':
+    - generic: curl --request DELETE \
+    - generic: "--url https://api.housecallpro.com/jobs/{job_id}/schedule \\"
+    - generic: "--header 'Accept: application/json' \\"
+    - generic: "--header 'Authorization: 123' \\"
+    - generic: "--header 'Content-Type: application/json'"
+  - generic: Response Example
+  - button:
+    - img: 
+  - 'group "{ \"object\": \"schedule\", \"deleted\": true }"':
+    - generic: "1"
+    - generic: "{"
+    - generic: "2"
+    - generic: "\"object\": \"schedule\","
+    - generic: "3"
+    - generic: "\"deleted\": true"
+    - generic: "4"
+    - generic: "}"
+- link "Housecall Pro":
+  - /url: /
+  - img "Housecall Pro"
+- link "Home":
+  - /url: /
+  - img: 
+  - generic: Home
+- generic "Housecall Pro Public API":
+  - img:  
+- link "Housecall Pro Public API":
+  - /url: /docs/housecall-public-api
+- link "Authentication":
+  - /url: /docs/housecall-public-api/b87d37ae48a0d-authentication
+  - generic "Authentication":
+    - generic: Authentication
+- link "Changelog":
+  - /url: /docs/housecall-public-api/06ba3d648e345-changelog
+  - generic "Changelog":
+    - generic: Changelog
+- link "Multi-location Enabled APIs":
+  - /url: /docs/housecall-public-api/4c64fe617d191-multi-location-enabled-ap-is
+  - generic "Multi-location Enabled APIs":
+    - generic: Multi-location Enabled APIs
+- link "Pricebook API":
+  - /url: /docs/housecall-public-api/p5zsg5n9sbiij-pricebook-api
+  - generic "Pricebook API":
+    - generic: Pricebook API
+- link "Webhooks":
+  - /url: /docs/housecall-public-api/46e9e1be07621-webhooks
+  - generic "Webhooks":
+    - generic: Webhooks
+- generic: APIS
+- link "Housecall v1 API v1":
+  - /url: /docs/housecall-public-api/a4ca20a18010c-housecall-v1-api
+  - generic "Housecall v1 API":
+    - img: 
+    - generic: Housecall v1 API
+    - generic: v1
+    - img: 
+- generic "Checklists":
+  - generic: Checklists
+  - img: 
+- generic "Customers":
+  - generic: Customers
+  - img: 
+- link "Get Customers get":
+  - /url: /docs/housecall-public-api/042bd3bf861ae-get-customers
+  - generic "Get Customers":
+    - img: 
+    - generic: Get Customers
+    - generic: get
+- link "Create Customer post":
+  - /url: /docs/housecall-public-api/4e0bf8c4d65d7-create-customer
+  - generic "Create Customer":
+    - img: 
+    - generic: Create Customer
+    - generic: post
+- link "Get Customer get":
+  - /url: /docs/housecall-public-api/7599b1ec89338-get-customer
+  - generic "Get Customer":
+    - img: 
+    - generic: Get Customer
+    - generic: get
+- link "Update Customer put":
+  - /url: /docs/housecall-public-api/b1c3acd657849-update-customer
+  - generic "Update Customer":
+    - img: 
+    - generic: Update Customer
+    - generic: put
+- link "Get All of a Customer's Addresses get":
+  - /url: /docs/housecall-public-api/abdc4e24d762b-get-all-of-a-customer-s-addresses
+  - generic "Get All of a Customer's Addresses":
+    - img: 
+    - generic: Get All of a Customer's Addresses
+    - generic: get
+- link "Create an Address on a Customer post":
+  - /url: /docs/housecall-public-api/6cf593d8a90ca-create-an-address-on-a-customer
+  - generic "Create an Address on a Customer":
+    - img: 
+    - generic: Create an Address on a Customer
+    - generic: post
+- link "Get a Customer's Address get":
+  - /url: /docs/housecall-public-api/721b19310aa3b-get-a-customer-s-address
+  - generic "Get a Customer's Address":
+    - img: 
+    - generic: Get a Customer's Address
+    - generic: get
+- generic "Employees":
+  - generic: Employees
+  - img: 
+- generic "Estimates":
+  - generic: Estimates
+  - img: 
+- generic "Jobs":
+  - generic: Jobs
+  - img: 
+- link "Get Jobs get":
+  - /url: /docs/housecall-public-api/6c97704da8bf3-get-jobs
+  - generic "Get Jobs":
+    - img: 
+    - generic: Get Jobs
+    - generic: get
+- link "Create a Job post":
+  - /url: /docs/housecall-public-api/2dcf481ed7d69-create-a-job
+  - generic "Create a Job":
+    - img: 
+    - generic: Create a Job
+    - generic: post
+- link "Get a Job get":
+  - /url: /docs/housecall-public-api/bbabd67bed1ab-get-a-job
+  - generic "Get a Job":
+    - img: 
+    - generic: Get a Job
+    - generic: get
+- link "Add an Attachment to a Job post":
+  - /url: /docs/housecall-public-api/c4ea6b1217b22-add-an-attachment-to-a-job
+  - generic "Add an Attachment to a Job":
+    - img: 
+    - generic: Add an Attachment to a Job
+    - generic: post
+- link "Lists all line items for a job get":
+  - /url: /docs/housecall-public-api/1c84b6c79b94f-lists-all-line-items-for-a-job
+  - generic "Lists all line items for a job":
+    - img: 
+    - generic: Lists all line items for a job
+    - generic: get
+- link "Add a line item to a Job post":
+  - /url: /docs/housecall-public-api/99ba8250597cd-add-a-line-item-to-a-job
+  - generic "Add a line item to a Job":
+    - img: 
+    - generic: Add a line item to a Job
+    - generic: post
+- link "Bulk update a job's line items put":
+  - /url: /docs/housecall-public-api/79a5ef20427d5-bulk-update-a-job-s-line-items
+  - generic "Bulk update a job's line items":
+    - img: 
+    - generic: Bulk update a job's line items
+    - generic: put
+- link "Update a single line item for a job put":
+  - /url: /docs/housecall-public-api/7b05bc804ebcc-update-a-single-line-item-for-a-job
+  - generic "Update a single line item for a job":
+    - img: 
+    - generic: Update a single line item for a job
+    - generic: put
+- link "Delete a single line item for a job delete":
+  - /url: /docs/housecall-public-api/0c05c275eede7-delete-a-single-line-item-for-a-job
+  - generic "Delete a single line item for a job":
+    - img: 
+    - generic: Delete a single line item for a job
+    - generic: delete
+- link "Update job schedule put":
+  - /url: /docs/housecall-public-api/1d344f58672f9-update-job-schedule
+  - generic "Update job schedule":
+    - img: 
+    - generic: Update job schedule
+    - generic: put
+- link "Delete job schedule delete":
+  - /url: /docs/housecall-public-api/7c3db70353a4f-delete-job-schedule
+  - generic "Delete job schedule":
+    - img: 
+    - generic: Delete job schedule
+    - generic: delete
+- link "Dispatch job to employees put":
+  - /url: /docs/housecall-public-api/7395e7ae9c4e7-dispatch-job-to-employees
+  - generic "Dispatch job to employees":
+    - img: 
+    - generic: Dispatch job to employees
+    - generic: put
+- link "Lists all job input materials for a job get":
+  - /url: /docs/housecall-public-api/024edad38a2a2-lists-all-job-input-materials-for-a-job
+  - generic "Lists all job input materials for a job":
+    - img: 
+    - generic: Lists all job input materials for a job
+    - generic: get
+- link "Bulk update a job's input materials put":
+  - /url: /docs/housecall-public-api/ecc9f7a5d84bc-bulk-update-a-job-s-input-materials
+  - generic "Bulk update a job's input materials":
+    - img: 
+    - generic: Bulk update a job's input materials
+    - generic: put
+- link "Add job tag post":
+  - /url: /docs/housecall-public-api/f9f47b5268bae-add-job-tag
+  - generic "Add job tag":
+    - img: 
+    - generic: Add job tag
+    - generic: post
+- link "Add job note post":
+  - /url: /docs/housecall-public-api/62185fa6f6afc-add-job-note
+  - generic "Add job note":
+    - img: 
+    - generic: Add job note
+    - generic: post
+- link "Delete job note delete":
+  - /url: /docs/housecall-public-api/e3423d7dc7d5f-delete-job-note
+  - generic "Delete job note":
+    - img: 
+    - generic: Delete job note
+    - generic: delete
+- link "Remove job tag delete":
+  - /url: /docs/housecall-public-api/f34ea2077256c-remove-job-tag
+  - generic "Remove job tag":
+    - img: 
+    - generic: Remove job tag
+    - generic: delete
+- link "Create Job Link post":
+  - /url: /docs/housecall-public-api/083bf9924aa4b-create-job-link
+  - generic "Create Job Link":
+    - img: 
+    - generic: Create Job Link
+    - generic: post
+- link "Lock Job post":
+  - /url: /docs/housecall-public-api/90211f98061d0-lock-job
+  - generic "Lock Job":
+    - img: 
+    - generic: Lock Job
+    - generic: post
+- link "Lock Jobs post":
+  - /url: /docs/housecall-public-api/30432b125d051-lock-jobs
+  - generic "Lock Jobs":
+    - img: 
+    - generic: Lock Jobs
+    - generic: post
+- generic "Job Appointments":
+  - generic: Job Appointments
+  - img: 
+- generic "Job Invoices":
+  - generic: Job Invoices
+  - img: 
+- generic "Job Types":
+  - generic: Job Types
+  - img: 
+- generic "Leads":
+  - generic: Leads
+  - img: 
+- generic "Lead Sources":
+  - generic: Lead Sources
+  - img: 
+- generic "Application":
+  - generic: Application
+  - img: 
+- generic "Webhooks":
+  - generic: Webhooks
+  - img: 
+- generic "Materials":
+  - generic: Materials
+  - img: 
+- generic "Material Categories":
+  - generic: Material Categories
+  - img: 
+- generic "Price Forms":
+  - generic: Price Forms
+  - img: 
+- generic "Price Book Services":
+  - generic: Price Book Services
+  - img: 
+- generic "Service Zones":
+  - generic: Service Zones
+  - img: 
+- generic "Pipeline":
+  - generic: Pipeline
+  - img: 
+- generic "Routes":
+  - generic: Routes
+  - img: 
+- generic "Company":
+  - generic: Company
+  - img: 
+- generic "Schedule":
+  - generic: Schedule
+  - img: 
+- generic "Events":
+  - generic: Events
+  - img: 
+- generic "Tags":
+  - generic: Tags
+  - img: 
+- generic "Lead Line Items":
+  - generic: Lead Line Items
+  - img: 
+- generic "Invoices":
+  - generic: Invoices
+  - img: 
+- generic "Schemas":
+  - img: 
+  - generic: Schemas
+  - img: 
+- link "powered by Stoplight":
+  - /url: https://stoplight.io/?utm_source=workspaces&utm_medium=housecallpro&utm_campaign=powered_by&utm_content=/docs/housecall-public-api/7c3db70353a4f-delete-job-schedule
+  - generic:  
+  - text: powered by
+  - strong: Stoplight

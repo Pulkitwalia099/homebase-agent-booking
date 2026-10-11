@@ -1,0 +1,1 @@
+Completed conversational website release e58767f and verified custom-domain HTTPS, October 11, 2026. Exact report, credential-free source bundle, preview and navigation. Local theses and working Page unchanged.

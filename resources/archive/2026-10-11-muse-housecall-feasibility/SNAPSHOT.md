@@ -1,0 +1,1 @@
+Completed feasibility check and current setup notes. Official private custom connector path supported; account setup/credential grant and live Muse execution still pending. No supplier writes or spend; main theses and working Page unchanged. Credentials excluded.

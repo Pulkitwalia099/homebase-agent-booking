@@ -1,0 +1,1 @@
+Before the requested six-slide visual structure revision, October 10 2026. Exact prior deck and affected supporting files. Main thesis and working Page are separate and remain unchanged. No application replacement or submission.

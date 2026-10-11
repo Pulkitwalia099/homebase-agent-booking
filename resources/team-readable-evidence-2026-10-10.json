@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-10",
+  "source": "Latest annotations on v22 applied to current v23",
+  "deck": "output/pptx/golocal-pitch-v24.pptx",
+  "scope": "Slide 6 only",
+  "role": "Operations and Partnerships",
+  "body_emphasis": [
+    "$3B IPO",
+    "MCP integrations"
+  ],
+  "company_names": [
+    "Urban Company",
+    "Bessemer Venture Partners",
+    "Amazon",
+    "Square",
+    "Citrix"
+  ],
+  "company_logos": "Footer marks removed; names written in bullets",
+  "preserved": "Education logos, rounded photos, profile links, three native bullets per person, previously explicit numerical credentials",
+  "numeric_basis": "Previously explicit $50M retained; ambiguous numerical wording in annotation not interpreted as a new amount",
+  "unchanged": "Slides 1\u20135, thesis, Word/PDF, online Page, application"
+}

@@ -1,0 +1,14 @@
+{
+  "slide_count": 6,
+  "unchanged_slides_pixel_identical": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "6": true
+  },
+  "slide4_generic_model": true,
+  "slide5_pilot_and_pipeline": true,
+  "slides_4_5_visually_reviewed": true,
+  "validation_findings": 0,
+  "preexisting_slide1_warnings_retained": true
+}

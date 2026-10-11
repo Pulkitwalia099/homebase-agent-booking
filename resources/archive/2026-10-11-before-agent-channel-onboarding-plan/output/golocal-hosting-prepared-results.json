@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-11",
+  "status": "prepared-not-deployed",
+  "target": "Render Starter, free workspace, one instance, 1 GB disk",
+  "estimatedMonthlyBaseUSD": 7.25,
+  "budgetMonthlyUSD": 60,
+  "vendorUpgradePurchased": false,
+  "credentialTransferPerformed": false,
+  "connectorTestsPassed": 42,
+  "relayTestsPassed": 7,
+  "websiteBuildAndTypesPassed": true,
+  "containerImage": "golocal-hosting-test:20261011",
+  "containerForcedCrashRecovery": "passed with fictional data",
+  "concurrentWriter": "blocked",
+  "revocationAfterRestart": "preserved",
+  "vendorCallsInImageTest": 0,
+  "sourceDirectory": "website/services/golocal",
+  "hostedOrigin": "https://api.getgolocal.com",
+  "capUsed": 3,
+  "capLimit": 3,
+  "hostingSpendSoFarUSD": 0
+}

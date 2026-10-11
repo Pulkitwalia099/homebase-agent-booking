@@ -1,0 +1,1 @@
+Completed authorized slide 4 revision: editable six-slide v15 and slide 4 preview. Only slide 4 changed; slides 1–3 and 5–6 compared pixel-identical to v14. Sources and qualifications preserved in notes and dated evidence. Previous deck and PDF retained in before-snapshot. Main thesis, its Word/PDF and online Page unchanged. No application or outreach action.

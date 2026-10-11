@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-11",
+  "scope": "Production planning for customers already using AI agents; not a separate consumer marketplace.",
+  "artifact": "output/golocal-agent-onboarding-plan.html",
+  "recommendation": [
+    "Use custom Muse/Dots connections for controlled agent-user pilots.",
+    "Build approved directory distribution for self-serve activation.",
+    "Pursue an agent routing partnership to reduce discovery/installation work.",
+    "Prioritize reviewed Jobber OAuth; test supplier capabilities before public rollout.",
+    "For Housecall non-MAX businesses, obtain explicit business acceptance behind GoLocal while the customer stays in the agent. Native booking and limited Zapier are conditional alternatives, not equivalent API access."
+  ],
+  "boundaries": [
+    "One GoLocal product, separate grants/installations per agent and separate merchant authorization.",
+    "Directory listing does not guarantee agent selection or demand.",
+    "Housecall partner access and lower-plan eligibility require written confirmation; affiliate status is insufficient.",
+    "Requests and job drafts must not be called confirmed appointments.",
+    "Schedule removal is not cancellation.",
+    "Current prototype is one company, synthetic jobs only, three-job cap exhausted.",
+    "Production fulfillment, representative agent demand, paid continuation and venture economics remain unproven."
+  ],
+  "verifiedUI": {
+    "tabs": 4,
+    "keyboardTabNavigation": true,
+    "outcomes": [
+      "confirmed",
+      "pending",
+      "unknown",
+      "changed",
+      "cancelled"
+    ],
+    "desktopViewportWidth": 1280,
+    "bodyOverflow": false
+  },
+  "sources": [
+    "https://www.meta.com/help/artificial-intelligence/1687253048996149/",
+    "https://muse.ai/platform/docs",
+    "https://developers.openai.com/plugins/deploy/connect-chatgpt",
+    "https://developers.openai.com/plugins/deploy/submission",
+    "https://learn.chatgpt.com/docs/dots/computers-and-apps",
+    "https://developer.getjobber.com/docs/getting_started/",
+    "https://developer.getjobber.com/docs/publishing_your_app/app_review_process/",
+    "https://developer.getjobber.com/docs/building_your_app/testing_your_app/",
+    "https://help.getjobber.com/en/articles/app-marketplace/",
+    "https://help.housecallpro.com/en/articles/8505035-api-overview",
+    "https://www.housecallpro.com/pricing/",
+    "https://help.housecallpro.com/en/articles/7034474-online-booking-overview",
+    "https://help.housecallpro.com/en/articles/5138242-companycam-integration-overview",
+    "https://help.housecallpro.com/en/articles/5449431-faqs-about-hcp-data",
+    "https://www.housecallpro.com/partner/",
+    "https://help.housecallpro.com/en/articles/5452973-zapier-integration-overview"
+  ],
+  "mainThesesChanged": false,
+  "workingPageChanged": false
+}

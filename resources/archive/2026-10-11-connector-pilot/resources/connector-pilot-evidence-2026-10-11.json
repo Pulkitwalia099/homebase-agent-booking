@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-11",
+  "scope": "Private GoLocal connector prototype for the founder's own agent and synthetic business account. No production bookings or demand evidence.",
+  "sources": [
+    { "url": "https://www.meta.com/help/artificial-intelligence/1687253048996149/", "finding": "Muse offers a private Custom Connector path guided from chat and a Secure Credentials Store. Retrieved via Parallel Fetch after the web reader timed out." },
+    { "url": "https://muse.ai/platform/docs", "finding": "Public connector review is separate; requires documented tools, test access, security and complete supported workflows." },
+    { "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps", "finding": "Dots can use supported installed/enabled plugins, subject to permissions and execution environment." },
+    { "url": "https://developers.openai.com/plugins/build/mcp-server", "finding": "Official SDK and Streamable HTTP tool implementation guidance; authorization and meaningful annotations required." },
+    { "url": "https://developer.getjobber.com/docs/getting_started/", "finding": "Separate developer and business accounts; developer testing signup offers a 90-day testing window. GraphiQL token is short-lived and reauthorization invalidates previous refresh tokens." },
+    { "url": "https://developer.getjobber.com/docs/building_your_app/app_authorization/", "finding": "OAuth authorization code, state, S256 PKCE, secret exchange, account identity and refresh rotation are documented." },
+    { "url": "https://developer.getjobber.com/docs/using_jobbers_api/api_queries_and_mutations/", "finding": "Documented fixed clientCreate example used as the first controlled write. Live verification pending business account." },
+    { "url": "https://developer.getjobber.com/docs/changelog/", "finding": "2026-09-25 listed as active version and pinned in this pilot. Verify the authorized schema before scheduling implementation." },
+    { "url": "https://developer.getjobber.com/docs/building_your_app/testing_your_app/", "finding": "Use internal testing; coordinate with Jobber before testing with existing customers or broad distribution." },
+    { "url": "https://help.housecallpro.com/en/articles/8505035-api-overview", "finding": "Housecall Pro API requires MAX; eligible admins generate read-only or full-access keys." },
+    { "url": "https://www.housecallpro.com/pricing/", "finding": "Advertises a no-card 14-day trial with MAX features; actual trial API-key entitlement has not been tested." },
+    { "url": "https://www.getjobber.com/pricing/", "finding": "Standard no-card 14-day trial on Grow; shorter fallback to investigate after developer signup failure." },
+    { "url": "https://www.getjobber.com/sign-up/", "finding": "Standard signup offers Start with Google and Start with Apple. Google signup was opened for user handoff; account creation not confirmed." }
+  ],
+  "observations": [
+    "User authorized account creation, selected pulkitwalia099@gmail.com, and approved saving a private app with Clients read/write and Jobs read-only scopes.",
+    "User completed Developer Center signup. GoLocal Connector Test app saved; generated credentials copied directly from visible credential fields to private local .env without disclosure in chat.",
+    "Business developer signup returned An unexpected error occurred in the in-app browser; user also reported failure with another email and in Chrome.",
+    "Analytics errors were observed in the signup page console; they do not establish causation for the signup failure.",
+    "Standard free trial with Google signup opened as a fallback. No paid plan or billing information was submitted.",
+    "16 automated tests passed; Jobber HTTP responses were mocked. Real MCP SDK smoke completed search, availability, quote, approval, simulated booking, duplicate retry, status and cancellation over public HTTPS.",
+    "Temporary ngrok tunnel uses inspect=false. MCP and REST endpoints require a dedicated private bearer token; operator actions use a separate credential.",
+    "Actual Muse calls, Dots installation, live Jobber data reads/writes, appointment scheduling, fulfillment and payments are unverified."
+  ],
+  "money_spent_usd": 0,
+  "user_spending_cap_usd": 60,
+  "unchanged": ["Local short and detailed theses", "Working Page", "Public website and deployment"]
+}

@@ -1,0 +1,198 @@
+The approved GoLocal relay is now live and independently verified at https://getgolocal.com/api/connector/integration. The user approved publishing it and updating this existing GoLocal connector to that destination. Update custom.golocal to allow only getgolocal.com and use GET https://getgolocal.com/api/connector/tools and POST https://getgolocal.com/api/connector/tools/{name}. Reuse the existing GoLocal credential in your secure store unchanged; its expiry remains October 12, 2026, 1:48 a.m. Eastern. Do not put a credential in chat, add unrelated hosts, or create a separate Housecall consumer connector. Keep write approvals on Ask. First run actual authenticated read-only schemas, connector_status, housecall_company, and housecall_list_jobs through the relay using normal TLS and routing. Expected company GoLocal Connector Test, ID 4cd1c8ed-be46-46ea-a458-98b8063b82f3. Report actual results before any write. One synthetic job remains under the global cap; reserve the existing idempotency key golocal-muse-e2e-20261011-c1. Stop on unknown outcomes; no automatic write retries.
+Assistant message: Read results are in — and there's an auth blocker to report before any write.
+
+**What worked:**
+- The relay is reachable, and its public integration doc confirms the exact same API shape (`GET /api/connector/tools`, `POST /api/connector/tools/{name}`) with `Authorization: Bearer` using the securely stored GoLocal test credential. Seven tools, same schemas.
+- The connector update was accepted: `custom.golocal` returned `already_connected` — no new link minted, your stored credential reused unchanged, as instructed. The skill now points at the relay.
+
+**What failed:**
+- Authenticated `GET /api/connector/tools` → **HTTP 401 `{"code":"UNAUTHORIZED"}`**. The company is not verified, so I did not run the other reads — they'd carry the same credential. No writes attempted.
+
+**Honest assessment:** the credential itself was verified good about an hour ago via your independent direct call, so I don't believe it's bad — and per your instruction I'm not replacing it. That leaves two candidates: either the secure surrogate wasn't swapped for the real bearer on egress to the new host, or the company/origin-bound bearer is being rejected when presented via the relay path rather than directly. I can't distinguish these from my side.
+
+This needs an operator-side check of how the relay handles the bearer. Everything stays parked: no writes, no retries, idempotency key `golocal-muse-e2e-20261011-c1` still reserved, three-job budget untouched.
+User message: The deployed relay independently accepts the exact existing raw GoLocal bearer: schema GET and company POST both returned 200, and wrong/missing bearers return 401. Thus the 401 happens before vendor company/origin checks. Your request_api_access returning already_connected may have preserved the original ngrok-only surrogate host binding instead of updating it. Inspect the supported credentials API documentation for updating allowed_hosts on an existing custom.golocal credential or re-linking the same provider to the new host. User approval explicitly covers changing that destination to getgolocal.com and saving the same existing key there, without extending expiry or permissions. If secure re-entry is necessary, present its dedicated credential form; I can enter the existing key there. Do not expose keys/surrogates, print secrets, bypass auth or relax the relay. Keep writes parked until an actual authenticated schema read succeeds.
+Assistant message: **Documentation finding:** there is no separate "update allowed_hosts" API — re-linking the same provider with `reconnect=true` is the supported path for moving the destination, which matches your diagnosis: the earlier `already_connected` short-circuit kept the old ngrok-only surrogate binding, so the bearer never reached the relay.
+
+**Task:** re-link the existing `custom.golocal` connector to `getgolocal.com` only, saving the same existing key. The credential comes from your own GoLocal pilot setup — it's the same company/origin-bound test bearer you already hold (expiring Oct 12, 2026, 1:48 AM Eastern). Nothing new to create, no expiry or permission changes; the seven tools and write-approval rules stay exactly as they are. Enter that same key on the secure form below — I never see it.
+Assistant message: Golocal is connected through the relay now — the re-link worked.
+
+**Actual read results:**
+- `GET /api/connector/tools` → 200, all seven schemas returned
+- `housecall_company` → 200, verified: **GoLocal Connector Test**, `4cd1c8ed-be46-46ea-a458-98b8063b82f3`, `America/New_York`
+- `connector_status` → timed out (~30s, no response)
+- `housecall_list_jobs` → timed out (~30s, no response)
+
+The relay's own docs note it still depends on the local server and ngrok tunnel, and the path is slow — even the successful calls took 20–40 seconds. So the one-job budget is still not independently verified, and per your stop rule I'm not proceeding to writes.
+
+Want me to retry the two timed-out reads, or leave the test parked until the tunnel path is more stable?
+User message: The re-link succeeded. I independently rechecked relay connector_status just now: HTTP 200 in 513 ms, backend housecall, synthetic writes enabled, liveBookingsSupported false and paymentsSupported false. Retry only the two read-only calls one at a time, with a 90-second client timeout to allow for your per-request approval latency (the relay itself has a 20-second upstream deadline). Preserve normal TLS, default routing and the same secure credential. Request approval for each call, then return the actual HTTP results. Do not retry a write or prepare a quote yet. The previously approved test can resume once these reads verify the state.
+Assistant message: Both reads are green — actual results:
+
+**`connector_status` → 200**
+- backend: `housecall`, pilot: true, singleOperator: true
+- liveBookingsSupported: false, paymentsSupported: false
+- housecallConfigured: true, housecallTestWritesEnabled: true
+- jobberConnected: false, jobberTestWritesEnabled: false
+- Matches your independent check exactly.
+
+**`housecall_list_jobs` → 200**
+- 2 jobs, both `needs scheduling`: `job_2e0d3b1c453b45dbab46441411a44f44` (invoice 2), `job_8ead1790a92c40e89c0294e6d1ed4359` (invoice 1)
+- Page 1 of 1, availabilityInferred: false
+
+That independently confirms exactly **one job remains** under the global three-job cap. Test mode, company, and budget all verify — the approved test can resume.
+
+Next step is the first write. For your approval — the exact operation I will run:
+
+**`prepare_housecall_test_booking` with `{}`** — stores one $0 synthetic quote with the fixed fictional customer in GoLocal Connector Test. No job is created by this call; the quote comes back for your review first, and I'll show the exact returned quote and appointment with all guard flags before anything else happens.
+
+Approve this quote preparation?
+You:
+
+Approve exactly prepare_housecall_test_booking with {} in GoLocal Connector Test through the approved relay. Run it once with the 90-second client timeout, show its returned quote ID, total, appointment and guard flags for review before confirmation. No new job yet, no messages, no payment or service.
+
+👍
+
+Quote prepared — here it is for your review, before anything is confirmed:
+
+Quote ID: c1972daf-3e9f-4120-8780-acdb0177559f
+
+Company: 4cd1c8ed-be46-46ea-a458-98b8063b82f3 (GoLocal Connector Test)
+Total: $0.00 USD
+Appointment: Oct 12, 12:00–13:00 EDT (16:00–17:00 UTC)
+Customer: "GoLocal API Test - No Service" (fixed fictional customer)
+Service: "Synthetic plumbing test - NO SERVICE"
+
+Guard flags — all verify:
+
+customerContactVerified: true ✓
+customerHasEmail: false ✓ · customerHasPhone: false ✓ · customerNotifications: false ✓
+workStartSupported: false ✓ · dispatchWorkflowSupported: false ✓ · paymentsSupported: false ✓ · availabilityChecked: false ✓
+
+No job created yet, no messages, no payment, no service. The quote expires; nothing else happens until you approve the next step.
+
+For your approval — the exact confirmation I will run:
+confirm_housecall_test_booking with quote_id=c1972daf-3e9f-4120-8780-acdb0177559f, idempotency_key=golocal-muse-e2e-20261011-c1, user_approved=true. This creates the one synthetic test job.
+
+Approve the confirmation?
+
+You:
+
+Approve this exact $0 synthetic quote c1972daf-3e9f-4120-8780-acdb0177559f for Oct 12, 12:00–13:00 EDT, fixed GoLocal API Test - No Service customer in the bound test company, with every guard flag shown. Run confirm_housecall_test_booking once with {"quote_id":"c1972daf-3e9f-4120-8780-acdb0177559f","idempotency_key":"golocal-muse-e2e-20261011-c1","user_approved":true}. Use the 90-second client timeout. On a known success, read housecall_test_booking_status for only its returned job ID and show the result. No messages, work-start, dispatch, invoice sending or payment. Stop on unknown write outcome; do not automatically retry or use a different quote/key.
+
+👍
+
+Job created and verified — actual results:
+
+confirm_housecall_test_booking → success (first creation, idempotentReplay: false)
+
+Job ID: job_7bec0be6b918473ba4492fc0d9dc882c · Invoice 3 · Status: scheduled
+When: Oct 12, 12:00–13:00 EDT
+Money: total $0.00, charged $0.00
+realVendorRecord: true · syntheticCustomer: true · customerNotifications: false · availabilityChecked: false
+
+housecall_test_booking_status for that job returns the identical state. No messages, no dispatch, no work-start, nothing invoiced or paid.
+
+The global cap is now 3 of 3 — no further jobs may be created under any key.
+
+Next, the idempotency check from your plan. For your approval — the exact repeat I will run, once:
+confirm_housecall_test_booking with the identical quote_id=c1972daf-3e9f-4120-8780-acdb0177559f, idempotency_key=golocal-muse-e2e-20261011-c1, user_approved=true. Expected: same job job_7bec0be6… returned with replayed:true, no new job.
+
+Approve the repeat confirmation?
+
+You:
+
+Approve the exact known-success duplicate check once: confirm_housecall_test_booking with {"quote_id":"c1972daf-3e9f-4120-8780-acdb0177559f","idempotency_key":"golocal-muse-e2e-20261011-c1","user_approved":true}. Verify it returns the same job job_7bec0be6b918473ba4492fc0d9dc882c and replay flag true, with no additional job. Keep the 90-second client timeout. Then show the exact schedule-removal operation for that job; do not cancel/delete the record.
+
+👍
+
+Idempotency verified — the duplicate check behaved exactly as designed:
+
+Repeat confirm_housecall_test_booking (identical quote + key) → same job job_7bec0be6b918473ba4492fc0d9dc882c, invoice 3, idempotentReplay: true. No additional job was created. The global cap holds at 3 of 3.
+
+Final step of your plan — the exact schedule-removal operation, for your approval (not run yet):
+
+unschedule_housecall_test_booking with {"job_id":"job_7bec0be6b918473ba4492fc0d9dc882c","user_approved":true}
+
+This removes the schedule from only the new job. It does not cancel or delete the record — expected end state: needs scheduling, null scheduled timestamps, notifications off, $0. I'll read the final status right after.
+
+Approve the unschedule?
+
+You:
+
+Approve exactly unschedule_housecall_test_booking with {"job_id":"job_7bec0be6b918473ba4492fc0d9dc882c","user_approved":true}, only this new synthetic job. Run once with the 90-second client timeout, then read its authoritative status. Verify needs scheduling, null start/end, notifications off and $0; do not cancel/delete the job. Report the completed lifecycle with exact quote/job/key, replay result and final guard flags. No further jobs or writes after this test.
+
+👍
+
+Test complete — full lifecycle report:
+
+Reads (all 200)
+
+Schemas: all seven tools · connector_status: housecall backend, test mode, live bookings and payments off · housecall_company: GoLocal Connector Test, 4cd1c8ed-be46-46ea-a458-98b8063b82f3 · housecall_list_jobs: 2 jobs → one slot left under the cap
+
+Prepare (approved) → quote c1972daf-3e9f-4120-8780-acdb0177559f, $0.00 USD, Oct 12 12:00–13:00 EDT, fixed fictional customer. All guard flags verified (contact verified, no email/phone, notifications/dispatch/work-start/payments/availability all off).
+
+Confirm (approved) → job job_7bec0be6b918473ba4492fc0d9dc882c, invoice 3, key golocal-muse-e2e-20261011-c1, first creation. Status read: scheduled, $0.
+
+Repeat confirm (approved) → same job, idempotentReplay: true. No additional job.
+
+Unschedule (approved) → needs scheduling, null start/end, unscheduled: true, jobCancelled: false. Final status read identical: notifications off, $0.00 charged.
+
+No messages, dispatch, work-start, invoice sending, or payment at any point — and none possible through these tools. No further jobs or writes from here; the test is concluded.
+
+Muse
+Connected
+Today
+Unschedule housecall test booking
+Unschedule completed and status confirmed
+2:51
+Run duplicate booking check
+Verified replay, no duplicate job created
+2:51
+Approve GoLocal Test Booking
+Confirmed and scheduled the GoLocal test booking
+2:50
+Run Housecall test booking
+Prepared test booking and stored quote details
+2:50
+Verify read-only connector calls
+Verified read-only connector calls with HTTP results
+2:49
+Check GoLocal relay re-link
+Relay re-linked; reads partial, writes blocked
+2:48
+Re-link GoLocal connector
+Paused waiting for key re-entry
+2:46
+Fix GoLocal host binding
+Generated reconnect link and documented host binding fix
+2:46
+Update GoLocal connector to relay
+Connector update blocked by 401 UNAUTHORIZED
+2:45
+Check GoLocal Website Reachability
+GoLocal site reachable: HTTP 200 in 0.64s
+1:56
+Diagnose GoLocal Proxy Path
+Logged GoLocal proxy diagnosis with blocked egress
+1:54
+Diagnose GoLocal read endpoint
+Checking proxy environment variables for GoLocal
+1:52
+Run GoLocal end-to-end test
+Marked 6 tasks blocked after VM egress timeouts
+1:51
+Check GoLocal connector status
+Marked GoLocal custom.golocal connector as connected
+1:48
+Configure GoLocal Custom Connector
+Saved GoLocal setup with 7 tools and secure link
+1:43
+Prepare GoLocal Housecall Connector
+Documented GoLocal Housecall connector config and credentials
+1:41
+Sep 20
+Create name picker widget
+Created the name picker widget
+20:00
+Message

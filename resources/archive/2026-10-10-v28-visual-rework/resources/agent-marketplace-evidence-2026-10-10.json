@@ -1,0 +1,31 @@
+{
+  "checked_on": "2026-10-10",
+  "purpose": "Support V28 opportunity slide marketplace comparison",
+  "slide_line": "Uber, DoorDash and Booking.com bring organized supply to AI agents.",
+  "gap_line": "Local providers still span disconnected quoting, scheduling and booking systems.",
+  "claim_boundary": "Different depths of integration. No claim that all platforms complete every booking/payment inside every agent, and no universal absence-of-competition claim.",
+  "sources": [
+    {
+      "url": "https://developer.uber.com/docs/third-party-rides-demand-v1/introduction",
+      "finding": "Official developer documentation describes agentic MCP ride booking and access to supply, pricing and trip lifecycle."
+    },
+    {
+      "url": "https://developer.doordash.com/en-US/mcp/",
+      "finding": "Official page describes CLI and corporate MCP ordering, including checkout, in limited beta."
+    },
+    {
+      "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+      "finding": "May 20, 2026 announcement: ChatGPT app supports rental-car discovery and redirects to Booking.com to complete reservation."
+    },
+    {
+      "url": "https://developers.booking.com/demand/docs/getting-started/overview",
+      "finding": "Demand API supports integrated booking for eligible partners and supported travel services. This is separate from the ChatGPT app flow."
+    },
+    {
+      "url": "https://updater.com/",
+      "finding": "Markets commerce infrastructure for AI agents, including moving and home improvement. Supports avoiding a blanket claim that nothing exists. Marketing does not establish coverage or reliability for GoLocal's target pilot."
+    }
+  ],
+  "final_deck_use": "Marketplace comparisons omitted from final slides following founder steering. Research preserved as context, not final pitch wording.",
+  "final_slide_close": "A platform that closes the last two steps can earn a share of completed local-service bookings."
+}

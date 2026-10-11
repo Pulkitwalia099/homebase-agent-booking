@@ -1,0 +1,39 @@
+Stopped before confirmation. The company checks passed, but the returned quote didn’t expose the customer’s email/phone state or an explicit no-work-start guard. The tool description says “no contact details,” but that wasn’t verified in the result. No new vendor job was created
+
+Actual MCP results, in order (all isError=false):
+
+connector_status
+backend="housecall"; housecallTestWritesEnabled=true; housecallConfigured=true; liveBookingsSupported=false; paymentsSupported=false; dotsOAuthScope="golocal:housecall-test"; jobberConnected=false; jobberTestWritesEnabled=false
+modeNotice="Housecall bound synthetic test jobs enabled. No real service, crew availability, payments or job cancellation API; schedule removal only."
+
+housecall_company
+id="4cd1c8ed-be46-46ea-a458-98b8063b82f3"
+name="GoLocal Connector Test"
+timeZone="America/New_York"
+
+housecall_list_jobs
+One existing job: job_8ead1790a92c40e89c0294e6d1ed4359
+invoiceNumber="1"; workStatus="needs scheduling"
+page=1; totalPages=1; availabilityInferred=false
+This job was left untouched
+
+prepare_housecall_test_booking
+Exactly one quote prepared:
+
+Quote ID: 3c5826b9-2c9e-4ae8-ac63-89e3279c8582
+Company ID: 4cd1c8ed-be46-46ea-a458-98b8063b82f3
+Customer: “GoLocal API Test - No Service”
+Service: “Synthetic plumbing test - NO SERVICE”
+Amount: 0 USD
+Quoted local schedule: October 12, 2026, noon–1pm America/New_York (EDT, UTC−04:00)
+start="2026-10-12T16:00:00.000Z"
+end="2026-10-12T17:00:00.000Z"
+expiresAt=1791697050554
+availabilityChecked=false
+Exact terms: “Creates a real $0 test job in your trial only. Housecall may assign the bound test owner automatically. No dispatch workflow, payment or customer notifications. Schedule removal does not cancel the job.”
+
+Confirmation, status, idempotency retry and unscheduling were not run. New/retry job IDs, idempotentReplay, final vendor workStatus/timestamps, amountCharged and jobCancelled are therefore unavailable. The $0 quote is not an amountCharged result
+
+The connector needs to expose the missing safety evidence before this guarded end-to-end test can proceed
+
+1:28 AM

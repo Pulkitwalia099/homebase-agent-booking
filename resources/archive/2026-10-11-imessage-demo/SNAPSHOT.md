@@ -1,0 +1,1 @@
+Completed iMessage-style GoLocal demo with ChatGPT Dots, Muse, Instinct, OpenClaw and Hermes ecosystem row. Production release 8495e67 verified on getgolocal.com. Source bundle includes supplied brand artwork and provenance notes. Local theses and online Page unchanged.

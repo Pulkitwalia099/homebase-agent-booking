@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-10",
+  "scope": "Founder-requested team slide redesign",
+  "deck": "output/pptx/golocal-pitch-v22.pptx",
+  "latest_founder_corrections": {
+    "Pulkit Walia": {
+      "label": "Stratton",
+      "facts": [
+        "Built Asia\u2019s largest home services marketplace from zero to a $3B IPO as an Urban Company founding team member",
+        "Launched first venture, a home security consumer brand, at 19 and scaled to $700K revenue",
+        "Investor at Bessemer Venture Partners; $50M deployed in consumer AI startups retained from prior founder instruction"
+      ]
+    },
+    "Rohit Jain": {
+      "label": "Engineering",
+      "facts": [
+        "5 years as a Senior SWE at Amazon, Square and Citrix",
+        "#1 system design tutor on Udemy, with 2,500 engineers taught",
+        "Built production-grade MCP integrations"
+      ]
+    }
+  },
+  "supersedes": {
+    "engineers_taught": "Latest user figure 2,500 replaces earlier 25,000+ in this deck. Original source/draft preserved.",
+    "pulkit_label": "Stratton replaces Founder exactly as typed by the user."
+  },
+  "fact_basis": "Latest founder-supplied statements preserved. Asia-largest claim, seniority across companies, #1 ranking and training count not independently audited. No invented rank basis, year, commitment or title.",
+  "education": {
+    "Pulkit": "Harvard Business School MBA",
+    "Rohit": "Texas A&M Computer Science; IIT Kharagpur",
+    "basis": "Founder screenshot and live Laoh team page previously inspected. No extra degree types."
+  },
+  "logos": {
+    "Harvard Business School": "public/team/hbs.jpg in founder-supplied get-an-expert-web repository",
+    "Texas A&M": "https://aux.tamu.edu/logos/boxTAM.svg",
+    "IIT Kharagpur": "https://www.uxdt.nic.in/wp-content/uploads/2024/06/iit-khargpur-01.jpg"
+  },
+  "assets": {
+    "live-image-6.jpeg": "2befc1bfb90148a40094c5fed6f9d9c0cfa973523af577e357014479429336f8",
+    "live-image-2.jpeg": "9947ed814e3d2585b1fb9b291541bb0f09e0d45bacd2517e5c18ef8b322902e8",
+    "live-image-5.png": "19c1823fb50e4f3a217dc58f2e58c445485e4b5b28d18865e397ba03113a8d50",
+    "repo-uc.jpg": "48b71319a66fff1c1464c3404f19a387cc87050bc84bf353c0ed49601d080604",
+    "repo-bessemer.jpg": "8a2009aa9ebb7003c90f3326fea03c343307fb38b1457346c933374fb6413fdd",
+    "repo-amazon.jpg": "3edbc850c4cfe50d87ea46d29c984f7af19abac11ce017d049c9294ab67cf08a",
+    "repo-square.jpg": "88a44daeed4a5364c36f6b81b2976acc488fb901edca063298ade3cde352e2b5",
+    "repo-hbs.jpg": "bd74a2ebc3119e327c23e86d27ddaae1f8306b50470d113ff3d304fd6e0fc042",
+    "tamu.svg": "8b6a470b4336c53133dbbb0c68f3660252a0769eb0980b4a4e56509838cb0105",
+    "tamu.png": "4e08dcf76271694f775ed103fe02e4b413371334548b2bcfae2d1aca1b9ec8a2",
+    "iit-emblem.jpg": "aec5d5c5747197134d8a73af0c9e61b419dfc77dd42996220af9ef6b1c80a7bf"
+  },
+  "design": "Two flat profiles, native rounded portraits, education marks, three native bullet paragraphs each, restrained company logo footer. Editable text and original embedded images.",
+  "limits": [
+    "Company IPO milestone is not GoLocal revenue or valuation",
+    "$700K venture revenue differs from $50M deployed investment capital",
+    "Company/university logos identify background, not endorsements or partnerships",
+    "Main thesis, online Page, PDFs and application unchanged"
+  ]
+}

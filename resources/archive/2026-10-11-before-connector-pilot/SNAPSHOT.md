@@ -1,0 +1,1 @@
+Before adding the Muse/Jobber connector pilot and research navigation on October 11, 2026. Exact copies of affected project navigation files. Local thesis, website and working Page are unchanged. No credentials included.

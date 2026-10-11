@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-11",
+  "pluginId": "asdk_app_6acb1d4924948191a8174cbd6d6888cf",
+  "scope": "golocal:housecall-test",
+  "companyId": "4cd1c8ed-be46-46ea-a458-98b8063b82f3",
+  "quoteId": "0b29be64-8e3c-4437-8d14-063a076119ac",
+  "jobId": "job_2e0d3b1c453b45dbab46441411a44f44",
+  "idempotencyKey": "hcp-dot-e2e-20261011-b1",
+  "dotsReported": {
+    "successfulCalls": 9,
+    "newJobs": 1,
+    "initialWorkStatus": "scheduled",
+    "initialScheduledStart": "2026-10-12T16:00:00Z",
+    "initialScheduledEnd": "2026-10-12T17:00:00Z",
+    "scheduledStartLocal": "2026-10-12T12:00:00-04:00",
+    "idempotentReplay": true,
+    "unscheduled": true,
+    "jobCancelled": false
+  },
+  "independentConnectedToolResults": {
+    "connectorStatus": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"backend\":\"housecall\",\"pilot\":true,\"singleOperator\":true,\"liveBookingsSupported\":false,\"paymentsSupported\":false,\"dotsOAuthEnabled\":true,\"dotsOAuthScope\":\"golocal:housecall-test\",\"jobberConnected\":false,\"jobberTestWritesEnabled\":false,\"housecallConfigured\":true,\"housecallTestWritesEnabled\":true,\"modeNotice\":\"Housecall bound synthetic test jobs enabled. No real service, crew availability, payments or job cancellation API; schedule removal only.\"}"
+        }
+      ],
+      "structuredContent": {
+        "backend": "housecall",
+        "pilot": true,
+        "singleOperator": true,
+        "liveBookingsSupported": false,
+        "paymentsSupported": false,
+        "dotsOAuthEnabled": true,
+        "dotsOAuthScope": "golocal:housecall-test",
+        "jobberConnected": false,
+        "jobberTestWritesEnabled": false,
+        "housecallConfigured": true,
+        "housecallTestWritesEnabled": true,
+        "modeNotice": "Housecall bound synthetic test jobs enabled. No real service, crew availability, payments or job cancellation API; schedule removal only."
+      },
+      "isError": false
+    },
+    "company": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"id\":\"4cd1c8ed-be46-46ea-a458-98b8063b82f3\",\"name\":\"GoLocal Connector Test\",\"timeZone\":\"America/New_York\"}"
+        }
+      ],
+      "structuredContent": {
+        "id": "4cd1c8ed-be46-46ea-a458-98b8063b82f3",
+        "name": "GoLocal Connector Test",
+        "timeZone": "America/New_York"
+      },
+      "isError": false
+    },
+    "jobList": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"jobs\":[{\"id\":\"job_2e0d3b1c453b45dbab46441411a44f44\",\"invoiceNumber\":\"2\",\"workStatus\":\"needs scheduling\"},{\"id\":\"job_8ead1790a92c40e89c0294e6d1ed4359\",\"invoiceNumber\":\"1\",\"workStatus\":\"needs scheduling\"}],\"page\":1,\"totalPages\":1,\"availabilityInferred\":false}"
+        }
+      ],
+      "structuredContent": {
+        "jobs": [
+          {
+            "id": "job_2e0d3b1c453b45dbab46441411a44f44",
+            "invoiceNumber": "2",
+            "workStatus": "needs scheduling"
+          },
+          {
+            "id": "job_8ead1790a92c40e89c0294e6d1ed4359",
+            "invoiceNumber": "1",
+            "workStatus": "needs scheduling"
+          }
+        ],
+        "page": 1,
+        "totalPages": 1,
+        "availabilityInferred": false
+      },
+      "isError": false
+    },
+    "finalJobStatus": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"jobId\":\"job_2e0d3b1c453b45dbab46441411a44f44\",\"invoiceNumber\":\"2\",\"workStatus\":\"needs scheduling\",\"scheduledStart\":null,\"scheduledEnd\":null,\"scheduledStartLocal\":null,\"timeZone\":\"America/New_York\",\"totalAmount\":0,\"amountCharged\":0,\"realVendorRecord\":true,\"syntheticCustomer\":true,\"availabilityChecked\":false,\"customerNotifications\":false}"
+        }
+      ],
+      "structuredContent": {
+        "jobId": "job_2e0d3b1c453b45dbab46441411a44f44",
+        "invoiceNumber": "2",
+        "workStatus": "needs scheduling",
+        "scheduledStart": null,
+        "scheduledEnd": null,
+        "scheduledStartLocal": null,
+        "timeZone": "America/New_York",
+        "totalAmount": 0,
+        "amountCharged": 0,
+        "realVendorRecord": true,
+        "syntheticCustomer": true,
+        "availabilityChecked": false,
+        "customerNotifications": false
+      },
+      "isError": false
+    }
+  },
+  "testsPassed": 35,
+  "spendUsd": 0,
+  "limitations": [
+    "Synthetic customer and $0 real vendor job; no service fulfillment or payments.",
+    "Unscheduling is not cancellation.",
+    "Temporary local MCP process and HTTPS tunnel must remain running.",
+    "Access tokens last one hour with an absolute one-day refresh grant.",
+    "Housecall API entitlement verified in the no-card trial; ongoing affordable access not established."
+  ],
+  "artifacts": [
+    "output/dots-housecall-initial-guard-report.txt",
+    "output/dots-housecall-test-report.txt",
+    "output/dots-housecall-plugin-connected.png",
+    "output/dots-housecall-e2e-passed.png",
+    "output/dots-housecall-job-unscheduled.png"
+  ]
+}

@@ -1,0 +1,1 @@
+Exact current deck, short thesis and affected supporting files before adding funding research and a revised content wireframe. October 10, 2026. Deck revision and application submission are not authorized by this snapshot.

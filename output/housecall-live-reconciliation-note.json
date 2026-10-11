@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-11",
+  "jobId": "job_8ead1790a92c40e89c0294e6d1ed4359",
+  "initialWriteGuard": "WRONG_RECORD",
+  "reasonVerified": "Housecall automatically assigned one employee, the verified test account owner, despite assigned_employee_ids=[]",
+  "repeatedPost": false,
+  "recovery": "Operator read-only checks and local pending-operation reconciliation",
+  "vendorStateAfterRecovery": "scheduled",
+  "finalVendorState": "needs scheduling",
+  "actualJobCancellation": false,
+  "spend": 0
+}

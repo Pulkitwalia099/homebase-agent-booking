@@ -1,0 +1,1 @@
+Completed project navigation addition for the GoLocal production website, credential-free source bundle, preview and launch report. The short and detailed theses and online Page were not revised. Source checkout remains separately versioned in Pulkitwalia099/homebase.

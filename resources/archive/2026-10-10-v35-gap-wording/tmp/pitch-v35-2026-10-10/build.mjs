@@ -1,0 +1,12 @@
+import fs from 'node:fs/promises';
+import {FileBlob,PresentationFile} from '@oai/artifact-tool';
+const R='/Users/pulkitwalia/Documents/ChatGPT/Homebase',W=R+'/tmp/pitch-v35-2026-10-10';
+const p=await PresentationFile.importPptx(await FileBlob.load('/Users/pulkitwalia/Downloads/golocal-pitch-v34.pptx'));
+await fs.mkdir(W+'/source',{recursive:true});
+for(let i=0;i<p.slides.items.length;i++)await fs.writeFile(W+`/source/slide-${i+1}.png`,new Uint8Array(await(await p.export({slide:p.slides.items[i],format:'png',scale:1})).arrayBuffer()));
+const els=(await p.inspect({select:'$.slides[1].elements[*]',include:['id','kind']})).records;
+const t=p.resolve(els.find(x=>x.kind==='table').id);
+const c=t.getCell(8,1);
+c.text.replace('MISSING: a shared live data layer for local businesses\nServices, pricing and availability, connected to booking & payment','Missing today: a live data layer with business pricing and availability.\nWithout it, agents cannot complete scheduling, booking or payment.');
+await fs.writeFile(W+'/draft-seven.png',new Uint8Array(await(await p.export({slide:p.slides.items[1],format:'png',scale:1})).arrayBuffer()));
+await(await PresentationFile.exportPptx(p)).save(W+'/candidate-seven.pptx');

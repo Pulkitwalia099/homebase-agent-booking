@@ -1,0 +1,174 @@
+[
+  {
+    "name": "connector_status",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"backend\":\"housecall\",\"pilot\":true,\"singleOperator\":true,\"liveBookingsSupported\":false,\"paymentsSupported\":false,\"dotsOAuthEnabled\":true,\"dotsOAuthScope\":\"golocal:housecall-test\",\"jobberConnected\":false,\"jobberTestWritesEnabled\":false,\"housecallConfigured\":true,\"housecallTestWritesEnabled\":true,\"modeNotice\":\"Housecall bound synthetic test jobs enabled. No real service, crew availability, payments or job cancellation API; schedule removal only.\"}"
+        }
+      ],
+      "structuredContent": {
+        "backend": "housecall",
+        "pilot": true,
+        "singleOperator": true,
+        "liveBookingsSupported": false,
+        "paymentsSupported": false,
+        "dotsOAuthEnabled": true,
+        "dotsOAuthScope": "golocal:housecall-test",
+        "jobberConnected": false,
+        "jobberTestWritesEnabled": false,
+        "housecallConfigured": true,
+        "housecallTestWritesEnabled": true,
+        "modeNotice": "Housecall bound synthetic test jobs enabled. No real service, crew availability, payments or job cancellation API; schedule removal only."
+      }
+    }
+  },
+  {
+    "name": "housecall_company",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"id\":\"4cd1c8ed-be46-46ea-a458-98b8063b82f3\",\"name\":\"GoLocal Connector Test\",\"timeZone\":\"America/New_York\"}"
+        }
+      ],
+      "structuredContent": {
+        "id": "4cd1c8ed-be46-46ea-a458-98b8063b82f3",
+        "name": "GoLocal Connector Test",
+        "timeZone": "America/New_York"
+      }
+    }
+  },
+  {
+    "name": "housecall_list_jobs",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"jobs\":[{\"id\":\"job_8ead1790a92c40e89c0294e6d1ed4359\",\"invoiceNumber\":\"1\",\"workStatus\":\"scheduled\"}],\"page\":1,\"totalPages\":1,\"availabilityInferred\":false}"
+        }
+      ],
+      "structuredContent": {
+        "jobs": [
+          {
+            "id": "job_8ead1790a92c40e89c0294e6d1ed4359",
+            "invoiceNumber": "1",
+            "workStatus": "scheduled"
+          }
+        ],
+        "page": 1,
+        "totalPages": 1,
+        "availabilityInferred": false
+      }
+    }
+  },
+  {
+    "name": "confirm_housecall_test_booking",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"jobId\":\"job_8ead1790a92c40e89c0294e6d1ed4359\",\"invoiceNumber\":\"1\",\"workStatus\":\"scheduled\",\"scheduledStart\":\"2026-10-12T16:00:00Z\",\"scheduledEnd\":\"2026-10-12T17:00:00Z\",\"scheduledStartLocal\":\"2026-10-12T12:00:00-04:00\",\"timeZone\":\"America/New_York\",\"totalAmount\":0,\"amountCharged\":0,\"realVendorRecord\":true,\"syntheticCustomer\":true,\"availabilityChecked\":false,\"customerNotifications\":false,\"idempotentReplay\":true}"
+        }
+      ],
+      "structuredContent": {
+        "jobId": "job_8ead1790a92c40e89c0294e6d1ed4359",
+        "invoiceNumber": "1",
+        "workStatus": "scheduled",
+        "scheduledStart": "2026-10-12T16:00:00Z",
+        "scheduledEnd": "2026-10-12T17:00:00Z",
+        "scheduledStartLocal": "2026-10-12T12:00:00-04:00",
+        "timeZone": "America/New_York",
+        "totalAmount": 0,
+        "amountCharged": 0,
+        "realVendorRecord": true,
+        "syntheticCustomer": true,
+        "availabilityChecked": false,
+        "customerNotifications": false,
+        "idempotentReplay": true
+      }
+    }
+  },
+  {
+    "name": "confirm_housecall_test_booking",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"jobId\":\"job_8ead1790a92c40e89c0294e6d1ed4359\",\"invoiceNumber\":\"1\",\"workStatus\":\"scheduled\",\"scheduledStart\":\"2026-10-12T16:00:00Z\",\"scheduledEnd\":\"2026-10-12T17:00:00Z\",\"scheduledStartLocal\":\"2026-10-12T12:00:00-04:00\",\"timeZone\":\"America/New_York\",\"totalAmount\":0,\"amountCharged\":0,\"realVendorRecord\":true,\"syntheticCustomer\":true,\"availabilityChecked\":false,\"customerNotifications\":false,\"idempotentReplay\":true}"
+        }
+      ],
+      "structuredContent": {
+        "jobId": "job_8ead1790a92c40e89c0294e6d1ed4359",
+        "invoiceNumber": "1",
+        "workStatus": "scheduled",
+        "scheduledStart": "2026-10-12T16:00:00Z",
+        "scheduledEnd": "2026-10-12T17:00:00Z",
+        "scheduledStartLocal": "2026-10-12T12:00:00-04:00",
+        "timeZone": "America/New_York",
+        "totalAmount": 0,
+        "amountCharged": 0,
+        "realVendorRecord": true,
+        "syntheticCustomer": true,
+        "availabilityChecked": false,
+        "customerNotifications": false,
+        "idempotentReplay": true
+      }
+    }
+  },
+  {
+    "name": "housecall_test_booking_status",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"jobId\":\"job_8ead1790a92c40e89c0294e6d1ed4359\",\"invoiceNumber\":\"1\",\"workStatus\":\"scheduled\",\"scheduledStart\":\"2026-10-12T16:00:00Z\",\"scheduledEnd\":\"2026-10-12T17:00:00Z\",\"scheduledStartLocal\":\"2026-10-12T12:00:00-04:00\",\"timeZone\":\"America/New_York\",\"totalAmount\":0,\"amountCharged\":0,\"realVendorRecord\":true,\"syntheticCustomer\":true,\"availabilityChecked\":false,\"customerNotifications\":false}"
+        }
+      ],
+      "structuredContent": {
+        "jobId": "job_8ead1790a92c40e89c0294e6d1ed4359",
+        "invoiceNumber": "1",
+        "workStatus": "scheduled",
+        "scheduledStart": "2026-10-12T16:00:00Z",
+        "scheduledEnd": "2026-10-12T17:00:00Z",
+        "scheduledStartLocal": "2026-10-12T12:00:00-04:00",
+        "timeZone": "America/New_York",
+        "totalAmount": 0,
+        "amountCharged": 0,
+        "realVendorRecord": true,
+        "syntheticCustomer": true,
+        "availabilityChecked": false,
+        "customerNotifications": false
+      }
+    }
+  },
+  {
+    "name": "unschedule_housecall_test_booking",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"jobId\":\"job_8ead1790a92c40e89c0294e6d1ed4359\",\"invoiceNumber\":\"1\",\"workStatus\":\"needs scheduling\",\"scheduledStart\":null,\"scheduledEnd\":null,\"scheduledStartLocal\":null,\"timeZone\":\"America/New_York\",\"totalAmount\":0,\"amountCharged\":0,\"realVendorRecord\":true,\"syntheticCustomer\":true,\"availabilityChecked\":false,\"customerNotifications\":false,\"unscheduled\":true,\"jobCancelled\":false}"
+        }
+      ],
+      "structuredContent": {
+        "jobId": "job_8ead1790a92c40e89c0294e6d1ed4359",
+        "invoiceNumber": "1",
+        "workStatus": "needs scheduling",
+        "scheduledStart": null,
+        "scheduledEnd": null,
+        "scheduledStartLocal": null,
+        "timeZone": "America/New_York",
+        "totalAmount": 0,
+        "amountCharged": 0,
+        "realVendorRecord": true,
+        "syntheticCustomer": true,
+        "availabilityChecked": false,
+        "customerNotifications": false,
+        "unscheduled": true,
+        "jobCancelled": false
+      }
+    }
+  }
+]

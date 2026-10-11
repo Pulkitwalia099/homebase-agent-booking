@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-11",
+  "surface": "Personal Dot at https://chatgpt.com/dots/home",
+  "pluginAppId": "asdk_app_6acb14f577d481919971027ef1da3827",
+  "dotReportedSuccessfulToolCalls": 9,
+  "idempotencyKey": "golocal-dot-e2e-20261011-a1",
+  "primaryPluginStatus": {
+    "backend": "demo",
+    "pilot": true,
+    "singleOperator": true,
+    "liveBookingsSupported": false,
+    "paymentsSupported": false,
+    "dotsOAuthEnabled": true,
+    "dotsOAuthScope": "golocal:demo",
+    "jobberConnected": false,
+    "jobberTestWritesEnabled": false,
+    "housecallConfigured": false,
+    "modeNotice": "All provider data and bookings are simulated."
+  },
+  "independentFinalStatus": {
+    "id": "demo-booking-6855431f-5d40-48dc-a617-923425038394",
+    "quoteId": "demo-quote-dc3419c4-f800-4069-af0c-d87f94e15594",
+    "providerId": "demo-plumber",
+    "slot": {
+      "id": "demo-1791820800000",
+      "startAt": "2026-10-12T16:00:00.000Z",
+      "endAt": "2026-10-12T17:00:00.000Z",
+      "timezone": "America/Denver"
+    },
+    "simulated": true,
+    "state": "cancelled",
+    "priceCents": 0,
+    "amountCharged": 0,
+    "currency": "USD",
+    "terms": "Simulation only. No technician, repair, payment or messages."
+  },
+  "independentPostCancellationReplay": {
+    "id": "demo-booking-6855431f-5d40-48dc-a617-923425038394",
+    "quoteId": "demo-quote-dc3419c4-f800-4069-af0c-d87f94e15594",
+    "providerId": "demo-plumber",
+    "slot": {
+      "id": "demo-1791820800000",
+      "startAt": "2026-10-12T16:00:00.000Z",
+      "endAt": "2026-10-12T17:00:00.000Z",
+      "timezone": "America/Denver"
+    },
+    "simulated": true,
+    "state": "cancelled",
+    "priceCents": 0,
+    "amountCharged": 0,
+    "currency": "USD",
+    "terms": "Simulation only. No technician, repair, payment or messages."
+  },
+  "passed": true,
+  "limitations": [
+    "Simulation only; no real supplier booking, payment or fulfillment verified.",
+    "Temporary endpoint requires this Mac, connector and ngrok to remain online."
+  ]
+}

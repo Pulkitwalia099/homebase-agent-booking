@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+import {FileBlob,PresentationFile} from '@oai/artifact-tool';
+const R='/Users/pulkitwalia/Documents/ChatGPT/Homebase',W=R+'/tmp/pitch-v33-2026-10-10';
+const p=await PresentationFile.importPptx(await FileBlob.load(R+'/output/pptx/golocal-pitch-v32.pptx'));
+const s=p.slides.items[0];
+const els=(await p.inspect({select:'$.slides[0].elements[*]',include:['id','kind']})).records;
+const pic=els.filter(x=>x.kind==='image');if(pic.length!==1)throw Error('Cover image count '+pic.length);
+const im=p.resolve(pic[0].id);const frame=im.frame,crop=im.crop,fit=im.fit;
+im.replace({blob:new Uint8Array(await fs.readFile(R+'/output/imagegen/golocal-cover-v33.png')),contentType:'image/png',alt:'Illustrated local-service neighborhood with a man mowing the central lawn and a roofer repairing the rear house roof, alongside the original garage service workers and van.',fit:fit??'cover'});
+im.frame=frame;im.crop=crop;
+s.speakerNotes.text+='\nCover artwork edited with the built-in image-generation tool at the founder’s request to add a lawn-mowing worker and a roofer. Conceptual illustration, not a photograph of live operations. Source artwork retained; versioned edited asset: output/imagegen/golocal-cover-v33.png.';
+await fs.writeFile(W+'/draft-seven.png',new Uint8Array(await(await p.export({slide:s,format:'png',scale:1})).arrayBuffer()));
+await(await PresentationFile.exportPptx(p)).save(W+'/candidate-seven.pptx');

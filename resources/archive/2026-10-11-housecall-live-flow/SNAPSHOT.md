@@ -1,0 +1,1 @@
+Completed Housecall live MCP test with synthetic $0 job, verified schedule removal, guarded owner-assignment recovery and 34 passing tests. Dots Housecall grant prepared, not approved/connected yet. Credentials and dependency/state files excluded. Main thesis, working Page and public site unchanged.

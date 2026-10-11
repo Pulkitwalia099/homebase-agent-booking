@@ -1,0 +1,17 @@
+{
+  "recorded": "2026-10-10",
+  "source": "Latest founder correction in this conversation.",
+  "correction": "Do not say committed. Cactus AI has agreed to introduce GoLocal to 50+ service partners, with another 56 to come through the regional back-office partner named YourCardare.",
+  "current_slide_copy": {
+    "Cactus AI": "Agreed to introduce GoLocal to 50+ service partners.",
+    "YourCardare": "Regional back-office partner. Another 56 potential provider introductions."
+  },
+  "limits": [
+    "Introductions in the pipeline, not guaranteed onboarding.",
+    "No live supply or production-booking claim.",
+    "Counts kept separately; no inferred unique combined total.",
+    "56 and YourCardare follow the exact latest founder text.",
+    "Earlier combined 50 commitment and prior 100+/20 figures are historical, preserved and superseded for this pitch."
+  ],
+  "artifact": "output/pptx/golocal-pitch-v17.pptx"
+}

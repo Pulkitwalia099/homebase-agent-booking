@@ -1,0 +1,46 @@
+{
+  "source_deck": "output/pptx/golocal-pitch-v26.pptx",
+  "source_sha256": "083cf97ce4efb18a5a89833f005f50c869b7443f1a1f5d2876edeb6ae634e7f2",
+  "source_unchanged": true,
+  "page_count": 7,
+  "page_size_pt": [
+    960.0,
+    540.0
+  ],
+  "outline_count": 7,
+  "linkedin_links": 2,
+  "bytes": 1983387,
+  "approved_slide_images": [
+    {
+      "slide": 1,
+      "sha256": "6fb330b95dd67dd54b0c5bdb64d55e8d621a1e91b445fbc9460860b0c43a882a"
+    },
+    {
+      "slide": 2,
+      "sha256": "a9492a55caeae3d04d0bded53f156ae075559b39118151e9bb5d5e62e4e0f488"
+    },
+    {
+      "slide": 3,
+      "sha256": "e463aa176603f72a1f7a126fe8a2ccd296e9a54cdfca543300af306af445d205"
+    },
+    {
+      "slide": 4,
+      "sha256": "a98f53537630338e456dbdb7d101fcf0939b40181721fcec632ccb280118ff24"
+    },
+    {
+      "slide": 5,
+      "sha256": "082f9f970122076e078176014a0f6bea5c95c9c3be4300e8e68547d57736ac6f"
+    },
+    {
+      "slide": 6,
+      "sha256": "93a00cd1931d7096c60f74a0172ae07a61f33963d42f6ba71dfe52e62a2a281e"
+    },
+    {
+      "slide": 7,
+      "sha256": "282d6346281d2cd62dafda93a6bc742370ef4ea9c298c4ebb9e032ad910c13a6"
+    }
+  ],
+  "export": "High-resolution approved slide renders, losslessly embedded; source deck remains editable",
+  "native_export_fallback": "Artifact Tool PDF export encountered missing #standard-fonts/Helvetica; approved renders used for fidelity",
+  "content_changes": false
+}

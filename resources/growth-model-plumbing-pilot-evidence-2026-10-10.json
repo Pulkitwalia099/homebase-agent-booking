@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-10",
+  "scope": "Separate slide 4 general model from slide 5 concrete pilot",
+  "deck": "output/pptx/golocal-pitch-v23.pptx",
+  "latest_founder_instruction": {
+    "slide_4": "Pick one city-category combination, onboard enough suppliers for critical mass, users ask their agent to add GoLocal once, then useful bookings support the proposed network effect. Do not name Salt Lake City here.",
+    "slide_5": "Start the proof of concept in Salt Lake City, plumbing category; existing partnerships establish a provider-introduction pipeline."
+  },
+  "pilot_scope": {
+    "city": "Salt Lake City",
+    "category": "Plumbing",
+    "status": "Planned proof of concept, not completed production validation"
+  },
+  "partners": {
+    "Cactus AI": "Agreed introductions to 50+ service partners",
+    "YourCardare": "Regional back-office partner, another 10+ providers in the pipeline",
+    "qualification": "Introductions, not committed onboardings or live supply. No combined unique count or assertion that every introduction is a Salt Lake City plumber."
+  },
+  "distribution": "One-time setup intended on compatible platforms, with sign-in/approval when required. Transaction approvals remain separate. Recommendations conditional on platform rules, usefulness and reliability.",
+  "commercial": "Proposed success fee on fulfilled new-customer jobs and partner share retained unchanged. No measured/agreed fees, revenue mix or forecasts.",
+  "source_basis": "Latest founder request and earlier approved deck notes; no new external market claims or platform capabilities asserted.",
+  "unchanged": [
+    "Slides 1, 2, 3 and 6",
+    "Short business thesis",
+    "Word/PDF thesis",
+    "Online Page",
+    "Application attachment/submission"
+  ],
+  "previous_evidence": "Dated source records and v22 preserved before revision."
+}

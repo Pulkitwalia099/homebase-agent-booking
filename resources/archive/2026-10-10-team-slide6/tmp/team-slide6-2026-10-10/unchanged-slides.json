@@ -1,0 +1,32 @@
+{
+  "final": "golocal-pitch-v21.pptx",
+  "comparisons": [
+    {
+      "slide": 1,
+      "pixel_identical": true
+    },
+    {
+      "slide": 2,
+      "pixel_identical": true
+    },
+    {
+      "slide": 3,
+      "pixel_identical": true
+    },
+    {
+      "slide": 4,
+      "pixel_identical": true
+    },
+    {
+      "slide": 5,
+      "pixel_identical": true
+    }
+  ],
+  "native_profile_links": [
+    "https://www.linkedin.com/in/pulkitwalia/",
+    "https://www.linkedin.com/in/pulkitwalia/",
+    "https://www.linkedin.com/in/rohit-jain-343437187/",
+    "https://www.linkedin.com/in/rohit-jain-343437187/"
+  ],
+  "embedded_photos_and_logos": 8
+}

@@ -1,0 +1,5 @@
+Mode: built-in image_gen edit
+Source: tmp/pitch-v28-2026-10-10/reference/cover.png
+Output: output/imagegen/golocal-cover-v33.png
+
+Use case: precise-object-edit. Edit target: the supplied GoLocal neighborhood illustration. Add only two workers: (1) a man pushing a clearly recognizable walk-behind lawn mower on the front lawn of the central house, naturally scaled to the existing workers; (2) a roofer kneeling and fixing shingles on the sloped roof of the house behind it at the upper right, with a small roofing tool and appropriate workwear. Match the existing warm cream, sage and dark teal illustrated miniature/isometric style, fine textures, light direction and perspective. Preserve the exact overall wide composition, all existing houses, trees, garage, service workers, van and driveway. Preserve the large empty dark teal space on the left for editable slide text. Do not add any text, logos, labels or watermark. Make both activities clearly legible at slide size without oversizing the people. Keep the original aspect ratio.

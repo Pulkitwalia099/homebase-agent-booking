@@ -1,0 +1,369 @@
+{
+  "checkedAt": "2026-10-11T06:43:48.477Z",
+  "base": "https://getgolocal.com/api/connector",
+  "expiry": "2026-10-12T05:48:00.745Z",
+  "deployment": "dpl_HDBzDG75852aYkLcDJThjvsmt4DL",
+  "commit": "780903cf0c4840895c476c39cc953ee61649bef9",
+  "results": [
+    {
+      "name": "public",
+      "status": 200,
+      "body": {
+        "name": "GoLocal",
+        "environment": "private Housecall test pilot",
+        "api": {
+          "listTools": "https://getgolocal.com/api/connector/tools",
+          "callTool": "https://getgolocal.com/api/connector/tools/{name}",
+          "method": "POST",
+          "body": "Exact tool input-schema JSON object",
+          "auth": "Authorization: Bearer <securely stored GoLocal test credential>"
+        },
+        "permissions": "Seven bounded tools; approve each write. One-day existing credential only. Vendor key remains on the local GoLocal backend.",
+        "constraints": [
+          "One bound test company, fictional customers and $0 synthetic jobs.",
+          "No service fulfillment, messages, dispatch, work-start or payments.",
+          "Schedule removal does not cancel the job.",
+          "No automatic retry after unknown write outcome.",
+          "Relay still depends on the local server and ngrok tunnel."
+        ],
+        "tools": [
+          {
+            "name": "connector_status",
+            "description": "Get connector backend, test restrictions and enabled capabilities. Does not validate a live booking.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "housecall_company",
+            "description": "Read ID, name and time zone of the operator-bound Housecall Pro test company. No contact details.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "housecall_list_jobs",
+            "description": "Read the first ten job IDs, invoice numbers and work states from the bound test company. Omits customer details and does not infer crew availability.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "prepare_housecall_test_booking",
+            "description": "Prepare an exact $0 synthetic job quote in the named GoLocal test company. Fixed fake customer, no contact details or crew availability promise.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": false,
+              "idempotentHint": false,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "confirm_housecall_test_booking",
+            "description": "After exact quote approval, create one real vendor test job. No service, dispatch, notification or payment. Reuse the same idempotency key.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": true,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "quote_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                },
+                "idempotency_key": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{8,80}$"
+                },
+                "user_approved": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "quote_id",
+                "idempotency_key",
+                "user_approved"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "housecall_test_booking_status",
+            "description": "Read authoritative vendor state of a connector-created synthetic test job only.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "job_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                }
+              },
+              "required": [
+                "job_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "unschedule_housecall_test_booking",
+            "description": "Remove the schedule from the approved synthetic test job. This does NOT cancel or delete the job; it remains needs scheduling.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": true,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "job_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                },
+                "user_approved": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "job_id",
+                "user_approved"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "unauthenticated",
+      "status": 401,
+      "body": {
+        "code": "UNAUTHORIZED"
+      }
+    },
+    {
+      "name": "wrong-key",
+      "status": 401,
+      "body": {
+        "code": "UNAUTHORIZED"
+      }
+    },
+    {
+      "name": "schemas",
+      "status": 200,
+      "body": {
+        "tools": [
+          {
+            "name": "connector_status",
+            "description": "Get connector backend, test restrictions and enabled capabilities. Does not validate a live booking.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "housecall_company",
+            "description": "Read ID, name and time zone of the operator-bound Housecall Pro test company. No contact details.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "housecall_list_jobs",
+            "description": "Read the first ten job IDs, invoice numbers and work states from the bound test company. Omits customer details and does not infer crew availability.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "prepare_housecall_test_booking",
+            "description": "Prepare an exact $0 synthetic job quote in the named GoLocal test company. Fixed fake customer, no contact details or crew availability promise.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": false,
+              "idempotentHint": false,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "confirm_housecall_test_booking",
+            "description": "After exact quote approval, create one real vendor test job. No service, dispatch, notification or payment. Reuse the same idempotency key.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": true,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "quote_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                },
+                "idempotency_key": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{8,80}$"
+                },
+                "user_approved": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "quote_id",
+                "idempotency_key",
+                "user_approved"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "housecall_test_booking_status",
+            "description": "Read authoritative vendor state of a connector-created synthetic test job only.",
+            "annotations": {
+              "readOnlyHint": true,
+              "destructiveHint": false,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "job_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                }
+              },
+              "required": [
+                "job_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "unschedule_housecall_test_booking",
+            "description": "Remove the schedule from the approved synthetic test job. This does NOT cancel or delete the job; it remains needs scheduling.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": true,
+              "idempotentHint": true,
+              "openWorldHint": false
+            },
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "job_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                },
+                "user_approved": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "job_id",
+                "user_approved"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "company",
+      "status": 200,
+      "body": {
+        "id": "4cd1c8ed-be46-46ea-a458-98b8063b82f3",
+        "name": "GoLocal Connector Test",
+        "timeZone": "America/New_York"
+      }
+    }
+  ]
+}

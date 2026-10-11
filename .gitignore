@@ -9,3 +9,6 @@ build/
 coverage/
 *.log
 /tmp/
+
+# Separate GoLocal website checkout; portable source is in output/golocal-website-source.zip
+/website/

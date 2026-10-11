@@ -1,0 +1,15 @@
+import fs from 'node:fs/promises';
+import {FileBlob,PresentationFile} from '@oai/artifact-tool';
+const R='/Users/pulkitwalia/Documents/ChatGPT/Homebase',W=R+'/tmp/pitch-v36-2026-10-10';
+const p=await PresentationFile.importPptx(await FileBlob.load(R+'/output/pptx/golocal-pitch-v35.pptx'));
+async function repl(i,from,to){const els=(await p.inspect({select:`$.slides[${i}].elements[*]`,include:['id','text']})).records;const e=els.find(x=>x.text===from);if(!e)throw Error(from);const sh=p.resolve(e.id);sh.text.replace(from,to);return sh;}
+await repl(5,'First pilot: plumbing in Salt Lake City','60+ plumbing companies in the pipeline');
+await repl(5,'Two channel partners provide a starting point for supply.','Salt Lake City, through two channel partners.');
+await repl(5,'Agreed to introduce GoLocal\nto 50+ service partners.','YC-backed AI front office\nfor local trades.');
+await repl(5,'Regional back-office partner.\nAnother 10+ providers in the pipeline.','Regional back-office partner.');
+p.slides.items[5].speakerNotes.text=`Founder clarification on October 10, 2026 (annotation-mv39a1d3-h): 60+ plumbing companies in the Salt Lake City pipeline, with 50+ coming through Cactus AI and 10+ through YourCardare. This latest founder confirmation supersedes earlier uncertainty about whether the pipeline was plumbing-specific and based in Salt Lake City. These are prospective providers in the pipeline, not live integrated businesses, completed onboardings or confirmed bookings. Cactus AI is a YC-backed AI front office for local trades. YourCardare is a regional back-office partner, per the founder.\nCactus public corroboration: Y Combinator company profile https://www.ycombinator.com/companies/oncactus (checked October 10, 2026) lists Cactus in Spring 2025 and describes AI call answering, qualification, booking and follow-up for trades including plumbing. The YC profile verifies company background, not GoLocal's partnership or pipeline counts, which are founder-reported.\nThe next milestone remains onboarding participating providers, connecting authorized software and testing customer-authorized agent bookings. Supply pipeline does not establish representative customer demand, live production reliability or paid revenue.`;
+const head=await repl(6,'The team behind GoLocal','Built for consumer apps.\nNow building for the agent layer.');
+head.position={left:52,top:64,width:1176,height:100};head.text.style={fontSize:42,typeface:'Helvetica Neue',bold:true,autoFit:'none',insets:0};
+p.slides.items[6].speakerNotes.text+='\nFounder-requested positioning: the team’s consumer-app experience now informs building for the agent layer. This is a positioning statement, not a claim that the two team members jointly built every company in their separate biographies.';
+for(const i of [5,6])await fs.writeFile(W+`/draft-slide-${i+1}.png`,new Uint8Array(await(await p.export({slide:p.slides.items[i],format:'png',scale:1})).arrayBuffer()));
+await(await PresentationFile.exportPptx(p)).save(W+'/candidate-seven.pptx');
