@@ -1,0 +1,49 @@
+{
+  "verified_at": "2026-10-11T15:50:13.243941+00:00",
+  "status": "live",
+  "site": "https://getgolocal.com",
+  "comparison": "https://getgolocal.com/hero-preview",
+  "commit": "088ab38d60da09f4647b30492b582f8faa728634",
+  "deployment_id": "dpl_7uiJdXBcrBN7Ef4wztpFvhLBD6cF",
+  "deployment_url": "https://homebase-agent-booking-ek7z1guav-pulkitwalia099s-projects.vercel.app",
+  "budget_credits": 350,
+  "generations": 2,
+  "quoted_credits_each": 48,
+  "credits_committed": 96,
+  "remaining_authorized_budget": 254,
+  "model": "Kling 3.0",
+  "master_resolution": "3836x2160",
+  "duration_seconds": 8.041667,
+  "web_resolution": "1920x1082",
+  "web_files": {
+    "scene": {
+      "path": "website/apps/web/public/brand/hero-scene.mp4",
+      "bytes": 816332
+    },
+    "message": {
+      "path": "website/apps/web/public/brand/hero-message.mp4",
+      "bytes": 816023
+    }
+  },
+  "verified": [
+    "Production build and TypeScript passed",
+    "Production deployment READY; custom domain aliases verified",
+    "Both production MP4s loaded and played without media errors",
+    "Homepage uses message version",
+    "Pause and resume verified through visible controls",
+    "Comparison controls switch videos",
+    "Muted loop playback confirmed",
+    "Desktop and 390px mobile layouts visually checked"
+  ],
+  "implementation_checks": [
+    "Reduced motion skips video and shows settled message",
+    "IntersectionObserver and document visibility pause hidden video",
+    "Original image remains as loading/error fallback"
+  ],
+  "limits": [
+    "Illustrative generated scene; individual tool motions are approximate",
+    "Reduced-motion and hidden-tab behavior audited in code; no browser preference automation used",
+    "Spend is based on two confirmed Generate 48 actions; final account balance not independently verified"
+  ],
+  "source_bundle_files": 117
+}

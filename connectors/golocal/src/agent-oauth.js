@@ -3,10 +3,11 @@ import { InvalidClientMetadataError, InvalidGrantError, InvalidScopeError, Inval
 
 export const DEMO_SCOPE = 'golocal:demo';
 export const HOUSECALL_SCOPE = 'golocal:housecall-test';
+export const ASSISTED_SCOPE = 'golocal:assisted';
 const nonce = () => randomBytes(32).toString('hex');
 const hash = value => createHash('sha256').update(value).digest('hex');
 
-// Private single-operator prototype, with OAuth grants restricted to simulated data.
+// Customer-bound assisted grants and separate private demo/Housecall test grants.
 // Tokens are opaque; server-side records bind issuer, resource, scope and expiry.
 export class AgentOAuth {
   constructor(store, config, now = () => Date.now()) {
@@ -28,7 +29,7 @@ export class AgentOAuth {
   }
   get resource() { return `${this.config.baseUrl}/mcp`; }
   get issuer() { return new URL(this.config.baseUrl).href; }
-  get scope() { return this.config.backend==='housecall' ? HOUSECALL_SCOPE : DEMO_SCOPE; }
+  get scope() { return this.config.backend==='assisted' ? ASSISTED_SCOPE : this.config.backend==='housecall' ? HOUSECALL_SCOPE : DEMO_SCOPE; }
   get accountId() { return this.config.backend==='housecall' ? this.config.housecall?.companyId : null; }
   allowedCallback(uri) {
     try {
@@ -45,7 +46,11 @@ export class AgentOAuth {
   }
   target(resource) { if (resource?.href !== this.resource) throw new InvalidTargetError('Resource must match the GoLocal MCP URL.'); }
   scopes(scopes) { if (scopes?.some(scope => scope !== this.scope)) throw new InvalidScopeError('Scope does not match the active test backend. Reconnect for a separate grant.'); return [this.scope]; }
-  enabled() { if (!this.config.dotsOAuth || !(this.config.backend==='demo'||(this.config.backend==='housecall'&&this.config.housecall?.writes&&this.accountId))) throw new InvalidScopeError('OAuth unavailable for this backend. A separate bound test grant is required.'); }
+  enabled() { if (!this.config.dotsOAuth || !(this.config.backend==='assisted'||this.config.backend==='demo'||(this.config.backend==='housecall'&&this.config.housecall?.writes&&this.accountId))) throw new InvalidScopeError('OAuth unavailable for this backend. A separate bound test grant is required.'); }
+  verifiedUser(id) {
+    const user = this.store.state.assisted?.users[id];
+    if (!user?.verified || user.disabled) throw new InvalidGrantError('A verified active customer account is required.');
+  }
   async authorize(client, params, res) {
     this.enabled(); this.target(params.resource); this.scopes(params.scopes);
     if (!this.allowedCallback(params.redirectUri) || !client.redirect_uris.includes(params.redirectUri) || !/^[A-Za-z0-9_-]{43}$/.test(params.codeChallenge)) throw new InvalidGrantError('Invalid callback or S256 challenge.');
@@ -56,11 +61,12 @@ export class AgentOAuth {
       a.flows[id] = { clientId: client.client_id, redirectUri: params.redirectUri, state: params.state,
         challenge: params.codeChallenge, resource: this.resource, scope:this.scope, accountId:this.accountId, expiresAt: this.now() + 600000 };
     });
-    res.redirect(303, `/operator/agent/consent/${id}`);
+    res.redirect(303, `${this.config.backend==='assisted'?'/assisted':'/operator'}/agent/consent/${id}`);
   }
   flow(id) { const flow = this.store.state.agentOAuth?.flows[id]; return flow?.expiresAt > this.now() ? flow : null; }
-  async consent(id, approved) {
+  async consent(id, approved, userId) {
     this.enabled();
+    if (this.config.backend==='assisted') this.verifiedUser(userId);
     return this.store.transaction(s => {
       const a = this.state(s); const flow = a.flows[id];
       if (!flow || flow.scope!==this.scope || flow.accountId!==this.accountId) throw new InvalidGrantError('Authorization expired, changed backend or already used.');
@@ -70,7 +76,7 @@ export class AgentOAuth {
       // No RFC 9207 advertisement: SDK error redirects omit iss. Stable/callback-ID paths still allowed.
       if (!approved) redirect.searchParams.set('error','access_denied');
       else {
-        const code = nonce(); a.codes[hash(code)] = { ...flow, expiresAt: this.now() + 120000 };
+        const code = nonce(); a.codes[hash(code)] = { ...flow, ...(this.config.backend==='assisted'?{userId}:{}), expiresAt: this.now() + 120000 };
         redirect.searchParams.set('code',code);
       }
       return redirect.href;
@@ -81,9 +87,9 @@ export class AgentOAuth {
     if (!item || item.clientId !== client.client_id || item.expiresAt <= this.now()) throw new InvalidGrantError('Code invalid or expired.');
     return item.challenge;
   }
-  mint(a, clientId, family, grantExpiresAt = this.now() + (this.config.oauthGrantDays || 1)*86400000) {
+  mint(a, clientId, family, grantExpiresAt = this.now() + (this.config.oauthGrantDays || 1)*86400000, userId) {
     const access = nonce(), refresh = nonce();
-    const binding = { clientId, family, issuer: this.issuer, resource: this.resource, scopes: [this.scope], accountId:this.accountId, grantExpiresAt };
+    const binding = { clientId, family, issuer: this.issuer, resource: this.resource, scopes: [this.scope], accountId:this.accountId, grantExpiresAt, ...(userId?{userId}:{}) };
     const accessExpiresAt = Math.min(this.now()+3600000,grantExpiresAt);
     a.access[hash(access)] = { ...binding, expiresAt: accessExpiresAt };
     a.refresh[hash(refresh)] = { ...binding, expiresAt: grantExpiresAt, used: false };
@@ -95,7 +101,8 @@ export class AgentOAuth {
       const a = this.state(s), item = a.codes[hash(code)];
       if (!item || item.scope!==this.scope || item.accountId!==this.accountId || item.clientId !== client.client_id || item.redirectUri !== redirectUri || item.resource !== this.resource ||
         typeof verifier !== 'string' || !/^[A-Za-z0-9._~-]{43,128}$/.test(verifier) || createHash('sha256').update(verifier).digest('base64url') !== item.challenge) throw new InvalidGrantError('Invalid code, callback or PKCE verifier.');
-      delete a.codes[hash(code)]; return this.mint(a,client.client_id,nonce());
+      if (this.config.backend==='assisted') this.verifiedUser(item.userId);
+      delete a.codes[hash(code)]; return this.mint(a,client.client_id,nonce(),undefined,item.userId);
     });
   }
   revokeFamily(a, family) {
@@ -107,7 +114,8 @@ export class AgentOAuth {
       const a = this.state(s), item = a.refresh[hash(token)];
       if (!item || !item.scopes.includes(this.scope) || (item.accountId??null)!==this.accountId || item.clientId !== client.client_id || item.resource !== this.resource || item.issuer !== this.issuer) return null;
       if (item.used) { this.revokeFamily(a,item.family); return null; }
-      item.used = true; return this.mint(a,client.client_id,item.family,item.grantExpiresAt);
+      if (this.config.backend==='assisted') this.verifiedUser(item.userId);
+      item.used = true; return this.mint(a,client.client_id,item.family,item.grantExpiresAt,item.userId);
     });
     if (!result) throw new InvalidGrantError('Refresh token expired, reused or invalid. Reconnect.');
     return result;
@@ -116,7 +124,8 @@ export class AgentOAuth {
     this.enabled();
     const item = this.store.state.agentOAuth?.access[hash(token)];
     if (!item || (item.accountId??null)!==this.accountId || item.expiresAt <= this.now() || item.resource !== this.resource || item.issuer !== this.issuer || !item.scopes.includes(this.scope)) throw new InvalidTokenError('Access token invalid, wrong test account, changed backend or expired.');
-    return { token, clientId: item.clientId, scopes: item.scopes, expiresAt: Math.floor(item.expiresAt/1000), resource: new URL(item.resource) };
+    if (this.config.backend==='assisted') this.verifiedUser(item.userId);
+    return { token, clientId: item.clientId, scopes: item.scopes, expiresAt: Math.floor(item.expiresAt/1000), resource: new URL(item.resource), ...(item.userId?{extra:{userId:item.userId}}:{}) };
   }
   async revokeToken(client, request) {
     await this.store.transaction(s => {
@@ -125,4 +134,5 @@ export class AgentOAuth {
     });
   }
   async revokeAll() { await this.store.transaction(s => { const a = this.state(s); a.flows={}; a.codes={}; a.access={}; a.refresh={}; }); }
+  async revokeUser(userId) { await this.store.transaction(s => { const a = this.state(s); for(const map of [a.access,a.refresh]) for(const [id,item] of Object.entries(map)) if(item.userId===userId) delete map[id]; }); }
 }

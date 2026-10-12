@@ -363,3 +363,32 @@ All entries are local snapshots. They do not indicate updates to the working Pag
 - [Before hosting preparation](2026-10-11-before-durable-golocal-hosting/SNAPSHOT.md): exact affected source/supporting files, no credentials.
 - [Before recording the agent-channel plan](2026-10-11-before-agent-channel-onboarding-plan/SNAPSHOT.md): exact prior navigation/status files.
 - [Completed HTML plan and hosting billing checkpoint](2026-10-11-agent-channel-onboarding-plan/SNAPSHOT.md): agent-first production journeys, source/evidence record and tested hosting status. Hosting remains pending billing; main theses and working Page unchanged.
+
+- [Before animated hero](2026-10-11-before-animated-hero/SNAPSHOT.md): exact copies of the live website source, bundle and report before hero work.
+- [Animated hero prepared](2026-10-11-animated-hero-prepared/SNAPSHOT.md): local message-bubble and scene layouts, build passed; video generation and deployment pending image upload, zero credits spent.
+
+- [2026-10-11 before hero publication](2026-10-11-before-hero-publication/): latest report, source bundle and README, preserving concurrent connector updates.
+- [2026-10-11 animated hero live](2026-10-11-animated-hero-live/): published message-led hero, two-version comparison, source bundle and verification evidence; 96/350 credits.
+
+- [2026-10-11 before business stack refresh](2026-10-11-before-business-stack-refresh/): exact prior website/report/source artifacts.
+- [2026-10-11 business stack live](2026-10-11-business-stack-live/): 12 official software logos, tighter hero spacing, published source bundle and verification.
+
+
+## Zapier Housecall data and startup MCP assessment · October 11, 2026
+
+- [Before recording](2026-10-11-before-zapier-housecall-assessment/SNAPSHOT.md): exact prior supporting indexes; thesis and working Page unchanged.
+- [Completed assessment](2026-10-11-zapier-housecall-assessment/SNAPSHOT.md): connected-account proof, safe fresh API sample, native-MCP capability correction, failed/disabled custom probe and proposed onboarding path. No supplier secrets or vendor writes.
+
+
+## Assisted multi supplier MVP · October 12, 2026
+
+- [Before implementation](2026-10-12-before-assisted-mvp/SNAPSHOT.md): exact affected source and supporting files before adding assisted accounts and booking requests; no secrets or runtime data.
+- [Before hosted compatibility changes](2026-10-12-before-assisted-hosting-adjustments/SNAPSHOT.md): Docker, setup and protected hosted initialization files.
+- [Completed local build](2026-10-12-assisted-mvp-built/SNAPSHOT.md): assisted source, tests, guide, verification evidence and credential-free source bundle. All 53 tests pass; local browser flow verified. No public deployment, vendor booking or email delivery. Main theses and working Page unchanged.
+
+
+## Machine hosted assisted test pilot · October 12, 2026
+
+- [Before pilot changes](2026-10-12-before-assisted-pilot-live/SNAPSHOT.md): exact prior connector and affected supporting files, excluding all private state.
+- [Before release artifacts](2026-10-12-before-assisted-pilot-artifacts/SNAPSHOT.md): exact website bundle and launch report before email-relay publication notes.
+- [Live pilot revision](2026-10-12-assisted-pilot-live/SNAPSHOT.md): tested source, fixed-template email relay, setup guide, safe delivery evidence and browser screenshots. Local processes intentionally remain running. Durable cloud backend deferred; all requests are test-only. Main theses and working Page unchanged.

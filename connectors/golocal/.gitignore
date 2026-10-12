@@ -5,3 +5,5 @@ node_modules/
 .data/
 *.log
 docs/jobber-schema.json
+
+.data-assisted-pilot/

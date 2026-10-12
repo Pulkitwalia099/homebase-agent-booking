@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "golocal": {
+      "type": "streamable-http",
+      "url": "https://camryn-mechanomorphic-ellis.ngrok-free.dev/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": { "mode": "dcr" },
+            "baseScopes": ["golocal:demo"]
+          }
+        }
+      }
+    }
+  }
+}

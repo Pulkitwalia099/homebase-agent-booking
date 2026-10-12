@@ -1,0 +1,70 @@
+{
+  "signIns": [
+    {
+      "id": "1a12ed8ee0c7c7f8",
+      "to": "pulkitwalia099+golocal-customer-b@gmail.com",
+      "receivedAt": "2026-10-12T06:42:10+00:00"
+    },
+    {
+      "id": "1a12ed8eab1bf3fa",
+      "to": "pulkitwalia099+golocal-supplier-b@gmail.com",
+      "receivedAt": "2026-10-12T06:42:09+00:00"
+    },
+    {
+      "id": "1a12ed8e71295695",
+      "to": "pulkitwalia099+golocal-supplier-a@gmail.com",
+      "receivedAt": "2026-10-12T06:42:08+00:00"
+    },
+    {
+      "id": "1a12ed8e21abea83",
+      "to": "pulkitwalia099@gmail.com",
+      "receivedAt": "2026-10-12T06:42:07+00:00"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1a12eddcdf8c7ed4",
+      "to": "pulkitwalia099+golocal-customer-b@gmail.com",
+      "subject": "[GoLocal TEST] Request declined",
+      "receivedAt": "2026-10-12T06:47:30+00:00"
+    },
+    {
+      "id": "1a12eddc88d665be",
+      "to": "pulkitwalia099+golocal-supplier-a@gmail.com",
+      "subject": "[GoLocal TEST] New request for your business",
+      "receivedAt": "2026-10-12T06:47:28+00:00"
+    },
+    {
+      "id": "1a12eddc27473dbc",
+      "to": "pulkitwalia099+golocal-supplier-b@gmail.com",
+      "subject": "[GoLocal TEST] New request for your business",
+      "receivedAt": "2026-10-12T06:47:27+00:00"
+    },
+    {
+      "id": "1a12edd0c8fd76d6",
+      "to": "pulkitwalia099@gmail.com",
+      "subject": "[GoLocal TEST] Request confirmed",
+      "receivedAt": "2026-10-12T06:46:40+00:00"
+    },
+    {
+      "id": "1a12edbe1d4931da",
+      "to": "pulkitwalia099+golocal-supplier-a@gmail.com",
+      "subject": "[GoLocal TEST] New request for your business",
+      "receivedAt": "2026-10-12T06:45:24+00:00"
+    }
+  ],
+  "replyToChecks": [
+    {
+      "id": "1a12eddcdf8c7ed4",
+      "subject": "[GoLocal TEST] Request declined",
+      "receivedAt": "2026-10-12T06:47:30+00:00",
+      "replyTo": "pulkitwalia099@gmail.com"
+    },
+    {
+      "id": "1a12edd0c8fd76d6",
+      "subject": "[GoLocal TEST] Request confirmed",
+      "receivedAt": "2026-10-12T06:46:40+00:00",
+      "replyTo": "pulkitwalia099@gmail.com"
+    }
+  ]
+}

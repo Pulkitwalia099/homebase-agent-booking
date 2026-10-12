@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-11T19:22:17.523244+00:00",
+  "site": "https://getgolocal.com",
+  "businesses": "https://getgolocal.com/businesses",
+  "commit": "711ebe44ea1929a2c46be245cc89317835c2d2df",
+  "deployment_id": "dpl_7nBwMdziwvEh3CQbGu1QhJmmAXgi",
+  "deployment_status": "READY",
+  "logos": [
+    "Housecall Pro",
+    "Jobber",
+    "ServiceTitan",
+    "FieldEdge",
+    "Workiz",
+    "ServiceM8",
+    "Service Fusion",
+    "BuildOps",
+    "Simpro",
+    "Kickserv",
+    "Commusoft",
+    "Joblogic"
+  ],
+  "checks": [
+    "Production build and TypeScript passed",
+    "Diff whitespace check passed",
+    "Desktop and 390px mobile layouts visually reviewed",
+    "All 12 public logo assets loaded",
+    "Hero message width 275px and font size 12px confirmed on production"
+  ],
+  "source_bundle_files": 131,
+  "scope": "Business software examples and hero spacing; no new supplier integration activated",
+  "availability_note": "Housecall Pro tested in pilot. Additional connections planned; availability confirmed during onboarding."
+}

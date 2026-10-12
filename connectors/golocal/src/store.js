@@ -2,7 +2,7 @@ import { createCipheriv, createDecipheriv, randomBytes } from 'node:crypto';
 import { mkdir, readFile, writeFile, rename, open, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 
-// Single process, single operator pilot. The lock prevents unsafe sharing between processes.
+// Single-process pilot store. The lock prevents unsafe sharing between processes.
 export class Store {
   constructor(dir, key) {
     if (!/^[a-f0-9]{64}$/i.test(key)) throw new Error('DATA_ENCRYPTION_KEY must contain 64 hex characters');

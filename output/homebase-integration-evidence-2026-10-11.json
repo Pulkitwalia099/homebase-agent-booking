@@ -1,0 +1,216 @@
+{
+  "dateLocal": "2026-10-11",
+  "timezone": "America/New_York",
+  "scope": "Fresh read-only trial sample and startup MCP onboarding assessment. No vendor record writes, messages, bookings or payments.",
+  "zapier": {
+    "housecallConnected": true,
+    "defaultConfigured": true,
+    "nativeEnabledActions": [
+      {
+        "key": "customer",
+        "name": "Create Customer",
+        "type": "write",
+        "toolName": "housecall_pro_create_customer"
+      }
+    ],
+    "catalogCounts": {
+      "read": 2,
+      "write": 1,
+      "search": 0
+    },
+    "correction": "The two catalog reads are job event triggers. The enabled native MCP exposes Create Customer only; it does not expose callable job search/read actions.",
+    "customProbe": {
+      "purpose": "Read only company id/name/time_zone through the standard Zapier connection, fixed to the test company",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"isError\":true,\"error\":\"Code execution hit an error (error_id: 1ea1f760-5427-4b73-9e8b-e4a9e3124022).\",\"error_id\":\"1ea1f760-5427-4b73-9e8b-e4a9e3124022\"}"
+          }
+        ],
+        "isError": true
+      },
+      "interpretation": "Execution error with no diagnostic vendor HTTP status; public API access through this connection remains unverified.",
+      "disposition": "Temporary custom probe disabled after failure"
+    }
+  },
+  "directSample": {
+    "checkedAt": "2026-10-12T01:25:53.219Z",
+    "requests": [
+      "GET https://api.housecallpro.com/company",
+      "GET https://api.housecallpro.com/jobs?page=1&page_size=10"
+    ],
+    "company": {
+      "id": "4cd1c8ed-be46-46ea-a458-98b8063b82f3",
+      "name": "GoLocal Connector Test",
+      "timeZone": "America/New_York"
+    },
+    "companyFields": [
+      "id",
+      "name",
+      "time_zone",
+      "address",
+      "address.latitude",
+      "address.longitude",
+      "phone_number",
+      "support_email",
+      "website",
+      "logo_url",
+      "default_arrival_window",
+      "service_areas_data.zip_codes"
+    ],
+    "jobFields": [
+      "id",
+      "company_id",
+      "company_name",
+      "invoice_number",
+      "work_status",
+      "customer",
+      "customer.id",
+      "customer.first_name",
+      "customer.last_name",
+      "customer.email",
+      "customer.mobile_number",
+      "customer.home_number",
+      "customer.work_number",
+      "customer.notifications_enabled",
+      "customer.tags",
+      "customer.notes",
+      "customer.lead_source",
+      "customer.created_at",
+      "customer.updated_at",
+      "customer.kind",
+      "customer.company",
+      "customer.company_id",
+      "customer.company_name",
+      "address",
+      "assigned_employees",
+      "assigned_route_template_id",
+      "description",
+      "notes",
+      "tags",
+      "job_fields.job_type",
+      "job_fields.business_unit",
+      "lead_source",
+      "original_estimate_id",
+      "original_estimate_uuids",
+      "recurrence_id",
+      "recurrence_number",
+      "recurrence_rule",
+      "recurrence_status",
+      "subtotal",
+      "total_amount",
+      "outstanding_balance",
+      "schedule.scheduled_start",
+      "schedule.scheduled_end",
+      "schedule.scheduled_start_local",
+      "schedule.scheduled_end_local",
+      "schedule.time_zone",
+      "schedule.arrival_window",
+      "schedule.appointments",
+      "created_at",
+      "updated_at",
+      "canceled_at",
+      "deleted_at",
+      "locked_at",
+      "work_timestamps.started_at",
+      "work_timestamps.on_my_way_at",
+      "work_timestamps.completed_at"
+    ],
+    "jobs": [
+      {
+        "id": "job_7bec0be6b918473ba4492fc0d9dc882c",
+        "invoiceNumber": "3",
+        "workStatus": "needs scheduling",
+        "totalAmount": 0,
+        "schedule": {
+          "scheduled_start": null,
+          "scheduled_end": null,
+          "time_zone": "America/New_York",
+          "scheduled_start_local": null,
+          "scheduled_end_local": null,
+          "arrival_window": 0,
+          "appointments": []
+        },
+        "lineItemsInListResponse": []
+      },
+      {
+        "id": "job_2e0d3b1c453b45dbab46441411a44f44",
+        "invoiceNumber": "2",
+        "workStatus": "needs scheduling",
+        "totalAmount": 0,
+        "schedule": {
+          "scheduled_start": null,
+          "scheduled_end": null,
+          "time_zone": "America/New_York",
+          "scheduled_start_local": null,
+          "scheduled_end_local": null,
+          "arrival_window": 0,
+          "appointments": []
+        },
+        "lineItemsInListResponse": []
+      },
+      {
+        "id": "job_8ead1790a92c40e89c0294e6d1ed4359",
+        "invoiceNumber": "1",
+        "workStatus": "needs scheduling",
+        "totalAmount": 0,
+        "schedule": {
+          "scheduled_start": null,
+          "scheduled_end": null,
+          "time_zone": "America/New_York",
+          "scheduled_start_local": null,
+          "scheduled_end_local": null,
+          "arrival_window": 0,
+          "appointments": []
+        },
+        "lineItemsInListResponse": []
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "totalPages": 1
+    },
+    "limits": [
+      "Observed fields are a sample, not the full API schema",
+      "Contact values omitted",
+      "Job schedules do not establish bookable capacity",
+      "Null times do not prove no availability",
+      "Zero synthetic totals do not establish service pricing",
+      "Trial access does not establish other merchants' production access"
+    ]
+  },
+  "existingConnector": {
+    "hostedToolCheck": "connector_status failed with internal error",
+    "directTrialRead": "succeeded",
+    "recordedEarlierTests": "Synthetic $0 job creation, same-key retry, status and schedule removal passed; all three test operations used",
+    "productionLimits": [
+      "one operator/company",
+      "no real availability validation",
+      "no service fulfillment",
+      "no payments",
+      "no verified job cancellation",
+      "local backend/tunnel dependency"
+    ]
+  },
+  "recommendedArchitecture": {
+    "customer": "Agent -> Homebase MCP -> customer-scoped service/offer/booking tools. Supplier credentials never exposed to customers.",
+    "supplier": "Separate Homebase supplier onboarding -> credential/OAuth connection or assisted acceptance -> exact merchant binding -> service/pricing/coverage agreement -> capability test -> activate.",
+    "today": "One city, one task, one reachable agent channel. Assisted booking acceptance where integrations are unavailable; explicit pending/confirmed states.",
+    "target": "Durable hosting, customer OAuth, merchant isolation, normalized providers/offers/bookings, capability flags, reconciliation and idempotency, supplier self-service.",
+    "zapierRole": "Optional event sync and supported actions. Evaluate approved embedded/white-label product for supplier onboarding; current founder account is not multi-tenant product authorization."
+  },
+  "sources": [
+    "https://help.housecallpro.com/en/articles/8505035-api-overview",
+    "https://help.housecallpro.com/en/articles/5452973-zapier-integration-overview",
+    "https://help.housecallpro.com/en/articles/5683520-how-to-enable-webhooks",
+    "https://docs.zapier.com/sdk/reference",
+    "https://docs.zapier.com/powered-by-zapier",
+    "https://docs.zapier.com/white-label/getting-started",
+    "https://docs.zapier.com/powered-by-zapier/authentication/getting-started",
+    "https://ts.sdk.modelcontextprotocol.io/v2/serving/authorization",
+    "https://developer.getjobber.com/docs/getting_started/"
+  ],
+  "mainThesesChanged": false,
+  "workingPageChanged": false
+}

@@ -1,0 +1,1 @@
+Prepared only, not deployed. Both hero layouts and playback controls implemented; production build passed. Actual generated videos pending Higgsfield image upload. Zero credits spent. Final budget 350 credits total. Existing source bundle and launch report still describe the live site.

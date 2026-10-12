@@ -1,0 +1,1 @@
+Completed October 11, 2026 Eastern: Zapier Housecall account connected with explicit approval; direct trial sample captured; native tools corrected to Create Customer only; custom read execution failed and probe disabled. Project-relative safe evidence and supporting indexes archived. Main theses and working Page unchanged. No credentials or vendor-record mutations.

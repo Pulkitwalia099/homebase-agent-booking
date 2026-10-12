@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-12",
+  "status": "live_machine_hosted_test_pilot",
+  "public_origin": "https://camryn-mechanomorphic-ellis.ngrok-free.dev",
+  "backend": "assisted",
+  "test_only": true,
+  "deployment": {
+    "email_route_host": "https://getgolocal.com/api/pilot-email",
+    "website_release": "93ae87f",
+    "deployment_id": "dpl_5Qa1VndPnJoGZRnWZMpRd5ysfSro",
+    "status": "READY",
+    "durable_cloud_backend": "deferred"
+  },
+  "runtime": {
+    "local_port": 8792,
+    "server": "running",
+    "tunnel": "running",
+    "keep_awake": "running",
+    "persistent_data": "private local encrypted business store and matching account SQLite",
+    "auto_start_on_reboot": false
+  },
+  "accounts": {
+    "verified_founder_controlled_accounts": 4,
+    "approved_demo_suppliers": 2,
+    "shared_inbox": "founder personal Gmail aliases",
+    "existing_housecall_environment": "unchanged"
+  },
+  "prepared_requests": [
+    "confirmed",
+    "pending_supplier",
+    "declined"
+  ],
+  "email": {
+    "from": "notifications@getgolocal.com",
+    "reply_to": "pulkitwalia099@gmail.com",
+    "received_sign_in": true,
+    "received_supplier_alert": true,
+    "received_customer_confirmed": true,
+    "received_customer_declined": true,
+    "relay_expiry": "2026-11-12T04:59:59Z",
+    "receipt_evidence": "output/assisted-pilot-email-proof.json",
+    "public_unauthenticated_relay": "rejected",
+    "unrelated_production_secrets_downloaded": false
+  },
+  "verification": {
+    "connector_tests": 55,
+    "website_tests": 18,
+    "local_build": "Webpack and TypeScript passed; Turbopack local worker blocked by OS port policy",
+    "remote_build": "Turbopack and TypeScript passed",
+    "browser": [
+      "actual emailed customer sign-in",
+      "two approved suppliers visible",
+      "offer and customer request submission",
+      "supplier review and explicit test acceptance in separate Chrome session",
+      "customer sees confirmation",
+      "feedback submission and operator review"
+    ],
+    "cross_supplier_access": "rejected",
+    "public_mcp": "actual OAuth and MCP SDK read calls passed; verification grant revoked",
+    "notification_queue": {
+      "pending": 0,
+      "unknown": 0
+    },
+    "real_chatgpt_client_linking": "not_verified"
+  },
+  "external_effects": {
+    "third_party_supplier_messages": 0,
+    "service_bookings": 0,
+    "vendor_writes": 0,
+    "payments": 0,
+    "new_paid_subscriptions": 0
+  },
+  "unchanged": [
+    "main theses",
+    "working Page",
+    "website UI",
+    "existing Housecall private configuration and protected history"
+  ]
+}

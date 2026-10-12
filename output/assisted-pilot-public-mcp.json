@@ -1,0 +1,11 @@
+{
+  "transport": "actual MCP SDK over public HTTPS",
+  "scope": "golocal:assisted",
+  "testOnly": true,
+  "providers": 2,
+  "ownBookingStates": [
+    "pending_supplier",
+    "declined"
+  ],
+  "verificationGrantRevoked": true
+}

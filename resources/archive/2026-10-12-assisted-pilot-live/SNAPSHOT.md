@@ -1,0 +1,3 @@
+# Machine hosted assisted test pilot live
+
+October 12, 2026. Exact completed source, fixed-template email route, guides, credential-free bundles and safe verification evidence. 55 connector and 18 website tests pass; actual public email/browser/MCP flows verified using founder-controlled accounts. Server, tunnel and temporary keep-awake processes intentionally remain running. No runtime database, environment secrets, cookies, magic links, node_modules or Git metadata archived. Durable cloud backend deferred; no actual services, vendor writes or payments. Main theses and working Page unchanged.

@@ -1,0 +1,1 @@
+Exact project artifact snapshot before publishing the animated hero; preserves connector updates that arrived during hero generation. Website implementation was separately captured in the before-animated-hero archive.

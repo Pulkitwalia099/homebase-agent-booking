@@ -2,21 +2,31 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod/v4';
 import { randomUUID } from 'node:crypto';
 import { PilotError } from './jobber.js';
+import { assistedSchemas } from './assisted.js';
 
 const id = z.string().min(1).max(180);
 const key = z.string().regex(/^[a-zA-Z0-9_-]{8,80}$/);
-export function makeTools({ demo, jobber, housecall, housecallTest, store, config }) {
+export function makeTools({ demo, jobber, housecall, housecallTest, assisted, actor, store, config }) {
   const tools = [];
   const add = (name, description, schema, fn, readOnly = true, destructive = false) => tools.push({ name, description, schema, fn,
-    annotations: { readOnlyHint: readOnly, destructiveHint: destructive, idempotentHint: readOnly || ['confirm_booking', 'cancel_booking', 'commit_jobber_test_client', 'confirm_housecall_test_booking', 'unschedule_housecall_test_booking'].includes(name), openWorldHint: false } });
+    annotations: { readOnlyHint: readOnly, destructiveHint: destructive, idempotentHint: readOnly || ['request_booking','withdraw_booking_request','confirm_booking', 'cancel_booking', 'commit_jobber_test_client', 'confirm_housecall_test_booking', 'unschedule_housecall_test_booking'].includes(name), openWorldHint: false } });
   add('connector_status', 'Get connector backend, test restrictions and enabled capabilities. Does not validate a live booking.', {}, async () => ({
-    backend: config.backend, pilot: true, singleOperator: true, liveBookingsSupported: false, paymentsSupported: false,
-    dotsOAuthEnabled: Boolean(config.dotsOAuth), dotsOAuthScope: config.dotsOAuth ? (config.backend==='housecall'?'golocal:housecall-test':'golocal:demo') : null,
+    backend: config.backend, pilot: true, singleOperator: config.backend !== 'assisted', liveBookingsSupported: false, paymentsSupported: false,
+    testOnly:config.backend==='assisted'&&Boolean(config.assistedTestMode),bookingRequestsSupported:config.backend==='assisted', multiSupplierRoutingImplemented:config.backend==='assisted',
+    dotsOAuthEnabled: Boolean(config.dotsOAuth), dotsOAuthScope: config.dotsOAuth ? (config.backend==='assisted'?'golocal:assisted':config.backend==='housecall'?'golocal:housecall-test':'golocal:demo') : null,
     jobberConnected: Boolean(store.state.jobber?.active), jobberTestWritesEnabled: config.jobber.writes,
     housecallConfigured: config.backend === 'housecall' && Boolean(config.housecall?.apiKey && config.housecall?.companyId), housecallTestWritesEnabled: Boolean(config.housecall?.writes),
-    modeNotice: config.backend === 'demo' ? 'All provider data and bookings are simulated.' : config.backend === 'housecall' ? (config.housecall?.writes?'Housecall bound synthetic test jobs enabled. No real service, crew availability, payments or job cancellation API; schedule removal only.':'Housecall Pro test company and bounded job reads only. No vendor writes or live availability.') : 'Jobber account reads and operator-approved test-client writes only. Live scheduling is not implemented.'
+    modeNotice: config.backend === 'assisted' ? (config.assistedTestMode?'TEST ONLY: no actual service, dispatch, CRM write or payment. Supplier acceptance confirms a test request.':'')+'Supplier-approved listings and customer-owned booking requests. Confirmation requires supplier portal acceptance. No CRM sync, verified crew availability or GoLocal payments.' : config.backend === 'demo' ? 'All provider data and bookings are simulated.' : config.backend === 'housecall' ? (config.housecall?.writes?'Housecall bound synthetic test jobs enabled. No real service, crew availability, payments or job cancellation API; schedule removal only.':'Housecall Pro test company and bounded job reads only. No vendor writes or live availability.') : 'Jobber account reads and operator-approved test-client writes only. Live scheduling is not implemented.'
   }));
-  if (config.backend === 'demo') {
+  if (config.backend === 'assisted') {
+    const userId = () => { if(!actor?.userId) throw new PilotError('ACCOUNT_REQUIRED','Connect your customer account.'); return actor.userId; };
+    add('search_providers','Find active participating plumbing suppliers in a ZIP. Prices are for diagnostic visits; requested times require acceptance.',assistedSchemas.search.shape,a=>assisted.providers(userId(),a));
+    add('prepare_booking','Prepare a 15-minute offer for an exact supplier, ZIP and requested one-hour diagnostic visit. It does not reserve capacity.',assistedSchemas.offer.shape,a=>assisted.offer(userId(),a),false);
+    add('request_booking','After approval of the exact offer, share customer details with the selected supplier and request acceptance. Returns pending_supplier; no payment or CRM write. Reuse the same retry key.',assistedSchemas.request.shape,a=>assisted.request(userId(),a),false,true);
+    add('get_booking_status','Get the verified state of a booking request you own. Confirmed means the supplier explicitly accepted the unchanged offer.',{booking_id:id},a=>assisted.status(userId(),a.booking_id));
+    add('list_my_bookings','List only your customer booking requests.',{},async()=>({bookings:(await assisted.dashboard(userId())).customerBookings}));
+    add('withdraw_booking_request','Withdraw your still-pending request. Confirmed bookings require coordination with the supplier.',{booking_id:id,user_approved:z.literal(true)},a=>assisted.withdraw(userId(),a.booking_id),false,true);
+  } else if (config.backend === 'demo') {
     add('search_providers', 'Search fictional test plumbing providers in Salt Lake City ZIP 84101. No real merchant data.', {
       zip: z.string().regex(/^\d{5}$/), service: z.enum(['plumbing_diagnostic'])
     }, ({ zip, service }) => demo.providers(zip, service));

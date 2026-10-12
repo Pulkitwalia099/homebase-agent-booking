@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-12",
+  "project": "GoLocal assisted multi-supplier MVP",
+  "status": "built_and_verified_locally",
+  "backend": "assisted",
+  "verification": {
+    "automated": {
+      "command": "npm test",
+      "cwd": "connectors/golocal",
+      "passed": 53,
+      "failed": 0,
+      "skipped": 0,
+      "includes": [
+        "verified email accounts and one-time links",
+        "logout and CSRF",
+        "customer OAuth discovery, registration, consent, PKCE and revocation",
+        "real MCP SDK search, offer and booking request",
+        "supplier portal acceptance and decline",
+        "two-supplier and two-customer isolation",
+        "duplicate requests and conflicting decisions",
+        "encrypted restart persistence",
+        "hosted initialization and matching account-history checks",
+        "legacy demo, Housecall, Jobber and Muse restrictions"
+      ]
+    },
+    "browser": {
+      "environment": "isolated loopback preview with synthetic accounts",
+      "checks": [
+        "two approved suppliers visible for ZIP 84101",
+        "customer offer review and pending request submission",
+        "Supplier A denied access to Supplier B request",
+        "supplier acceptance of exact offer",
+        "customer dashboard shows confirmed request",
+        "separate Supplier B dashboard"
+      ],
+      "screenshots": [
+        "output/assisted-mvp-supplier-review.jpg",
+        "output/assisted-mvp-customer-account.jpg"
+      ]
+    },
+    "dependency_audit": {
+      "vulnerabilities_reported": 0
+    },
+    "container": {
+      "status": "not_built_for_this_revision",
+      "reason": "Docker daemon unavailable"
+    },
+    "diff_check": "passed"
+  },
+  "implemented": [
+    "verified customer accounts",
+    "verified supplier-owner accounts",
+    "supplier signup, edits, pause and operator-reviewed activation",
+    "per-supplier internal connection and capability records",
+    "customer-bound OAuth access",
+    "supplier comparison and immutable short-lived offers",
+    "durable pending requests with customer-scoped idempotency",
+    "supplier acceptance and decline with reasons",
+    "customer status and pending withdrawal"
+  ],
+  "boundaries": [
+    "one persistent application process and replica",
+    "one supplier profile per owner account",
+    "one service: USD one-hour plumbing diagnostic",
+    "supplier dashboard manually checked; no booking alerts",
+    "ChatGPT callback allowlist; other agent authorization not implemented",
+    "no Zapier or Housecall CRM sync in assisted mode",
+    "no live capacity reservation or automatic booking",
+    "no GoLocal payment collection",
+    "no confirmed-booking changes or fulfillment tracking"
+  ],
+  "unverified": [
+    "public deployment of assisted mode",
+    "production email sender and delivery",
+    "actual public ChatGPT linking of assisted mode",
+    "real supplier participation or service fulfillment",
+    "container image build for new dependencies"
+  ],
+  "external_effects": {
+    "supplier_api_writes": 0,
+    "emails_sent": 0,
+    "service_bookings_made": 0,
+    "payments": 0,
+    "public_deployments": 0
+  },
+  "preserved": [
+    "existing private environment and supplier credentials",
+    "protected Housecall test history",
+    "legacy backend modes",
+    "main business theses",
+    "working Page",
+    "public website"
+  ],
+  "entry_points": {
+    "guide": "connectors/golocal/docs/assisted-mvp.md",
+    "preview_command": "npm run preview:assisted",
+    "customer_portal": "/assisted",
+    "supplier_signup": "/assisted/supplier/new",
+    "operator_review": "/operator/assisted",
+    "mcp": "/mcp",
+    "oauth_scope": "golocal:assisted"
+  },
+  "source_references": [
+    "https://better-auth.com/docs/integrations/express",
+    "https://better-auth.com/docs/plugins/magic-link",
+    "https://better-auth.com/docs/adapters/sqlite",
+    "https://resend.com/docs/api-reference/emails/send-email"
+  ]
+}

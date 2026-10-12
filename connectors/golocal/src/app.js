@@ -6,6 +6,8 @@ import { makeServer, makeTools } from './tools.js';
 import { PilotError } from './jobber.js';
 import { AgentOAuth, DEMO_SCOPE } from './agent-oauth.js';
 import { mcpAuthRouter } from '@modelcontextprotocol/sdk/server/auth/router.js';
+import { toNodeHandler } from 'better-auth/node';
+import { mountAssistedPortal } from './assisted-portal.js';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const equal = (a, b) => typeof a === 'string' && Buffer.byteLength(a) === Buffer.byteLength(b) && timingSafeEqual(Buffer.from(a), Buffer.from(b));
@@ -30,11 +32,20 @@ export function createApp(context) {
     if (limits.size > 1000) for (const [ip, value] of limits) if (value.until < now) limits.delete(ip);
     next();
   });
+  if (config.backend === 'assisted') {
+    if (!context.accounts || !context.assisted) throw new Error('Assisted accounts and service must be initialized before serving.');
+    app.all('/account/*splat', (req,res,next)=>{res.set('Referrer-Policy','no-referrer');next();}, toNodeHandler(context.accounts.auth));
+  }
   app.use(express.json({ limit: '32kb' }));
   app.use(express.urlencoded({ extended: false, limit: '4kb' }));
   if (config.dotsOAuth) app.use(mcpAuthRouter({ provider: agentOAuth, issuerUrl: new URL(config.baseUrl), resourceServerUrl: new URL(`${config.baseUrl}/mcp`),
-    scopesSupported: [agentOAuth.scope], resourceName: config.backend==='housecall'?'GoLocal Housecall test jobs':'GoLocal simulated booking test', serviceDocumentationUrl: new URL(`${config.baseUrl}/integration`), clientRegistrationOptions: { clientSecretExpirySeconds: 0 } }));
+    scopesSupported: [agentOAuth.scope], resourceName: config.backend==='assisted'?'GoLocal customer booking requests':config.backend==='housecall'?'GoLocal Housecall test jobs':'GoLocal simulated booking test', serviceDocumentationUrl: new URL(`${config.baseUrl}/integration`), clientRegistrationOptions: { clientSecretExpirySeconds: 0 } }));
   const auth = async (req, res, next) => {
+    if (config.backend === 'assisted') {
+      const token = req.get('authorization')?.match(/^Bearer ([a-f0-9]{64})$/)?.[1];
+      if (token) { try { const grant=await agentOAuth.verifyAccessToken(token); req.actor={userId:grant.extra.userId}; return next(); } catch {} }
+      return res.status(401).set('WWW-Authenticate',`Bearer resource_metadata="${config.baseUrl}/.well-known/oauth-protected-resource/mcp", scope="${agentOAuth.scope}"`).json({error:'Connect your customer account.'});
+    }
     const muse=config.museAccess;
     if(muse && equal(req.get('authorization'),`Bearer ${muse.token}`) && config.backend==='housecall' && config.housecall?.companyId===muse.companyId && config.baseUrl===muse.baseUrl && Date.now()<muse.expiresAt) return next();
     if (equal(req.get('authorization'), `Bearer ${config.mcpToken}`)) return next();
@@ -58,25 +69,27 @@ export function createApp(context) {
   const form = (req, action, label) => `<form method="post" action="${escape(action)}"><input type="hidden" name="csrf" value="${escape(req.operator.csrf)}"><button>${escape(label)}</button></form>`;
   const wrap = fn => (req, res, next) => Promise.resolve(fn(req, res)).catch(next);
 
+  if (config.backend === 'assisted') mountAssistedPortal(app,{...context,agentOAuth,operator,operatorCsrf:csrf});
+
   app.get('/health', (req, res) => res.json({ ok: true, service: 'golocal-pilot', backend: config.backend }));
-  app.get('/', (req, res) => res.send(page('GoLocal connector pilot', '<p>A private connector test for Muse and compatible MCP clients.</p><p><a href="/operator">Operator setup</a> · <a href="/integration">Integration documentation</a></p><p>Demo bookings are simulated. Live bookings and payments are not enabled.</p>')));
+  app.get('/', (req, res) => config.backend === 'assisted' ? res.redirect(303,'/assisted') : res.send(page('GoLocal connector pilot', '<p>A private connector test for Muse and compatible MCP clients.</p><p><a href="/operator">Operator setup</a> · <a href="/integration">Integration documentation</a></p><p>Demo bookings are simulated. Live bookings and payments are not enabled.</p>')));
   app.get('/integration', (req, res) => res.json({
-    name: 'GoLocal', environment: 'private pilot', product: { agentConnection: 'One GoLocal service, configured separately in each personal agent.', supplierAdapters: ['Housecall Pro', 'Jobber'], multiSupplierRoutingImplemented: false }, backend: config.backend, mcp: { url: `${config.baseUrl}/mcp`, transport: 'Streamable HTTP', auth: config.dotsOAuth ? `OAuth authorization-code + S256 PKCE for ${agentOAuth.scope}; private operator-issued bearer key also supported` : 'Bearer token via secure credentials input' },
+    name: 'GoLocal', environment: config.backend==='assisted'?'assisted supplier pilot':'private pilot', product: { agentConnection: 'One GoLocal service, configured separately in each personal agent.', supplierAdapters: config.backend==='assisted'?['Supplier portal acceptance']:['Housecall Pro', 'Jobber'], multiSupplierRoutingImplemented: config.backend==='assisted' }, backend: config.backend, mcp: { url: `${config.baseUrl}/mcp`, transport: 'Streamable HTTP', auth: config.backend==='assisted'?`Customer OAuth authorization-code + S256 PKCE for ${agentOAuth.scope}; shared operator bearer keys are rejected`:config.dotsOAuth ? `OAuth authorization-code + S256 PKCE for ${agentOAuth.scope}; private operator-issued bearer key also supported` : 'Bearer token via secure credentials input' },
     api: { listTools: `${config.baseUrl}/api/tools`, callTool: `${config.baseUrl}/api/tools/{name}`, method: 'POST', body: 'JSON object matching the tool input schema', auth: 'Authorization: Bearer <GoLocal agent credential>' },
     privateMuseSetup: { authentication:config.hostedAccess?'Revocable GoLocal bearer credential, restricted to the Housecall test backend, exact company and HTTPS origin. No daily expiry; enter only into a secure credential form.':'Operator-issued GoLocal bearer credential, restricted to the Housecall test backend, exact company and HTTPS origin; expires within one day. Enter only into a secure credential form.', oauthCompatibility:'Current OAuth registration allows ChatGPT callbacks only. Do not use it for Muse.', permissions:'Use platform approval controls for test writes. No supplier API key is exposed.' },
-    constraints: ['Single operator and one test business account.', 'Simulated bookings only in demo mode.', 'Real service booking and payments are not implemented; Housecall synthetic scheduling is test-only.', 'Housecall Pro mode permits only bound test company reads and explicitly enabled synthetic $0 test jobs; schedule removal is not job cancellation.', 'Jobber test writes require operator enablement and separate browser approval.', 'Keep secrets out of chat, URLs and tool responses.'],
+    constraints: config.backend==='assisted'?['Multiple operator-approved suppliers; customer-owned booking requests.','Requested times are not verified live availability.','Confirmation requires explicit supplier acceptance of the unchanged offer.','No CRM synchronization, automatic vendor bookings or GoLocal payments.','One service: one-hour plumbing diagnostic; repairs quoted separately.','Customer OAuth callbacks currently support verified ChatGPT clients only.','Single-process persistent disk; do not run multiple replicas.']:['Single operator and one test business account.', 'Simulated bookings only in demo mode.', 'Real service booking and payments are not implemented; Housecall synthetic scheduling is test-only.', 'Housecall Pro mode permits only bound test company reads and explicitly enabled synthetic $0 test jobs; schedule removal is not job cancellation.', 'Jobber test writes require operator enablement and separate browser approval.', 'Keep secrets out of chat, URLs and tool responses.'],
     tools: makeTools(context).map(t => ({ name: t.name, description: t.description, annotations: t.annotations, inputSchema: z.toJSONSchema(z.object(t.schema).strict()) }))
   }));
   app.get('/api/tools', auth, (req, res) => res.json({ tools: makeTools(context).map(t => ({ name: t.name, description: t.description, annotations: t.annotations, inputSchema: z.toJSONSchema(z.object(t.schema).strict()) })) }));
   app.post('/api/tools/:name', auth, wrap(async (req, res) => {
-    const tool = makeTools(context).find(t => t.name === req.params.name);
+    const tool = makeTools({...context,actor:req.actor}).find(t => t.name === req.params.name);
     if (!tool) return res.status(404).json({ code: 'NOT_FOUND' });
     const args = z.object(tool.schema).strict().safeParse(req.body);
     if (!args.success) return res.status(400).json({ code: 'INVALID_INPUT' });
     res.json(await tool.fn(args.data));
   }));
   app.post('/mcp', auth, wrap(async (req, res) => {
-    const server = makeServer(context);
+    const server = makeServer({...context,actor:req.actor});
     const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
     res.on('close', () => { void transport.close(); void server.close(); });
     await server.connect(transport);
@@ -103,6 +116,7 @@ export function createApp(context) {
   for (const decision of ['approve','deny']) app.post(`/operator/agent/consent/:id/${decision}`,operator,csrf,wrap(async(req,res) => res.redirect(303,await agentOAuth.consent(req.params.id,decision==='approve'))));
   app.post('/operator/agent/revoke',operator,csrf,wrap(async(req,res) => { await agentOAuth.revokeAll(); if(config.hostedAccess) await store.transaction(s=>{s.hostedCredentialRevoked=true;});res.redirect(303,'/operator'); }));
   app.get('/operator', operator, (req, res) => {
+    if (config.backend === 'assisted') return res.redirect(303,'/operator/assisted');
     if (config.backend === 'housecall') return res.send(page('GoLocal operator', `<p>Housecall Pro bound test mode. Company: ${escape(config.housecall.companyId)}. Synthetic test writes: ${Boolean(config.housecall.writes)}.</p><p>Real vendor test jobs only; no fulfillment, dispatch or payments. Removing a schedule does not cancel the job.</p>${form(req,'/operator/agent/revoke',config.hostedAccess?'Revoke Muse and ChatGPT / Dots access':'Revoke all ChatGPT / Dots access')}<p><a href="/integration">Tool documentation</a></p>`));
     const active = store.state.jobber?.active;
     const body = `<p>Mode: <strong>${escape(config.backend)}</strong>. No live scheduling or payments.</p>

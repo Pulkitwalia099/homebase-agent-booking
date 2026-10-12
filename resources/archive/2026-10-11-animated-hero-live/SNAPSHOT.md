@@ -1,0 +1,1 @@
+Completed animated-hero release on getgolocal.com. Exact final report, source bundle (including optimized clips), README and evidence. Master 4K clips remain in output/hero-masters. Theses and working Page unchanged.

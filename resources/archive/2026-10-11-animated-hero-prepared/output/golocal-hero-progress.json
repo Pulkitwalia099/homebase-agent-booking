@@ -1,0 +1,27 @@
+{
+  "status": "Website hero code and comparison layout prepared locally; image upload to Higgsfield pending. Not deployed.",
+  "budget_credits_total": 350,
+  "credits_spent": 0,
+  "account_balance_observed": 1500,
+  "model_prepared": "Kling 3.0",
+  "duration_seconds": 8,
+  "resolution": "4K",
+  "quoted_credits_first_generation": 48,
+  "source_image": "website/apps/web/public/brand/local-services.png",
+  "variants": [
+    "Continuous worker activity",
+    "Personal-agent message with coordinated worker activity"
+  ],
+  "message": "Just take care of the house for me.",
+  "reply": "On it. I\u2019ll coordinate the right local pros.",
+  "pending": [
+    "Upload original image through Higgsfield Start frame",
+    "Generate and inspect both clips within 350 credits",
+    "Optimize video and inspect looping playback",
+    "Verify motion controls and mobile layout with actual video",
+    "Publish and verify getgolocal.com",
+    "Refresh source bundle and launch report"
+  ],
+  "local_preview": "http://127.0.0.1:3012/hero-preview",
+  "existing_live_site": "https://getgolocal.com"
+}

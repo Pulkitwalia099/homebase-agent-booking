@@ -1,0 +1,1 @@
+Exact prior supporting indexes before recording the Zapier/Housecall connection and fresh direct API sample. Project-relative paths preserved. Main thesis and working Page unchanged; credentials excluded.

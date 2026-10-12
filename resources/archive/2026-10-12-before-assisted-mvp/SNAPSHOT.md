@@ -1,0 +1,1 @@
+Exact pre-build source and supporting documents for assisted multi-supplier MVP. Existing website changes preserved; credentials, runtime state and dependencies excluded. Main theses and working Page unchanged.
