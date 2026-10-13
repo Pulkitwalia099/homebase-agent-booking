@@ -8,6 +8,7 @@ import { AgentOAuth, DEMO_SCOPE } from './agent-oauth.js';
 import { mcpAuthRouter } from '@modelcontextprotocol/sdk/server/auth/router.js';
 import { toNodeHandler } from 'better-auth/node';
 import { mountAssistedPortal } from './assisted-portal.js';
+import { mountPublicDemo } from './public-demo.js';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const equal = (a, b) => typeof a === 'string' && Buffer.byteLength(a) === Buffer.byteLength(b) && timingSafeEqual(Buffer.from(a), Buffer.from(b));
@@ -22,7 +23,7 @@ export function createApp(context) {
   app.use((req, res, next) => {
     // Preserve Origin on same-origin browser form POSTs; suppress cross-origin referrers.
     res.set({ 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin',
-      'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; form-action 'self' https://api.getjobber.com https://chatgpt.com; frame-ancestors 'none'; base-uri 'none'" });
+      'Content-Security-Policy': `default-src 'none'; style-src 'unsafe-inline'; form-action 'self' https://api.getjobber.com https://chatgpt.com${config.accounts?.google?.enabled?' https://accounts.google.com':''}; frame-ancestors 'none'; base-uri 'none'` });
     if (!config.allowedHosts.has(req.get('host'))) return res.status(403).send('Host not allowed. Set PUBLIC_BASE_URL to the exact HTTPS tunnel origin.');
     const origin = req.get('origin');
     if (origin && origin !== config.baseUrl && !config.allowedOrigins.includes(origin)) return res.status(403).send('Origin not allowed.');
@@ -38,6 +39,7 @@ export function createApp(context) {
   }
   app.use(express.json({ limit: '32kb' }));
   app.use(express.urlencoded({ extended: false, limit: '4kb' }));
+  mountPublicDemo(app, config);
   if (config.dotsOAuth) app.use(mcpAuthRouter({ provider: agentOAuth, issuerUrl: new URL(config.baseUrl), resourceServerUrl: new URL(`${config.baseUrl}/mcp`),
     scopesSupported: [agentOAuth.scope], resourceName: config.backend==='assisted'?'GoLocal customer booking requests':config.backend==='housecall'?'GoLocal Housecall test jobs':'GoLocal simulated booking test', serviceDocumentationUrl: new URL(`${config.baseUrl}/integration`), clientRegistrationOptions: { clientSecretExpirySeconds: 0 } }));
   const auth = async (req, res, next) => {

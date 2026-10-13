@@ -1,4 +1,5 @@
 import { betterAuth } from 'better-auth';
+import { verifyGoogleIdToken } from 'better-auth/social-providers';
 import { magicLink } from 'better-auth/plugins/magic-link';
 import { getMigrations } from 'better-auth/db/migration';
 import Database from 'better-sqlite3';
@@ -31,6 +32,20 @@ export async function createAccounts(config, sendOverride, existingUsers = {}) {
     trustedOrigins:[config.baseUrl], telemetry:{enabled:false}, logger:{disabled:true},
     rateLimit:{enabled:true,storage:'database'},
     session:{expiresIn:7*86400,updateAge:86400},
+    // Only verified email matches may link to a verified existing account.
+    account:{encryptOAuthTokens:true,accountLinking:{enabled:true,trustedProviders:[],allowDifferentEmails:false}},
+    ...(config.accounts.google?.enabled?{socialProviders:{google:{
+      clientId:config.accounts.google.clientId,clientSecret:config.accounts.google.clientSecret,
+      prompt:'select_account',accessType:'online',includeGrantedScopes:false,
+      disableIdTokenSignIn:true,
+      // Verify claims from the server-side code exchange before creating/linking an account.
+      getUserInfo:async tokens=>{
+        if(!tokens.idToken)return null;
+        const profile=await verifyGoogleIdToken({token:tokens.idToken,audience:config.accounts.google.clientId});
+        if(!profile||profile.email_verified!==true||typeof profile.sub!=='string'||typeof profile.email!=='string')return null;
+        return {user:{name:profile.name||'',email:profile.email,image:profile.picture,emailVerified:true},data:profile};
+      },
+    }}}:{}),
     plugins:[magicLink({expiresIn:900,storeToken:'hashed',sendMagicLink:send})],
   };
   try {

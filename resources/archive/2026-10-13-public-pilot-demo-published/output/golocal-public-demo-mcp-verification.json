@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-13T08:34:01.265Z",
+  "origin": "https://getgolocal.com",
+  "transport": "real MCP SDK Streamable HTTP",
+  "notificationAcknowledgementVerified": true,
+  "tools": [
+    {
+      "tool": "connector_status",
+      "state": null
+    },
+    {
+      "tool": "scope_request",
+      "state": "ready"
+    },
+    {
+      "tool": "search_providers",
+      "state": null
+    },
+    {
+      "tool": "get_availability",
+      "state": null
+    },
+    {
+      "tool": "prepare_booking",
+      "state": null
+    },
+    {
+      "tool": "confirm_booking",
+      "state": "simulated_confirmed"
+    },
+    {
+      "tool": "get_booking_status",
+      "state": "simulated_confirmed"
+    },
+    {
+      "tool": "confirm_booking",
+      "state": "simulated_confirmed"
+    }
+  ],
+  "provider": "Oak Plumbing",
+  "priceCents": 7900,
+  "amountCharged": 0,
+  "state": "simulated_confirmed",
+  "stableRetry": true,
+  "simulated": true,
+  "noAccountData": true,
+  "providers": [
+    "Oak Plumbing",
+    "Canyon Plumbing",
+    "Jordan Home Plumbing"
+  ]
+}

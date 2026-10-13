@@ -1,0 +1,1 @@
+Exact sources before the October 13 public pilot demo, customer credit signup and public simulated MCP. Existing customer OAuth and supplier acceptance test already passed. No credentials or customer records included.

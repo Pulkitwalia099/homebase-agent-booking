@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-13",
+  "production_deployment": "dpl_AA85ZKMjZVjYHJXhibM6CJLASiMH",
+  "production_url": "https://getgolocal.com",
+  "status": "READY and promoted",
+  "post_release_checks": {
+    "homepage_http": 200,
+    "homepage_50_dollar_offer": true,
+    "setup_http": 200,
+    "exact_connect_demo_step": true,
+    "supplier_pilot_http": 200,
+    "supplier_profile_link": true,
+    "existing_customer_oauth_connector_backend": "assisted",
+    "existing_oauth_scope": "golocal:assisted",
+    "existing_supplier_acceptance_required": true
+  },
+  "test_counts": {
+    "connector": 60,
+    "website": 24
+  },
+  "chatgpt_demo_conversation": "https://chatgpt.com/c/6acded33-cfe8-83ea-a191-ff0fcae830df",
+  "chatgpt_demo_state": "simulated_confirmed",
+  "customer_alert_message_id": "1a13459efb5fabbf",
+  "supplier_alert_message_id": "1a1345e14aa05509",
+  "duplicate_customer_signup_http": 200,
+  "backend_lifecycle_report": "golocal-public-demo-mcp-verification.json",
+  "runtime": {
+    "local_server": true,
+    "tunnel_process": true,
+    "keep_awake": true,
+    "persistent_cloud_backend_added": false
+  },
+  "limits": [
+    "Simulated companies, ratings, prices and appointments. No real fulfillment or charges.",
+    "Credit reserved at signup; redemption awaits real-service launch.",
+    "Claude and other client setup documented but not independently verified."
+  ]
+}

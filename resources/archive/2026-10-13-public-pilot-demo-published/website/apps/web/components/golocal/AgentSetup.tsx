@@ -1,0 +1,18 @@
+"use client";
+import { useState } from 'react';
+import Link from 'next/link';
+export const demoMcpUrl = 'https://getgolocal.com/demo/mcp';
+export const firstPrompt = 'Use GoLocal Demo. My kitchen tap drips when turned off in ZIP 84101. Help me compare plumbers, visit prices and times, then confirm an example appointment after I approve it. Keep this a demo: no real booking or charge.';
+export function CopyValue({ value, label }: { value: string; label: string }) {
+  const [copied, setCopied] = useState(false), [error, setError] = useState(false);
+  async function copy() { try { await navigator.clipboard.writeText(value); setCopied(true); setError(false); } catch { setError(true); } }
+  return <div className="gl-copy"><code>{value}</code><button type="button" onClick={copy} aria-label={label}>{copied ? 'Copied ✓' : 'Copy'}</button>{error && <small role="status">Select the text above and copy it manually.</small>}</div>;
+}
+export default function AgentSetup() {
+  const [client, setClient] = useState('ChatGPT');
+  return <div className="gl-setup"><div className="gl-client-tabs" role="group" aria-label="Choose your agent">{['ChatGPT', 'Claude', 'Other agents'].map(c => <button type="button" key={c} aria-pressed={client === c} onClick={() => setClient(c)}>{c}</button>)}</div><p className="gl-setup-note">Free simulation. No GoLocal account, API key or email sign-in required.</p><ol className="gl-setup-steps">
+    <li><span>01</span><div><h3>{client === 'ChatGPT' ? 'Add a custom MCP server' : client === 'Claude' ? 'Add a custom connector' : 'Open your agent’s MCP settings'}</h3><p>{client === 'ChatGPT' ? <>Open <a href="https://chatgpt.com/plugins" target="_blank" rel="noreferrer">ChatGPT Plugins ↗</a>. Select <strong>+</strong> → <strong>Add custom MCP server</strong>. Name it <strong>GoLocal Demo</strong>.</> : client === 'Claude' ? <>In Claude, open <strong>Settings → Connectors → Add custom connector</strong>. Name it <strong>GoLocal Demo</strong>. Your account or organization must permit custom connectors.</> : <>Add a remote MCP server named <strong>GoLocal Demo</strong>. Your client needs to support <strong>Streamable HTTP</strong>. Ask us if it needs different setup.</>}</p></div></li>
+    <li><span>02</span><div><h3>Paste this URL</h3><CopyValue value={demoMcpUrl} label="Copy demo MCP URL" /><p>Choose <strong>No authentication</strong>. {client === 'ChatGPT' ? <>Review the notice, tick <strong>I understand and want to continue</strong>, then choose <strong>Create as a plugin</strong>. Choose <strong>Connect GoLocal Demo</strong> when prompted. On its page, choose <strong>Try in chat</strong>.</> : <>Save the connector and enable its tools.</>}</p></div></li>
+    <li><span>03</span><div><h3>Start a conversation. Try this.</h3><p>{client === 'ChatGPT' ? <>In a new chat, type <strong>@</strong> and select <strong>GoLocal Demo</strong>. Paste this prompt. Approve the demo confirmation when asked.</> : <>Enable GoLocal Demo in your conversation, paste this prompt and approve the demo confirmation when asked.</>}</p><CopyValue value={firstPrompt} label="Copy first demo prompt" /></div></li>
+  </ol><p className="gl-note">ChatGPT is our verified pilot agent. Claude and other clients use their documented remote MCP setup; their GoLocal demo flows have not yet been independently verified. Account and workspace controls apply. The demo server may be temporarily offline while our pilot machine is unavailable.</p><div className="gl-setup-bottom"><span>No custom connector option? You can still try the full journey here.</span><Link href="/demo" className="gl-text-link">Open the web demo ↗</Link></div></div>;
+}

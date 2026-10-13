@@ -4,6 +4,10 @@ Built locally on October 12, 2026 in the existing Express MCP connector. Custome
 
 This mode records real participation and decisions when used with actual accounts. It does not reserve CRM capacity, create Housecall Pro jobs, synchronize Zapier, collect payments or prove service fulfillment. `confirmed` means the supplier accepted the unchanged request in the GoLocal portal.
 
+## Actual ChatGPT verification · October 13
+
+The real assisted ChatGPT flow now passed: customer OAuth, search and offer, customer-approved pending request, supplier portal acceptance, and an independent final ChatGPT status read. Both notification emails were delivered. [Completed conversation, evidence and repeat instructions](chatgpt-assisted-test.md). The October 12 build notes below retain the original pending client-linking observations, superseded by this later verification. Live Google sign-in was verified separately; this ChatGPT linking reused the already signed-in customer session. No application code changed for the live test.
+
 ## Try the isolated preview
 
 Requires Node 22 or later. From `connectors/golocal`:

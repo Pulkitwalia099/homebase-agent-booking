@@ -2,6 +2,14 @@
 
 The assisted MVP is running from your machine through an HTTPS tunnel. It supports customer email sign-in, supplier onboarding, operator approval, test booking requests, supplier acceptance or decline, email alerts and feedback. Every page labels it as a test: no actual visit, CRM job or payment occurs.
 
+## Google sign-in · October 13
+
+Continue with Google is implemented and tested. The Google OAuth client is registered, and the live account chooser and callback are verified. The founder completed Google verification and returned to the existing account with its confirmed test request intact. Customers and suppliers can choose Google without opening an email link; email remains available. Google is currently in testing mode; verify each participant’s access before inviting them. The account chooser shows the temporary ngrok domain. Keep email fallback for the founder’s Gmail alias demo accounts: aliases are not separate Google identities. [Setup, customer flow and future ChatGPT/Claude options](customer-signin.md).
+
+## Full ChatGPT flow · October 13
+
+The actual customer → ChatGPT → GoLocal MCP → supplier acceptance → ChatGPT status flow passed. [Open the completed chat and repeat the demonstration](chatgpt-assisted-test.md). Use the new **GoLocal** app with `golocal:assisted`, rather than the old demo/Housecall connections. Supplier request and customer confirmation emails were both delivered; no standing app permission was changed.
+
 ## Open the pilot
 
 | Person | Link |
@@ -69,4 +77,4 @@ npm run pilot:stop
 
 Start restores the pilot server, tunnel and temporary keep-awake process. Stop ends only those owned processes and keeps saved accounts and requests. The separate `.env.assisted-pilot` and `.data-assisted-pilot/` hold private configuration and data; the existing Housecall `.env` and protected test history remain separate. No auto-start on machine reboot is configured.
 
-The existing tunnel URL now serves assisted test mode. Old Housecall/Muse shared credentials do not authorize customer access to it. The new MCP endpoint is [the pilot MCP](https://camryn-mechanomorphic-ellis.ngrok-free.dev/mcp), with customer OAuth scope `golocal:assisted`. Actual public MCP SDK calls passed; linking this mode inside ChatGPT remains a separate client check. Manual browser testing can proceed now.
+The existing tunnel URL now serves assisted test mode. Old Housecall/Muse shared credentials do not authorize customer access to it. The new MCP endpoint is [the pilot MCP](https://camryn-mechanomorphic-ellis.ngrok-free.dev/mcp), with customer OAuth scope `golocal:assisted`. Actual public MCP SDK calls and the October 13 real ChatGPT assisted request/acceptance flow passed. Manual browser testing can also proceed.

@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-10-13T07:53:30.111310+00:00",
+  "result": "passed",
+  "agent": "ChatGPT regular Chat mode in Chrome",
+  "conversationURL": "https://chatgpt.com/c/6acde1b6-29ac-83e9-9185-5e3c3857fdd1",
+  "pluginName": "GoLocal",
+  "pluginURL": "https://chatgpt.com/plugins/plugin_asdk_app_6acde11c769c819190f47c0d5dfe0f0b",
+  "appId": "asdk_app_6acde11c769c819190f47c0d5dfe0f0b",
+  "visibility": "private development custom MCP connection",
+  "endpoint": "https://camryn-mechanomorphic-ellis.ngrok-free.dev/mcp",
+  "oauthScope": "golocal:assisted",
+  "registration": "Dynamic Client Registration",
+  "customerAccount": "pulkitwalia099@gmail.com",
+  "supplierAccount": "pulkitwalia099+golocal-supplier-a@gmail.com",
+  "supplier": "Demo Plumbing A \u2014 Test Only",
+  "quoteId": "quote_10ca9459-760d-41b3-8431-f45fb65f5306",
+  "bookingId": "booking_89f3b5d3-3e95-44a1-8132-ebbb8a5805f1",
+  "idempotencyKey": "chatgpt-assisted-e2e-20261013-01",
+  "requestedStart": "2026-10-16T20:00:00.000Z",
+  "requestedEnd": "2026-10-16T21:00:00.000Z",
+  "timezone": "America/Denver",
+  "priceCents": 9500,
+  "stateBeforeDecision": "pending_supplier",
+  "stateAfterDecision": "confirmed",
+  "confirmationSource": "supplier_portal_acceptance",
+  "testOnly": true,
+  "amountCharged": 0,
+  "vendorSync": "not_connected",
+  "newRequestsSubmitted": 1,
+  "supplierDecision": "Accept request through signed-in owner portal",
+  "finalVerification": "ChatGPT separately called get_booking_status after supplier acceptance and read confirmed",
+  "toolSequence": [
+    "connector_status",
+    "search_providers",
+    "prepare_booking",
+    "request_booking",
+    "get_booking_status (pending)",
+    "get_booking_status (confirmed)"
+  ],
+  "emails": [
+    {
+      "messageId": "1a1343d24e23ee6c",
+      "subject": "[GoLocal TEST] Request confirmed",
+      "to": "pulkitwalia099@gmail.com",
+      "bookingIdMatched": true,
+      "state": "confirmed"
+    },
+    {
+      "messageId": "1a1343bf5edad659",
+      "subject": "[GoLocal TEST] New request for your business",
+      "to": "pulkitwalia099+golocal-supplier-a@gmail.com",
+      "bookingIdMatched": true,
+      "state": "pending supplier"
+    }
+  ],
+  "connectionApproval": "Explicit user action-time approval received",
+  "requestSharingApproval": "Allow once for synthetic name, phone and address; no Always allow or global permissions change",
+  "permissionsChanged": false,
+  "observedFriction": [
+    "Legacy GoLocal Connector Test cached golocal:demo; the new assisted connection requires golocal:assisted",
+    "ChatGPT requested a one-time sharing approval for the synthetic contact details",
+    "Tool response names the shared role-aware request URL statusUrl; agent could not identify a separate supplier review URL",
+    "Google branding currently displays the ngrok domain"
+  ],
+  "identityVerificationBoundary": "This ChatGPT linking reused the already signed-in verified customer browser session. Live Google sign-in was verified separately; fresh Google sign-in nested inside ChatGPT consent is covered by the automated test only.",
+  "notEstablished": [
+    "unaided agent selection",
+    "representative customer demand",
+    "real supplier fulfillment",
+    "paid continuation",
+    "CRM sync",
+    "verified crew availability",
+    "always-on hosting"
+  ],
+  "actualServiceBookings": 0,
+  "vendorWrites": 0,
+  "payments": 0,
+  "applicationCodeChanges": false,
+  "tests": "57 connector tests passed in the preceding implementation turn; no application code changed for this live verification",
+  "evidence": [
+    "golocal-assisted-chatgpt-transcript.txt",
+    "golocal-assisted-chatgpt-connected.png",
+    "golocal-assisted-chatgpt-request-approval.png",
+    "golocal-assisted-chatgpt-request-pending.png",
+    "golocal-assisted-supplier-pending-request.png",
+    "golocal-assisted-supplier-accepted.png",
+    "golocal-assisted-chatgpt-confirmed.png",
+    "golocal-assisted-chatgpt-email-proof.json"
+  ]
+}

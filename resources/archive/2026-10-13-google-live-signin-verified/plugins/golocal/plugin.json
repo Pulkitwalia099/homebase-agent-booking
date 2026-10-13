@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "golocal",
+  "version": "0.1.1",
+  "description": "Private GoLocal simulated plumbing booking test for ChatGPT, Dots and Codex.",
+  "author": { "name": "GoLocal" },
+  "extensions": {
+    "com.openai": {
+      "apps": "./.app.json",
+      "interface": {
+        "displayName": "GoLocal Connector Test",
+        "shortDescription": "Test simulated plumbing bookings",
+        "longDescription": "Search a fictional Salt Lake City provider, prepare a simulated quote, confirm after user approval, inspect status and cancel. No real service bookings or charges. Private prototype; the temporary endpoint requires the operator's computer to stay online.",
+        "developerName": "GoLocal",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": ["Use GoLocal to show simulated plumbing diagnostic availability in ZIP 84101. Stop before confirming."]
+      }
+    }
+  }
+}

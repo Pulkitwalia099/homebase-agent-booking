@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-13T07:08:35.715811+00:00",
+  "status": "enabled_awaiting_personal_google_verification",
+  "publicOrigin": "https://camryn-mechanomorphic-ellis.ngrok-free.dev",
+  "callback": "https://camryn-mechanomorphic-ellis.ngrok-free.dev/account/callback/google",
+  "googleCloudProject": "vocal-cyclist-511506-f9",
+  "oauthApp": "GoLocal",
+  "oauthClientName": "GoLocal pilot",
+  "oauthAudience": "External / Testing",
+  "testUserRegistered": true,
+  "credentialsStored": "private .env.assisted-pilot, mode 0600; values omitted",
+  "requestedScopes": [
+    "openid",
+    "email",
+    "profile"
+  ],
+  "accessType": "online",
+  "googleChooserVerified": true,
+  "liveCallbackVerified": false,
+  "liveCallbackPendingReason": "Google asks founder to complete personal passkey verification",
+  "publicLoginPage": {
+    "status": 200,
+    "googleButton": true,
+    "emailFallback": true
+  },
+  "pilotProcesses": {
+    "localServer": true,
+    "tunnel": true,
+    "keepAwake": true
+  },
+  "connectorTests": {
+    "passed": 57,
+    "failed": 0,
+    "providerEndpoints": "mocked Google token/JWKS endpoints with signed test ID tokens",
+    "checks": [
+      "same verified-email account ID and retained supplier history",
+      "new customer account",
+      "MCP consent resumption and separate token exchange",
+      "state cookie and PKCE",
+      "callback replay rejection",
+      "unsafe return rejection",
+      "identity scopes only",
+      "unverified email / wrong issuer / audience / signature / expired ID token rejection"
+    ]
+  },
+  "futureProviders": {
+    "chatgpt": "Documented; selected commercial partners through limited trial, GoLocal registration required",
+    "claude": "No public generic customer identity provider found in official documentation checked; MCP connector authorization is separate"
+  },
+  "hosting": "Existing local pilot and ngrok; no cloud backend",
+  "actualServiceBookings": 0,
+  "vendorWrites": 0,
+  "payments": 0,
+  "sources": [
+    "https://developers.openai.com/siwc/website",
+    "https://developers.openai.com/siwc/chatgpt-plugin",
+    "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+    "https://developers.google.com/identity/protocols/oauth2/web-server"
+  ],
+  "evidenceImages": [
+    "golocal-google-signin-live.png",
+    "golocal-google-verification-pending.png"
+  ]
+}

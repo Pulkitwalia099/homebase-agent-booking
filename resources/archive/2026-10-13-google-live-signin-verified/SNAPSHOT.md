@@ -1,0 +1,3 @@
+# Google live sign-in verified · October 13, 2026
+
+Actual Google sign-in callback succeeded after user-completed Google verification. The existing customer account and confirmed synthetic request were retained. Read-only SQLite check confirmed one verified customer account linked to Google, with no duplicate. All 57 connector tests passed in the implementation turn; no application code changed in this verification turn. Live customer page, identity-scope proof, updated guide, credential-free source and verification included. Private credentials, databases and logs excluded. Actual assisted ChatGPT client linking remains unverified. Backend hosting remains local. Thesis and working Page unchanged; no new booking, vendor mutation or payment.

@@ -392,3 +392,19 @@ All entries are local snapshots. They do not indicate updates to the working Pag
 - [Before pilot changes](2026-10-12-before-assisted-pilot-live/SNAPSHOT.md): exact prior connector and affected supporting files, excluding all private state.
 - [Before release artifacts](2026-10-12-before-assisted-pilot-artifacts/SNAPSHOT.md): exact website bundle and launch report before email-relay publication notes.
 - [Live pilot revision](2026-10-12-assisted-pilot-live/SNAPSHOT.md): tested source, fixed-template email relay, setup guide, safe delivery evidence and browser screenshots. Local processes intentionally remain running. Durable cloud backend deferred; all requests are test-only. Main theses and working Page unchanged.
+
+## Google customer sign-in · October 13, 2026
+
+- [Before Google sign-in](2026-10-13-before-google-signin/SNAPSHOT.md): exact affected source, configuration template and supporting documents; private configuration and account data excluded.
+- [Google sign-in enabled](2026-10-13-google-signin-enabled/SNAPSHOT.md): implemented Google sign-in, 57 passing connector tests, identity-option research, configured Web OAuth client and live account chooser. Final live callback is waiting for the founder’s Google passkey. Local backend remains running; no real service, CRM write or payment. Thesis and working Page unchanged.
+
+- [Before the live verification update](2026-10-13-before-google-live-verification/SNAPSHOT.md): exact earlier passkey-pending guide, source bundle and verification.
+- [Google live sign-in verified](2026-10-13-google-live-signin-verified/SNAPSHOT.md): actual Google callback returned to the existing customer account, its confirmed test request remained accessible, and a read-only database check confirmed a single verified account linked to Google. Source and dated documentation updated; no new booking or CRM write.
+
+## Actual assisted ChatGPT flow · October 13, 2026
+
+- [Before actual agent-flow evidence](2026-10-13-before-assisted-chatgpt-e2e/SNAPSHOT.md): exact affected supporting files before recording ChatGPT linking and the supplier decision.
+- [Completed ChatGPT request and supplier acceptance](2026-10-13-assisted-chatgpt-e2e-passed/SNAPSHOT.md): actual private customer OAuth, tool-driven search/offer/request, pending supplier inbox, owner acceptance, separate ChatGPT confirmed-status read and both delivered emails. Includes transcript, screenshots, structured results and updated instructions. Synthetic founder-controlled accounts only; no real service, CRM write or payment. No application code changed; thesis and working Page unchanged.
+
+- [2026-10-13-before-public-pilot-demo](2026-10-13-before-public-pilot-demo/SNAPSHOT.md): exact affected sources before customer/supplier demo, public MCP and $50 signup work. Existing private customer OAuth and supplier acceptance evidence retained.
+- [2026-10-13-public-pilot-demo-published](2026-10-13-public-pilot-demo-published/SNAPSHOT.md): completed published website/MCP demo, onboarding, signup credit reservation and test evidence. No credentials, customer records or private sign-in URLs included.

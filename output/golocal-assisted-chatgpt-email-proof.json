@@ -1,0 +1,20 @@
+{
+  "checkedDate": "2026-10-13",
+  "bookingId": "booking_89f3b5d3-3e95-44a1-8132-ebbb8a5805f1",
+  "notifications": [
+    {
+      "messageId": "1a1343d24e23ee6c",
+      "subject": "[GoLocal TEST] Request confirmed",
+      "to": "pulkitwalia099@gmail.com",
+      "bookingIdMatched": true,
+      "state": "confirmed"
+    },
+    {
+      "messageId": "1a1343bf5edad659",
+      "subject": "[GoLocal TEST] New request for your business",
+      "to": "pulkitwalia099+golocal-supplier-a@gmail.com",
+      "bookingIdMatched": true,
+      "state": "pending supplier"
+    }
+  ]
+}

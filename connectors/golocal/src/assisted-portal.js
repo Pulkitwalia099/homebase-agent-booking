@@ -27,11 +27,36 @@ export function mountAssistedPortal(app, {config,store,assisted,accounts,agentOA
     next();
   };
   const hidden = req => `<input type="hidden" name="csrf" value="${esc(req.assistedCsrf)}">`;
-  const loginForm = returnTo => `<p>Use one account for your bookings and supplier profile. We’ll email a single-use sign-in link.</p><form method="post" action="/assisted/login" class="card"><input type="hidden" name="return_to" value="${esc(safeReturn(returnTo))}"><label>Your name<input name="name" required maxlength="100" autocomplete="name"></label><label>Email<input name="email" type="email" required maxlength="254" autocomplete="email"></label><button>Send sign-in link</button></form>`;
+  const loginForm = returnTo => {
+    const hiddenReturn=`<input type="hidden" name="return_to" value="${esc(safeReturn(returnTo))}">`;
+    const emailForm=`<form method="post" action="/assisted/login" class="card">${hiddenReturn}<label>Your name<input name="name" required maxlength="100" autocomplete="name"></label><label>Email<input name="email" type="email" required maxlength="254" autocomplete="email"></label><button>Send sign-in link</button></form>`;
+    return config.accounts.google?.enabled
+      ? `<p>Use one account for your bookings and supplier profile.</p><form method="post" action="/assisted/login/google" class="card">${hiddenReturn}<button>Continue with Google</button><p class="muted">Choose your Google account to sign in. We only request your name, email and profile.</p></form><details><summary>Continue with email</summary><p>We’ll email a single-use sign-in link.</p>${emailForm}</details>`
+      : `<p>Use one account for your bookings and supplier profile. We’ll email a single-use sign-in link.</p>${emailForm}`;
+  };
   const details = r => `<p class="state">${esc(r.state.replaceAll('_',' '))}</p><dl><dt>Supplier</dt><dd>${esc(r.providerName)}</dd><dt>Diagnostic visit</dt><dd>${money(r.offer.priceCents)} · repairs quoted separately</dd><dt>Requested time</dt><dd>${esc(time(r.offer.requestedStart,r.offer.timezone))} — one hour (${esc(r.offer.timezone)})</dd><dt>Scope</dt><dd>${esc(r.offer.scope)}</dd><dt>Cancellation terms</dt><dd>${esc(r.offer.cancellationTerms)}</dd><dt>Customer</dt><dd>${esc(r.customer.name)}</dd><dt>Contact</dt><dd>${esc(r.customer.email)} · ${esc(r.customer.phone)}</dd><dt>Address</dt><dd>${esc(r.customer.street)}, ${esc(r.customer.city)}, ${esc(r.customer.zip)}</dd><dt>Notes</dt><dd>${esc(r.customer.notes)||'None'}</dd></dl>${r.reason?`<p>Supplier response: ${esc(r.reason)}</p>`:''}<p>No payment collected by GoLocal. ${r.state==='pending_supplier'?`Supplier response due ${esc(time(r.responseDeadline,r.offer.timezone))}.`:r.state==='confirmed'?(r.testOnly?'The supplier accepted this test request only. No actual service is arranged.':'The supplier accepted this exact price, scope and requested time.') : ''}</p>`;
   const rows = (bookings,label) => `<h2>${label}</h2>${bookings.length?bookings.map(r=>`<article class="card"><span class="state">${esc(r.state.replaceAll('_',' '))}</span><h3>${esc(r.providerName)}</h3><p>${esc(time(r.offer.requestedStart,r.offer.timezone))} · ${money(r.offer.priceCents)}</p><a href="/assisted/bookings/${encodeURIComponent(r.bookingId)}">View request</a></article>`).join(''):'<p>No requests yet.</p>'}`;
 
-  app.get('/assisted/login',(req,res)=>res.send(shell('Sign in to GoLocal',`${req.query.error?'<p class="error">That link is invalid or expired. Request a new one.</p>':''}${loginForm(req.query.return_to)}`)));
+  app.get('/assisted/login',(req,res)=>res.send(shell('Sign in to GoLocal',`${req.query.error?'<p class="error">Sign-in did not complete. Try again or continue with email.</p>':''}${loginForm(req.query.return_to)}`)));
+  app.post('/assisted/login/google',wrap(async(req,res)=>{
+    if(req.get('origin')!==config.baseUrl)return res.status(403).send(shell('Request rejected','<p>Open the GoLocal sign-in page to continue.</p>'));
+    if(!config.accounts.google?.enabled)return res.status(503).send(shell('Google sign-in unavailable',loginForm(req.body.return_to)));
+    const now=Date.now(),key=createHmac('sha256',config.accounts.secret).update(`google:${req.ip}`).digest('hex');
+    for(const [k,v]of loginLimits)if(v.until<=now)loginLimits.delete(k);
+    const limit=loginLimits.get(key)||{n:0,until:now+60000};
+    if(++limit.n>10||loginLimits.size>1000)return res.status(429).send(shell('Please wait','<p>Wait a minute before trying Google sign-in again.</p>'));
+    loginLimits.set(key,limit);
+    const returnTo=safeReturn(req.body.return_to),callbackURL=config.baseUrl+returnTo;
+    try {
+      const response=await accounts.auth.api.signInSocial({body:{provider:'google',callbackURL,newUserCallbackURL:callbackURL,errorCallbackURL:config.baseUrl+'/assisted/login?'+new URLSearchParams({error:'google',return_to:returnTo})},headers:fromNodeHeaders(req.headers),asResponse:true});
+      const data=await response.json(),url=new URL(data.url);
+      if(!response.ok||url.origin!=='https://accounts.google.com'||url.pathname!=='/o/oauth2/v2/auth')throw new Error('Google sign-in could not start.');
+      const cookies=response.headers.getSetCookie();if(cookies.length)res.set('Set-Cookie',cookies);
+      res.redirect(303,url.toString());
+    } catch {
+      res.status(503).send(shell('Google sign-in unavailable',`<p class="error">Please try again or continue with email.</p>${loginForm(returnTo)}`));
+    }
+  }));
   app.post('/assisted/login',wrap(async(req,res)=>{
     if(req.get('origin')!==config.baseUrl) return res.status(403).send(shell('Request rejected','<p>Open the GoLocal sign-in page to continue.</p>'));
     const email=String(req.body.email||'').trim().toLowerCase(),name=String(req.body.name||'').trim();

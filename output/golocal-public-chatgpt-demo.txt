@@ -1,0 +1,240 @@
+Share
+You said:
+Use GoLocal Demo. My kitchen tap drips when turned off in ZIP 84101. Help me compare plumbers, visit prices and times, then confirm an example appointment after I approve it. Keep this a demo: no real booking or charge.
+Worked for 53s
+ChatGPT said:
+Your kitchen tap repair demo
+Demo only, no real booking or charge
+
+I found three fictional plumbers through GoLocal Demo for ZIP 84101 (Salt Lake City). All three have sample appointments available on Wednesday, October 14, 2026.
+
+The job is a one-hour diagnostic visit for a kitchen tap that drips when turned off. Replacement parts and repairs are not included in the visit price.
+
+1. Compare plumbers
+
+Demo plumber
+
+	
+
+Sample rating
+
+	
+
+Visit price
+
+	
+
+Distance
+
+
+
+
+Oak Plumbing
+
+	
+
+4.9 ★ (128)
+
+	
+
+$79
+
+	
+
+2.1 mi
+
+
+
+
+Canyon Plumbing
+
+	
+
+4.8 ★ (214)
+
+	
+
+$95
+
+	
+
+3.4 mi
+
+
+
+
+Jordan Home Plumbing
+
+	
+
+4.7 ★ (89)
+
+	
+
+$69
+
+	
+
+4.2 mi
+
+Oak Plumbing is my recommended demo choice: it has the highest sample rating, the shortest listed distance, and costs only $10 more than the cheapest option. Jordan is the budget choice.
+
+2. Available demo times
+
+Wednesday, October 14
+
+Mountain Time (MDT)
+
+9–10 AM
+
+All 3 plumbers
+
+11 AM–12 PM
+
+All 3 plumbers
+
+2–3 PM
+
+All 3 plumbers
+These are fictional appointment windows, not real plumber availability.
+3. Appointment ready for your approval
+
+Recommended demo offer
+
+Oak Plumbing
+
+Kitchen tap diagnostic • ZIP 84101
+
+$79.00
+
+Wed, October 14, 2026
+
+9:00–10:00 AM MDT
+
+One-hour diagnosis, repairs and parts extra
+
+Simulation only • $0 actually charged
+
+Cancellation terms: No real appointment is created. You can restart the demo at any time. No supplier is contacted or dispatched.
+Approve demo appointment
+
+Nothing has been confirmed yet. Approving will let me create and verify the example appointment inside GoLocal Demo, without booking a real plumber or charging you. You can also choose a different plumber or time instead.
+
+You said:
+I approve the Oak Plumbing demo offer: October 14, 2026, 9–10 a.m. Mountain time, $79 example one-hour diagnostic visit, repairs and parts extra, and $0 actually charged. Confirm this simulated appointment and verify its status with GoLocal Demo.
+Worked for 26s
+ChatGPT said:
+Demo appointment confirmed
+Verified with GoLocal Demo
+
+I successfully confirmed your simulated appointment and independently verified its status using GoLocal Demo's booking status lookup.
+
+APPOINTMENT DETAILS
+
+Oak Plumbing
+
+Wednesday, October 14, 2026
+
+9:00–10:00 AM MDT (America/Denver)
+
+ZIP 84101, Salt Lake City
+
+Kitchen tap drip, one-hour diagnostic
+
+Example visit price
+$79.00
+
+Actual amount charged
+
+$0.00
+
+Verified booking state
+
+simulated_confirmed
+
+Demo booking reference
+
+demo_booking_32eca96f-1ff5-4b95-ad9b-22c4d0a6104a
+
+Verification results
+
+Check
+
+	
+
+Result
+
+
+
+
+Confirmation succeeded
+
+	
+
+ Yes
+
+
+
+
+Independent status lookup
+
+	
+
+ Confirmed
+
+
+
+
+Test only
+
+	
+
+Yes
+
+
+
+
+Real plumber contacted
+
+	
+
+No
+
+
+
+
+Real appointment created
+
+	
+
+No
+
+
+
+
+Payment or credit redeemed
+
+	
+
+No
+
+
+
+
+Repairs and parts
+
+	
+
+Extra, separately quoted
+
+The full GoLocal Demo flow is complete: provider comparison, appointment selection, price and terms review, user approval, simulated confirmation, and independent status verification.
+
+No real service, supplier notification, dispatch, or payment occurred.
+
+ChatGPT can make mistakes. Check important info.
+Latest response
+
+
+
+
+High
