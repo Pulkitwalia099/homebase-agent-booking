@@ -408,3 +408,37 @@ All entries are local snapshots. They do not indicate updates to the working Pag
 
 - [2026-10-13-before-public-pilot-demo](2026-10-13-before-public-pilot-demo/SNAPSHOT.md): exact affected sources before customer/supplier demo, public MCP and $50 signup work. Existing private customer OAuth and supplier acceptance evidence retained.
 - [2026-10-13-public-pilot-demo-published](2026-10-13-public-pilot-demo-published/SNAPSHOT.md): completed published website/MCP demo, onboarding, signup credit reservation and test evidence. No credentials, customer records or private sign-in URLs included.
+
+- [2026-10-13-before-first-booking-credit](2026-10-13-before-first-booking-credit/SNAPSHOT.md): exact sources before the founder’s first-real-booking credit timing confirmation.
+- [2026-10-13-first-booking-credit-confirmed](2026-10-13-first-booking-credit-confirmed/SNAPSHOT.md): published $50-off-first-real-booking offer, updated signup wording and fixed application metadata.
+
+- [2026-10-13-before-preview-copy-simplification](2026-10-13-before-preview-copy-simplification/SNAPSHOT.md): exact sources before the concise booking-preview and on-site-payment changes.
+- [2026-10-13-before-mobile-network-review](2026-10-13-before-mobile-network-review/SNAPSHOT.md): existing desktop/mobile layout and audience wording before the homepage review.
+- [2026-10-13-mobile-audiences-preview-published](2026-10-13-mobile-audiences-preview-published/SNAPSHOT.md): final mobile/audience review, ordered connection map, agent icons and concise on-site-payment preview.
+
+- [Before mobile onboarding verification](2026-10-13-before-mobile-onboarding-test/SNAPSHOT.md) · [Completed mobile onboarding revision](2026-10-13-mobile-onboarding-verified-published/SNAPSHOT.md).
+
+- [Before public Google signup](2026-10-13-before-open-google-signin/SNAPSHOT.md) · [Completed public Google and fresh customer revision](2026-10-13-open-google-fresh-customer-verified/SNAPSHOT.md).
+
+- [2026-10-13 before audience flow refresh](2026-10-13-before-audience-flow-refresh/): current website presentation before the initial customer/business draft; preserved and restored when design exploration was requested.
+- [2026-10-13 before design exploration report](2026-10-13-before-design-exploration-report/): exact current project docs before recording the mockups.
+- [2026-10-13 agent-first design mockups](2026-10-13-agent-first-design-mockups/): three directions, plain assistant entry, portable source/screenshots bundle and verification.
+
+
+## Selected Option A website release · October 13, 2026
+
+- [Before implementation](2026-10-13-before-option-a-implementation/): exact prior website presentation and affected project artifacts.
+- [Before publication report](2026-10-13-before-option-a-publication-report/SNAPSHOT.md): exact latest supporting documents before release context, preserving parallel connector updates.
+- [Option A live](2026-10-13-option-a-live/SNAPSHOT.md): selected design, refreshed source bundle, release evidence, public agent docs and live screenshots. Main theses and working Page unchanged.
+
+- [Before hero polish](2026-10-13-before-option-a-hero-polish/SNAPSHOT.md) · [Hero polish live](2026-10-13-option-a-hero-polish-live/SNAPSHOT.md): original worker animation retained; compact synchronized request/reply, final source and live verification.
+
+- [Before header simplification](2026-10-13-before-header-simplification/SNAPSHOT.md) · [Simplified header live](2026-10-13-header-simplified-live/SNAPSHOT.md): customer/business header links removed, logo and personal-assistant entry retained; animated hero unchanged.
+
+- [Before value messaging](2026-10-13-before-value-messaging/SNAPSHOT.md) · [Value messaging live](2026-10-13-value-messaging-live/SNAPSHOT.md): expanded agent capability, business growth channel, setup clarity and matching page/metadata copy; original worker animation retained and ambiguous hero bubble removed.
+
+- [Before secondary-copy trim](2026-10-13-before-copy-trim/SNAPSHOT.md) · [Copy trim live](2026-10-13-copy-trim-live/SNAPSHOT.md): requested customer note, pilot count and repeated tech-stack paragraph/link removed; headings, logos and animation retained.
+
+- [Before logo-note removal](2026-10-14-before-logo-notes-removal/SNAPSHOT.md) · [Logo notes removed live](2026-10-14-logo-notes-removed-live/SNAPSHOT.md): software section reduced to heading/logos; agent availability sentence removed while coming-soon markers remain.
+
+- [Before personal-agent heading](2026-10-14-before-personal-agent-heading/SNAPSHOT.md) · [Personal-agent heading live](2026-10-14-personal-agent-heading-live/SNAPSHOT.md): exact customer heading correction, source/report and live preview.

@@ -198,3 +198,69 @@ Validation: final production build and TypeScript passed, diff whitespace checks
 The existing website now provides a restricted authenticated fixed-template email relay at `/api/pilot-email`, using its protected Resend sender and the founder's personal Gmail as reply-to. Deployment `dpl_5Qa1VndPnJoGZRnWZMpRd5ysfSro` is READY and promoted on getgolocal.com; local release commit `93ae87f`. The website UI and existing registration paths are unchanged. All 18 website tests pass, local Webpack/TypeScript build passes, and the remote Turbopack build passes. Unauthenticated relay calls reject. Received sign-in, request, accepted and declined emails are recorded in [pilot email proof](assisted-pilot-email-proof.json). No existing production secret was downloaded.
 
 Customer accounts, supplier profiles and request history remain on the founder's machine behind the authenticated HTTPS tunnel. [Pilot guide](../connectors/golocal/docs/pilot-testing.md). A keep-awake process and restart/status/stop scripts support manual usability testing; no persistent cloud backend or paid subscription was created. All three prepared requests are test-only and all recipients are founder-controlled inbox aliases.
+
+
+## Agent-first design mockups prepared · October 13, 2026 — review only
+
+The founder requested design-language exploration before further website changes, then clarified the main audiences as customers and personal AI agents, with businesses as supply partners. Three responsive mockups preserve the cream/forest/sage palette while removing oversized statistics and credit promotions. The recommended warm/spacious direction preserves the earlier site’s local-world character; alternatives prioritize the product connection or a panoramic illustration. Agent logos and the existing tech-stack story remain, and Muse labels the illustrative conversation. AI front-office and sales partnerships are supporting copy.
+
+The personal-assistant entrance switches fully to a plain documentation surface with README.md, SKILL.md, llms.txt, mcp-config.json and capabilities.json. Files reference the existing no-auth public demo and accurately separate simulation from the customer-bound supplier pilot. This new entry is not deployed. The requested paddle.ai address was unavailable; official Paddle developer documentation and Anthropic frontend-design guidance were used as primary references. No persistent design skill was installed.
+
+Desktop and 390px layouts were visually checked with no horizontal overflow; the example’s local compare/choose/confirmation interaction, agent switch and gallery selector passed. No real booking or external message was sent and no media credits spent. Mockups, screenshots, documentation and the portable bundle are in output/golocal-design-explorations and output/golocal-design-mockups.zip. The earlier customer/business-only draft is preserved in output/golocal-ui-drafts/customer-business-2026-10-13, and the existing website working files were restored to their exact pre-edit contents when design review became the requested next step. Other pilot work was preserved. No new deployment occurred; the live website remains the prior release.
+
+
+## Selected Option A published · October 13, 2026
+
+The founder selected the warm and spacious design. The new homepage leads with “Let your AI agent handle the local work,” a modest “Live pilot. Now onboarding” label and the founder-reported 5–6 pilot customers. The customer promise, agent-readable doorway and business supply proposition are clear. The illustration and copy occupy separate areas, retaining the existing looping video without covering the house. No new media credits were spent.
+
+“Stay with the agent you already know” restores Dots, Muse, Instinct, OpenClaw and Hermes. Muse and Instinct retain coming-soon markers. Muse labels the example iMessage conversation. Claude and ChatGPT icon badges are removed from the homepage and connection map. The business section says “Your next customers are asking their agents” and explains a single GoLocal connection while retaining existing tools. All 12 locally hosted software logos remain; Housecall Pro pilot testing and additional planned connections are identified. AI front-office and software partnerships are a smaller supporting section. No universal support or million-customer reach is asserted.
+
+The “I’m a personal assistant” entrance opens /agent as a plain HTML/text document outside the marketing UI. README.md, SKILL.md, llms.txt, mcp-config.json and capabilities.json are actual public resources. A text/markdown Accept header returns raw Markdown. The public simulation endpoint and separate OAuth/supplier-acceptance pilot are documented accurately. Prominent $50 promotions and “first pilot” language are removed from setup, registration and demo pages; existing signup entitlements, email delivery and duplicate protection remain intact.
+
+Release `59dc06ecc78bca4c731752df1a9dedcaec80bb16` was pushed to GitHub main. Vercel production deployment `dpl_CuKcPLFo9Dc6xKNXVi4AVg28ZWHh` is READY and serves getgolocal.com and www.getgolocal.com. The 24 website tests, local webpack build and TypeScript passed. Live desktop/390px layouts, mobile navigation, all 12 loaded business marks, video pause/resume and the example Oak selection through confirmation were verified. Plain documents, JSON parsing, setup/signup pages and the read-only demo status returned successfully; the status explicitly reports simulation, no live bookings or account access. Local 320px layout also has no horizontal overflow.
+
+Updated project artifacts: golocal-website-source.zip, golocal-option-a-live-verification.json and five live screenshots. Current pilot counts are founder-reported, not an independent demand or fulfilled-service audit. Backend hosting remains dependent on the pilot machine and tunnel; no real service, vendor message or payment was created during this design revision. Main thesis documents and working Page were unchanged.
+
+
+## Hero animation preserved and polished · October 13, 2026
+
+The founder explicitly requested that the moving hero remain. The original silent 8-second worker video is preserved. A compact lower-corner sequence now shows “Just take care of the house for me,” delivery/typing, then “On it. I’ll coordinate the local pros.” It follows video currentTime, so the message resets with every loop and freezes when paused. The roof, mower, garage workers and van remain visible around it. Reduced-motion and video-error views keep the complete conversation as static text. No new generation or media credits were used.
+
+Release `5e2ad3de033566f48fefb3d5fac733f3b48c2d56` is READY as Vercel deployment `dpl_BsD7TUvqwnpr4JxEW4hY5zM2Am3Z`, serving getgolocal.com and www.getgolocal.com. The local production build and TypeScript pass. The live browser verified worker movement, reply appearance, a loop restart at 0.027 seconds, the synchronized pause at 0.079 seconds, resume and 390px framing without horizontal overflow. Screenshots: golocal-hero-polish-live-desktop.png and golocal-hero-polish-live-mobile.png. Structured results: golocal-hero-polish-verification.json. The updated source bundle contains 150 tracked website/assets/documentation files and excludes secrets, dependencies, build state and the unrelated duplicate configuration.
+
+
+## Header simplified · October 13, 2026
+
+Removed “I’m a customer” and “For businesses” from the header, including their mobile-menu versions. The header retains the GoLocal logo and “I’m a personal assistant” entrance. Body audience sections and the moving hero remain. Release a0baa4907684edadc0027fb29632fae89b19be07 is READY as dpl_CU3R34R7xXKaGyj6Ci2JPyHb1L4z on getgolocal.com and www.getgolocal.com. The production build passed, and desktop/390px browser checks verified the simplified links and no phone overflow. Source bundle refreshed. Screenshots and structured evidence are saved as golocal-header-simplified-live.png, golocal-header-simplified-mobile.png and golocal-header-simplification-verification.json.
+
+
+## Agent capability and business growth messaging live · October 13, 2026
+
+The founder asked for the larger product unlock, beyond reduced back-and-forth. The homepage now leads with “Your AI agent. Connected to the real world.” Its description explicitly explains that GoLocal enables a personal agent to find, book and manage local services. The customer example is introduced as “Local services. Handled by your agent,” followed by the concrete discovery, choice, booking and tracking flow. A three-step setup section shows how to add GoLocal, try an example booking and join the supplier-connected pilot.
+
+The business story is “Personal agents. Your next customer growth channel.” One GoLocal connection is the central proposition, with three specific benefits: get discovered, turn customer intent into booking requests, and keep existing workflows. The 12 software logos and scoped integration notes remain. The business page, setup guide, signup introductions, pilot page, demo eyebrow, ecosystem copy, site metadata and share image now reinforce this positioning. No universal agent coverage, million-customer reach or unmeasured five/ten-minute activation guarantee is asserted.
+
+The ambiguous personal-agent message over the hero is removed. The original worker video, silent autoplay, eight-second loop, pause/resume, reduced-motion handling and fallback image remain. Removing the message also removes unnecessary video-time React updates. The earlier /hero-preview experiment remains available as a historical comparison. No new media credits were spent.
+
+Release `725f1b2a233be1ad5b336abb44fc4c2c2d518dae` is READY as Vercel production deployment `dpl_6CsYvDRtqv8SxLRaksxD8RRECC5a`, serving getgolocal.com and www.getgolocal.com. Cloud logs confirm successful compilation, TypeScript in 6.6 seconds and all 28 prerendered pages. Local webpack compilation passed, but local TypeScript workers stalled and were stopped; the final cloud build provides completed validation. Desktop, live 390px and local 320px layouts were reviewed. All 12 business marks loaded. Ten live routes, including signup/setup, plain agent docs and the generated PNG share image, returned 200. No booking, registration submission, vendor message or payment was made during this copy revision.
+
+Current proofs: golocal-value-messaging-live-desktop.png, golocal-value-messaging-live-business.png, golocal-value-messaging-live-mobile.png and golocal-value-messaging-live-business-mobile.png. Structured results are in golocal-value-messaging-verification.json. The updated source bundle contains 150 tracked website/assets/documentation files and excludes credentials, dependencies, build state and unrelated duplicate configuration. These full views supersede earlier header preview captures. The original and completed revisions are archived. Main thesis documents and the working Page were unchanged.
+
+
+## Requested secondary copy removed · October 13, 2026
+
+Removed the customer note beginning “Watch an example plumbing booking through Muse,” the hero pilot count/location note, the repeated tech-stack paragraph and “Tell us what you use” link wherever the shared section appears. The related pilot-customer count was also removed from /pilot. The tech-stack heading now occupies one aligned column above all 12 logos. Main value propositions, registration actions, integration-status note and worker animation remain.
+
+Release `c8c9a46e9f24df539a2e27a1dc497e93a57537f9` is READY as Vercel production deployment `dpl_GJ3zj5iyB5BsdZBvNmv2rxW9KVY7`, serving getgolocal.com and www.getgolocal.com. HTTP checks verified the requested phrases absent from the homepage, business page and pilot page. Desktop and 390px layouts were visually reviewed; the software heading aligns with the logos, all 12 marks load and phone width equals document width. Current screenshots: golocal-copy-trim-live-hero.png, golocal-copy-trim-live-business.png and golocal-copy-trim-live-mobile.png. Verification and source bundle are updated. No booking, registration submission, message, payment or new media spend occurred. Main theses and working Page unchanged.
+
+
+## Logo-row explanatory notes removed · October 14, 2026
+
+Removed the Housecall Pro tested/planned-connections/onboarding note from the shared software section, leaving its heading and 12 logos. Removed the agent/channel availability sentence from the ecosystem footer; the Muse/Instinct asterisks and “Coming soon” note remain. Technical setup documentation and the animated hero are unchanged.
+
+Release `e5725fa62e1da040cfd7eac10ae9ab310758a0dc` is READY as deployment `dpl_Es4fKnAXoLhxoQrW7SbCk4AJ8myU` on getgolocal.com and www.getgolocal.com. Both public pages return 200 with the requested sentences absent. Browser checks verify all 12 software logos load and the removed note element is absent. The current source bundle, live screenshot and verification are saved in project files. Main theses and working Page unchanged.
+
+
+## Customer heading clarified · October 14, 2026
+
+Changed the customer section heading to “Local services. Handled by your personal agent.” Release `43aeee4cfb1693ecf5fad6ace3d95e64b9b60e1c` is READY as deployment `dpl_7n6K6ogKatAZb7JtEz6mBNucT5f1` on getgolocal.com and www.getgolocal.com. The live browser verified the exact wording and clean three-line desktop layout. Screenshot: golocal-personal-agent-heading-live.png. Source bundle refreshed; no other website behavior changed.

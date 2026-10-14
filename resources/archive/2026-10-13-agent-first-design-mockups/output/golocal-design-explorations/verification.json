@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-13",
+  "status": "reviewable_mockups_not_deployed",
+  "variants": [
+    "A \u00b7 Warm and spacious",
+    "B \u00b7 Agent native",
+    "C \u00b7 The local world"
+  ],
+  "recommended": "A with the plain agent entry",
+  "desktop_visually_reviewed": true,
+  "phone_width": 390,
+  "horizontal_overflow": false,
+  "agent_switch_verified": true,
+  "demo_interaction_verified": true,
+  "comparison_switching_verified": true,
+  "local_asset_references_verified": true,
+  "json_valid": true,
+  "additional_generation_credits": 0
+}

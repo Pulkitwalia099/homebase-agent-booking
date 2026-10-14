@@ -6,11 +6,11 @@ import { PilotError } from './jobber.js';
 
 // Public fixtures only. This service deliberately receives no account or CRM store.
 const suppliers = [
-  { id: 'oak', name: 'Oak Plumbing', initials: 'OP', rating: 4.9, reviewCount: 128, priceCents: 7900, distance: '2.1 mi', badge: 'Our demo pick', description: 'Kitchen taps, everyday leaks and careful diagnostics.', color: 'sage' },
-  { id: 'canyon', name: 'Canyon Plumbing', initials: 'CP', rating: 4.8, reviewCount: 214, priceCents: 9500, distance: '3.4 mi', badge: 'Most sample reviews', description: 'A friendly neighborhood team for home plumbing.', color: 'clay' },
+  { id: 'oak', name: 'Oak Plumbing', initials: 'OP', rating: 4.9, reviewCount: 128, priceCents: 7900, distance: '2.1 mi', badge: 'Recommended', description: 'Kitchen taps, everyday leaks and careful diagnostics.', color: 'sage' },
+  { id: 'canyon', name: 'Canyon Plumbing', initials: 'CP', rating: 4.8, reviewCount: 214, priceCents: 9500, distance: '3.4 mi', badge: 'Most reviewed', description: 'A friendly neighborhood team for home plumbing.', color: 'clay' },
   { id: 'jordan', name: 'Jordan Home Plumbing', initials: 'JH', rating: 4.7, reviewCount: 89, priceCents: 6900, distance: '4.2 mi', badge: 'Lowest visit price', description: 'Straightforward help for taps, sinks and small leaks.', color: 'blue' },
 ];
-const disclosure = { simulated: true, testOnly: true, amountCharged: 0, currency: 'USD', source: 'Fictional demo companies, sample ratings, example prices and appointment times. No service, charge, dispatch or supplier notification.' };
+const disclosure = { simulated: true, testOnly: true, amountCharged: 0, amountDueNowCents: 0, paymentTiming: 'on_site', currency: 'USD', source: 'Fictional demo companies, sample ratings, example prices and appointment times. No service, charge, dispatch or supplier notification.' };
 const provider = id => { const result = suppliers.find(p => p.id === id); if (!result) throw new PilotError('NOT_FOUND', 'Choose one of the demo plumbers.'); return result; };
 export class PublicDemo {
   constructor(secret, now = () => Date.now()) { this.secret = secret; this.now = now; }
@@ -44,7 +44,7 @@ export class PublicDemo {
     const p = provider(id), slot = this.availability(id).slots.find(s => s.id === slotId);
     if (!slot) throw new PilotError('SLOT_UNAVAILABLE', 'Choose a fresh demo appointment.');
     const data = { id: `demo_quote_${randomUUID()}`, providerId: id, slot, priceCents: p.priceCents, expiresAt: this.now() + 900000 };
-    return { ...disclosure, ...data, quoteId: this.seal('quote', data), providerName: p.name, timezone: 'America/Denver', terms: 'One-hour diagnostic visit at the displayed example price. Repairs and parts quoted separately. Demo only; no charge.', cancellation: 'No real appointment is created. You can restart at any time.' };
+    return { ...disclosure, ...data, quoteId: this.seal('quote', data), providerName: p.name, timezone: 'America/Denver', terms: 'One-hour diagnostic visit at the displayed example price. Repairs and parts quoted separately. Payment is on-site after the visit; $0 due now. Demo only.', cancellation: 'You can restart the booking preview at any time.' };
   }
   confirm(token, approved) {
     if (!approved) throw new PilotError('APPROVAL_REQUIRED', 'Ask the customer to approve the named demo plumber, example price and appointment before confirming.');
@@ -55,7 +55,7 @@ export class PublicDemo {
   }
   booking(token) {
     const data = this.open(token, 'booking'), p = provider(data.providerId);
-    return { ...disclosure, bookingId: token, reference: data.id, state: 'simulated_confirmed', providerName: p.name, slot: data.slot, timezone: 'America/Denver', priceCents: data.priceCents, creditApplied: false, message: 'Your demo appointment is confirmed immediately. This is a simulation; no provider was contacted.' };
+    return { ...disclosure, bookingId: token, reference: data.id, state: 'simulated_confirmed', providerName: p.name, slot: data.slot, timezone: 'America/Denver', priceCents: data.priceCents, creditApplied: false, message: 'Appointment confirmed in the booking preview.' };
   }
 }
 export function publicDemoTools(demo) {
@@ -71,7 +71,7 @@ export function publicDemoTools(demo) {
   return tools.map(([name, description, schema, fn]) => ({ name, description, schema, fn }));
 }
 export function makePublicDemoServer(demo) {
-  const server = new McpServer({ name: 'GoLocal Demo', version: '0.2.0' }, { instructions: 'GoLocal is a PUBLIC SIMULATION. All companies, ratings, prices and times are fictional examples. No sign-in or personal details required. Scope a tap leak with two short questions; photos optional. Compare providers, get availability, prepare an exact offer, ask approval, then confirm_booking and verify get_booking_status. Confirmations are immediate simulations. Never claim a real service, payment, credit redemption or supplier acceptance. The real account-based pilot is separate.' });
+  const server = new McpServer({ name: 'GoLocal Demo', version: '0.2.0' }, { instructions: 'GoLocal is a PUBLIC SIMULATION. All companies, ratings, prices and times are fictional examples. No sign-in or personal details required. Scope a tap leak with two short questions; photos optional. Compare providers, get availability, prepare an exact offer, ask approval, then confirm_booking and verify get_booking_status. Confirmations are immediate simulations. Never claim a real service, payment, credit redemption or supplier acceptance. The real account-based pilot is separate. For customer-facing copy, identify the preview context once, then keep the scoping, comparison and confirmation concise. Show the visit price, payment on-site and $0 due now. The vendor verification-call note describes the proposed live flow; no call is scheduled by these tools.' });
   for (const t of publicDemoTools(demo)) server.registerTool(t.name, { description: t.description, inputSchema: t.schema, annotations: { readOnlyHint: !['prepare_booking', 'confirm_booking'].includes(t.name), destructiveHint: false, idempotentHint: t.name !== 'prepare_booking', openWorldHint: false }, _meta: { securitySchemes: [{ type: 'noauth' }] } }, async args => {
     try { const result = await t.fn(args); return { content: [{ type: 'text', text: JSON.stringify(result) }], structuredContent: result }; }
     catch (error) { return { isError: true, content: [{ type: 'text', text: JSON.stringify({ code: error instanceof PilotError ? error.code : 'DEMO_ERROR', message: error instanceof PilotError ? error.message : 'Demo temporarily unavailable.' }) }] }; }

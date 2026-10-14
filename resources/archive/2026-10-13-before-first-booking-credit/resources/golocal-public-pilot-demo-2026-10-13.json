@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-13",
+  "purpose": "Public customer/supplier demo and design-partner onboarding; simulated bookings only",
+  "public_site": "https://getgolocal.com",
+  "demo": "https://getgolocal.com/demo",
+  "setup": "https://getgolocal.com/connectors",
+  "pilot": "https://getgolocal.com/pilot",
+  "public_mcp": {
+    "url": "https://getgolocal.com/demo/mcp",
+    "auth": "none",
+    "tools": [
+      "connector_status",
+      "scope_request",
+      "search_providers",
+      "get_availability",
+      "prepare_booking",
+      "confirm_booking",
+      "get_booking_status"
+    ],
+    "private_account_access": false,
+    "hosting": "Existing local backend through ngrok and credential-free Vercel relay"
+  },
+  "customer_flow": [
+    "Try the web demo without signup",
+    "Add custom MCP server GoLocal Demo, No authentication",
+    "Connect GoLocal Demo; Try in chat; paste starter prompt",
+    "Approve exact simulated offer and check status",
+    "Join early-customer pilot, optionally design partner"
+  ],
+  "supplier_flow": [
+    "Register business interest",
+    "Sign in to own supplier account, create coverage/price profile",
+    "Operator reviews and activates test profile",
+    "Review authorized test requests, accept or decline in portal"
+  ],
+  "sample_suppliers": [
+    {
+      "name": "Oak Plumbing",
+      "sample_rating": 4.9,
+      "example_diagnostic_cents": 7900
+    },
+    {
+      "name": "Canyon Plumbing",
+      "sample_rating": 4.8,
+      "example_diagnostic_cents": 9500
+    },
+    {
+      "name": "Jordan Home Plumbing",
+      "sample_rating": 4.7,
+      "example_diagnostic_cents": 6900
+    }
+  ],
+  "credit": {
+    "amount_cents": 5000,
+    "status": "reserved_at_signup",
+    "eligibility": "Every early customer",
+    "redemption": "First real GoLocal home-service booking when services launch in the customer area",
+    "cash_value": false,
+    "demo_uses_credit": false,
+    "timing_assumption": "Founder promised $50; optional timing clarification unanswered. Recommended reserve-at-signup/local-launch timing was stated during work."
+  },
+  "references": [
+    {
+      "url": "https://higgsfield.ai/mcp",
+      "used": "Client selector, copy endpoint, examples after setup"
+    },
+    {
+      "url": "https://docs.zapier.com/mcp/get-started/quickstart",
+      "used": "Connect client then first-use prompt"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/custom-mcp-server",
+      "used": "Current exact custom-MCP UI and No authentication option"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+      "used": "Documented Claude setup, not verified GoLocal compatibility"
+    }
+  ],
+  "verification": {
+    "connector_tests": 60,
+    "website_tests": 24,
+    "production_build": "Passed on Vercel",
+    "local_build": "Blocked by Google Fonts network restriction; production fonts and TypeScript build passed",
+    "chatgpt_conversation": "https://chatgpt.com/c/6acded33-cfe8-83ea-a191-ff0fcae830df",
+    "chatgpt_plugin": "https://chatgpt.com/plugins/plugin_asdk_app_6acded01ec0081918470c157c5629697",
+    "chatgpt_state": "simulated_confirmed",
+    "chatgpt_reference": "demo_booking_32eca96f-1ff5-4b95-ad9b-22c4d0a6104a",
+    "customer_signup_email_proof": "1a13459efb5fabbf",
+    "supplier_signup_email_proof": "1a1345e14aa05509",
+    "duplicate_customer_signup_http_status": 200,
+    "production_error_scan": "No error logs found on the previously promoted corrected build during verification."
+  },
+  "evidence_boundaries": [
+    "Fictional companies, sample ratings, example prices and times",
+    "No real service, merchant contact, charge, repair quote or credit redemption",
+    "Web photos stay browser-local; public server does not analyze images",
+    "ChatGPT tested; Claude/other client setup documented but unverified",
+    "Existing assisted test requests still need supplier acceptance",
+    "Interest signup and assisted sign-in accounts are separate",
+    "No production reliability or representative demand demonstrated"
+  ],
+  "working_page_updated": false,
+  "main_thesis_updated": false,
+  "deployment": {
+    "id": "dpl_AA85ZKMjZVjYHJXhibM6CJLASiMH",
+    "url": "https://homebase-agent-booking-i82gbfe4x-pulkitwalia099s-projects.vercel.app",
+    "target": "production",
+    "framework": "Next.js 16.4",
+    "validation": "READY; TypeScript/build passed; exact setup guide browser checked. Same functional backend/relay already verified on public domain."
+  }
+}

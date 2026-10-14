@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-13",
+  "scope": [
+    "Preserve existing desktop artwork, typography and animation",
+    "Fix mobile hero overlap",
+    "Make customers and local businesses the main paths",
+    "Keep AI agent and software/channel partners secondary",
+    "Explain personal agent -> GoLocal -> existing business software -> local service provider in order",
+    "Add small agent logos with accurate status and client-specific setup links",
+    "Simplify booking preview; payment on-site and $0 due now; verification-call note",
+    "Retain $50 off the first real booking"
+  ],
+  "page_order": [
+    "Shared hero",
+    "For customers: preview, agent setup and early-customer credit",
+    "How GoLocal works: network and ordered steps",
+    "Customer example: plumbing",
+    "For businesses: onboarding and existing software stack",
+    "Smaller partner area: AI agent companies and AI front-office/service software",
+    "Salt Lake City pilot and FAQ"
+  ],
+  "changes": {
+    "hero_mobile": "Copy, message bubbles and scene now participate in normal vertical layout rather than fixed message offsets",
+    "diagram_mobile": "Numbered vertical flow with arrows and visible per-step captions",
+    "customer_theme": "Subtle sage",
+    "business_theme": "Warm cream/linen",
+    "partner_area": "Compact supporting strip",
+    "preview": "One context label; clean appointment approval/confirmation, amount due now $0 and on-site payment"
+  },
+  "agent_logos": [
+    {
+      "agent": "ChatGPT",
+      "status": "Pilot tested",
+      "source": "https://developers.openai.com/favicon.png",
+      "setup": "/connectors?agent=chatgpt"
+    },
+    {
+      "agent": "Claude",
+      "status": "Setup guide; independent booking compatibility not verified",
+      "source": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=32&h=32",
+      "setup": "/connectors?agent=claude"
+    },
+    {
+      "agent": "Other MCP clients",
+      "status": "Setup guide",
+      "setup": "/connectors?agent=other"
+    }
+  ],
+  "verification": {
+    "phone_widths": [
+      320,
+      390
+    ],
+    "tablet_width": 768,
+    "horizontal_overflow": false,
+    "hero_text_message_gap_min_pixels": 32,
+    "mini_logo_assets_loaded": true,
+    "claude_link_selects_claude_guide": true,
+    "business_mobile_width": 390,
+    "business_page_customer_credit_shown": false,
+    "public_booking_flow": "Prepared, approved, confirmed and status-verified in browser",
+    "amount_due_now_cents": 0,
+    "payment_timing": "on_site",
+    "connector_tests": 60,
+    "website_tests": 24,
+    "production_build_typescript": "Passed",
+    "public_pages_http": {
+      "/": 200,
+      "/businesses": 200,
+      "/connectors?agent=claude": 200,
+      "/demo": 200
+    },
+    "public_confirmation_copy": "Amount to pay now: $0; Pay on-site; A verification call might come to you from the vendor.",
+    "in_app_homepage_reloaded": true
+  },
+  "deployment": {
+    "id": "dpl_HCu3ja3okDQWRTjQpdujND3MJwvx",
+    "url": "https://homebase-agent-booking-4e81webzq-pulkitwalia099s-projects.vercel.app",
+    "domain": "https://getgolocal.com",
+    "target": "production",
+    "status": "READY and promoted"
+  },
+  "limits": [
+    "The preview remains fictional, without real appointments, calls or charges",
+    "Vendor verification-call wording describes the intended live flow; no call is scheduled",
+    "First-booking discount is a real-service launch policy; test bookings cannot redeem it",
+    "Existing customer OAuth and supplier acceptance behavior retained"
+  ],
+  "main_thesis_updated": false,
+  "working_page_updated": false
+}

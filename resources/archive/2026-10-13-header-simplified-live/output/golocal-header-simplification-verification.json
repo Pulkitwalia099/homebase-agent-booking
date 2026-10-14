@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-13",
+  "release": "a0baa4907684edadc0027fb29632fae89b19be07",
+  "deployment": "dpl_CU3R34R7xXKaGyj6Ci2JPyHb1L4z",
+  "production": "https://getgolocal.com",
+  "status": "READY",
+  "change": "Customer/business header links and redundant mobile menu removed. Logo and personal-assistant entry retained.",
+  "desktopAnd390MobileVerified": true,
+  "mobileHorizontalOverflow": false,
+  "heroVideoRetained": "/brand/hero-message.mp4"
+}

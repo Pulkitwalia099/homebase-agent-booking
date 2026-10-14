@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-13",
+  "source": "Direct founder feedback in this conversation",
+  "intent": "Lead with expanded agent capability in the real world and a new business customer-growth channel, rather than reduced conversational friction. Explain what GoLocal is, how the booking example works and how to connect.",
+  "implementation": "Homepage, business page, setup, customer/business signup, pilot page, demo eyebrow, ecosystem copy and metadata/shared-link image aligned. New three-step setup and business value sections. Ambiguous hero-message overlay removed; animated workers retained.",
+  "claimBoundaries": "One connection is the integration proposition. Agent/platform support remains scoped; no unmeasured 5/10-minute guarantee or universal reach. Founder-reported 5\u20136 pilot customers remain modestly displayed; no demand or fulfilled-service validation inferred.",
+  "verification": "../output/golocal-value-messaging-verification.json",
+  "mainThesesAndWorkingPage": "Unchanged"
+}

@@ -1,0 +1,1 @@
+Exact sources before the mobile hero/network flow and homepage audience review. Preserve existing desktop art/design. Prior first-booking credit published; preview copy simplification in progress. No credentials or account data included.

@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-13",
+  "release": "59dc06ecc78bca4c731752df1a9dedcaec80bb16",
+  "deployment": "dpl_CuKcPLFo9Dc6xKNXVi4AVg28ZWHh",
+  "deploymentUrl": "https://homebase-agent-booking-4w4v6qn3c-pulkitwalia099s-projects.vercel.app",
+  "production": "https://getgolocal.com",
+  "status": "READY",
+  "selectedDesign": "A \u2014 warm and spacious",
+  "founderReportedPilotCustomers": "5\u20136",
+  "pilotCountIndependentlyVerified": false,
+  "validation": {
+    "websiteTests": 24,
+    "testsPassed": 24,
+    "localProductionBuild": "Next webpack and TypeScript passed",
+    "vercelBuild": "READY",
+    "desktopVisualReview": true,
+    "mobile390VisualReview": true,
+    "local320NoHorizontalOverflow": true,
+    "live390NoHorizontalOverflow": true,
+    "businessSoftwareLogosLoaded": 12,
+    "museExample": "Photo plus tap age; provider ratings, weekly bookings, recommendation; Oak selected and example confirmation verified",
+    "heroPauseResume": true,
+    "heroVideoError": null,
+    "agentEntry": "Plain document outside marketing UI",
+    "markdownNegotiation": true,
+    "httpChecks": [
+      {
+        "path": "/",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 34073
+      },
+      {
+        "path": "/agent",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 2493
+      },
+      {
+        "path": "/llms.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "bytes": 952
+      },
+      {
+        "path": "/agent/files/README.md",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "bytes": 1395
+      },
+      {
+        "path": "/agent/files/SKILL.md",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "bytes": 792
+      },
+      {
+        "path": "/agent/files/mcp-config.json",
+        "status": 200,
+        "type": "application/json; charset=utf-8",
+        "bytes": 244
+      },
+      {
+        "path": "/agent/files/capabilities.json",
+        "status": 200,
+        "type": "application/json; charset=utf-8",
+        "bytes": 661
+      },
+      {
+        "path": "/connectors",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 24228
+      },
+      {
+        "path": "/register?type=customer",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 19103
+      },
+      {
+        "path": "/register?type=business",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 19342
+      },
+      {
+        "path": "/pilot",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 25015
+      },
+      {
+        "path": "/demo",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 20632
+      },
+      {
+        "path": "/agent",
+        "accept": "text/markdown",
+        "status": 200,
+        "rawMarkdown": true
+      },
+      {
+        "path": "/api/demo/connector_status",
+        "status": 200,
+        "response": {
+          "simulated": true,
+          "testOnly": true,
+          "amountCharged": 0,
+          "amountDueNowCents": 0,
+          "paymentTiming": "on_site",
+          "currency": "USD",
+          "source": "Fictional demo companies, sample ratings, example prices and appointment times. No service, charge, dispatch or supplier notification.",
+          "backend": "public_demo",
+          "authentication": "none",
+          "liveBookingsSupported": false,
+          "accountDataAccessible": false,
+          "imageAnalysisSupported": false,
+          "service": "one-hour plumbing diagnostic",
+          "zip": "84101"
+        }
+      }
+    ]
+  },
+  "mediaCreditsSpentThisRevision": 0,
+  "boundaries": "The pilot is onboarding. Public demo remains a simulation. Supplier-connected test requests require acceptance. Existing signup credit entitlements and email logic retained; no new real booking, vendor message or payment."
+}

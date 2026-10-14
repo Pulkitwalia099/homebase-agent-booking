@@ -1,0 +1,1 @@
+Completed first-booking credit wording and application metadata, published October 13, 2026. $50 applies to the first real booking; existing entitlements preserved and demo redemption remains disabled. Exact source revision before the subsequent request to simplify preview copy.

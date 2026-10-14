@@ -4,7 +4,7 @@ The assisted MVP is running from your machine through an HTTPS tunnel. It suppor
 
 ## Google sign-in · October 13
 
-Continue with Google is implemented and tested. The Google OAuth client is registered, and the live account chooser and callback are verified. The founder completed Google verification and returned to the existing account with its confirmed test request intact. Customers and suppliers can choose Google without opening an email link; email remains available. Google is currently in testing mode; verify each participant’s access before inviting them. The account chooser shows the temporary ngrok domain. Keep email fallback for the founder’s Gmail alias demo accounts: aliases are not separate Google identities. [Setup, customer flow and future ChatGPT/Claude options](customer-signin.md).
+Continue with Google is implemented and tested. The Google OAuth client is registered, and the live account chooser and callback are verified. The founder completed Google verification and returned to the existing account with its confirmed test request intact. Customers and suppliers can choose Google without opening an email link; email remains available. Update October 13: Google is now External / In production; participants can sign in without invitations. The account chooser shows the temporary ngrok domain. Keep email fallback for the founder’s Gmail alias demo accounts: aliases are not separate Google identities. [Setup, customer flow and future ChatGPT/Claude options](customer-signin.md).
 
 ## Full ChatGPT flow · October 13
 
@@ -78,3 +78,17 @@ npm run pilot:stop
 Start restores the pilot server, tunnel and temporary keep-awake process. Stop ends only those owned processes and keeps saved accounts and requests. The separate `.env.assisted-pilot` and `.data-assisted-pilot/` hold private configuration and data; the existing Housecall `.env` and protected test history remain separate. No auto-start on machine reboot is configured.
 
 The existing tunnel URL now serves assisted test mode. Old Housecall/Muse shared credentials do not authorize customer access to it. The new MCP endpoint is [the pilot MCP](https://camryn-mechanomorphic-ellis.ngrok-free.dev/mcp), with customer OAuth scope `golocal:assisted`. Actual public MCP SDK calls and the October 13 real ChatGPT assisted request/acceptance flow passed. Manual browser testing can also proceed.
+
+## Mobile customer-agent and new supplier test · October 13
+
+Use [Test with a supplier](https://getgolocal.com/connectors?flow=pilot) for the account-based flow. The public `GoLocal Demo` endpoint does not send requests to supplier accounts. ChatGPT automatically discovers the pilot OAuth settings; keep OAuth selected and let discovery complete.
+
+A new founder-controlled supplier signed in through an emailed link, submitted Copper Canyon Plumbing — Mobile Test ($89, ZIP 84101), was reviewed/activated, and accepted one actual ChatGPT-submitted synthetic request from its owner account. ChatGPT independently read `confirmed` with `supplier_portal_acceptance`. Both emails arrived. Google sign-in nested inside mobile ChatGPT reconnection returned to the correct customer consent and retained access to that same booking.
+
+[Completed chat](https://chatgpt.com/c/6ace9485-8468-83ea-91fd-dcf46a6c5d11) · [Structured verification](../../../resources/golocal-mobile-onboarding-e2e-2026-10-13.json). Phone-size browser emulation, not a physical iOS/Android app test; existing plugin reused, new custom-server form/discovery inspected without duplication. Existing supplier review, test-only scope and $0 charged behavior retained. No customer demand or real fulfillment established.
+
+## Fresh Google customer and connector · October 13
+
+Google is now External / In production; the earlier invitation-only assumption is superseded. `pulkit@dnpequity.com` had never signed into GoLocal and was absent from the old test list. It completed basic Google identity consent, created a new verified customer account and authorized a newly created **GoLocal Fresh Customer Test** MCP connection. Initial history was empty. One $89 example request went to Copper Canyon Plumbing — Mobile Test, whose separate owner accepted it. The fresh agent independently verified confirmation and exactly one request; the earlier personal customer request was inaccessible. Both notification emails arrived.
+
+[Fresh conversation](https://chatgpt.com/c/6acee3be-c860-83ea-abb6-adf4ae0ee8de) · [Evidence](../../../resources/golocal-open-google-fresh-customer-2026-10-13.json). The existing connector was not reused. Customer identity is separate from ChatGPT identity; the same ChatGPT host login was used with the new customer-bound connection. No real visit, payment, CRM write or credit redemption occurred.

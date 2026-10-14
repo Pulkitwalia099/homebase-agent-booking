@@ -398,3 +398,32 @@ All 55 connector tests and 18 website tests pass. No third-party suppliers were 
 - [Dated evidence and setup references](golocal-public-pilot-demo-2026-10-13.json): customer/supplier paths, $50 reservation policy, public fictional listings, client eligibility and source references from Zapier, Higgsfield, OpenAI and Claude.
 - [Published demo](https://getgolocal.com/demo) · [MCP setup](https://getgolocal.com/connectors) · [Pilot signup](https://getgolocal.com/pilot). No-auth public simulation; the account OAuth and supplier acceptance pilot remains separate.
 - [MCP lifecycle verification](../output/golocal-public-demo-mcp-verification.json) · [Actual ChatGPT demo](https://chatgpt.com/c/6acded33-cfe8-83ea-a191-ff0fcae830df) · [Browser transcript](../output/golocal-public-chatgpt-demo.txt) · [Live design](../output/golocal-public-demo-live.png). Simulated confirmation, $0 charged; no real fulfillment, vendor messaging, payments, credit redemption or demand validation. Main business thesis and working Page unchanged.
+
+### Founder-confirmed first-booking credit timing · October 13, 2026
+
+The founder selected “Apply $50 to their first real booking.” Current website offer and signup confirmation now say $50 off the first real GoLocal home-service booking once services are available locally. Signup records keep an unused entitlement with `apply_on: first_real_booking`; simulated bookings do not consume it. Existing reserved records retain that entitlement. Real-service billing/redemption remains part of the real-service launch, rather than the test-only MCP. [Dated confirmation](golocal-public-pilot-demo-2026-10-13.json).
+
+## Homepage audiences, mobile layout and preview copy · October 13, 2026
+
+[Review and verification](golocal-homepage-mobile-review-2026-10-13.json): desktop design retained; mobile hero reflows; network chronology is explicit; customers/businesses are primary and partners secondary. Official small agent icons link to client-specific guides. Preview payment is on-site with $0 due now, and the repeated simulation/dispatch/charge explanations are replaced by one context label and a vendor verification-call note. API truth and the test-only boundary remain intact. Main thesis and working Page unchanged.
+
+- [Mobile customer-agent and new supplier onboarding verification · October 13](golocal-mobile-onboarding-e2e-2026-10-13.json): phone-size browser evidence, automatic OAuth discovery, nested Google reconnection, new supplier account/profile/review and acceptance, email delivery and explicit limits. Synthetic test, not representative demand or production fulfillment.
+
+- [Public Google signup and fresh customer agent verification · October 13](golocal-open-google-fresh-customer-2026-10-13.json): External / In production, a new Google customer identity and new custom MCP connector, empty-to-one request history, supplier acceptance, both emails and account isolation. Corrects earlier basic-identity allowlist assumptions. Synthetic capability evidence, not customer demand or production fulfillment.
+
+
+## Agent-first website design exploration · October 13, 2026
+
+[Three mockups](../output/golocal-design-explorations/index.html) · [Design decisions and primary references](../output/golocal-design-explorations/DESIGN.md) · [Portable bundle](../output/golocal-design-mockups.zip). The founder clarified that personal AI agents are the product audience, customers use their existing agent, and businesses are supply partners. Every design has a plain assistant entry with actual Markdown/text/JSON prototype files. Anthropic frontend-design and Paddle agent documentation informed the approach. The directions are warm/spacious, product-focused and illustration-led; A is recommended. All phone layouts and primary interactions were checked. No production deployment, supplier operation, message or spend; theses and working Page unchanged.
+
+
+## Selected agent-first website design live · October 13, 2026
+
+[Founder positioning and pilot context](golocal-option-a-2026-10-13.json) · [Live verification](../output/golocal-option-a-live-verification.json) · [Homepage](https://getgolocal.com) · [Plain agent files](https://getgolocal.com/agent). Selected Option A supersedes the review-only design note above. Customer delegation, one business connection, restored agent logos and 12 software marks; modest founder-reported 5–6 pilot customers. Public simulation and supplier-connected test boundaries remain documented; no fulfillment or demand validation is inferred. Theses and working Page unchanged.
+
+- [Preserved hero animation verification](../output/golocal-hero-polish-verification.json): original worker footage retained; compact agent message synchronized to the 8-second loop, live desktop/mobile review and pause/resume. No new credits used.
+
+
+## Value-led GoLocal website messaging · October 13, 2026
+
+[Founder direction and claim boundaries](golocal-value-messaging-2026-10-13.json) · [Live verification](../output/golocal-value-messaging-verification.json). Customer agent capability in the real world, one business connection to a new customer channel, clear setup and explicit business benefits. Ambiguous hero overlay removed while worker animation remains. Current coverage, simulation and planned-connection notes are retained. No demand, fulfillment, guaranteed-growth or timed-activation inference; theses and working Page unchanged.

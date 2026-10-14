@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-13",
+  "source": "Direct founder instructions in this conversation",
+  "selectedDesign": "A \u2014 warm and spacious",
+  "pilotStatement": "Founder reports 5\u20136 pilot customers and ongoing onboarding; displayed as modest text, not a large metric. No production fulfillment inference.",
+  "customerMessage": "Let your AI agent handle the local work.",
+  "businessMessage": "Your next customers are asking their agents. One GoLocal connection; keep existing tools.",
+  "reachBoundary": "No assertion of millions reached or universal agent/software support. Muse and Instinct retain coming-soon markers.",
+  "agentFiles": [
+    "/agent",
+    "/agent/files/README.md",
+    "/agent/files/SKILL.md",
+    "/agent/files/mcp-config.json",
+    "/agent/files/capabilities.json",
+    "/llms.txt"
+  ],
+  "verification": "../output/golocal-option-a-live-verification.json",
+  "mainThesisAndWorkingPage": "Unchanged"
+}

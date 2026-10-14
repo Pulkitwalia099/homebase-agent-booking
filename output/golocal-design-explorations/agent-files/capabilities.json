@@ -1,0 +1,13 @@
+{
+  "service": "GoLocal Demo",
+  "mode": "public_simulation",
+  "tools": ["connector_status", "scope_request", "search_providers", "get_availability", "prepare_booking", "confirm_booking", "get_booking_status"],
+  "category": "plumbing",
+  "example_location": "Salt Lake City",
+  "real_service": false,
+  "payments": false,
+  "supplier_account_access": false,
+  "requires_customer_approval_before_confirmation": true,
+  "runtime_dependency": "pilot machine and tunnel",
+  "supplier_pilot_setup": "https://getgolocal.com/connectors?flow=pilot"
+}

@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-13",
+  "release": "725f1b2a233be1ad5b336abb44fc4c2c2d518dae",
+  "deployment": "dpl_6CsYvDRtqv8SxLRaksxD8RRECC5a",
+  "production": "https://getgolocal.com",
+  "status": "READY",
+  "positioning": {
+    "customer": "Your AI agent. Connected to the real world.",
+    "customerValue": "Find, book and manage local services through the personal agent you already use.",
+    "business": "Personal agents. Your next customer growth channel.",
+    "businessValue": "One GoLocal connection; discovery, booking requests and existing workflows."
+  },
+  "hero": {
+    "workerVideoPreserved": "/brand/hero-message.mp4",
+    "loop": true,
+    "playingOnLiveSite": true,
+    "messageOverlayRemoved": true,
+    "mediaCreditsSpent": 0
+  },
+  "checks": {
+    "vercelProductionBuild": "passed",
+    "vercelTypescript": "passed in 6.6 seconds",
+    "liveDesktopVisualReview": true,
+    "live390PhoneVisualReview": true,
+    "local320NoHorizontalOverflow": true,
+    "live390NoHorizontalOverflow": true,
+    "businessLogosLoaded": 12,
+    "http": [
+      {
+        "path": "/",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 38118
+      },
+      {
+        "path": "/businesses",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 29102
+      },
+      {
+        "path": "/connectors",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 24817
+      },
+      {
+        "path": "/register?type=customer",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 19495
+      },
+      {
+        "path": "/register?type=business",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 19852
+      },
+      {
+        "path": "/pilot",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 25731
+      },
+      {
+        "path": "/demo",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 20994
+      },
+      {
+        "path": "/agent",
+        "status": 200,
+        "type": "text/html; charset=utf-8",
+        "bytes": 2515
+      },
+      {
+        "path": "/llms.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "bytes": 952
+      },
+      {
+        "path": "/opengraph-image",
+        "status": 200,
+        "type": "image/png",
+        "bytes": 45958
+      }
+    ]
+  },
+  "localBuildNote": "Webpack compilation passed. Local build and standalone TypeScript workers stalled idle and were stopped; final production TypeScript/build checks passed on Vercel. Local dev layouts were reviewed.",
+  "boundaries": "No universal agent/platform reach, guaranteed growth, million-customer count or measured 5/10-minute setup claim. Current pilot and demo boundaries retained. No booking, payment, vendor contact or registration was created in this revision."
+}

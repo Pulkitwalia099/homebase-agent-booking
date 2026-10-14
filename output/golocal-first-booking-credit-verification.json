@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-13",
+  "founder_answer": "Apply $50 to their first real booking",
+  "offer": "$50 off each early customer\u2019s first real GoLocal home-service booking",
+  "apply_on": "first_real_booking",
+  "demo_uses_credit": false,
+  "amount_cents": 5000,
+  "deployment": "dpl_E1kvmwo6ixHBVAXA52mGjLfnbXLj",
+  "target": "production",
+  "website_tests": 24,
+  "production_build_and_typescript": "passed",
+  "browser_signup_confirmation": "You\u2019re in. $50 off your first booking.",
+  "existing_entitlements": "Preserved; no customer records rewritten",
+  "real_billing_implementation": "Deferred until real-service launch; test-only tools cannot redeem credit"
+}

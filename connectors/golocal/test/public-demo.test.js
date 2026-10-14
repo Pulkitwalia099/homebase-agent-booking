@@ -16,7 +16,7 @@ test('public demo gives three fictional options and an approved immediate confir
     const slot = demo.availability(p.id).slots[0], offer = demo.prepare(p.id, slot.id);
     assert.throws(() => demo.confirm(offer.quoteId, false), { code: 'APPROVAL_REQUIRED' });
     const result = demo.confirm(offer.quoteId, true);
-    assert.equal(result.state, 'simulated_confirmed'); assert.equal(result.amountCharged, 0);
+    assert.equal(result.state, 'simulated_confirmed'); assert.equal(result.amountCharged, 0); assert.equal(result.amountDueNowCents, 0); assert.equal(result.paymentTiming, 'on_site');
     assert.equal(result.priceCents, p.priceCents); assert.equal(result.creditApplied, false);
     assert.deepEqual(demo.confirm(offer.quoteId, true), result);
     assert.deepEqual(demo.booking(result.bookingId), result);

@@ -1,0 +1,1 @@
+Exact affected sources before the founder confirmed that the $50 early-customer credit applies to the first real booking. Existing public demo remains simulated and has no credit redemption. No credentials or customer records included.

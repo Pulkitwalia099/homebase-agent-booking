@@ -1,0 +1,1 @@
+Exact affected sources before the founder requested a cleaner preview with payment on site, $0 due now and the vendor verification-call note. First-real-booking credit wording already published. No credentials or customer records included.

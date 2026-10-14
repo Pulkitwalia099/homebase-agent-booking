@@ -1,0 +1,1 @@
+Prepared before the founder clarified that customers and AI agents are primary, with businesses as supply partners. Not deployed. Superseded as the proposed design by the three agent-first mockups. Existing local working files restored to their exact pre-edit state, preserving other pilot work.

@@ -1,5 +1,15 @@
 # GoLocal customer sign-in
 
+## Public Google access · October 13, 2026
+
+Google Auth Platform is now **External / In production** for the existing GoLocal identity client. The homepage and privacy URL point to getgolocal.com. Customers and suppliers can choose Continue with Google without a GoLocal invitation; supplier profiles still require business review before listing. Only openid, email and profile are requested, with online access and no Google API data permissions.
+
+Correction to the earlier invite-only wording: Google's current documentation exempts apps requesting only basic identity scopes from the testing allowlist as well. Publishing explicitly establishes the external public audience. Workspace administrators may still apply their organization's app-access controls. [Official Google app-state documentation](https://developers.google.com/identity/protocols/oauth2/production-readiness/overview).
+
+The earlier setup account, client, callback and test history below are preserved as a historical baseline. Their testing-status / invitation assumptions are superseded by this update. A separate fresh customer connector is being verified; no existing customer connector is reused.
+
+## Earlier setup and verification baseline
+
 Checked October 13, 2026. Google sign-in is implemented and all 57 connector tests pass. Google OAuth registration is complete, credentials are stored privately and the live pilot displays Continue with Google plus email fallback. The live Google account chooser and callback are verified. After the founder completed Google’s passkey verification, sign-in returned to the existing customer account and retained its confirmed test request. A read-only account-database check confirmed one verified customer account with a linked Google identity; no duplicate account was created. A dedicated **GoLocal OAuth** project was created in the founder's Google Cloud account, project ID `vocal-cyclist-511506-f9`. App configuration and the Web OAuth client **GoLocal pilot** are registered, with an external testing audience. The founder’s Google account is registered as a test user. This is identity configuration; the backend still runs locally.
 
 ## Customer experience with Google enabled
@@ -53,3 +63,7 @@ The Google button appears only with complete credentials. Partial configuration 
 Automated HTTP tests use the actual account framework, state/cookie and PKCE flow, with cryptographically signed test ID tokens and mocked Google token/public-key endpoints. They check retained account history, new accounts, agent consent/token exchange, identity-only scopes, unsafe returns, missing browser state, replay, unverified email, incorrect issuer/audience/signature and expiry. Separately, the actual Google client and public callback were verified in Chrome with the founder’s Google account, preserving the existing confirmed test request. Existing account isolation and supplier accept/decline tests also pass. Resumption of MCP consent through Google is covered by the automated HTTP test. [Actual assisted ChatGPT linking and supplier acceptance](chatgpt-assisted-test.md) passed later October 13 using the already signed-in customer browser session. A fresh Google sign-in nested inside ChatGPT authorization was not separately exercised live.
 
 The local thesis and working Page are unchanged. No cloud backend, CRM integration, supplier outreach, paid plan, actual service booking or payment was added. Google remains in testing mode. Its current account chooser displays the ngrok domain rather than a verified GoLocal brand. Check participant access before invitations; verified branding and a stable owned identity domain belong to the later public rollout.
+
+## Fresh signup result · October 13
+
+The separate fresh-customer test is complete. `pulkit@dnpequity.com` was not an existing GoLocal account or a Google test user. It signed in successfully, obtained a verified new account, authorized the new **GoLocal Fresh Customer Test** connection, and completed the supplier-acceptance lifecycle with $0 charged. Empty history became exactly one request, and cross-account access was rejected. [Full evidence](../../../resources/golocal-open-google-fresh-customer-2026-10-13.json). Google public audience is verified in the console; verified brand display remains a separate step.

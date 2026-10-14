@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-14",
+  "release": "e5725fa62e1da040cfd7eac10ae9ab310758a0dc",
+  "deployment": "dpl_Es4fKnAXoLhxoQrW7SbCk4AJ8myU",
+  "production": "https://getgolocal.com",
+  "status": "READY",
+  "removed": [
+    "Housecall Pro pilot/planned-connections/onboarding note",
+    "Agent/channel availability sentence"
+  ],
+  "retained": [
+    "Software heading and 12 logos",
+    "Agent logos",
+    "Muse and Instinct coming-soon markers",
+    "Original animated hero"
+  ],
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "requestedNotesAbsent": true
+    },
+    {
+      "path": "/businesses",
+      "status": 200,
+      "requestedNotesAbsent": true
+    }
+  ],
+  "softwareLogosLoaded": 12,
+  "publicBrowserVerified": true
+}

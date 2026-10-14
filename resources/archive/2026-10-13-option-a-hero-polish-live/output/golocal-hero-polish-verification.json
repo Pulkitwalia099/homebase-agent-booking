@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-13",
+  "release": "5e2ad3de033566f48fefb3d5fac733f3b48c2d56",
+  "deployment": "dpl_BsD7TUvqwnpr4JxEW4hY5zM2Am3Z",
+  "production": "https://getgolocal.com",
+  "videoPreserved": "/brand/hero-message.mp4",
+  "duration": 8.041667,
+  "workerMovementVisuallyReviewed": true,
+  "messageReplyVerified": true,
+  "loopReset": {
+    "caption": "YOUR PERSONAL AGENT\n\n“Just take care of the house for me.”\n\nDelivered",
+    "duration": 8.041667,
+    "loop": true,
+    "paused": false,
+    "time": 0.027483
+  },
+  "pause": {
+    "caption": "YOUR PERSONAL AGENT\n\n“Just take care of the house for me.”\n\nDelivered",
+    "paused": true,
+    "time": 0.078672
+  },
+  "desktopAnd390MobileVisuallyReviewed": true,
+  "mobileOverflow": false,
+  "productionBuild": "READY",
+  "localWebpackAndTypescript": "passed",
+  "newMediaCredits": 0
+}

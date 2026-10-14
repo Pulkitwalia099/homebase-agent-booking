@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-13",
+  "status": "Google public sign-in and fresh customer agent flow verified",
+  "google": {
+    "project": "vocal-cyclist-511506-f9",
+    "audience": "External",
+    "publishing_status": "In production",
+    "previous_test_allowlist": [
+      "pulkitwalia099@gmail.com"
+    ],
+    "new_customer_not_previously_allowlisted": true,
+    "homepage": "https://getgolocal.com/",
+    "privacy": "https://getgolocal.com/privacy",
+    "configured_domains": [
+      "camryn-mechanomorphic-ellis.ngrok-free.dev",
+      "getgolocal.com"
+    ],
+    "requested_scopes": [
+      "openid",
+      "email",
+      "profile"
+    ],
+    "sensitive_scopes": 0,
+    "restricted_scopes": 0,
+    "access_type": "online",
+    "client_credentials_rotated": false,
+    "brand_verification_submitted": false,
+    "account_chooser_brand": "pilot ngrok domain"
+  },
+  "fresh_customer": {
+    "email": "pulkit@dnpequity.com",
+    "existing_account_before_test": false,
+    "new_verified_account_created": true,
+    "google_identity_links": 1,
+    "email_signin_link_required": false,
+    "google_login_session": "Existing work Google browser session; first-ever GoLocal signup",
+    "initial_booking_history": 0,
+    "final_booking_history": 1
+  },
+  "new_connector": {
+    "name": "GoLocal Fresh Customer Test",
+    "plugin_id": "plugin_asdk_app_6acee24e17dc81918469423f83a617d9",
+    "plugin_url": "https://chatgpt.com/plugins/plugin_asdk_app_6acee24e17dc81918469423f83a617d9",
+    "created_from": "ChatGPT mobile browser: Plugins \u2192 Add \u2192 Add custom MCP server \u2192 OAuth discovery \u2192 Create as a plugin",
+    "registration_method": "DCR, automatically discovered",
+    "scope": "golocal:assisted",
+    "grant_max_days": 30,
+    "existing_connector_reused": false,
+    "user_approved_account_grant": true,
+    "standing_tool_permissions_changed": false,
+    "same_chatgpt_login": true
+  },
+  "flow": {
+    "conversation": "https://chatgpt.com/c/6acee3be-c860-83ea-abb6-adf4ae0ee8de",
+    "booking_id": "booking_a5f40e07-ca03-406b-bd83-ef44bc723800",
+    "quote_id": "quote_b900ba7c-a915-44d3-bfe7-71d7f291b8fa",
+    "retry_key": "fresh-customer-google-20261013-01",
+    "supplier": "Copper Canyon Plumbing \u2014 Mobile Test",
+    "supplier_id": "supplier_01c7ea2f-2b42-4dad-83bc-e97a67d0519c",
+    "supplier_account": "separate founder-controlled supplier email alias",
+    "price_cents": 8900,
+    "start": "2026-10-18T17:00:00.000Z",
+    "end": "2026-10-18T18:00:00.000Z",
+    "timezone": "America/Denver",
+    "initial_state": "pending_supplier",
+    "final_state": "confirmed",
+    "confirmation_source": "supplier_portal_acceptance",
+    "amount_charged": 0,
+    "test_only": true,
+    "vendor_sync": "not_connected",
+    "new_requests": 1,
+    "supplier_owner_accepted_in_portal": true,
+    "agent_independently_read_confirmation": true
+  },
+  "verification": {
+    "fresh_connector_tool_status_read": "Passed",
+    "fresh_connector_history_count": 1,
+    "other_customer_request_read": "Rejected, isError true; no other account data returned",
+    "customer_email_notice_received": true,
+    "supplier_email_notice_received": true,
+    "phone_width": 390,
+    "horizontal_overflow": false,
+    "production_build_and_typescript": "Passed",
+    "website_copy": "No invite-only Google wording; email link instruction only for email fallback",
+    "automated_test_baseline": "60 connector and 24 website tests passed in preceding mobile revision; no backend code changed in this console/copy update"
+  },
+  "deployment": {
+    "id": "dpl_24vmE5zkgWWpS5Q97QGTixmUgkC6",
+    "url": "https://homebase-agent-booking-d6am03ghz-pulkitwalia099s-projects.vercel.app",
+    "domain": "https://getgolocal.com",
+    "status": "READY and promoted"
+  },
+  "limits": [
+    "Supplier self-signup creates a pending profile; GoLocal still reviews business authority, scope and terms before listing",
+    "Physical iOS/Android native apps not tested; phone-size browser used",
+    "Google Workspace administrators may apply their own third-party app restrictions",
+    "Google chooser still displays the pilot domain; brand verification is separate from public audience and account verification",
+    "The backend still depends on this machine and ngrok; no persistent-hosting migration",
+    "Synthetic test only: no real visit, CRM job, charge or $50 credit redemption",
+    "Fresh GoLocal account and fresh connector, using the same authenticated ChatGPT host account; no new ChatGPT account created"
+  ],
+  "correction": "Earlier invite-only wording overlooked Google basic identity scope exception. The prior records are preserved, with this dated correction and explicit production publication.",
+  "sources": [
+    "https://developers.google.com/identity/protocols/oauth2/production-readiness/overview",
+    "https://developers.openai.com/plugins/build/auth#components"
+  ],
+  "evidence_images": [
+    "output/golocal-google-public-signin.png",
+    "output/golocal-fresh-customer-consent.png",
+    "output/golocal-fresh-customer-supplier-accepted.png",
+    "output/golocal-fresh-customer-confirmation.jpg"
+  ],
+  "main_thesis_updated": false,
+  "working_page_updated": false
+}

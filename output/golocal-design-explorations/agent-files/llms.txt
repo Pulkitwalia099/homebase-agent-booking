@@ -1,0 +1,15 @@
+# GoLocal
+> Local-service tools for personal agents. Public demo uses fictional providers.
+
+## Files in this design prototype
+- [Overview](README.md): connection and workflow
+- [Agent instructions](SKILL.md): tool sequence and limits
+- [MCP configuration](mcp-config.json): endpoint and transport
+- [Capabilities](capabilities.json): tools and boundaries
+
+## Existing public setup
+- https://getgolocal.com/connectors
+- https://getgolocal.com/demo/mcp
+
+The files above are a proposed agent entry surface in this mockup,
+not newly deployed files at getgolocal.com.

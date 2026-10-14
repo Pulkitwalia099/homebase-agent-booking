@@ -1,0 +1,16 @@
+import Link from 'next/link';
+import EditorialHero from '@/components/golocal/EditorialHero';
+import Navigation from '@/components/golocal/Navigation';
+import BookingDemo from '@/components/golocal/BookingDemo';
+import AgentEcosystem from '@/components/golocal/AgentEcosystem';
+import BusinessStack from '@/components/golocal/BusinessStack';
+export const metadata = { description: 'Let your AI agent handle the local work. GoLocal connects personal agents to local businesses. Our pilot is live and onboarding customers and business partners.', alternates: { canonical: '/' }, other: { 'agent-documentation': 'https://getgolocal.com/agent', 'llms-txt': 'https://getgolocal.com/llms.txt' } };
+export default function Home() {
+  return <><Navigation /><main id="main" className="gh-home"><EditorialHero />
+    <section className="gl-container gh-agents"><div><h2>Stay with the agent<br />you already know.</h2><p>A growing local network,<br />across personal agents.</p></div><AgentEcosystem /></section>
+    <section id="customers" className="gh-customers"><div className="gl-container gh-example"><div><h2>A little less<br />back-and-forth.</h2><p>Let your personal agent handle the local details. Send a photo, compare the options and choose the visit that works for you.</p><div className="gh-steps"><span>Show the problem.</span><span>Choose a local pro.</span><span>Get the visit sorted.</span></div><div className="gh-actions"><Link className="gl-button" href="/connectors">Connect your agent today</Link><Link className="gh-text-link" href="/demo">Try the demo</Link></div><Link className="gh-pilot-link" href="/register?type=customer">Join the live pilot</Link><small className="gh-example-note">The conversation shows an example booking. Connect your agent for pilot setup and current availability.</small></div><BookingDemo /></div></section>
+    <section id="businesses" className="gh-businesses"><div className="gl-container gh-business-intro"><h2>Your next customers<br />are asking their agents.</h2><div><p>Make your business available through one GoLocal connection. Keep your tools and reach customers looking for businesses like yours through their personal agents.</p><Link className="gh-text-link" href="/register?type=business">Register your business</Link></div></div><BusinessStack /></section>
+    <section className="gl-container gh-partners"><p>Building an AI front office or sales platform?</p><div><Link className="gh-text-link" href="/agents">Agent partnerships</Link><Link className="gh-text-link" href="/partners">Software partnerships</Link></div></section>
+    <section className="gl-container gh-closing"><div><h2>Go local.<br />Stay with your agent.</h2><p>The pilot is live. We’re onboarding customers and local businesses, starting with plumbing in Salt Lake City.</p></div><div className="gh-actions"><Link className="gl-button" href="/connectors">Connect your agent</Link><Link className="gh-text-link" href="/register?type=business">Register your business</Link></div></section>
+  </main><footer className="gl-container gh-footer"><span>GoLocal · Local services for personal agents.</span><div><Link href="/agent">Agent documentation</Link><Link href="/privacy">Privacy</Link><a href="mailto:pulkitwalia099@gmail.com">Contact us</a></div></footer></>;
+}

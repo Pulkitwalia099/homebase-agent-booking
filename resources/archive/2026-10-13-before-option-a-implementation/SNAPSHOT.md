@@ -1,0 +1,1 @@
+Exact source and current project docs before implementing the founder-selected Option A and plain agent entry. Existing published pilot functionality preserved. Founder now reports 5–6 pilot customers and asks for live/onboarding language.

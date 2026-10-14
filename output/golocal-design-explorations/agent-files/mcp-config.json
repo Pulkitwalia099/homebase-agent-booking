@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "golocal-demo": {
+      "url": "https://getgolocal.com/demo/mcp",
+      "transport": "streamable-http",
+      "authentication": "none"
+    }
+  },
+  "note": "Client-specific configuration formats vary. This is a generic connection reference."
+}

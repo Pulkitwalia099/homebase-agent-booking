@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-13",
+  "release": "c8c9a46e9f24df539a2e27a1dc497e93a57537f9",
+  "deployment": "dpl_GJ3zj5iyB5BsdZBvNmv2rxW9KVY7",
+  "production": "https://getgolocal.com",
+  "status": "READY",
+  "removed": [
+    "Customer Muse/example/coverage note",
+    "5\u20136 pilot-customer count and hero location note",
+    "Repeated tech-stack explanatory paragraph",
+    "Tell us what you use links on homepage and business page"
+  ],
+  "validation": {
+    "requestedTextAbsent": [
+      {
+        "path": "/",
+        "status": 200,
+        "requestedTextAbsent": true
+      },
+      {
+        "path": "/businesses",
+        "status": 200,
+        "requestedTextAbsent": true
+      },
+      {
+        "path": "/pilot",
+        "status": 200,
+        "requestedTextAbsent": true
+      }
+    ],
+    "desktopHeadingAlignedWithLogos": true,
+    "loadedSoftwareLogos": 12,
+    "mobileWidth": 390,
+    "mobileScrollWidth": 390,
+    "workerVideoRetained": "/brand/hero-message.mp4",
+    "productionBuild": "READY"
+  },
+  "scope": "Copy/layout only. No booking, registration submission, payment or media generation."
+}

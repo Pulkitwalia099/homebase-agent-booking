@@ -108,5 +108,11 @@
     "target": "production",
     "framework": "Next.js 16.4",
     "validation": "READY; TypeScript/build passed; exact setup guide browser checked. Same functional backend/relay already verified on public domain."
+  },
+  "founder_credit_timing_confirmation": {
+    "date": "2026-10-13",
+    "answer": "Apply $50 to their first real booking",
+    "current_policy": "Every early customer gets $50 off their first real GoLocal home-service booking once services are available in their area. Signup records reserve the unused entitlement. Demo bookings do not consume it.",
+    "billing_implementation": "No real-service charging or automatic credit redemption is implemented in the demo or assisted pilot."
   }
 }

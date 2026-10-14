@@ -1,0 +1,7 @@
+# Public Google signup and fresh customer verified · October 13, 2026
+
+Google Auth Platform for GoLocal now shows External / In production. App homepage/privacy and the owned website domain were added to its branding configuration. Basic identity-only scopes remain unchanged, with no sensitive or restricted scopes. The earlier invite-only assumption is corrected; the original records are preserved in the before snapshot. Google brand verification was not submitted, and its chooser still shows the pilot domain.
+
+A previously unused work Google identity created a new verified GoLocal customer. A separate ChatGPT custom MCP plugin was created through the mobile setup UI and bound to that new account with an explicitly approved 30-day customer grant. Empty history became exactly one synthetic request. A separate supplier owner accepted it, and both actual ChatGPT and independent fresh-connector tool reads verified confirmed / supplier_portal_acceptance / $0 charged. Both emails arrived. Other-customer access was refused.
+
+Final copy deployed and promoted as dpl_24vmE5zkgWWpS5Q97QGTixmUgkC6 on getgolocal.com. Production build and TypeScript passed. Browser mobile checks passed at 390px. No backend code, persistent hosting, production service, CRM write, payment or credit redemption added. Main thesis and working Page unchanged. Secrets, private account stores, tokens and build output excluded.

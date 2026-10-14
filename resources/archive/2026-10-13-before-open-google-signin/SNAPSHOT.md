@@ -1,0 +1,1 @@
+Exact source before opening Google sign-in and testing a fresh customer connector. Earlier invite-only statements are preserved here as historical assumptions. Current Google documentation exempts basic identity-only scopes from the testing allowlist. Main thesis and working Page unchanged. Secrets and private account data excluded.

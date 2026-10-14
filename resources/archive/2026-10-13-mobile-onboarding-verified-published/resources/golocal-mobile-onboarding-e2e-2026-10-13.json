@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-13",
+  "status": "mobile browser flow passed; final improvements published",
+  "story": "Customer mobile ChatGPT connection and exact approved request \u2192 new supplier account, reviewed profile and acceptance \u2192 independent agent confirmation",
+  "customer": {
+    "agent": "ChatGPT web",
+    "conversation": "https://chatgpt.com/c/6ace9485-8468-83ea-91fd-dcf46a6c5d11",
+    "existing_plugin_reused": true,
+    "fresh_signin_during_reconnect": true,
+    "google_inside_oauth": "Passed: account chooser \u2192 GoLocal customer consent \u2192 ChatGPT connected account",
+    "renewed_status_read": "Passed; same confirmed booking accessible",
+    "custom_server_mobile_form": "Inspected on 390px; OAuth endpoints discovered; DCR automatically selected; assisted scope discovered; canceled without creating a duplicate app",
+    "standing_permissions_changed": false
+  },
+  "supplier": {
+    "new_founder_controlled_account": true,
+    "signin_method": "New email alias; delivered single-use link returned to signup form on same browser",
+    "name": "Copper Canyon Plumbing \u2014 Mobile Test",
+    "id": "supplier_01c7ea2f-2b42-4dad-83bc-e97a67d0519c",
+    "registration": "Pending operator review",
+    "review": "Founder-controlled synthetic authority, service scope, $89 price, 84101 coverage and test participation checked, then activated",
+    "acceptance": "Supplier owner reviewed unchanged offer and checked the test-only acceptance box"
+  },
+  "booking": {
+    "id": "booking_e923331c-717e-4ed4-ac71-1fccb314fb75",
+    "quote": "quote_27d96afe-7d63-43f5-9b21-ebb5e91ba044",
+    "retry_key": "mobile-onboarding-20261013-01",
+    "price_cents": 8900,
+    "start": "2026-10-17T17:00:00.000Z",
+    "end": "2026-10-17T18:00:00.000Z",
+    "timezone": "America/Denver",
+    "initial_state": "pending_supplier",
+    "final_state": "confirmed",
+    "confirmation_source": "supplier_portal_acceptance",
+    "amount_charged": 0,
+    "test_only": true,
+    "vendor_sync": "not_connected",
+    "new_requests_created": 1
+  },
+  "notifications": {
+    "supplier_received": true,
+    "customer_received": true,
+    "subjects": [
+      "[GoLocal TEST] New request for your business",
+      "[GoLocal TEST] Request confirmed"
+    ]
+  },
+  "ux_fixes": [
+    "Prominent supplier-connected setup alongside booking preview; distinct endpoints and promises",
+    "Supplier primary signup action goes straight to account/profile, with a secondary talk-to-us lead form",
+    "Customer signup confirmation links to supplier-connected guide",
+    "Three-step account-based agent setup with copyable endpoint and starter prompt; no manual OAuth credentials",
+    "Supplier dashboard puts business and incoming requests first",
+    "Mobile navigation wraps and provides 44px targets; form grouped into business, diagnostic and terms",
+    "Email fallback explains same-phone/browser return to the next step"
+  ],
+  "verification": {
+    "phone_widths": [
+      320,
+      390
+    ],
+    "horizontal_overflow": false,
+    "supplier_form_smallest_width": 320,
+    "supplier_submit_button_height": 46.8,
+    "clipboard_url": "Passed",
+    "clipboard_prompt": "Passed",
+    "connector_tests": 60,
+    "website_tests": 24,
+    "clean_production_typescript_build": "Passed",
+    "local_typecheck": "Pre-existing duplicate generated .next/dev declaration files prevent standalone local tsc; clean Vercel production typecheck passes",
+    "runtime": {
+      "server": true,
+      "tunnel": true,
+      "keep_awake": true
+    },
+    "live_guide_http": 200,
+    "temporary_mobile_tabs_closed": true,
+    "delivered_tabs_normal_viewport": true
+  },
+  "limits": [
+    "Phone-size browser emulation; physical iOS/Android native apps not tested",
+    "Existing private ChatGPT plugin reused; fresh customer sign-in and reconnect tested; first-time creation form/discovery inspected without a duplicate plugin",
+    "Custom MCP availability depends on client/account; no public directory listing created",
+    "Google OAuth remains in test mode for invited accounts; email fallback works for other pilot participants",
+    "Supplier activation needs GoLocal review; acceptance cannot be represented as immediate before the supplier decides",
+    "Synthetic test only: no actual visit, dispatch, vendor write, payment or credit redemption",
+    "Main thesis and working Page unchanged"
+  ],
+  "deployment": {
+    "id": "dpl_5awRVJ2pfqAzh25VHx75K12fiDoL",
+    "url": "https://homebase-agent-booking-6bxhkrpdr-pulkitwalia099s-projects.vercel.app",
+    "domain": "https://getgolocal.com",
+    "status": "READY and promoted"
+  }
+}
