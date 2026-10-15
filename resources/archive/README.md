@@ -442,3 +442,5 @@ All entries are local snapshots. They do not indicate updates to the working Pag
 - [Before logo-note removal](2026-10-14-before-logo-notes-removal/SNAPSHOT.md) · [Logo notes removed live](2026-10-14-logo-notes-removed-live/SNAPSHOT.md): software section reduced to heading/logos; agent availability sentence removed while coming-soon markers remain.
 
 - [Before personal-agent heading](2026-10-14-before-personal-agent-heading/SNAPSHOT.md) · [Personal-agent heading live](2026-10-14-personal-agent-heading-live/SNAPSHOT.md): exact customer heading correction, source/report and live preview.
+
+- [Before simple setup and hierarchy](2026-10-14-before-simple-setup-value/SNAPSHOT.md) · [Simple setup and hierarchy live](2026-10-14-simple-setup-value-live/SNAPSHOT.md): everyday value, one setup instruction, renamed agent header entry, hero controls simplified and readable heading sizes; animation retained.

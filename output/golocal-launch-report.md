@@ -264,3 +264,16 @@ Release `e5725fa62e1da040cfd7eac10ae9ab310758a0dc` is READY as deployment `dpl_E
 ## Customer heading clarified · October 14, 2026
 
 Changed the customer section heading to “Local services. Handled by your personal agent.” Release `43aeee4cfb1693ecf5fad6ace3d95e64b9b60e1c` is READY as deployment `dpl_7n6K6ogKatAZb7JtEz6mBNucT5f1` on getgolocal.com and www.getgolocal.com. The live browser verified the exact wording and clean three-line desktop layout. Screenshot: golocal-personal-agent-heading-live.png. Source bundle refreshed; no other website behavior changed.
+
+
+## Simple setup, everyday value and readable hierarchy live · October 14, 2026
+
+The header entrance is now “For personal AI agents.” The hero has one “Connect your agent” action; its secondary documentation link and Pause control are removed as requested. The original silent looping worker video remains, with offscreen/document-hidden pausing, reduced-motion preference and error fallback. No new video generation or media credits were used.
+
+The hero now explains one GoLocal connection and gives concrete everyday examples: home cleaning, handyman help and a barber appointment. These examples describe the intended product scope; this revision does not establish production fulfillment for these categories. Existing documentation still distinguishes the public simulation from the supplier-connected plumbing pilot.
+
+The numbered setup list is replaced by “One connection. Everyday local help,” one explanation and a “Follow the setup guide” link. Section labels use readable title case at 18px desktop/17px mobile. The homepage hierarchy is 68px hero H1, 48px principal section H2, 42px setup H2 and 20px benefit H3, with responsive mobile sizes. Customer, business and software sections retain their audience flow, logos and registration actions.
+
+Release `092775e499177dc635eda6c312eac3f0c3655d75` is READY as Vercel production deployment `dpl_59ECgxro63phu2YYEc8YTEEa1DPX`, serving getgolocal.com and www.getgolocal.com. Cloud compilation, TypeScript in 4.2 seconds and all 28 prerendered pages completed. Desktop and live 390px layouts were visually reviewed; local 320px also has no horizontal overflow. Browser checks verified one hero CTA, no hero pause control, no numbered setup list, the looping video playing when visible and all 12 software logos loading. Homepage, setup guide, agent documentation and business registration returned HTTP 200. No signup, booking, email, vendor message or payment was created.
+
+Live screenshots, structured verification and the refreshed 150-file website source ZIP are saved in output. Exact before/completed copies are archived. Main thesis documents and the working Page were unchanged. The unrelated untracked duplicate Next configuration remains outside the commit and bundle.

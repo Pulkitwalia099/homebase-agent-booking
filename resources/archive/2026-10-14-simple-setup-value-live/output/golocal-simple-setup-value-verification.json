@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-14",
+  "url": "https://getgolocal.com",
+  "commit": "092775e499177dc635eda6c312eac3f0c3655d75",
+  "deployment": "dpl_59ECgxro63phu2YYEc8YTEEa1DPX",
+  "status": "READY",
+  "production_build": {
+    "compiled": true,
+    "typescript": "passed in 4.2s",
+    "static_pages": 28
+  },
+  "checks": {
+    "desktop_width": 1440,
+    "live_mobile_width": 390,
+    "local_narrow_width": 320,
+    "horizontal_overflow": false,
+    "hero_ctas": 1,
+    "hero_pause_controls": 0,
+    "setup_numbered_lists": 0,
+    "hero_video": {
+      "playing_when_visible": true,
+      "loop": true,
+      "ready_state": 4
+    },
+    "homepage_section_labels_px": 18,
+    "mobile_section_labels_px": 17,
+    "desktop_h1_px": 68,
+    "desktop_section_h2_px": 48,
+    "desktop_setup_h2_px": 42,
+    "desktop_benefit_h3_px": 20,
+    "software_logos_loaded": 12,
+    "http_200": [
+      "/",
+      "/connectors",
+      "/agent",
+      "/register?type=business"
+    ]
+  },
+  "new_media_credits": 0,
+  "screenshots": [
+    "output/golocal-simple-setup-live-hero.png",
+    "output/golocal-simple-setup-live-section.png",
+    "output/golocal-simple-setup-live-mobile.png"
+  ],
+  "scope": "Presentation and copy; no registration, booking or email was submitted."
+}
