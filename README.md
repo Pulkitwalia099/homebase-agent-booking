@@ -6,6 +6,8 @@ Personal agents are expanding the ways people find and buy services, but local b
 
 ## Start here
 
+- [Round 2: four-slide pitch with intro](output/pptx/golocal-round2-four-slides-v5.pptx) · November 2: opportunity, booking layer and Florida progress, then Pulkit as sole founder with Rohit and Aryan in the engineering team. Timed speaking pointers are in the notes.
+
 ## Connector pilot
 
 - **Actual ChatGPT agent flow passed October 13:** [Open the test conversation](https://chatgpt.com/c/6acde1b6-29ac-83e9-9185-5e3c3857fdd1) · [Repeat the flow](connectors/golocal/docs/chatgpt-assisted-test.md). Private customer OAuth, supplier search/offer, pending request, supplier-account acceptance and separate agent confirmation all passed. Both notification emails arrived. $0 charged; test only, no CRM job. [Verification](output/golocal-assisted-chatgpt-e2e-verification.json).
@@ -40,7 +42,7 @@ Personal agents are expanding the ways people find and buy services, but local b
 - [Launch report](output/golocal-launch-report.md) · [Homepage preview](output/golocal-website-preview.jpg) · [Conversation demo preview](output/golocal-live-demo-preview.jpg).
 
 
-- [Latest V37 pitch deck](output/pptx/golocal-pitch-v37.pptx): first pilot lined up in Salt Lake City, 60+ plumbing companies already in pipeline, and 30-day MCP launch target with aligned launch steps.
+- [Earlier V37 pitch deck](output/pptx/golocal-pitch-v37.pptx): first pilot lined up in Salt Lake City, 60+ plumbing companies already in pipeline, and 30-day MCP launch target with aligned launch steps.
 
 - [Previous V36 pitch deck](output/pptx/golocal-pitch-v36.pptx): founder-confirmed 60+ Salt Lake City plumbing-company pipeline through Cactus AI and YourCardare, plus updated consumer-app-to-agent-layer team headline.
 

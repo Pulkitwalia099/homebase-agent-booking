@@ -444,3 +444,15 @@ All entries are local snapshots. They do not indicate updates to the working Pag
 - [Before personal-agent heading](2026-10-14-before-personal-agent-heading/SNAPSHOT.md) · [Personal-agent heading live](2026-10-14-personal-agent-heading-live/SNAPSHOT.md): exact customer heading correction, source/report and live preview.
 
 - [Before simple setup and hierarchy](2026-10-14-before-simple-setup-value/SNAPSHOT.md) · [Simple setup and hierarchy live](2026-10-14-simple-setup-value-live/SNAPSHOT.md): everyday value, one setup instruction, renamed agent header entry, hero controls simplified and readable heading sizes; animation retained.
+
+- [Before body/control readability](2026-11-02-before-readable-body-controls/SNAPSHOT.md) · [Readable text and controls live](2026-11-02-readable-body-controls-live/SNAPSHOT.md): shared body/control scale, mobile inputs, setup/demo wrapping, plain agent docs and verified live previews.
+
+- [Before round-two pitch](2026-11-02-before-round2-three-slides/) · [Three-slide round-two pitch](2026-11-02-round2-three-slides/): personal-agent opportunity, booking layer and current Florida progress; Pulkit as sole founder, Rohit and Aryan as the engineering team. Editable PowerPoint and timed notes.
+
+- [Before founder revision](2026-11-02-before-founder-credentials/) · [Founder credentials restored](2026-11-02-founder-credentials/): original founder achievements, corrected $15M Bessemer figure, Rohit title at Grab and concise engineering credentials.
+
+- [Before engineering detail](2026-11-02-before-engineering-detail/) · [Expanded engineering profiles](2026-11-02-engineering-detail/): Grab agentic commerce, GXS digital-bank context, Rohit teaching experience and 40/50/30-second pitch timing.
+
+- [Before Rohit trim](2026-11-02-before-rohit-trim/) · [Rohit profile trimmed](2026-11-02-rohit-trim/): removed teaching credential from slide and notes.
+
+- [Before intro](2026-11-02-before-intro-slide/) · [Intro added](2026-11-02-intro-added/): original cover design restored before current three slides; 5/35/50/30-second timing.

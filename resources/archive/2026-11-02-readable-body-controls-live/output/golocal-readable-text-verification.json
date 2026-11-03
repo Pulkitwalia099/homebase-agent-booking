@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-02",
+  "url": "https://getgolocal.com",
+  "commit": "bed580c882af8174051472f3dc1b8584f904aa1f",
+  "deployment": "dpl_CDoKp8z64wQkWTNJPziCG46k3Sub",
+  "status": "READY",
+  "aliases": [
+    "getgolocal.com",
+    "www.getgolocal.com"
+  ],
+  "typography_px": {
+    "body_desktop": 18,
+    "body_mobile": 17,
+    "controls": 16,
+    "supporting": 16,
+    "metadata": 14,
+    "agent_documentation": 16
+  },
+  "controls": {
+    "main_min_height": 48,
+    "compact_min_height": 44,
+    "live_registration_input_heights": [
+      50,
+      50,
+      50,
+      50,
+      49,
+      50,
+      50
+    ]
+  },
+  "verification": {
+    "local_widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "live_widths": [
+      390,
+      1280
+    ],
+    "horizontal_page_overflow": false,
+    "routes_checked": [
+      "/",
+      "/connectors",
+      "/register?type=business",
+      "/businesses",
+      "/agents",
+      "/partners",
+      "/pilot",
+      "/privacy",
+      "/developers (redirects to /agents)",
+      "/demo",
+      "/agent"
+    ],
+    "setup_tab_switch": true,
+    "homepage_demo_chapter_navigation": true,
+    "provider_cards_fit_chat_width": true,
+    "hero_video_playing_and_looping": true,
+    "typescript": "passed in 3.2s",
+    "static_pages": 28,
+    "production_compilation": "passed"
+  },
+  "source_bundle_files": 151,
+  "existing_build_warnings": "npm ci reported 6 dependency vulnerabilities (5 high, 1 critical); dependency versions were not changed or audited for exploitability in this typography revision.",
+  "side_effects": "No signup, booking, email, vendor message or payment submitted. No new media credits."
+}

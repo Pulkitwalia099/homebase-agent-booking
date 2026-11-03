@@ -1,0 +1,1 @@
+November 2, 2026. Removed Rohit teaching credential from slide and speaker notes per user. Other slide content unchanged. Slide 3 visually reviewed, exported renders matched, slides 1 and 2 unchanged; package/layout checks passed. Original preserved. Main theses and Page unchanged.
